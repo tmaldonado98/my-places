@@ -157,6 +157,14 @@ $('#del-sel').click(()=>{
 })
 
 
+////CODE TO MAKE EDIT ROW APPEAR UPON MOUSE HOVER OVER ROW
+$('.data-row').mouseover(()=>{
+    $('.edit-row').prop('style', 'display: block');
+});
+$('.data-row').mouseout(()=>{
+    $('.edit-row').prop('style', 'display:none');
+});
+
 /*
 $('.checkbox').change(()=>{  
     // if ($('.checkbox').prop('checked') == false) {

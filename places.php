@@ -12,7 +12,8 @@ session_start();
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-<div id="col-left">
+<section id="want">
+<div id="column-w-1">
 <?php
 // ini_set('display_errors', 1);
 // ini_set('display_startup_errors', 1);
@@ -27,11 +28,11 @@ if (isset($_POST['submit'])) {
     $insert = mysqli_query($con, "INSERT INTO places(country, city, landmark) VALUES ('$country', '$city', '$landmark')"); 
 };    
     
-
+echo '<h1>Where I Want To Go</h1>';
 echo '<div id=container-table-btns>';
     echo '<table id=table cellspacing="15">';
     echo '<tr>
-    <th>#</th>
+    <th> </th>
     <th>Country</th>
     <th>City</th>
     <th>Landmark</th>
@@ -57,6 +58,8 @@ echo '<div id=container-table-btns>';
             echo "<td><form id='cbox-form' action='delete.php' method='post'>
             <input class=checkbox type=checkbox name='checkbox[]' value='$marker'>
             </td>";
+            echo "<td><a href=# , class=see-more>See More</a>
+            </td>";
             
             echo '</tr>';
         }
@@ -65,48 +68,57 @@ echo '</table>';
 echo 'No results to display.';
 };
 
-?> 
-    <div id="btn-msg">
-        <div id="btn">
-                <input type="submit" id="del-sel" name="delete_sel" value="Delete Selection">
-            </form>
-
-        </div>
-
-        <div id="msg">
-        <?php 
-            if (isset($_SESSION['status'])){
-                echo "<h4 id=fdback>" . $_SESSION['status'] ."</h4>";
-                unset ($_SESSION['status']);
-            };
-        ?>
-        </div>
-    </div>
+?>
 </div id=container-table-btns>
 
 
-<div id="container-add-place">
-    <div id="head-text">
-        <h3 id="med-head">Where Would You Go?</h3>
-        <form id="add-place" method="post">
-            <div class="container-input">
-                <label for="country"><p>Country</p></label>
-                <input class="text" id="country" placeholder="Country" type="text" name="country"></input>
-            </div>
-            <div class="container-input">
-                <label for="city"><p>City</p></label>
-                <input class="text" id="city" placeholder="City" type="text" name="city"></input>
-            </div>
-            <div class="container-input">
-                <label for="landmark"><p>Landmark</p></label>
-                <input class="text" id="landmark" placeholder="Landmark" type="text" name="landmark"></input>
-            </div>
-    </div>
-        <div id="container-btn1">
-            <input id="btn1" type="submit" name="submit" value="Add New Place"></input>
+    <div id="btn-msg">
+    <div id="btn">
+                <input type="submit" id="del-sel" name="delete_sel" value="Delete Selection">
+            </form>
+
+            <?php 
+                if (isset($_SESSION['status'])){
+                    echo "<h4 id=fdback>" . $_SESSION['status'] ."</h4>";
+                    unset ($_SESSION['status']);
+                };
+            ?>
         </div>
 
-</div>        
+        
+        <div id="container-add-place">
+            <div id="head-text">
+                <h3 id="med-head">Add A New Place</h3>
+                <form id="add-place" method="post">
+                    <div class="container-input">
+                        <label for="country"><p>Country</p></label>
+                        <input class="text" id="country" placeholder="Country" type="text" name="country"></input>
+                    </div>
+                    <div class="container-input">
+                        <label for="city"><p>City</p></label>
+                        <input class="text" id="city" placeholder="City" type="text" name="city"></input>
+                    </div>
+                    <div class="container-input">
+                        <label for="landmark"><p>Landmark</p></label>
+                        <input class="text" id="landmark" placeholder="Landmark" type="text" name="landmark"></input>
+                    </div>
+                    <div id="container-btn1">
+                <input id="btn1" type="submit" name="submit" value="Add New Place"></input>
+                </form>
+            </div>
+            </div>
+        </div>
+
+
+
+
+
+    </div>        
+    
+
+
+
+
                 
 
     </form>
@@ -116,14 +128,24 @@ echo 'No results to display.';
     </div>
 </div>
 
-<div id="col-right">
+<div id="column-w-2">
+    <h3>Average Weather</h3>
+    <h3>Did You Know?</h3>
+    <h3>Some Facts About This Place</h3>
+</div>
 
-    <img src="" alt="">
+</section>
+
+<section id="already-been">
+    <div id="column-ab-1">
+    <!-- ajax see more section-->
+    
+
 
 
 
 <?php
-
+/*
 $ch = curl_init();
 
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -157,30 +179,10 @@ foreach($image_results as $result) {
     echo '<figure>
     <img class=img src="'.$source.'">
     </figure>';
-}
-
-/*
-require 'path/to/google-search-results.php';
-require 'path/to/restclient.php';
-
-$query = [
- "engine" => "google",
- "q" => "Venice",
- "google_domain" => "google.com",
- "gl" => "us",
- "hl" => "en",
- "tbm" => "isch",
-];
-
-$search = new GoogleSearch('secret_api_key');
-$result = $search->get_json($query);
-*/
-
+}*/
 ?>
-
-
-</div>
-
+    </div >
+    </section>
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript" src="script.js"></script>

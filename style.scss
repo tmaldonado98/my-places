@@ -1,12 +1,20 @@
 body {
     margin: 0;
 }
-#btn1, .edit-row, #del-sel, #print{
+
+h1{
+    text-align: center;
+}
+
+#btn1, .edit-row, #del-sel, #print, .see-more{
     font-size: 20px;
     text-decoration: none;
     color: inherit;
     cursor: pointer;
-    // margin: auto;
+}
+
+.edit-row{
+    display: none;
 }
 
 .edit-row, #del-sel, #print{
@@ -24,7 +32,6 @@ body {
 #del-sel{
     background-color: rgba(243, 103, 152, 0.611);
     width: 15rem;
-    margin-left: 19%;
 }
 #del-sel:hover{
     background-color: rgb(187, 8, 71);
@@ -77,7 +84,7 @@ tr:nth-child(even){
 }
 
 #container-table-btns{
-    width: 60%;
+    width: 100%;
 }
 
 #container-add-place{
@@ -95,8 +102,9 @@ tr:nth-child(even){
     text-align: center;
 }
 #add-place{
-    display: flex;
-    justify-content: space-between;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: space-between;
     align-items: center;
     
 }
@@ -110,8 +118,6 @@ tr:nth-child(even){
 #container-btn1 {
     display: flex;
     text-align: center;
-    width: 60%;
-    margin: auto ;
 
 }
 
@@ -141,18 +147,23 @@ tr:nth-child(even){
 
 #btn-msg{
     display: flex;
-    flex-wrap: wrap;
-    // flex-direction: column;
     margin: 2.5rem auto;
 }
 
-#btn, #msg{
+#msg{
     width: 100%;
     display: flex;
     margin: auto;
     gap: 15%;
     align-items: center;
     padding: 2rem 0 0 0;
+}
+
+#btn{
+    width: 100%;
+    margin: 0 auto auto auto;
+    padding: 2rem 0 0 0;
+    text-align: center;
 }
 
 @keyframes fdback{
@@ -168,7 +179,6 @@ tr:nth-child(even){
     // animation-name: fdback;
     // animation-duration: 5s;
     // animation-fill-mode: forwards;
-    margin-left: 15%;
 }
 
 // #msg h4 {
@@ -178,3 +188,19 @@ tr:nth-child(even){
     width: 25rem;
     height: auto;
 }
+
+#want{
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    column-gap: 5rem;
+}
+#column-w-1{
+    grid-column:1;
+}
+#column-w-2{
+    grid-column: 2;
+}
+
+// div{
+//     border: 3px black solid;
+// }
