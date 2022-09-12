@@ -121,7 +121,6 @@ echo 'No results to display.';
     <img src="" alt="">
 
 
-</div>
 
 <?php
 
@@ -131,10 +130,10 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_HEADER, false);
 
 $data = [
-//    "q" => $country, $city, $landmark,
-"q" => 'venice',
+   "q" => $country, $city, $landmark,
+// "q" => 'venice',
    "tbm" => "isch",
-   "num" => "2",
+   "num" => "5",
 ];
 
 curl_setopt($ch, CURLOPT_URL, "https://app.zenserp.com/api/v2/search?" . http_build_query($data));
@@ -148,10 +147,17 @@ curl_close($ch);
 
 $json = json_decode($response, true);
 
-// print_r($json);
-var_dump($json);
+// var_dump($json);
 
-// header('location: places.php');
+$image_results = $json['image_results'];
+ 
+foreach($image_results as $result) {
+    $source = $result['sourceUrl'];
+ 
+    echo '<figure>
+    <img class=img src="'.$source.'">
+    </figure>';
+}
 
 /*
 require 'path/to/google-search-results.php';
@@ -173,6 +179,7 @@ $result = $search->get_json($query);
 ?>
 
 
+</div>
 
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

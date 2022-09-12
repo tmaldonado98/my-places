@@ -167,4 +167,9 @@ tr:nth-child(even) td:nth-child(1), tr:nth-child(even) td:nth-child(2), tr:nth-c
 }
 #fdback {
   margin-left: 15%;
+}
+
+.img {
+  width: 25rem;
+  height: auto;
 }/*# sourceMappingURL=style.css.map */
