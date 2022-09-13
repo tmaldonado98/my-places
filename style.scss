@@ -105,7 +105,7 @@ tr:nth-child(even){
     // display: flex;
     // flex-direction: column;
     // justify-content: space-between;
-    align-items: center;
+    text-align: center;
     
 }
 
@@ -116,7 +116,6 @@ tr:nth-child(even){
 }
 
 #container-btn1 {
-    display: flex;
     text-align: center;
 
 }
@@ -175,24 +174,20 @@ tr:nth-child(even){
     }
 }
 #fdback{
-    // animation-delay: 4s;
-    // animation-name: fdback;
-    // animation-duration: 5s;
-    // animation-fill-mode: forwards;
+    animation-delay: 4s;
+    animation-name: fdback;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
 }
 
 // #msg h4 {
 //     margin: auto;
 // }
-.img{
-    width: 25rem;
-    height: auto;
-}
 
 #want{
     display: grid;
     grid-template-columns: 1.5fr 1fr;
-    column-gap: 5rem;
+    column-gap: 2rem;
 }
 #column-w-1{
     grid-column:1;
@@ -201,6 +196,21 @@ tr:nth-child(even){
     grid-column: 2;
 }
 
+#container-figure{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.figure-img{
+    width: fit-content;
+    margin: 0.5rem;
+}
+.img{
+    width: 20rem;
+    height: auto;
+}
+
 // div{
 //     border: 3px black solid;
 // }
+
