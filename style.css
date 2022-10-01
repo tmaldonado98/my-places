@@ -62,6 +62,14 @@ h1 {
   color: white;
 }
 
+#pdf {
+  background-color: rgb(167, 154, 242);
+  font-size: 18px;
+  display: none;
+  border: 3px solid rgba(170, 170, 170, 0.481);
+  padding: 0.5rem;
+}
+
 #table {
   border-spacing: 15px;
   border-collapse: separate;
@@ -83,6 +91,11 @@ td {
 
 tr:nth-child(even) td:nth-child(1), tr:nth-child(even) td:nth-child(2), tr:nth-child(even) td:nth-child(3), tr:nth-child(even) td:nth-child(4) {
   background-color: rgba(144, 144, 144, 0.084);
+}
+
+ul {
+  margin: 0;
+  padding-left: 0.5rem;
 }
 
 #container-table-btns {
@@ -210,19 +223,38 @@ tr:nth-child(even) td:nth-child(1), tr:nth-child(even) td:nth-child(2), tr:nth-c
   height: auto;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 650px) {
   #want {
     width: 100%;
   }
   #table {
-    border-spacing: 0;
+    border-spacing: 0 12px;
     border-collapse: separate;
     max-width: 100%;
   }
   tbody {
     margin: 0;
   }
-  td {
+  td, .see-more {
     padding: 0;
+    font-size: 0.9rem;
+  }
+  .container-see-more {
+    border: 0.1px black solid;
+  }
+  .edit-row, .checkbox {
+    display: none;
+  }
+  tr th:nth-child(5), tr th:nth-child(6), td:nth-child(5), td:nth-child(6) {
+    display: none;
+  }
+  td:hover {
+    color: inherit;
+  }
+  #btn, #print {
+    display: none;
+  }
+  #pdf {
+    display: block;
   }
 }/*# sourceMappingURL=style.css.map */

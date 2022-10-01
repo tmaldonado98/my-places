@@ -47,7 +47,8 @@ echo '<div id=container-table-btns>';
             
 
             echo '<tr class=data-row>';
-            echo "<td>" . $row['marker'] . "</td>";
+            // echo "<td>" . $row['marker'] . "</td>";
+            echo "<td><ul><li></li></ul></td>";
             echo "<td>" . ucwords($row['country']) . "</td>";
             echo "<td>" . ucwords($row['city']) . "</td>";
             echo "<td>" . ucwords($row['landmark']) . "</td>";
@@ -58,7 +59,7 @@ echo '<div id=container-table-btns>';
             echo "<td><form id='cbox-form' action='delete.php' method='post'>
             <input class=checkbox type=checkbox name='checkbox[]' value='$marker'>
             </td>";
-            echo "<td><a href=# , class=see-more>See More</a>
+            echo "<td class=container-see-more><a href=# , class=see-more>See More</a>
             </td>";
             
             echo '</tr>';
@@ -125,6 +126,7 @@ echo 'No results to display.';
     
     <div id="container-print">
         <input id="print" type="button" value="Print Page">
+        <input id="pdf" type="button" value="Save PDF">
     </div>
 </div>
 
