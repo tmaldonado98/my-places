@@ -13,7 +13,7 @@ session_start();
 </head>
 <body>
 <section id="want">
-<div id="column-w-1">
+<!-- <div id="column-w-1"> -->
 <?php
 // ini_set('display_errors', 1);
 // ini_set('display_startup_errors', 1);
@@ -30,7 +30,7 @@ if (isset($_POST['submit'])) {
     
 echo '<h1>Where I Want To Go</h1>';
 echo '<div id=container-table-btns>';
-    echo '<table id=table cellspacing="15">';
+    echo '<table id=table>';
     echo '<tr>
     <th> </th>
     <th>Country</th>
@@ -113,7 +113,7 @@ echo 'No results to display.';
 
 
 
-    </div>        
+    <!-- </div>         -->
     
 
 
@@ -128,14 +128,14 @@ echo 'No results to display.';
     </div>
 </div>
 
-<div id="column-w-2">
+<!-- <div id="column-w-2"> -->
     <h3>Average Weather</h3>
     <h3>Did You Know?</h3>
     <h3>Some Facts About This Place</h3>
 
     <?php
 
-/*$ch = curl_init();
+$ch = curl_init();
 
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_HEADER, false);
@@ -147,10 +147,10 @@ $data = [
    "num" => "5",
 ];
 
-curl_setopt($ch, CURLOPT_URL, "https://app.zenserp.com/api/v2/search?" . http_build_query($data));
+curl_setopt($ch, CURLOPT_URL,   'https://customsearch.googleapis.com/customsearch/v1?key=AIzaSyAHakO0K7mac852qUCsJxSq0sozCCvy-xA&cx=22bdf86666de74d21%20&filter=1&q=?randomsearch&searchType=image');
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
     "Content-Type: application/json",
-    "apikey: 1a3be160-2e79-11ed-85ee-2bfcdd59e9c8",  
+    // "apikey: 1a3be160-2e79-11ed-85ee-2bfcdd59e9c8",  
 ));
 
 $response = curl_exec($ch);
@@ -158,11 +158,11 @@ curl_close($ch);
 
 $json = json_decode($response, true);
 
-// var_dump($json);
-
-*/
+var_dump($json);
 
 
+
+/*
 $curl = curl_init();
 
 curl_setopt_array($curl, [
@@ -194,7 +194,7 @@ if ($err) {
 } else {
 	echo $response;
 }
-
+*/
 
 $image_results = $json['image_results'];
 
@@ -208,9 +208,15 @@ foreach($image_results as $result) {
     </figure>';
     '</div>';
 }
+
+// curl \;
+//   'https://customsearch.googleapis.com/customsearch/v1?cx=22bdf86666de74d21%20&filter=1&q=enterqueryhere&searchType=image&key=[AIzaSyAHakO0K7mac852qUCsJxSq0sozCCvy-xA ]' \;
+//   --header 'Accept: application/json' \;
+//   --compressed;
+
 ?>
 
-</div>
+<!-- </div> -->
 
 </section>
 

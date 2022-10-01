@@ -1,10 +1,16 @@
-body {
+body, html {
     margin: 0;
 }
 
 h1{
     text-align: center;
 }
+
+#want{
+    width: 70%;
+    margin: 0 auto;
+}
+
 
 #btn1, .edit-row, #del-sel, #print, .see-more{
     font-size: 20px;
@@ -56,13 +62,15 @@ h1{
     color: white;
 }
 
+#table{
+    border-spacing: 15px;
+    border-collapse: separate;
+}
 
 td{
     padding: 0.5rem;
     text-align: center;
     font-size: 20px;
-    width: 20%;
-    // row-gap: 2rem;
 }
 
 .data-row{
@@ -184,17 +192,13 @@ tr:nth-child(even){
 //     margin: auto;
 // }
 
-#want{
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    column-gap: 2rem;
-}
-#column-w-1{
-    grid-column:1;
-}
-#column-w-2{
-    grid-column: 2;
-}
+
+// #column-w-1{
+//     grid-column:1;
+// }
+// #column-w-2{
+//     grid-column: 2;
+// }
 
 #container-figure{
     display: flex;
@@ -214,3 +218,19 @@ tr:nth-child(even){
 //     border: 3px black solid;
 // }
 
+@media screen and (max-width: 450px) {
+    #want{
+        width: 100%;
+    }
+    #table{
+        border-spacing: 0;
+        border-collapse: separate;
+        max-width: 100%;
+    }
+    tbody{
+        margin: 0;
+    }
+    td{
+        padding: 0;
+    }
+}
