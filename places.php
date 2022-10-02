@@ -36,7 +36,6 @@ echo '<div id=container-table-btns>';
     <th>Country</th>
     <th>City</th>
     <th>Landmark</th>
-    <th> </th>
     <th>Select All <input id=sel-all type=checkbox></th>
     </tr>';
     echo '';
@@ -54,7 +53,8 @@ echo '<div id=container-table-btns>';
             echo "<td>" . ucwords($row['landmark']) . "</td>";
 ///THIS EVENT REMOVES DESIRED ROW FROM BOTH PAGE AND DB TABLE UPON REMOVE BTN PRESS
 // DOES NOT YET SELF-ADJUST MARKER COUNTER
-            echo "<td><a href='editRow.php?editid=$marker' class='edit-row' name=edit>Edit</a></td>";
+    /////DO NOT FORGET EDIT ROW. WILL USE LATER IN MODULE.        
+    // echo "<td><a href='editRow.php?editid=$marker' class='edit-row' name=edit>Edit</a></td>";
             //echo "<td><a href='delete.php?deleteid=".$row['marker']."' class=remove-row type=submit name=delete>Remove Place</a></td>";
             echo "<td><form id='cbox-form' action='delete.php' method='post'>
             <input class=checkbox type=checkbox name='checkbox[]' value='$marker'>
@@ -126,6 +126,7 @@ echo 'No results to display.';
     
     <div id="container-print">
         <input id="print" type="button" value="Print Page">
+        <br>
         <input id="pdf" type="button" value="Save PDF">
     </div>
 </div>

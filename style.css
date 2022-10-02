@@ -7,7 +7,6 @@ h1 {
 }
 
 #want {
-  width: 70%;
   margin: 0 auto;
 }
 
@@ -33,7 +32,7 @@ h1 {
 }
 
 #del-sel {
-  background-color: rgba(243, 103, 152, 0.611);
+  background-color: rgba(189, 186, 187, 0.611);
   width: 15rem;
 }
 
@@ -65,7 +64,6 @@ h1 {
 #pdf {
   background-color: rgb(167, 154, 242);
   font-size: 18px;
-  display: none;
   border: 3px solid rgba(170, 170, 170, 0.481);
   padding: 0.5rem;
 }
@@ -73,12 +71,14 @@ h1 {
 #table {
   border-spacing: 15px;
   border-collapse: separate;
+  margin: auto;
+  width: 85%;
 }
 
 td {
   padding: 0.5rem;
   text-align: center;
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 .data-row {
@@ -95,11 +95,17 @@ tr:nth-child(even) td:nth-child(1), tr:nth-child(even) td:nth-child(2), tr:nth-c
 
 ul {
   margin: 0;
-  padding-left: 0.5rem;
+  padding-left: 1.25rem;
 }
 
-#container-table-btns {
-  width: 100%;
+#sel-all {
+  width: 1rem;
+  height: 1rem;
+}
+
+.checkbox {
+  width: 1rem;
+  height: 1rem;
 }
 
 #container-add-place {
@@ -223,21 +229,21 @@ ul {
   height: auto;
 }
 
-@media screen and (max-width: 650px) {
-  #want {
+@media screen and (max-width: 700px) {
+  #container-table-btns {
     width: 100%;
   }
   #table {
     border-spacing: 0 12px;
     border-collapse: separate;
-    max-width: 100%;
+    width: 100%;
   }
   tbody {
     margin: 0;
   }
   td, .see-more {
     padding: 0;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
   }
   .container-see-more {
     border: 0.1px black solid;
@@ -245,7 +251,7 @@ ul {
   .edit-row, .checkbox {
     display: none;
   }
-  tr th:nth-child(5), tr th:nth-child(6), td:nth-child(5), td:nth-child(6) {
+  tr th:nth-child(5), tr th:nth-child(6), tr th:nth-child(5) {
     display: none;
   }
   td:hover {
@@ -256,5 +262,10 @@ ul {
   }
   #pdf {
     display: block;
+  }
+}
+@media screen and (min-width: 550px) and (max-width: 699px) {
+  td {
+    font-size: 1rem;
   }
 }/*# sourceMappingURL=style.css.map */

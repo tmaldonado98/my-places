@@ -127,9 +127,13 @@ $('.checkbox').change(()=>{
         $('#sel-all').prop("checked", true)
     };
 
-    // if ($('.checkbox').prop('checked') == true) {
-    //     $('#del-sel').prop('disabled', true);
-    // }
+
+    ///THIS STILL NEEDS WORK
+    if ($('checkbox').prop('checked') == true) {
+        // $('#del-sel').prop('disabled', true);
+        $('#del-sel').attr('style', 'background-color:red')
+    } 
+
     // if ($('.checkbox').prop('checked') == false) {
     //     $('#del-sel').prop('disabled', false);
     // }
@@ -158,12 +162,12 @@ $('#del-sel').click(()=>{
 
 
 ////CODE TO MAKE EDIT ROW APPEAR UPON MOUSE HOVER OVER ROW
-$('.data-row').mouseover(()=>{
+/* $('.data-row').mouseover(()=>{
     $('.edit-row').prop('style', 'display: block');
 });
 $('.data-row').mouseout(()=>{
     $('.edit-row').prop('style', 'display:none');
-});
+});  */
 
 /*
 $('.checkbox').change(()=>{  
