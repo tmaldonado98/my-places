@@ -110,7 +110,6 @@ ul {
 
 #container-add-place {
   align-items: baseline;
-  width: 60%;
 }
 
 #head-text {
@@ -165,6 +164,7 @@ ul {
 
 #btn-msg {
   display: flex;
+  flex-direction: column;
   margin: 2.5rem auto;
 }
 
@@ -229,6 +229,11 @@ ul {
   height: auto;
 }
 
+#map {
+  background-color: rgb(47, 65, 79);
+  height: 100vh;
+}
+
 @media screen and (max-width: 700px) {
   #container-table-btns {
     width: 100%;
@@ -260,12 +265,21 @@ ul {
   #btn, #print {
     display: none;
   }
-  #pdf {
-    display: block;
+  #container-table-btns p {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  #container-print {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 450px) and (max-width: 549px) {
+  td {
+    font-size: 1rem;
   }
 }
 @media screen and (min-width: 550px) and (max-width: 699px) {
   td {
-    font-size: 1rem;
+    font-size: 1.15rem;
   }
 }/*# sourceMappingURL=style.css.map */

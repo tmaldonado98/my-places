@@ -64,12 +64,25 @@ echo '<div id=container-table-btns>';
             
             echo '</tr>';
         }
-echo '</table>';
+echo '</table> <br>';
 } else {
 echo 'No results to display.';
 };
 
+$select = ("SELECT * FROM places");
+$count = mysqli_query($con, $select);
+$rowcount = mysqli_num_rows($count);
+echo "<p><b>Total Number Of Places: " . $rowcount . "</b></p>";
+
 ?>
+
+<div id="container-print">
+    <input id="print" type="button" value="Print Page">
+    <br>
+    <input id="pdf" type="button" value="Save PDF">
+</div>
+
+
 </div id=container-table-btns>
 
 
@@ -123,13 +136,16 @@ echo 'No results to display.';
                 
 
     </form>
-    
-    <div id="container-print">
-        <input id="print" type="button" value="Print Page">
-        <br>
-        <input id="pdf" type="button" value="Save PDF">
-    </div>
 </div>
+
+<section id="map">
+
+
+
+
+
+</section>
+
 
 <!-- <div id="column-w-2"> -->
     <h3>Average Weather</h3>
