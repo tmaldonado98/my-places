@@ -204,22 +204,12 @@ if ($(this).prop('checked', true)) {
     // }
 });
 */
-/*
-$('#sel-all').change(()=>{ 
-    if ($('#sel-all').prop('checked') == true) {
-        $('#del-sel').attr("disabled", false);
-    } 
-    else if ($('#sel-all').prop('checked') == false) {
-        $('#del-sel').attr("disabled", true);
-    }  
-});
-*/
 
-// $('#sel-all').change(()=>{   
-//     if ($('#sel-all').prop('checked', true)) {
-//         $('#del-sel').attr("disabled", false);
-//      } 
-//      else if ($('#sel-all').prop('checked', false)) {
-//         $('#del-sel').attr("disabled", true);
-//     }
-// });
+// $('.see-more').modal();
+
+$('.see-more').click(()=>{
+    $('#modal').show();
+})
+$('#close').click(()=>{
+    $('#modal').hide();
+})

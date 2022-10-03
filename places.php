@@ -10,10 +10,12 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Travel Bucket List</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./modals.css">
 </head>
 <body>
 <section id="want">
 <!-- <div id="column-w-1"> -->
+
 <?php
 // ini_set('display_errors', 1);
 // ini_set('display_startup_errors', 1);
@@ -52,15 +54,20 @@ echo '<div id=container-table-btns>';
             echo "<td>" . ucwords($row['city']) . "</td>";
             echo "<td>" . ucwords($row['landmark']) . "</td>";
 ///THIS EVENT REMOVES DESIRED ROW FROM BOTH PAGE AND DB TABLE UPON REMOVE BTN PRESS
-// DOES NOT YET SELF-ADJUST MARKER COUNTER
-    /////DO NOT FORGET EDIT ROW. WILL USE LATER IN MODULE.        
-    // echo "<td><a href='editRow.php?editid=$marker' class='edit-row' name=edit>Edit</a></td>";
-            //echo "<td><a href='delete.php?deleteid=".$row['marker']."' class=remove-row type=submit name=delete>Remove Place</a></td>";
             echo "<td><form id='cbox-form' action='delete.php' method='post'>
             <input class=checkbox type=checkbox name='checkbox[]' value='$marker'>
             </td>";
-            echo "<td class=container-see-more><a href=# , class=see-more>See More</a>
+
+            echo "<dialog id=modal>
+                <div id=close>&#10006;</div>
+                <a href='editRow.php?editid=$marker' class='edit-row' name=edit>Edit</a>
+                <a href='delete.php?deleteid=".$row['marker']."' class=remove-row type=submit name=delete>Remove Place</a>
+                this is -->" . $country . "
+            </dialog>";
+
+            echo "<td class=container-see-more><a href=#  class=see-more>See More</a>
             </td>";
+
             
             echo '</tr>';
         }
@@ -138,13 +145,7 @@ echo "<p><b>Total Number Of Places: " . $rowcount . "</b></p>";
     </form>
 </div>
 
-<section id="map">
 
-
-
-
-
-</section>
 
 
 <!-- <div id="column-w-2"> -->
@@ -249,6 +250,9 @@ foreach($image_results as $result) {
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript" src="script.js"></script>
+<!-- jQuery Modal -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" /> -->
 
 <?php
 mysqli_close($con);
