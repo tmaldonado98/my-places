@@ -206,39 +206,13 @@ if ($(this).prop('checked', true)) {
 */
 
 
-// let specificRow = $('tr[name=row]');
-
-// let modal = $('#modal').fadeIn('250ms');
-
-// let seeMoreClosestModal = $('.see-more').closest(modal);
-// let seeMore = $('.container-see-more').val(value);
-// .find('td')
-// .closest('a[name=delete]')
-
-// let linkVal = $('#see-more').val();
-
-// let modalVal = $('#modal').val();
-
-// let modalDialog = "<dialog name=modal id=modal><div class=close>&#10006;</div><a href='editRow.php' value=$marker id='edit-row' name=edit>Edit</a><a href='delete-modal.php' value=$marker id=remove-row name=delete>Remove Place</a><p id=dummy-text>This is </p></dialog>";
-
-$('.see-more').on('click', ()=>{
-    $(this).hide()
-    // closest('dialog[name=modal]').fadeIn('250ms');
-/*
-
-    if ($('dialog[name=modal]').length < 1) {
-        // $(this.$('.container-see-more')).append(modalDialog);
-        // $('#dummy-text').html(index);    
-        
-    } else if ($('#modal').length > 1) {
-        return false;
-    }
-  */  
+$('.see-more').click(function(){
+    $(this).siblings('dialog').fadeIn('250ms')
 });
     
 
-$('.close').click(()=>{
-    $('#modal').fadeOut('250ms');
+$('.close').click(function(){
+    $(this).closest('dialog').fadeOut('250ms');  
 })
 
 

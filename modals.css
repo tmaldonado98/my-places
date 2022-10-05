@@ -1,16 +1,16 @@
-#modal{
+.modal{
     height: 90%;
     width: 85%;
     vertical-align:middle;
     position: fixed;
 }
 
-#modal::backdrop{
+.modal::backdrop{
     background: rgba(0, 0, 0, 0.31);
     /* opacity: 0.4; */
 }
 
-#close{
+.close{
     position:relative;
     left: 95%;
     width: fit-content;

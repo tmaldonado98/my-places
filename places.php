@@ -90,7 +90,7 @@ echo '<div id=container-table-btns>';
             // echo $modal->get_markup();
 
             echo "<td class=container-see-more><a href=# name=see-more class=see-more value=$marker>See More</a>
-                <dialog name=modal id=modal value=$marker>
+                <dialog name=modal class=modal value=$marker>
                     <div class=close>&#10006;</div>
                     <a href='editRow.php' value=$marker id='edit-row' name=edit>Edit</a>
                     <a href='delete-modal.php' value=$marker id=remove-row name=delete>Remove Place</a>
