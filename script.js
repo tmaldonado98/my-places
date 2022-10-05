@@ -207,9 +207,30 @@ if ($(this).prop('checked', true)) {
 
 // $('.see-more').modal();
 
+// let value = $('tr[name=row]').val();
+
+let specificRow = $('tr[name=row]');
+
+let modal = $('dialog').closest('#modal').fadeIn('250ms');
+
+let seeMoreClosestModal = $('.see-more').closest(modal);
+// let seeMore = $('.container-see-more').val(value);
+// .find('td')
+// .closest('a[name=delete]')
+
 $('.see-more').click(()=>{
-    $('#modal').show();
+    // $(specificRow).closest(modal);
+    seeMoreClosestModal;
 })
-$('#close').click(()=>{
-    $('#modal').hide();
+    
+
+$('.close').click(()=>{
+    $('#modal').fadeOut('250ms');
 })
+
+
+
+
+
+// $('.remove-row')
+// http://localhost/my-places/places.php

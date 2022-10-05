@@ -47,7 +47,7 @@ echo '<div id=container-table-btns>';
 
             
 
-            echo '<tr class=data-row>';
+            echo "<tr name=row class=data-row  value=" . $marker . ">";
             // echo "<td>" . $row['marker'] . "</td>";
             echo "<td><ul><li></li></ul></td>";
             echo "<td>" . ucwords($row['country']) . "</td>";
@@ -58,14 +58,16 @@ echo '<div id=container-table-btns>';
             <input class=checkbox type=checkbox name='checkbox[]' value='$marker'>
             </td>";
 
-            echo "<dialog id=modal>
-                <div id=close>&#10006;</div>
-                <a href='editRow.php?editid=$marker' class='edit-row' name=edit>Edit</a>
-                <a href='delete.php?deleteid=".$row['marker']."' class=remove-row type=submit name=delete>Remove Place</a>
-                this is -->" . $country . "
-            </dialog>";
+            echo "";
 
-            echo "<td class=container-see-more><a href=#  class=see-more>See More</a>
+            echo "<td class=container-see-more><a href=# name=see-more class=see-more>See More</a>
+            <dialog id=modal value=$marker>
+                <div class=close>&#10006;</div>
+                <a href='editRow.php' value=$marker id='edit-row' name=edit>Edit</a>
+                <a href='delete-modal.php' value=$marker id=remove-row name=delete>Remove Place</a>
+                <p id=dummy-text>This is " . $marker . "</p>
+            </dialog>
+            
             </td>";
 
             
