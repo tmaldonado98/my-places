@@ -11,8 +11,15 @@ if (isset($_POST['delete_sel'])) {
    $result = mysqli_query($con, $query);
 
    $truncate = mysqli_query($con, "ALTER TABLE places AUTO_INCREMENT = 1");
+
+//    $noRows = ("DELETE * FROM places");
+//    $count2 = mysqli_query($con, $noRows);
+//    $reset = ("TRUNCATE TABLE places");
+//    $truncate2 = mysqli_query($con, $reset);
+//     header('location: places.php');
+
 };
-// /*
+
 if ($result) {
     $_SESSION['status'] = "<p>Your information has been updated</p>";
     header('location: places.php');
@@ -20,7 +27,16 @@ if ($result) {
     $_SESSION['status'] = "<p>Error updating your information</p>";
     die(mysqli_error($con));
     header('location: places.php');
-} //*/
+} 
+
+// if ($truncate2) {
+//     $_SESSION['status'] = "<p>Your information has been updated</p>";
+//     header('location: places.php');
+// } else {
+//     $_SESSION['status'] = "<p>Error updating your information</p>";
+//     die(mysqli_error($con));
+//     header('location: places.php');
+// } 
 ?>
 
 <!-- if (isset($_GET['deleteid'])) {

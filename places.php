@@ -73,6 +73,7 @@ echo '<div id=container-table-btns>';
         while ($row = $data->fetch_assoc()) {
             $marker = $row['marker'];
 
+
             echo "<tr name=row class=data-row  value=$marker>";
             // echo "<td>" . $row['marker'] . "</td>";
             echo "<td><ul><li></li></ul></td>";
@@ -92,9 +93,10 @@ echo '<div id=container-table-btns>';
             echo "<td class=container-see-more><a href=# name=see-more class=see-more value=$marker>See More</a>
                 <dialog name=modal class=modal value=$marker>
                     <div class=close>&#10006;</div>
-                    <a href='editRow.php' value=$marker id='edit-row' name=edit>Edit</a>
+                    <a href='editRow.php?editid=$marker' value=$marker id='edit-row' name=edit>Edit</a>
                     <a href='delete-modal.php' value=$marker id=remove-row name=delete>Remove Place</a>
-                    <p id=dummy-text>This is $marker</p>
+                    <p id=dummy-text><b>".ucwords($row['landmark'])." ". ucwords($row['city'])." ". ucwords($row['country'])." ". "</b></p>
+                
                 </dialog>
             
             </td>";
