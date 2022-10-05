@@ -24,6 +24,7 @@ session_start();
 $country = $_POST['country'];
 $city = $_POST['city'];
 $landmark = $_POST['landmark'];
+
 ////THIS EVENT PREVENTS PHP PAGE FROM INSERTING ROW INTO DB TABLE AFTER PAGE REFRESH
 //SEPARATED INSERT QUERY FROM FETCH ROW DATA QUERY.
 if (isset($_POST['submit'])) {
@@ -41,13 +42,38 @@ echo '<div id=container-table-btns>';
     <th>Select All <input id=sel-all type=checkbox></th>
     </tr>';
     echo '';
+
+//     $name = 'modal' . $marker;
+//     $value = $marker;
+//     $markup = "<td class=container-see-more><a href=# name=see-more id=see-more value=$marker>See More</a>
+//     <dialog name=modal id=modal value=$marker>
+//         <div class=close>&#10006;</div>
+//         <a href='editRow.php' value=$marker id='edit-row' name=edit>Edit</a>
+//         <a href='delete-modal.php' value=$marker id=remove-row name=delete>Remove Place</a>
+//         <p id=dummy-text>This is $marker</p>
+//     </dialog>
+
+// </td>";
+
+//     // class Modal {
+//     //     public $name;
+//     //     public $value;
+//     //     public $markup;
+
+//     //     function __construct($markup){
+//     //         $this->markup = $markup;    
+//     //     }
+
+//     //     function get_markup(){
+//     //         return $this->markup;
+//     //     }
+    // }
+
     if($data = mysqli_query($con, "SELECT * FROM places ORDER BY marker ASC")){
         while ($row = $data->fetch_assoc()) {
             $marker = $row['marker'];
 
-            
-
-            echo "<tr name=row class=data-row  value=" . $marker . ">";
+            echo "<tr name=row class=data-row  value=$marker>";
             // echo "<td>" . $row['marker'] . "</td>";
             echo "<td><ul><li></li></ul></td>";
             echo "<td>" . ucwords($row['country']) . "</td>";
@@ -60,13 +86,16 @@ echo '<div id=container-table-btns>';
 
             echo "";
 
-            echo "<td class=container-see-more><a href=# name=see-more class=see-more>See More</a>
-            <dialog id=modal value=$marker>
-                <div class=close>&#10006;</div>
-                <a href='editRow.php' value=$marker id='edit-row' name=edit>Edit</a>
-                <a href='delete-modal.php' value=$marker id=remove-row name=delete>Remove Place</a>
-                <p id=dummy-text>This is " . $marker . "</p>
-            </dialog>
+            // $modal = new Modal($markup);
+            // echo $modal->get_markup();
+
+            echo "<td class=container-see-more><a href=# name=see-more class=see-more value=$marker>See More</a>
+                <dialog name=modal id=modal value=$marker>
+                    <div class=close>&#10006;</div>
+                    <a href='editRow.php' value=$marker id='edit-row' name=edit>Edit</a>
+                    <a href='delete-modal.php' value=$marker id=remove-row name=delete>Remove Place</a>
+                    <p id=dummy-text>This is $marker</p>
+                </dialog>
             
             </td>";
 
@@ -251,7 +280,7 @@ foreach($image_results as $result) {
     </section>
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script type="text/javascript" src="script.js"></script>
+<script defer type="text/javascript" src="script.js"></script>
 <!-- jQuery Modal -->
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" /> -->

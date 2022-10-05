@@ -205,23 +205,36 @@ if ($(this).prop('checked', true)) {
 });
 */
 
-// $('.see-more').modal();
 
-// let value = $('tr[name=row]').val();
+// let specificRow = $('tr[name=row]');
 
-let specificRow = $('tr[name=row]');
+// let modal = $('#modal').fadeIn('250ms');
 
-let modal = $('dialog').closest('#modal').fadeIn('250ms');
-
-let seeMoreClosestModal = $('.see-more').closest(modal);
+// let seeMoreClosestModal = $('.see-more').closest(modal);
 // let seeMore = $('.container-see-more').val(value);
 // .find('td')
 // .closest('a[name=delete]')
 
-$('.see-more').click(()=>{
-    // $(specificRow).closest(modal);
-    seeMoreClosestModal;
-})
+// let linkVal = $('#see-more').val();
+
+// let modalVal = $('#modal').val();
+
+// let modalDialog = "<dialog name=modal id=modal><div class=close>&#10006;</div><a href='editRow.php' value=$marker id='edit-row' name=edit>Edit</a><a href='delete-modal.php' value=$marker id=remove-row name=delete>Remove Place</a><p id=dummy-text>This is </p></dialog>";
+
+$('.see-more').on('click', ()=>{
+    $(this).hide()
+    // closest('dialog[name=modal]').fadeIn('250ms');
+/*
+
+    if ($('dialog[name=modal]').length < 1) {
+        // $(this.$('.container-see-more')).append(modalDialog);
+        // $('#dummy-text').html(index);    
+        
+    } else if ($('#modal').length > 1) {
+        return false;
+    }
+  */  
+});
     
 
 $('.close').click(()=>{
