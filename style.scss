@@ -69,21 +69,31 @@ h1{
 
 
 #table{
-    border-spacing: 15px;
+    border-spacing: 0.2rem;
     border-collapse: separate;
     margin: auto;
     width: 85%;
 }
 
 td{
-    padding: 0.5rem;
+    padding: 0.8rem;
     text-align: center;
     font-size: 1.25rem;
+    border-spacing: 1rem;
 }
 
 .data-row{
     //border: 1px, solid, black;
     border-bottom: 1px solid black;
+    row-gap: 1rem;
+    background-color: rgb(41, 41, 96);
+    color: white;
+    border: 1px white solid;
+    border-radius: 5px;
+    // backdrop-filter: blur(10px);
+}
+tr{
+    border-spacing: 5px;
 }
 
 .data-row:hover{
@@ -91,6 +101,14 @@ td{
         background-color: rgba(67, 114, 155, 0.44);
 
     }
+}
+
+///row border radius
+.data-row:nth-child(2){
+    border-radius: 0.5rem 0 0 0.5rem;
+}
+.data-row:last-child{
+    border-radius: 0 0.5rem 0.5rem 0;
 }
 
 tr:nth-child(even){
@@ -112,11 +130,6 @@ ul{
 .checkbox{
     width: 1rem;
     height: 1rem;
-}
-
-#container-table-btns{
-    // width: 80%;
-    // margin: auto;
 }
 
 #container-add-place{
@@ -247,6 +260,22 @@ ul{
     height: 100vh;
 }
 
+dialog::backdrop{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.31)  
+
+    )
+     
+    /* opacity: 0.4; */
+}
+
+
+
 @media screen and (max-width: 700px) {
     // #want{
     //     width: 100%;
@@ -256,16 +285,17 @@ ul{
 
     }
     #table{
-        border-spacing: 0 12px;
-        border-collapse: separate;
+        // border-spacing: 0 12px;
         width: 100%;
     }
     tbody{
-        margin: 0;
+        border-spacing: 0;
+        border-collapse: collapse;
     }
     td, .see-more{
         padding: 0;
         font-size: 0.95rem;
+        border-spacing: 0;
     }
 
     .container-see-more{

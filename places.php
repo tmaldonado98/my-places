@@ -11,6 +11,9 @@ session_start();
     <title>My Travel Bucket List</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./modals.css">
+    <link rel="stylesheet" href="./tableA.css">
+    <link href="./jquery-ui-1.13.2.custom/jquery-ui.css">
+    <link href="./jquery-ui-1.13.2.custom/jquery-ui.min.css">
 </head>
 <body>
 <section id="want">
@@ -33,6 +36,7 @@ if (isset($_POST['submit'])) {
     
 echo '<h1>Where I Want To Go</h1>';
 echo '<div id=container-table-btns>';
+echo    '<div id=container-table>';
     echo '<table id=table>';
     echo '<tr>
     <th> </th>
@@ -43,71 +47,48 @@ echo '<div id=container-table-btns>';
     </tr>';
     echo '';
 
-//     $name = 'modal' . $marker;
-//     $value = $marker;
-//     $markup = "<td class=container-see-more><a href=# name=see-more id=see-more value=$marker>See More</a>
-//     <dialog name=modal id=modal value=$marker>
-//         <div class=close>&#10006;</div>
-//         <a href='editRow.php' value=$marker id='edit-row' name=edit>Edit</a>
-//         <a href='delete-modal.php' value=$marker id=remove-row name=delete>Remove Place</a>
-//         <p id=dummy-text>This is $marker</p>
-//     </dialog>
-
-// </td>";
-
-//     // class Modal {
-//     //     public $name;
-//     //     public $value;
-//     //     public $markup;
-
-//     //     function __construct($markup){
-//     //         $this->markup = $markup;    
-//     //     }
-
-//     //     function get_markup(){
-//     //         return $this->markup;
-//     //     }
-    // }
-
-    if($data = mysqli_query($con, "SELECT * FROM places ORDER BY marker ASC")){
+    if($data = mysqli_query($con, "SELECT * FROM places ORDER BY position")){
         while ($row = $data->fetch_assoc()) {
             $marker = $row['marker'];
 
-
-            echo "<tr name=row class=data-row  value=$marker>";
-            // echo "<td>" . $row['marker'] . "</td>";
-            echo "<td><ul><li></li></ul></td>";
-            echo "<td>" . ucwords($row['country']) . "</td>";
-            echo "<td>" . ucwords($row['city']) . "</td>";
-            echo "<td>" . ucwords($row['landmark']) . "</td>";
-///THIS EVENT REMOVES DESIRED ROW FROM BOTH PAGE AND DB TABLE UPON REMOVE BTN PRESS
-            echo "<td><form id='cbox-form' action='delete.php' method='post'>
-            <input class=checkbox type=checkbox name='checkbox[]' value='$marker'>
-            </td>";
-
-            echo "";
-
-            // $modal = new Modal($markup);
-            // echo $modal->get_markup();
-
-            echo "<td class=container-see-more><a href=# name=see-more class=see-more value=$marker>See More</a>
-                <dialog name=modal class=modal value=$marker>
-                    <div class=close>&#10006;</div>
-                    <a href='editRow.php?editid=$marker' value=$marker id='edit-row' name=edit>Edit</a>
-                    <a href='delete-modal.php' value=$marker id=remove-row name=delete>Remove Place</a>
-                    <p id=dummy-text><b>".ucwords($row['landmark'])." ". ucwords($row['city'])." ". ucwords($row['country'])." ". "</b></p>
+                echo "<tr name=row class='data-row draggable ui-state-default'  value=$marker draggable=true>";
+            echo "<div class=drag-container>";
                 
-                </dialog>
-            
-            </td>";
+                // echo "<td>" . $row['marker'] . "</td>";
+                echo "<td><ul><li></li></ul></td>";
+                echo "<td>" . ucwords($row['country']) . "</td>";
+                echo "<td>" . ucwords($row['city']) . "</td>";
+                echo "<td>" . ucwords($row['landmark']) . "</td>";
+///THIS EVENT REMOVES DESIRED ROW FROM BOTH PAGE AND DB TABLE UPON REMOVE BTN PRESS
+                echo "<td><form id='cbox-form' action='delete.php' method='post'>
+                <input class=checkbox type=checkbox name='checkbox[]' value='$marker'>
+                </td>";
 
-            
-            echo '</tr>';
+                echo "";
+
+                // $modal = new Modal($markup);
+                // echo $modal->get_markup();
+
+                echo "<td class=container-see-more><a href=# name=see-more class=see-more value=$marker>See More</a>
+                    <dialog name=modal class=modal value=$marker>
+                        <div class=close>&#10006;</div>
+                        <a href='editRow.php?editid=$marker' value=$marker id='edit-row' name=edit>Edit</a>
+                        <a href='delete-modal.php' value=$marker id=remove-row name=delete>Remove Place</a>
+                        <p id=dummy-text><b>".ucwords($row['landmark'])." ". ucwords($row['city'])." ". ucwords($row['country'])." ". "</b></p>
+
+                    </dialog>
+
+                </td>";
+
+            echo "</div>";    
+
+                echo '</tr>';
         }
 echo '</table> <br>';
 } else {
 echo 'No results to display.';
 };
+        echo '</div>';
 
 $select = ("SELECT * FROM places");
 $count = mysqli_query($con, $select);
@@ -116,13 +97,13 @@ echo "<p><b>Total Number Of Places: " . $rowcount . "</b></p>";
 
 ?>
 
-<div id="container-print">
-    <input id="print" type="button" value="Print Page">
-    <br>
-    <input id="pdf" type="button" value="Save PDF">
-</div>
+        <div id="container-print">
+            <input id="print" type="button" value="Print Page">
+            <br>
+            <input id="pdf" type="button" value="Save PDF">
+        </div>
 
-
+    
 </div id=container-table-btns>
 
 
@@ -163,17 +144,7 @@ echo "<p><b>Total Number Of Places: " . $rowcount . "</b></p>";
             </div>
         </div>
 
-
-
-
-
-    <!-- </div>         -->
-    
-
-
-
-
-                
+    <!-- </div>         -->             
 
     </form>
 </div>
@@ -281,8 +252,16 @@ foreach($image_results as $result) {
     </div >
     </section>
 
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script defer type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- jQuery UI plugin -->
+<script defer src="./jquery-ui-1.13.2.custom/jquery-ui.js"></script>
+
+<!-- <script defer src="https://cdnjs.cloudflare.com/ajax/libs/TableDnD/0.9.1/jquery.tablednd.js" integrity="sha256-d3rtug+Hg1GZPB7Y/yTcRixO/wlI78+2m08tosoRn7A=" crossorigin="anonymous"></script> -->
 <script defer type="text/javascript" src="script.js"></script>
+<script defer type="text/javascript" src="rows.js"></script>
+
+
+
 <!-- jQuery Modal -->
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" /> -->

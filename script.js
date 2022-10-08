@@ -215,7 +215,7 @@ $('.close').click(function(){
     $(this).closest('dialog').fadeOut('250ms');  
 })
 
-
+// $('.data-row').attr('draggable', 'true');
 
 
 
