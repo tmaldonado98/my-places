@@ -4,3 +4,11 @@
 .dragging{
     opacity: 0.5;
 }
+
+
+.ui-selecting{
+    background-color: rgb(255, 255, 255);
+}
+.ui-selected{
+    background-color: rgb(200, 200, 200);
+}

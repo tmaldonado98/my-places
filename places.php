@@ -1,7 +1,17 @@
 <?php     
 include "connect.php";
 session_start();
- ?> 
+
+if (isset($_POST['update'])) {
+    foreach ($_POST['positions'] as $position) {
+        $marker = $position[0];
+        $newPosition = $position[1];
+
+        $con->query(query: "UPDATE places SET position='$newPosition' WHERE marker='$marker'");
+    }
+    exit('success');
+}
+?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,7 +48,7 @@ echo '<h1>Where I Want To Go</h1>';
 echo '<div id=container-table-btns>';
 echo    '<div id=container-table>';
     echo '<table id=table>';
-    echo '<tr>
+    echo '<tr id=heading-row>
     <th> </th>
     <th>Country</th>
     <th>City</th>
@@ -50,9 +60,9 @@ echo    '<div id=container-table>';
     if($data = mysqli_query($con, "SELECT * FROM places ORDER BY position")){
         while ($row = $data->fetch_assoc()) {
             $marker = $row['marker'];
-
-                echo "<tr name=row class='data-row draggable ui-state-default'  value=$marker draggable=true>";
-            echo "<div class=drag-container>";
+            $position = $row['position'];
+                echo "<tr data-marker=$marker data-position=$position name=row class='data-row draggable ui-state-default ui-widget-content'  value=$marker draggable=true>";
+            // echo "<div class=drag-container>";
                 
                 // echo "<td>" . $row['marker'] . "</td>";
                 echo "<td><ul><li></li></ul></td>";
@@ -66,9 +76,6 @@ echo    '<div id=container-table>';
 
                 echo "";
 
-                // $modal = new Modal($markup);
-                // echo $modal->get_markup();
-
                 echo "<td class=container-see-more><a href=# name=see-more class=see-more value=$marker>See More</a>
                     <dialog name=modal class=modal value=$marker>
                         <div class=close>&#10006;</div>
@@ -80,7 +87,7 @@ echo    '<div id=container-table>';
 
                 </td>";
 
-            echo "</div>";    
+            // echo "</div>";    
 
                 echo '</tr>';
         }

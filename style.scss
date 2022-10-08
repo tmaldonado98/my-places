@@ -96,12 +96,12 @@ tr{
     border-spacing: 5px;
 }
 
-.data-row:hover{
-    td:nth-child(1),td:nth-child(2),td:nth-child(3),td:nth-child(4){
-        background-color: rgba(67, 114, 155, 0.44);
+// .data-row:hover{
+//     td:nth-child(1),td:nth-child(2),td:nth-child(3),td:nth-child(4){
+//         background-color: rgba(67, 114, 155, 0.44);
 
-    }
-}
+//     }
+// }  
 
 ///row border radius
 .data-row:nth-child(2){
@@ -309,9 +309,9 @@ dialog::backdrop{
         display: none;
     }
 
-    td:hover { 
-        color: inherit;
-    }
+    // td:hover { 
+    //     color: inherit;
+    // }
     
 
     #btn, #print{

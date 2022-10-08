@@ -1,39 +1,42 @@
-/*
-const draggables = document.querySelectorAll('.draggable');
-const containers = $('.drag-container');
-
-$(draggables).each(draggable => {
-    $(draggables).on('dragstart', ()=>{
-        $(draggables).addClass('dragging');
-    })
-});
-$(draggables).each(draggable => {
-    $(draggables).on('dragend', ()=>{
-        $(draggables).removeClass('dragging');
-    })
-});
-
-containers.$each(container => {
-    container.on('dragover', ()=>{
-        console.log('dragging over');
-        const draggable = document.querySelector('.dragging');
-        containerappend(draggable);
-    })
-});*/
-
 $(document).ready(function(){
-    $('tbody').sortable();
+    $('tbody').sortable({
+        ///disables sortable for heading row
+        cancel: "#heading-row",
+
+        update: function (event, ui){
+            $(this).children().each(function (marker){
+                if ($(this).attr('data-position') != (marker+1)) {
+                    $(this).attr('data-position', (marker+1)).addClass('updated')
+                }
+                saveNewPositions();
+            })
+        }
+
+    });   
+
+    function saveNewPositions(){
+        let positions = [];
+        $('.updated').each(function (){
+            positions.push([$(this).attr('data-marker'), $(this).attr('data-position')]);
+            $(this).removeClass('updated');
+        });
+
+        $.ajax({
+            url: 'places.php',
+            method: 'POST',
+            dataType: 'text',
+            data: {
+                update: 1,
+                positions: positions
+            }
+        });   
+    }
 
 
-//     // $('#table').tableDnD({
-//     //     onDragClass: "dragging",
-//     //     // onDrop: tableDnDUpdate()
-//     // });
+    $('.data-row').selectable();
+    
+    // ()=>{
+    //     $(this).addClass('.selected');
+    // });
 
-// //     $('#table').tableDnDUpdate();
 })
-
-// function reorderList(){
-
-
-// }
