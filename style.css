@@ -82,6 +82,10 @@ td {
   border-spacing: 1rem;
 }
 
+td:nth-child(1) {
+  padding: 0;
+}
+
 .data-row {
   border-bottom: 1px solid black;
   row-gap: 1rem;
@@ -120,6 +124,24 @@ ul {
 .checkbox {
   width: 1rem;
   height: 1rem;
+}
+
+td:where(.check-td) {
+  padding: 0;
+  width: 0;
+  height: 0;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  max-height: -webkit-fit-content;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+}
+
+.cbox-form {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 #container-add-place {

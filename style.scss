@@ -81,6 +81,9 @@ td{
     font-size: 1.25rem;
     border-spacing: 1rem;
 }
+td:nth-child(1){
+    padding: 0;
+}
 
 .data-row{
     //border: 1px, solid, black;
@@ -131,6 +134,17 @@ ul{
     width: 1rem;
     height: 1rem;
 }
+td:where(.check-td){
+    padding: 0;
+    width: 0;
+    height: 0;
+    max-width: fit-content;
+    max-height: fit-content;
+}
+.cbox-form{
+    width: fit-content;
+}
+
 
 #container-add-place{
     // display: flex;

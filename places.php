@@ -1,6 +1,7 @@
 <?php     
 include "connect.php";
 session_start();
+set_time_limit(100);
 
 if (isset($_POST['update'])) {
     foreach ($_POST['positions'] as $position) {
@@ -38,8 +39,7 @@ $country = $_POST['country'];
 $city = $_POST['city'];
 $landmark = $_POST['landmark'];
 
-////THIS EVENT PREVENTS PHP PAGE FROM INSERTING ROW INTO DB TABLE AFTER PAGE REFRESH
-//SEPARATED INSERT QUERY FROM FETCH ROW DATA QUERY.
+////SEPARATED INSERT QUERY FROM FETCH ROW DATA QUERY TO PREVENT PHP PAGE FROM INSERTING ROW INTO DB TABLE AFTER PAGE REFRESH
 if (isset($_POST['submit'])) {
     $insert = mysqli_query($con, "INSERT INTO places(country, city, landmark) VALUES ('$country', '$city', '$landmark')"); 
 };    
@@ -48,44 +48,49 @@ echo '<h1>Where I Want To Go</h1>';
 echo '<div id=container-table-btns>';
 echo    '<div id=container-table>';
     echo '<table id=table>';
-    echo '<tr id=heading-row>
-    <th> </th>
-    <th>Country</th>
-    <th>City</th>
-    <th>Landmark</th>
-    <th>Select All <input id=sel-all type=checkbox></th>
-    </tr>';
-    echo '';
+        echo '<tr id=heading-row>
+            <th> </th>
+            <th>Country</th>
+            <th>City</th>
+            <th>Landmark</th>
+            <th>Select All <input id=sel-all type=checkbox></th>
+        </tr>';
+        echo '';
 
     if($data = mysqli_query($con, "SELECT * FROM places ORDER BY position")){
         while ($row = $data->fetch_assoc()) {
             $marker = $row['marker'];
             $position = $row['position'];
-                echo "<tr data-marker=$marker data-position=$position name=row class='data-row draggable ui-state-default ui-widget-content'  value=$marker draggable=true>";
+            echo "<tr data-marker=$marker data-position=$position name=row class='data-row draggable ui-state-default ui-widget-content'  value=$marker >";
             // echo "<div class=drag-container>";
-                
                 // echo "<td>" . $row['marker'] . "</td>";
-                echo "<td><ul><li></li></ul></td>";
+                echo '<td><svg viewBox="0 0 100 80" width="20" height="20" fill="white">
+                <rect width="100" height="15" rx="8"></rect>
+                <rect y="30" width="100" height="15" rx="8"></rect>
+                <rect y="60" width="100" height="15" rx="8"></rect>
+              </svg></td>';
                 echo "<td>" . ucwords($row['country']) . "</td>";
                 echo "<td>" . ucwords($row['city']) . "</td>";
                 echo "<td>" . ucwords($row['landmark']) . "</td>";
 ///THIS EVENT REMOVES DESIRED ROW FROM BOTH PAGE AND DB TABLE UPON REMOVE BTN PRESS
-                echo "<td><form id='cbox-form' action='delete.php' method='post'>
-                <input class=checkbox type=checkbox name='checkbox[]' value='$marker'>
-                </td>";
+                
+                echo "<form id='cbox-form' action='delete.php' method='post'>";
+                echo "<td class=check-td>
+                        <input class=checkbox type=checkbox name='checkbox[]' value='$marker'>
+                    </td>";
 
                 echo "";
 
                 echo "<td class=container-see-more><a href=# name=see-more class=see-more value=$marker>See More</a>
-                    <dialog name=modal class=modal value=$marker>
-                        <div class=close>&#10006;</div>
-                        <a href='editRow.php?editid=$marker' value=$marker id='edit-row' name=edit>Edit</a>
-                        <a href='delete-modal.php' value=$marker id=remove-row name=delete>Remove Place</a>
-                        <p id=dummy-text><b>".ucwords($row['landmark'])." ". ucwords($row['city'])." ". ucwords($row['country'])." ". "</b></p>
+                        <dialog name=modal class=modal value=$marker>
+                            <div class=close>&#10006;</div>
+                            <a href='editRow.php?editid=$marker' value=$marker id='edit-row' name=edit>Edit</a>
+                            <a href='delete-modal.php' value=$marker id=remove-row name=delete>Remove Place</a>
+                            <p id=dummy-text><b>".ucwords($row['landmark'])." ". ucwords($row['city'])." ". ucwords($row['country'])." ". "</b></p>
 
-                    </dialog>
+                        </dialog>
 
-                </td>";
+                        </td>";
 
             // echo "</div>";    
 
@@ -95,7 +100,7 @@ echo '</table> <br>';
 } else {
 echo 'No results to display.';
 };
-        echo '</div>';
+    echo '</div>';
 
 $select = ("SELECT * FROM places");
 $count = mysqli_query($con, $select);
@@ -145,15 +150,16 @@ echo "<p><b>Total Number Of Places: " . $rowcount . "</b></p>";
                         <input class="text" id="landmark" placeholder="Landmark" type="text" name="landmark"></input>
                     </div>
                     <div id="container-btn1">
-                <input id="btn1" type="submit" name="submit" value="Add New Place"></input>
+                        <input id="btn1" type="submit" name="submit" value="Add New Place"></input>
+                    </div>
                 </form>
-            </div>
+                    
             </div>
         </div>
 
     <!-- </div>         -->             
 
-    </form>
+    <!-- </form> -->
 </div>
 
 
@@ -164,8 +170,10 @@ echo "<p><b>Total Number Of Places: " . $rowcount . "</b></p>";
     <h3>Did You Know?</h3>
     <h3>Some Facts About This Place</h3>
 
-    <?php
 
+
+    <?php
+//move this to another php file and include it here.
 $ch = curl_init();
 
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

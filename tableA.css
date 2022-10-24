@@ -1,4 +1,4 @@
-.draggable{
+td:nth-child(1){
     cursor: move;
 }
 .dragging{
@@ -11,4 +11,8 @@
 }
 .ui-selected{
     background-color: rgb(200, 200, 200);
+}
+
+.selectedRow{
+    background-color: rgb(255, 255, 255, 0.7);
 }

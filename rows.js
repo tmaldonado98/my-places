@@ -2,6 +2,7 @@ $(document).ready(function(){
     $('tbody').sortable({
         ///disables sortable for heading row
         cancel: "#heading-row",
+        distance: 20,
 
         update: function (event, ui){
             $(this).children().each(function (marker){
@@ -32,11 +33,12 @@ $(document).ready(function(){
         });   
     }
 
+  
 
-    $('.data-row').selectable();
-    
-    // ()=>{
-    //     $(this).addClass('.selected');
-    // });
 
 })
+
+////attempting to highlight row upon checkbox selection
+$('.checkbox').click(()=>{
+    $(this).closest('td').addClass('.selectedRow')
+})  
