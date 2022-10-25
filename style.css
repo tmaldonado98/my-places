@@ -95,25 +95,17 @@ td:nth-child(1) {
   border-radius: 5px;
 }
 
+.selectedRow {
+  background-color: rgba(255, 255, 255, 0.7);
+  color: grey;
+}
+
 tr {
   border-spacing: 5px;
 }
 
-.data-row:nth-child(2) {
-  border-radius: 0.5rem 0 0 0.5rem;
-}
-
-.data-row:last-child {
-  border-radius: 0 0.5rem 0.5rem 0;
-}
-
 tr:nth-child(even) td:nth-child(1), tr:nth-child(even) td:nth-child(2), tr:nth-child(even) td:nth-child(3), tr:nth-child(even) td:nth-child(4) {
   background-color: rgba(144, 144, 144, 0.084);
-}
-
-ul {
-  margin: 0;
-  padding-left: 1.25rem;
 }
 
 #sel-all {
@@ -122,8 +114,8 @@ ul {
 }
 
 .checkbox {
-  width: 1rem;
-  height: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 td:where(.check-td) {
@@ -142,6 +134,10 @@ td:where(.check-td) {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+}
+
+.container-see-more {
+  padding: 0;
 }
 
 #container-add-place {
@@ -304,14 +300,15 @@ dialog::backdrop {
     font-size: 0.95rem;
     border-spacing: 0;
   }
-  .container-see-more {
-    border: 0.1px black solid;
-  }
-  .edit-row, .checkbox {
+  .edit-row, .checkbox, .check-td {
     display: none;
   }
   tr th:nth-child(5), tr th:nth-child(6), tr th:nth-child(5) {
     display: none;
+  }
+  svg {
+    width: 15;
+    height: 15;
   }
   #btn, #print {
     display: none;

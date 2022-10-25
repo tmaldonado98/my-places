@@ -1,7 +1,9 @@
 <?php     
 include "connect.php";
 session_start();
-set_time_limit(100);
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
 
 if (isset($_POST['update'])) {
     foreach ($_POST['positions'] as $position) {
@@ -31,9 +33,6 @@ if (isset($_POST['update'])) {
 <!-- <div id="column-w-1"> -->
 
 <?php
-// ini_set('display_errors', 1);
-// ini_set('display_startup_errors', 1);
-// error_reporting(E_ALL);
 
 $country = $_POST['country'];
 $city = $_POST['city'];
@@ -64,11 +63,13 @@ echo    '<div id=container-table>';
             echo "<tr data-marker=$marker data-position=$position name=row class='data-row draggable ui-state-default ui-widget-content'  value=$marker >";
             // echo "<div class=drag-container>";
                 // echo "<td>" . $row['marker'] . "</td>";
-                echo '<td><svg viewBox="0 0 100 80" width="20" height="20" fill="white">
-                <rect width="100" height="15" rx="8"></rect>
-                <rect y="30" width="100" height="15" rx="8"></rect>
-                <rect y="60" width="100" height="15" rx="8"></rect>
-              </svg></td>';
+                echo '<td>
+                    <svg viewBox="0 0 100 80" width="20" height="20" fill="white">
+                        <rect width="100" height="15" rx="8"></rect>
+                        <rect y="30" width="100" height="15" rx="8"></rect>
+                        <rect y="60" width="100" height="15" rx="8"></rect>
+                    </svg>
+                </td>';
                 echo "<td>" . ucwords($row['country']) . "</td>";
                 echo "<td>" . ucwords($row['city']) . "</td>";
                 echo "<td>" . ucwords($row['landmark']) . "</td>";

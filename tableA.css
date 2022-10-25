@@ -13,6 +13,3 @@ td:nth-child(1){
     background-color: rgb(200, 200, 200);
 }
 
-.selectedRow{
-    background-color: rgb(255, 255, 255, 0.7);
-}

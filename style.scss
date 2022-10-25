@@ -10,7 +10,6 @@ h1{
     margin: 0 auto;
 }
 
-
 #btn1, .edit-row, #del-sel, #print, .see-more{
     font-size: 20px;
     text-decoration: none;
@@ -95,6 +94,10 @@ td:nth-child(1){
     border-radius: 5px;
     // backdrop-filter: blur(10px);
 }
+.selectedRow{
+    background-color: rgb(255, 255, 255, 0.7);
+    color: grey;
+}
 tr{
     border-spacing: 5px;
 }
@@ -106,13 +109,6 @@ tr{
 //     }
 // }  
 
-///row border radius
-.data-row:nth-child(2){
-    border-radius: 0.5rem 0 0 0.5rem;
-}
-.data-row:last-child{
-    border-radius: 0 0.5rem 0.5rem 0;
-}
 
 tr:nth-child(even){
     td:nth-child(1),td:nth-child(2),td:nth-child(3),td:nth-child(4){
@@ -120,10 +116,10 @@ tr:nth-child(even){
     }
 }
 
-ul{
-    margin: 0;
-    padding-left: 1.25rem;
-}
+// ul{
+//     margin: 0;
+//     padding-left: 1.25rem;
+// }
 
 #sel-all{
     width: 1rem;
@@ -131,8 +127,8 @@ ul{
 }
 
 .checkbox{
-    width: 1rem;
-    height: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
 }
 td:where(.check-td){
     padding: 0;
@@ -143,6 +139,12 @@ td:where(.check-td){
 }
 .cbox-form{
     width: fit-content;
+}
+
+
+.container-see-more{
+    // width: fit-content;
+    padding: 0;
 }
 
 
@@ -312,10 +314,10 @@ dialog::backdrop{
         border-spacing: 0;
     }
 
-    .container-see-more{
-        border: 0.1px black solid;
-    }
-    .edit-row, .checkbox{
+    // .container-see-more{
+    //     border: 0.1px black solid;
+    // }
+    .edit-row, .checkbox, .check-td{
         display: none;
     }
 
@@ -323,6 +325,10 @@ dialog::backdrop{
         display: none;
     }
 
+    svg{
+        width: 15;
+        height: 15;
+    }
     // td:hover { 
     //     color: inherit;
     // }
@@ -351,7 +357,7 @@ dialog::backdrop{
     td{
         font-size: 1rem;
     }
-}
+}    
 
 @media screen and (min-width: 550px) and (max-width: 699px) {
     td{
