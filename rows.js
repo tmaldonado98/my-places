@@ -47,12 +47,15 @@ $(document).ready(function(){
 
 function selectedRow(){
     let rows = $('.data-row');
-    let checkbox = $('checkbox');
+    let checkbox = $('.checkbox');
 
     for (let i = 0; i < rows.length; i++) {
         $(checkbox[i]).click(()=>{
             $(rows[i]).css({'background-color': 'rgb(255, 255, 255, 0.7)', 'color': 'gray'})    
+  
+            // .addClass('.selectedRow')
             
+                      
             // if ($(checkbox[i]).prop("checked", true)) {
             //     $(rows[i]).css({'background-color': 'rgb(255, 255, 255, 0.7)', 'color': 'gray'})    
             // }

@@ -215,9 +215,53 @@ $('.close').click(function(){
     $(this).closest('dialog').fadeOut('250ms');  
 })
 
-// $('.data-row').attr('draggable', 'true');
+
+///Suggestions function
+
+function countrySuggestion(str){
+    
+    if (str.length == 0) {
+        $('#country-sug').val('')
+    } else {
+        $.ajax({
+            method: 'GET',
+            url: 'suggest.php',
+            dataType: 'php',
+            success: function(result) {
+                $('#country-sug').html(this.result)
+            }
+        }).done(function (data) {
+            console.log(data);
+        });
+    }
+}
+
+$('#country').keyup(countrySuggestion(str), {
+    
+});
+
+$('#city').keyup(citySuggestion(str), {
+    //
+});
 
 
 
-// $('.remove-row')
-// http://localhost/my-places/places.php
+        // let xhr = new XMLHttpRequest();
+        // xhr.readystatechange() = function(){
+        //     if (this.readyState == 4 && this.status == 200) {
+                
+        //     }
+        // }
+
+//AJAX INSERT
+
+
+//AJAX DELETE
+// $('btn1').click(()=>{
+//     $.ajax({
+//         method: 'GET',
+//         url: 'delete.php',
+
+//     }).done();
+// });
+    

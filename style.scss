@@ -90,13 +90,13 @@ td:nth-child(1){
     row-gap: 1rem;
     background-color: rgb(41, 41, 96);
     color: white;
-    border: 1px white solid;
+    // border: 1px white solid;
     border-radius: 5px;
     // backdrop-filter: blur(10px);
 }
 .selectedRow{
-    background-color: rgb(255, 255, 255, 0.7);
-    color: grey;
+    background-color: rgb(255, 255, 255, 0.7) !important;
+    color: grey !important;
 }
 tr{
     border-spacing: 5px;

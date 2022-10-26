@@ -49,10 +49,11 @@ echo    '<div id=container-table>';
     echo '<table id=table>';
         echo '<tr id=heading-row>
             <th> </th>
+            <th>Select All <input id=sel-all type=checkbox></th>
             <th>Country</th>
             <th>City</th>
             <th>Landmark</th>
-            <th>Select All <input id=sel-all type=checkbox></th>
+            
         </tr>';
         echo '';
 
@@ -70,15 +71,18 @@ echo    '<div id=container-table>';
                         <rect y="60" width="100" height="15" rx="8"></rect>
                     </svg>
                 </td>';
+
+                echo "<form id='cbox-form' action='delete.php' method='post'>";
+                echo "<td class=check-td>
+                        <input class=checkbox type=checkbox name='checkbox[]' value='$marker'>
+                    </td>";
+
                 echo "<td>" . ucwords($row['country']) . "</td>";
                 echo "<td>" . ucwords($row['city']) . "</td>";
                 echo "<td>" . ucwords($row['landmark']) . "</td>";
 ///THIS EVENT REMOVES DESIRED ROW FROM BOTH PAGE AND DB TABLE UPON REMOVE BTN PRESS
                 
-                echo "<form id='cbox-form' action='delete.php' method='post'>";
-                echo "<td class=check-td>
-                        <input class=checkbox type=checkbox name='checkbox[]' value='$marker'>
-                    </td>";
+
 
                 echo "";
 
@@ -122,9 +126,9 @@ echo "<p><b>Total Number Of Places: " . $rowcount . "</b></p>";
 
     <div id="btn-msg">
     <div id="btn">
-                <input type="submit" id="del-sel" name="delete_sel" value="Delete Selection">
+                <input onclick="submitData('insert')" id="del-sel" name="delete_sel" value="Delete Selection">
             </form>
-
+<!-- type="submit" -->
             <?php 
                 if (isset($_SESSION['status'])){
                     echo "<h4 id=fdback>" . $_SESSION['status'] ."</h4>";
@@ -140,11 +144,13 @@ echo "<p><b>Total Number Of Places: " . $rowcount . "</b></p>";
                 <form id="add-place" method="post">
                     <div class="container-input">
                         <label for="country"><p>Country</p></label>
-                        <input class="text" id="country" placeholder="Country" type="text" name="country"></input>
+                        <input class="text" id="country" placeholder="Country" type="text" name="country" onkeyup="countrySuggestion(this.value)"></input>
+                        <p><span id='country-sug'></span></p>
                     </div>
                     <div class="container-input">
                         <label for="city"><p>City</p></label>
-                        <input class="text" id="city" placeholder="City" type="text" name="city"></input>
+                        <input class="text" id="city" placeholder="City" type="text" name="city" onkeyup="citySuggestion(this.value)"></input>
+                        <p><span id='city-sug'></span></p>
                     </div>
                     <div class="container-input">
                         <label for="landmark"><p>Landmark</p></label>
@@ -157,7 +163,6 @@ echo "<p><b>Total Number Of Places: " . $rowcount . "</b></p>";
                     
             </div>
         </div>
-
     <!-- </div>         -->             
 
     <!-- </form> -->
