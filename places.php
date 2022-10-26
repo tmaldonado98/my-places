@@ -39,9 +39,9 @@ $city = $_POST['city'];
 $landmark = $_POST['landmark'];
 
 ////SEPARATED INSERT QUERY FROM FETCH ROW DATA QUERY TO PREVENT PHP PAGE FROM INSERTING ROW INTO DB TABLE AFTER PAGE REFRESH
-if (isset($_POST['submit'])) {
+/*if (isset($_POST['submit'])) {
     $insert = mysqli_query($con, "INSERT INTO places(country, city, landmark) VALUES ('$country', '$city', '$landmark')"); 
-};    
+};*/    
     
 echo '<h1>Where I Want To Go</h1>';
 echo '<div id=container-table-btns>';
@@ -100,6 +100,12 @@ echo    '<div id=container-table>';
             // echo "</div>";    
 
                 echo '</tr>';
+
+            // include 'insert.php';
+            // if (insert()) {
+            //     echo $row;
+            // }
+
         }
 echo '</table> <br>';
 } else {
@@ -126,14 +132,15 @@ echo "<p><b>Total Number Of Places: " . $rowcount . "</b></p>";
 
     <div id="btn-msg">
     <div id="btn">
-                <input onclick="submitData('insert')" id="del-sel" name="delete_sel" value="Delete Selection">
+                <input type="submit" id="del-sel" name="delete_sel" value="Delete Selection">
             </form>
-<!-- type="submit" -->
+<!--  -->
             <?php 
                 if (isset($_SESSION['status'])){
                     echo "<h4 id=fdback>" . $_SESSION['status'] ."</h4>";
                     unset ($_SESSION['status']);
                 };
+                
             ?>
         </div>
 
@@ -144,12 +151,14 @@ echo "<p><b>Total Number Of Places: " . $rowcount . "</b></p>";
                 <form id="add-place" method="post">
                     <div class="container-input">
                         <label for="country"><p>Country</p></label>
-                        <input class="text" id="country" placeholder="Country" type="text" name="country" onkeyup="countrySuggestion(this.value)"></input>
+                        <input class="text" id="country" placeholder="Country" type="text" name="country" "></input>
+                        <!-- onkeyup="countrySuggestion(this.value) -->
                         <p><span id='country-sug'></span></p>
                     </div>
                     <div class="container-input">
                         <label for="city"><p>City</p></label>
-                        <input class="text" id="city" placeholder="City" type="text" name="city" onkeyup="citySuggestion(this.value)"></input>
+                        <input class="text" id="city" placeholder="City" type="text" name="city" ></input>
+                        <!-- onkeyup="citySuggestion(this.value)" -->
                         <p><span id='city-sug'></span></p>
                     </div>
                     <div class="container-input">
@@ -157,7 +166,8 @@ echo "<p><b>Total Number Of Places: " . $rowcount . "</b></p>";
                         <input class="text" id="landmark" placeholder="Landmark" type="text" name="landmark"></input>
                     </div>
                     <div id="container-btn1">
-                        <input id="btn1" type="submit" name="submit" value="Add New Place"></input>
+                        <input id="btn1" type="button" onclick="submitData('insert')" name="submit" value="Add New Place"></input>
+                        <!-- type="submit" -->
                     </div>
                 </form>
                     
@@ -178,88 +188,6 @@ echo "<p><b>Total Number Of Places: " . $rowcount . "</b></p>";
 
 
 
-    <?php
-//move this to another php file and include it here.
-$ch = curl_init();
-
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_HEADER, false);
-
-
-$data = [
-   "q" => $country, $city, $landmark,  
-   "tbm" => "isch",
-   "num" => "5",
-];
-
-curl_setopt($ch, CURLOPT_URL,   'https://customsearch.googleapis.com/customsearch/v1?key=AIzaSyAHakO0K7mac852qUCsJxSq0sozCCvy-xA&cx=22bdf86666de74d21%20&filter=1&q=?randomsearch&searchType=image');
-curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-    "Content-Type: application/json",
-    // "apikey: 1a3be160-2e79-11ed-85ee-2bfcdd59e9c8",  
-));
-
-$response = curl_exec($ch);
-curl_close($ch);
-
-$json = json_decode($response, true);
-
-var_dump($json);
-
-
-
-/*
-$curl = curl_init();
-
-curl_setopt_array($curl, [
-	CURLOPT_URL => "https://duckduckgo-duckduckgo-zero-click-info.p.rapidapi.com/?q=?$country,$city,$landmark&format=json&skip_disambig=1&no_redirect=1&no_html=1&callback=process_duckduckgo",
-	CURLOPT_RETURNTRANSFER => true,
-	CURLOPT_FOLLOWLOCATION => true,
-	CURLOPT_ENCODING => "",
-	CURLOPT_MAXREDIRS => 10,
-	CURLOPT_TIMEOUT => 30,
-	CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-	CURLOPT_CUSTOMREQUEST => "GET",
-	CURLOPT_HTTPHEADER => [
-		"X-RapidAPI-Host: duckduckgo-duckduckgo-zero-click-info.p.rapidapi.com",
-		"X-RapidAPI-Key: 39895f3948mshc954d1855356b54p15bcacjsn1c6cdc2ab2cd"
-	],
-]);
-
-$response = curl_exec($curl);
-$err = curl_error($curl);
-
-$json = json_decode($response);
-
-var_dump($json);
-
-curl_close($curl);
-
-if ($err) {
-	echo "cURL Error #:" . $err;
-} else {
-	echo $response;
-}
-*/
-
-$image_results = $json['image_results'];
-
-    echo '<div id=container-figure>'; 
-foreach($image_results as $result) {
-    $source = $result['sourceUrl'];
- 
-
-    echo '<figure class=figure-img>
-    <img class=img src="'.$source.'">
-    </figure>';
-    '</div>';
-}
-
-// curl \;
-//   'https://customsearch.googleapis.com/customsearch/v1?cx=22bdf86666de74d21%20&filter=1&q=enterqueryhere&searchType=image&key=[AIzaSyAHakO0K7mac852qUCsJxSq0sozCCvy-xA ]' \;
-//   --header 'Accept: application/json' \;
-//   --compressed;
-
-?>
 
 <!-- </div> -->
 

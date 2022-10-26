@@ -217,7 +217,7 @@ $('.close').click(function(){
 
 
 ///Suggestions function
-
+/*
 function countrySuggestion(str){
     
     if (str.length == 0) {
@@ -244,7 +244,7 @@ $('#city').keyup(citySuggestion(str), {
     //
 });
 
-
+*/
 
         // let xhr = new XMLHttpRequest();
         // xhr.readystatechange() = function(){
@@ -254,6 +254,29 @@ $('#city').keyup(citySuggestion(str), {
         // }
 
 //AJAX INSERT
+function submitData(action){
+    $(document).ready(function (){
+        let data = {
+            action: action,
+            country: $('#country').val(),
+            city: $('#city').val(),
+            landmark: $('#landmark').val(),    
+        };
+
+        $.ajax({
+            url: 'insert.php',
+            type: 'POST',
+            data: data,
+            success: function (response){
+                $.ajax({
+                    
+                })
+                
+                $(document).load('insert.php')
+            }
+        });
+    })
+}
 
 
 //AJAX DELETE
