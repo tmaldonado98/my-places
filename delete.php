@@ -4,8 +4,8 @@ session_start();
 
 if (isset($_POST['delete_sel'])) {
     $marker = $_POST['checkbox'];
-    $extract_marker = implode(',' , $marker);
-    // echo $extract_marker;
+    $extract_marker = implode(', ' , $marker);
+    echo $extract_marker;
    $query = "DELETE FROM places WHERE marker IN ($extract_marker)";
 
    $result = mysqli_query($con, $query);

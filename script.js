@@ -253,19 +253,20 @@ $('#city').keyup(citySuggestion(str), {
         //     }
         // }
 
-        //AJAX DISPLAY DB DATA
+    
+    //AJAX DISPLAY DB DATA
 
-$(document).ready(function(){
+    function displayData(){
+        $.ajax({        
+            type: 'GET',
+            url: 'data.php',
+            dataType: 'html',
+            success: function(data){
+                $('#table-body').append(data);
+            }
+        });
+    }
 
-    $.ajax({        
-        type: 'GET',
-        url: 'data.php',
-        dataType: 'html',
-        success: function(data){
-            $('#table-body').append(data);
-        }
-    });
-})
 
 //AJAX INSERT
 function submitData(action){
@@ -281,18 +282,27 @@ function submitData(action){
             url: 'insert.php',
             type: 'POST',
             data: data,
-            // success: function (response){
-            //     $.ajax({
-            //         url: 'data.php',
-            //         type: 'GET'
-            //     })
-                
-            // }
+            success: function (response){
+               alert('form data inserted');
+            //    displayData();
+            }
         });
     })
 }
 
 
+
+        // $(document).ready(function(){
+
+        //     $.ajax({        
+        //         type: 'GET',
+        //         url: 'data.php',
+        //         dataType: 'html',
+        //         success: function(data){
+        //             $('#table-body').append(data);
+        //         }
+        //     });
+        // })
 
 //AJAX DELETE
 // $('btn1').click(()=>{
