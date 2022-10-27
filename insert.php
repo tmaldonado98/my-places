@@ -23,11 +23,11 @@ function insert(){
 
     };
 
-$display = "SELECT * FROM places";
+// $display = "SELECT * FROM places";
 
-$result = mysqli_query($con, $display);
+// $result = mysqli_query($con, $display);
 
-echo $result;
+// echo $result;
 
 
 ?>

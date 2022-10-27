@@ -253,6 +253,20 @@ $('#city').keyup(citySuggestion(str), {
         //     }
         // }
 
+        //AJAX DISPLAY DB DATA
+
+$(document).ready(function(){
+
+    $.ajax({        
+        type: 'GET',
+        url: 'data.php',
+        dataType: 'html',
+        success: function(data){
+            $('#table-body').append(data);
+        }
+    });
+})
+
 //AJAX INSERT
 function submitData(action){
     $(document).ready(function (){
@@ -267,16 +281,17 @@ function submitData(action){
             url: 'insert.php',
             type: 'POST',
             data: data,
-            success: function (response){
-                $.ajax({
-                    
-                })
+            // success: function (response){
+            //     $.ajax({
+            //         url: 'data.php',
+            //         type: 'GET'
+            //     })
                 
-                $(document).load('insert.php')
-            }
+            // }
         });
     })
 }
+
 
 
 //AJAX DELETE
