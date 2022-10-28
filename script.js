@@ -290,7 +290,10 @@ function submitData(action){
             success: function(result){
                 // $('#table-body').append(data);'
                 // alert(result);
-                $('tbody').append(result)
+                $('tbody').append(result);
+                $('#country').val('');
+                $('#city').val('');
+                $('#landmark').val('');
             }
         });
     }
