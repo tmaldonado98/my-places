@@ -1,5 +1,5 @@
 body, html {
-    margin: 0;
+    margin: 0 auto;
 }
 
 h1{
@@ -333,6 +333,11 @@ dialog::backdrop{
     //     color: inherit;
     // }
     
+    #edit-field{
+        display: none;
+
+    }
+
 
     #btn, #print{
         display: none;

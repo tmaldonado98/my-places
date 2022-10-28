@@ -1,9 +1,7 @@
 <?php     
 include "connect.php";
+include "editRow.php";
 session_start();
-// ini_set('display_errors', 1);
-// ini_set('display_startup_errors', 1);
-// error_reporting(E_ALL);
 
 if (isset($_POST['update'])) {
     foreach ($_POST['positions'] as $position) {
@@ -86,9 +84,41 @@ echo "
                 <td class=container-see-more><a href=# name=see-more class=see-more value=$marker>See More</a>
                     <dialog name=modal class=modal value=$marker>
                         <div class=close>&#10006;</div>
-                        <a href='editRow.php?editid= $marker ' value= $marker  id='edit-row' name=edit>Edit</a>
-                        <a href='delete-modal.php' value= $marker  id=remove-row name=delete>Remove Place</a>
                         <p id=modal-title><b>" . ucwords($row['landmark'])." ". ucwords($row['city'])." ". ucwords($row['country'])." " . "</b></p>
+                        <a href='delete-modal.php' value= $marker  id=remove-row name=delete>Remove Place</a>
+                        <input type=submit action='' method=get name=populate value='Edit Place' id=edit-btn>". 
+                        
+                        $markerid=$_GET['editid'];
+// $marker = $row['marker'];    
+
+$populateFields = mysqli_query($con, "SELECT * FROM places WHERE marker='$markerid'");
+$singleRow = mysqli_fetch_assoc($populateFields);
+    $rcountry=$row['country'];
+    $rcity=$row['city'];
+    $rlandmark=$row['landmark'];
+
+// if (isset($_POST['update'])) 
+if (isset($_GET['populate'])) {
+    populateFields();
+}
+
+function populateFields(){
+include "connect.php";
+$update = mysqli_query($con, "UPDATE places SET marker = '$markerid', country='$country', city='$city', landmark='$landmark' WHERE marker='$markerid'"); 
+}
+                        
+                "          <fieldset id=edit-field visibility=none editid= $marker>
+                                <form method='post' editid= $marker>
+                                    <label for='country'><p>Country</p></label>
+                                    <input class='text' id='country' placeholder='Country' type='text' name='country' value='". $rcountry ."'></input>
+                                    <label for='city'><p>City</p></label>
+                                    <input class='text' id='city' placeholder='City' type='text' name='city' value='". $rcity ."'></input>
+                                    <label for='landmark'><p>Landmark</p></label>
+                                    <input class='text' id='landmark' placeholder='Landmark' type='text' name='landmark' value='". $rlandmark ."'></input>
+                                    <br>
+                                    <input class='btn1' type='submit' name='update' value='Update'></input>
+                                </form>
+                            </fieldset>
                     </dialog>
 
                 </td>
@@ -99,7 +129,7 @@ echo "
 ";
     }
 }
-
+// <a href='editRow.php?editid= $marker value= $marker  id='edit-row' name=edit></a>
 //curly brackets to end the while loop and the if statement
  
 
@@ -163,7 +193,6 @@ echo "<p><b>Total Number Of Places: " . $rowcount . "</b></p>";
                     </div>
                     <div id="container-btn1">
                         <input id="btn1" type="button" onclick="submitData('insert')" name="submit" value="Add New Place"></input>
-                        <!-- type="submit" -->
                     </div>
                 </form>
                     

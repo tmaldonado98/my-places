@@ -246,15 +246,6 @@ $('#city').keyup(citySuggestion(str), {
 
 */
 
-        // let xhr = new XMLHttpRequest();
-        // xhr.readystatechange() = function(){
-        //     if (this.readyState == 4 && this.status == 200) {
-                
-        //     }
-        // }
-
-    
-
 
 
 //AJAX INSERT
@@ -288,8 +279,6 @@ function submitData(action){
             url: 'data.php',
             dataType: 'html',
             success: function(result){
-                // $('#table-body').append(data);'
-                // alert(result);
                 $('tbody').append(result);
                 $('#country').val('');
                 $('#city').val('');
@@ -298,19 +287,31 @@ function submitData(action){
         });
     }
 
+///AJAX EDIT ROW
+// $('#edit-row').click(function (event){
+//     // event.preventDefault();
+//     alert('test');
+//     editRowAjax();
+// });
+
+$('#edit-btn').click(()=>{
+    $('#edit-field').attr('visibility', 'visible');
+});
+/*
+function editRowAjax(){
+    $.ajax({
+        type: 'GET',
+        url: 'editRow.php?editid= $marker',
+        dataType: 'html',
+        success: function(data){
+            $('#edit-row').append('<div>');
+            $('#edit-row div').append(data);
+            $('#edit-row div content').append('</div>');
+        }
+    })
+}*/
 
 
-        // $(document).ready(function(){
-
-        //     $.ajax({        
-        //         type: 'GET',
-        //         url: 'data.php',
-        //         dataType: 'html',
-        //         success: function(data){
-        //             $('#table-body').append(data);
-        //         }
-        //     });
-        // })
 
 //AJAX DELETE
 // $('btn1').click(()=>{
