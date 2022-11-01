@@ -16,6 +16,9 @@ $singleRow = mysqli_fetch_assoc($populateFields);
 
 // if (isset($_POST['update'])) 
 if (isset($_GET['populate'])) {
+    if ($_GET['populate']) {
+        # code...
+    }
     populateFields();
 }
 
@@ -33,7 +36,8 @@ $update = mysqli_query($con, "UPDATE places SET marker = '$markerid', country='$
     }
 };     
 ?>
-<!DOCTYPE html>
+
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -43,7 +47,7 @@ $update = mysqli_query($con, "UPDATE places SET marker = '$markerid', country='$
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <?php
+    <php
 $data =    '<tr>
         <form method="post">
             <label for="country"><p>Country</p></label>
@@ -62,4 +66,4 @@ $data =    '<tr>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" type="text/javascript"></script>
 <script src="./script.js" type="text/javascript"></script>
 </html>
-
+ -->

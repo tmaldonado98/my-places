@@ -14,38 +14,6 @@ $('#add-place').submit(()=>{
     }
 });
 
-////AJAX SECTION
-///PUTTING FORM INFO INTO AN OBJECT
-// let placeObj = {
-//     "country": $('.text[name=country]').val(),
-//     "city": $('.text[name=city]').val(),
-//     "landmark": $('.text[name=landmark]').val()
-
-// }
-/*
-$(document).ready(()=>{
-    $('#btn1').click(()=>{
-        $('#table').load('placesdata.json')
-    });
-});
-
-
-    let xhr = new XMLHttpRequest();
-xhr.onload = function (){
-    if (xhr.status === 200) {
-        JSON.parse(xhr.responseText);
-    }
-    // $(document).xhr.responseText;
-}
-xhr.open('get', 'placesdata.json', true);
-xhr.send();
-*/
-
-///AJAX SUBMIT
-
-
-
-
 $('#btn1').attr('style', 'visibility:hidden');
 
 ////THIS EVENT CAPITALIZES FIRST LETTER OF EACH WORD IN EACH INPUT FIELD
@@ -94,15 +62,6 @@ $('#print').click(()=>{
 });
 
 
-// $('#del-sel').attr('disabled', true);
-
-// if ($('.checkbox').prop('checked', false)) {
-//     $('#del-sel').attr('disabled', true);
-// } else if ($('.checkbox').prop('checked', true)) {
-//     $('#del-sel').attr('disabled', false);
-// }
-
-
 ////THE FIRST BLOCK OF CODE SELECTS ALL BOXES WHEN SELECT ALL BTN IS CHECKED
 ///SECOND BLOCK MAKES THE CHECKED STATUS OF THE SELECT ALL BTN CONGRUENT W/ OTHER BTNS
 
@@ -128,11 +87,7 @@ $('.checkbox').change(()=>{
     };
 
 
-    ///THIS STILL NEEDS WORK
-    if ($('checkbox').prop('checked') == true) {
-        // $('#del-sel').prop('disabled', true);
-        $('#del-sel').attr('style', 'background-color:red')
-    } 
+
 
     // if ($('.checkbox').prop('checked') == false) {
     //     $('#del-sel').prop('disabled', false);
@@ -207,12 +162,12 @@ if ($(this).prop('checked', true)) {
 
 
 $('.see-more').click(function(){
-    $(this).siblings('dialog').fadeIn('250ms')
+    $(this).siblings('.modal').fadeIn('250ms')
 });
     
 
 $('.close').click(function(){
-    $(this).closest('dialog').fadeOut('250ms');  
+    $(this).closest('.modal').fadeOut('250ms');  
 })
 
 
@@ -255,7 +210,8 @@ function submitData(action){
             action: action,
             country: $('#country').val(),
             city: $('#city').val(),
-            landmark: $('#landmark').val(),    
+            landmark: $('#landmark').val(),  
+              
         };
 
         $.ajax({
@@ -263,7 +219,8 @@ function submitData(action){
             type: 'POST',
             data: data,
             success: function (response){
-               displayData();                
+               displayData();           
+                    
             //    alert('form data inserted');
 
             }
@@ -279,29 +236,33 @@ function submitData(action){
             url: 'data.php',
             dataType: 'html',
             success: function(result){
-                $('tbody').append(result);
+                $('tbody').html(result);
+                //need to append # of places div separate from tbody
                 $('#country').val('');
                 $('#city').val('');
                 $('#landmark').val('');
+                $('#btn1').attr('style', 'visibility:hidden');
             }
         });
     }
 
-///AJAX EDIT ROW
-// $('#edit-row').click(function (event){
-//     // event.preventDefault();
-//     alert('test');
-//     editRowAjax();
-// });
+///AJAX EDIT ROW 
+
+$('#edit-row').click(function (event){
+    // event.preventDefault();
+    alert('test');
+    editRowAjax();
+});
 
 $('#edit-btn').click(()=>{
-    $('#edit-field').attr('visibility', 'visible');
+    $('#edit-field').css('display: block');
 });
+
 /*
 function editRowAjax(){
     $.ajax({
         type: 'GET',
-        url: 'editRow.php?editid= $marker',
+        url: 'editRow.php?editid='. $marker,
         dataType: 'html',
         success: function(data){
             $('#edit-row').append('<div>');
@@ -309,12 +270,12 @@ function editRowAjax(){
             $('#edit-row div content').append('</div>');
         }
     })
-}*/
+}
 
-
+*/
 
 //AJAX DELETE
-// $('btn1').click(()=>{
+// $('#del-sel').click(()=>{
 //     $.ajax({
 //         method: 'GET',
 //         url: 'delete.php',

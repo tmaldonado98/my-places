@@ -1,6 +1,6 @@
 <?php     
 include "connect.php";
-include "editRow.php";
+// include "editRow.php";
 session_start();
 
 if (isset($_POST['update'])) {
@@ -71,10 +71,11 @@ echo "
                         <rect y='60' width='100' height='15' rx='8'></rect>
                     </svg>
                 </td>
-
+                
                 <form id='cbox-form' action='delete.php' method='post'>
                 <td class=check-td>
                     <input class=checkbox type=checkbox name=checkbox[] value=$marker>
+
                 </td>
 
                 <td>" . ucwords($row['country']) . "</td>
@@ -86,9 +87,31 @@ echo "
                         <div class=close>&#10006;</div>
                         <p id=modal-title><b>" . ucwords($row['landmark'])." ". ucwords($row['city'])." ". ucwords($row['country'])." " . "</b></p>
                         <a href='delete-modal.php' value= $marker  id=remove-row name=delete>Remove Place</a>
-                        <input type=submit action='' method=get name=populate value='Edit Place' id=edit-btn>". 
-                        
-                        $markerid=$_GET['editid'];
+                        <input type=button name=populate value='Edit Place' id=edit-btn> 
+                            <div id='edit-field' editid= $marker>"
+                                /*<form method='post' action='editRow.php' editid= $marker>
+                                    <label for='country'><p>Country</p></label>
+                                    <input class='text' id='country' placeholder='Country' type='text' name='country' value='". $rcountry ."'></input>
+                                    <label for='city'><p>City</p></label>
+                                    <input class='text' id='city' placeholder='City' type='text' name='city' value='". $rcity ."'></input>
+                                    <label for='landmark'><p>Landmark</p></label>
+                                    <input class='text' id='landmark' placeholder='Landmark' type='text' name='landmark' value='". $rlandmark ."'></input>
+                                    <br>
+                                    <input class='btn1' type='button' name='update' value='Update'></input>
+                                </form>*/."
+                            </div>
+                    </dialog>
+                </td>
+            </div>   
+        </tr>
+
+";
+    }
+}
+//curly brackets to end the while loop and the if statement
+
+/*
+$markerid=$_GET['editid'];
 // $marker = $row['marker'];    
 
 $populateFields = mysqli_query($con, "SELECT * FROM places WHERE marker='$markerid'");
@@ -105,32 +128,12 @@ if (isset($_GET['populate'])) {
 function populateFields(){
 include "connect.php";
 $update = mysqli_query($con, "UPDATE places SET marker = '$markerid', country='$country', city='$city', landmark='$landmark' WHERE marker='$markerid'"); 
-}
+
                         
-                "          <fieldset id=edit-field visibility=none editid= $marker>
-                                <form method='post' editid= $marker>
-                                    <label for='country'><p>Country</p></label>
-                                    <input class='text' id='country' placeholder='Country' type='text' name='country' value='". $rcountry ."'></input>
-                                    <label for='city'><p>City</p></label>
-                                    <input class='text' id='city' placeholder='City' type='text' name='city' value='". $rcity ."'></input>
-                                    <label for='landmark'><p>Landmark</p></label>
-                                    <input class='text' id='landmark' placeholder='Landmark' type='text' name='landmark' value='". $rlandmark ."'></input>
-                                    <br>
-                                    <input class='btn1' type='submit' name='update' value='Update'></input>
-                                </form>
-                            </fieldset>
-                    </dialog>
 
-                </td>
+*/
 
-            </div>   
-
-        </tr>
-";
-    }
-}
 // <a href='editRow.php?editid= $marker value= $marker  id='edit-row' name=edit></a>
-//curly brackets to end the while loop and the if statement
  
 
 echo "    </table> <br>
@@ -148,7 +151,7 @@ echo "<p><b>Total Number Of Places: " . $rowcount . "</b></p>";
         <div id="container-print">
             <input id="print" type="button" value="Print Page">
             <br>
-            <input id="pdf" type="button" value="Save PDF">
+            <!-- <input id="pdf" type="button" value="Save PDF"> -->
         </div>
 
     
@@ -158,8 +161,9 @@ echo "<p><b>Total Number Of Places: " . $rowcount . "</b></p>";
     <div id="btn-msg">
     <div id="btn">
                 <input type="submit" id="del-sel" name="delete_sel" value="Delete Selection">
-    </div>    
         </form>
+    </div>    
+        
 
 <?php 
                 if (isset($_SESSION['status'])){

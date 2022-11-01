@@ -52,16 +52,6 @@ function selectedRow(){
     for (let i = 0; i < rows.length; i++) {
         $(checkbox[i]).click(()=>{
             $(rows[i]).css({'background-color': 'rgb(255, 255, 255, 0.7)', 'color': 'gray'})    
-  
-            // .addClass('.selectedRow')
-            
-                      
-            // if ($(checkbox[i]).prop("checked", true)) {
-            //     $(rows[i]).css({'background-color': 'rgb(255, 255, 255, 0.7)', 'color': 'gray'})    
-            // }
-            // if ($(rows[i]).closest('checkbox') == checked) {
-                
-            // }
             
         })    
     }
@@ -70,3 +60,8 @@ function selectedRow(){
 
 selectedRow();
 
+    // ///THIS STILL NEEDS WORK
+    // if ($('checkbox').prop('checked') == true) {
+    //     // $('#del-sel').prop('disabled', true);
+    //     $('#del-sel').attr('style', 'background-color:red')
+    // } 
