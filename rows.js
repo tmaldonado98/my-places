@@ -50,16 +50,10 @@ function selectedRow(){
     let checkbox = $('.checkbox');
  
     for (let i = 0; i < rows.length; i++) {
-        $(checkbox[i]).attr('checked', false).change(()=>{
-            $(rows[i]).addClass('selectedRow')
-        });   
-    };
-
-    // for (let i = 0; i < rows.length; i++) {
-    //     $(checkbox[i]).attr('checked', true).change(()=>{
-    //         $(rows[i]).removeClass('selectedRow')
-    //     }); 
-    // }
+        $(checkbox[i]).change(()=>{
+            $(rows[i]).toggleClass('selectedRow');
+        })         
+    }
 };
 
 $('body').on('focus', '.checkbox', function(){
