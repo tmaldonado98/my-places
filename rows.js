@@ -56,13 +56,10 @@ function selectedRow(){
     }
 };
 
-$('body').on('focus', '.checkbox', function(){
+$('body').on('focus blur', '.checkbox', function(){
     selectedRow()
 });
 
-// $('checkbox').prop('checked', true).change(()=>{
-//     $(this).closest('.data-row').css({'background-color': 'rgb(41, 41, 96)', 'color': 'white'})
-// })
     // ///THIS STILL NEEDS WORK
     // if ($('checkbox').prop('checked') == true) {
     //     // $('#del-sel').prop('disabled', true);
