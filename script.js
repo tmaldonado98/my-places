@@ -8,10 +8,11 @@ $(document).ready(()=>{
     $('input[name=country]').focus();
 });
 
-$('#add-place').submit(()=>{
+$('#add-place').click(()=>{
     if ($('#country').val() == '' && $('#city').val() == '' && $('#landmark').val() == '') {
         return false
     }
+    ///replaced SUBMIT with CLICK event 
 });
 
 $('#btn1').attr('style', 'visibility:hidden');
@@ -31,17 +32,17 @@ $('input').keypress((e)=>{
 ///THESE THREE KEYPRESS EVENTS INVALIDATE CHARACTERS WHEN FIELDS REACH A CHARACTER
 /// COUNT OF 20.
 $('#country').keypress(()=>{
-    if ($('#country').val().length >= 20) {
+    if ($('#country').val().length >= 25) {
         return false;
     };
 });
 $('#city').keypress(()=>{
-    if ($('#city').val().length >= 20) {
+    if ($('#city').val().length >= 25) {
         return false;
     };
 });
 $('#landmark').keypress(()=>{
-    if ($('#landmark').val().length >= 20) {
+    if ($('#landmark').val().length >= 25) {
         return false;
     };
 });
@@ -65,18 +66,7 @@ $('#print').click(()=>{
 ////THE FIRST BLOCK OF CODE SELECTS ALL BOXES WHEN SELECT ALL BTN IS CHECKED
 ///SECOND BLOCK MAKES THE CHECKED STATUS OF THE SELECT ALL BTN CONGRUENT W/ OTHER BTNS
 
-$('#sel-all').change(()=>{
-    if ($(this).prop('checked', true)) {
-        $('input[type=checkbox]').prop("checked", $('#sel-all').prop("checked"));
-        // $('#del-sel').attr('disabled', false);
-    } 
-    else if ($(this).prop('checked', false)) {
-        $('.checkbox').prop("checked", false);
-        // $('#del-sel').attr('disabled', true);
-    }
-});
-
-// $('body').on('change', '#sel-all', function () {
+// $('#sel-all').change(()=>{
 //     if ($(this).prop('checked', true)) {
 //         $('input[type=checkbox]').prop("checked", $('#sel-all').prop("checked"));
 //         // $('#del-sel').attr('disabled', false);
@@ -87,28 +77,60 @@ $('#sel-all').change(()=>{
 //     }
 // });
 
-$('.checkbox').change(()=>{
-    if ($(this).prop("checked", false)) {
-        $('#sel-all').prop("checked", false)
-    };
+$('body').on('click', '#sel-all', function () {
+        $('input[type=checkbox]').prop("checked", $('#sel-all').prop("checked"));
+}); //works
 
-    if ($('.checkbox:checked').length == $('.checkbox').length) {
-        $('#sel-all').prop("checked", true)
-    }
-});
-
-// $('body').on('change', '.checkbox', function () {
+// $('.checkbox').change(()=>{
 //     if ($(this).prop("checked", false)) {
 //         $('#sel-all').prop("checked", false)
 //     };
 
 //     if ($('.checkbox:checked').length == $('.checkbox').length) {
 //         $('#sel-all').prop("checked", true)
-//     } 
+//     }
 // });
 
-// $('.checkbox').change(()=>{
-   
+$('body').on('change', '.checkbox', function(){
+    if ($('checkbox').prop("checked", false)) {
+        $('#sel-all').prop("checked", false)
+    };
+
+    if ($('.checkbox:checked').length == $('.checkbox').length) {
+        $('#sel-all').prop("checked", true)
+    }
+});//works
+
+// $('#del-sel').css('visibility', 'hidden');
+// $('#del-sel').hide();
+
+$('body').on('click focus blur', '.checkbox', function(){
+    
+    if ($('.checkbox:checked').length > 0) {
+        $('.del-sel').addClass('del-sel-visible');
+
+    } else if ($('.checkbox:checked').length == 0) {
+        $('.del-sel').removeClass('del-sel-visible');
+
+    }
+
+});
+
+$('body').on('click', '#sel-all', function(){
+    if ($('#sel-all:checked')) {
+        $('.del-sel').addClass('del-sel-visible');
+    } 
+    else if ($('#sel-all').attr('checked', false)) {
+        $('.del-sel').removeClass('del-sel-visible');        
+    } 
+    else if ($('.checkbox:checked').length == 0){
+        $('.del-sel').removeClass('del-sel-visible');        
+    }
+});
+
+
+// $('body').on('click', '.checkbox', function(){
+
 // });
 
 ///THESE TWO BLOCKS OF CODE DISABLE DELETE BUTTON IF NO CHECKBOXES ARE SELECTED
@@ -118,19 +140,19 @@ $('.checkbox').change(()=>{
 //     if ($('.checkbox:checked').length > 0) {
 //         return true;
 //     } 
-//     else {
-//         return false;
+//     else if ($('.checkbox:checked').length == 0) {
+//         return false
 //     }
 // });
 
-$('#del-sel').click(()=>{
-    if ($('.checkbox:checked').length > 0) {
-        return true;
-    } 
-    else {
-        return false;
-    }
-})
+// $('#del-sel').click(()=>{
+//     if ($('.checkbox:checked').length > 0) {
+//         return true;
+//     } 
+//     else {
+//         return false;
+//     }
+// })
 
 // $('#del-sel').click(()=>{
     

@@ -160,7 +160,7 @@ echo "<p><b>Total Number Of Places: " . $rowcount . "</b></p>";
 
     <div id="btn-msg">
     <div id="btn">
-                <input type="submit" id="del-sel" name="delete_sel" value="Delete Selection">
+                <input type="submit" class="del-sel" name="delete_sel" value="Delete Selection">
         </form>
     </div>    
         

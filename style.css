@@ -10,7 +10,7 @@ h1 {
   margin: 0 auto;
 }
 
-#btn1, .edit-row, #del-sel, #print, .see-more {
+#btn1, .edit-row, #print, .see-more {
   font-size: 20px;
   text-decoration: none;
   color: inherit;
@@ -21,24 +21,24 @@ h1 {
   display: none;
 }
 
-.edit-row, #del-sel, #print {
+.edit-row, #print {
   border: 3px solid rgba(170, 170, 170, 0.481);
   padding: 0.5rem;
 }
 
-.edit-row:hover, #del-sel:hover, #print:hover {
+.edit-row:hover, #print:hover {
   color: black;
   font-weight: 600;
 }
 
-#del-sel {
+.del-sel {
   background-color: rgba(189, 186, 187, 0.611);
   width: 15rem;
+  visibility: hidden;
 }
 
-#del-sel:hover {
-  background-color: rgb(187, 8, 71);
-  color: white;
+.del-sel-visible {
+  visibility: visible;
 }
 
 .edit-row {
@@ -97,6 +97,18 @@ td:nth-child(1) {
 .selectedRow {
   background-color: rgba(255, 255, 255, 0.7) !important;
   color: grey !important;
+}
+
+.del-sel-avail {
+  display: block !important;
+  background-color: rgb(187, 8, 71);
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  border: 3px solid rgba(170, 170, 170, 0.481);
+  padding: 0.5rem;
 }
 
 tr {

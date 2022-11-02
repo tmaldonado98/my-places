@@ -33,16 +33,7 @@ $(document).ready(function(){
         });   
     }
 
-  
-
-
 })
-
-////attempting to highlight row upon checkbox selection
-// $('.checkbox').click(()=>{
-//     $(this).closest('td').css({'background-color': 'rgb(255, 255, 255, 0.7)', 'color': 'gray'})
-// })  
-
 
 
 function selectedRow(){
@@ -59,6 +50,8 @@ function selectedRow(){
 $('body').on('focus blur', '.checkbox', function(){
     selectedRow()
 });
+
+
 
     // ///THIS STILL NEEDS WORK
     // if ($('checkbox').prop('checked') == true) {
