@@ -76,6 +76,16 @@ $('#sel-all').change(()=>{
     }
 });
 
+// $('body').on('change', '#sel-all', function () {
+//     if ($(this).prop('checked', true)) {
+//         $('input[type=checkbox]').prop("checked", $('#sel-all').prop("checked"));
+//         // $('#del-sel').attr('disabled', false);
+//     } 
+//     else if ($(this).prop('checked', false)) {
+//         $('.checkbox').prop("checked", false);
+//         // $('#del-sel').attr('disabled', true);
+//     }
+// });
 
 $('.checkbox').change(()=>{
     if ($(this).prop("checked", false)) {
@@ -84,19 +94,34 @@ $('.checkbox').change(()=>{
 
     if ($('.checkbox:checked').length == $('.checkbox').length) {
         $('#sel-all').prop("checked", true)
-    };
-
-
-
-
-    // if ($('.checkbox').prop('checked') == false) {
-    //     $('#del-sel').prop('disabled', false);
-    // }
-
+    }
 });
+
+// $('body').on('change', '.checkbox', function () {
+//     if ($(this).prop("checked", false)) {
+//         $('#sel-all').prop("checked", false)
+//     };
+
+//     if ($('.checkbox:checked').length == $('.checkbox').length) {
+//         $('#sel-all').prop("checked", true)
+//     } 
+// });
+
+// $('.checkbox').change(()=>{
+   
+// });
 
 ///THESE TWO BLOCKS OF CODE DISABLE DELETE BUTTON IF NO CHECKBOXES ARE SELECTED
 // AND ENABLES THE BTN WHEN BOXES ARE SELECTED
+
+// $('body').on('click', '#del-sel', function(){
+//     if ($('.checkbox:checked').length > 0) {
+//         return true;
+//     } 
+//     else {
+//         return false;
+//     }
+// });
 
 $('#del-sel').click(()=>{
     if ($('.checkbox:checked').length > 0) {
@@ -105,6 +130,10 @@ $('#del-sel').click(()=>{
     else {
         return false;
     }
+})
+
+// $('#del-sel').click(()=>{
+    
      
     // if ($('.checkbox').prop('checked', true)) {
     //     return true;
@@ -113,7 +142,7 @@ $('#del-sel').click(()=>{
     // else if ($('.checkbox').prop('checked', true)) {
     //     return true;
     // }
-})
+// })
 
 
 ////CODE TO MAKE EDIT ROW APPEAR UPON MOUSE HOVER OVER ROW
@@ -160,15 +189,13 @@ if ($(this).prop('checked', true)) {
 });
 */
 
-
-$('.see-more').click(function(){
+$('body').on('click', '.see-more', function(){
     $(this).siblings('.modal').fadeIn('250ms')
 });
     
-
-$('.close').click(function(){
+$('body').on('click', '.close', function(){
     $(this).closest('.modal').fadeOut('250ms');  
-})
+});
 
 
 ///Suggestions function

@@ -48,18 +48,27 @@ $(document).ready(function(){
 function selectedRow(){
     let rows = $('.data-row');
     let checkbox = $('.checkbox');
-
+ 
     for (let i = 0; i < rows.length; i++) {
-        $(checkbox[i]).click(()=>{
-            $(rows[i]).css({'background-color': 'rgb(255, 255, 255, 0.7)', 'color': 'gray'})    
-            
-        })    
-    }
+        $(checkbox[i]).attr('checked', false).change(()=>{
+            $(rows[i]).addClass('selectedRow')
+        });   
+    };
 
-}
+    // for (let i = 0; i < rows.length; i++) {
+    //     $(checkbox[i]).attr('checked', true).change(()=>{
+    //         $(rows[i]).removeClass('selectedRow')
+    //     }); 
+    // }
+};
 
-selectedRow();
+$('body').on('focus', '.checkbox', function(){
+    selectedRow()
+});
 
+// $('checkbox').prop('checked', true).change(()=>{
+//     $(this).closest('.data-row').css({'background-color': 'rgb(41, 41, 96)', 'color': 'white'})
+// })
     // ///THIS STILL NEEDS WORK
     // if ($('checkbox').prop('checked') == true) {
     //     // $('#del-sel').prop('disabled', true);
