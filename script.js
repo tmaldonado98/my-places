@@ -117,21 +117,15 @@ $('body').on('click focus blur', '.checkbox', function(){
 });
 
 $('body').on('click', '#sel-all', function(){
-    if ($('#sel-all:checked')) {
+    if ($('#sel-all:checked') && $('.checkbox:checked').length == $('.checkbox').length) {
         $('.del-sel').addClass('del-sel-visible');
     } 
     else if ($('#sel-all').attr('checked', false)) {
         $('.del-sel').removeClass('del-sel-visible');        
     } 
-    else if ($('.checkbox:checked').length == 0){
-        $('.del-sel').removeClass('del-sel-visible');        
-    }
 });
 
 
-// $('body').on('click', '.checkbox', function(){
-
-// });
 
 ///THESE TWO BLOCKS OF CODE DISABLE DELETE BUTTON IF NO CHECKBOXES ARE SELECTED
 // AND ENABLES THE BTN WHEN BOXES ARE SELECTED
