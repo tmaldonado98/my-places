@@ -36,25 +36,53 @@ $(document).ready(function(){
 })
 
 
-function selectedRow(){
+// function selectedRow(){
+    // let rows = $('.data-row');
+    // let checkbox = $('.checkbox');
+ 
+    // for (let i = 0; i < rows.length; i++) {
+
+
+    //     // $('body').on('focus blur', checkbox[i], function(){
+    //     // })         
+        
+    //     // })
+    //     $(checkbox[i]).change(()=>{
+    //         if ($(checkbox[i]).attr('checked', true)) {
+    //             $(rows[i]).addClass('selectedRow')
+    //         }
+    //         else if ($(checkbox[i]).attr('checked', false)) {
+    //             $(rows[i]).removeClass('selectedRow')
+    //         }
+            
+    //     });
+    // }
+// };
+
+$('body').on('focus blur', '.checkbox', function(){
+    // selectedRow()
     let rows = $('.data-row');
     let checkbox = $('.checkbox');
  
     for (let i = 0; i < rows.length; i++) {
-        $(checkbox[i]).change(()=>{
-            $(rows[i]).toggleClass('selectedRow');
-        })         
-    }
-};
 
-$('body').on('focus blur', '.checkbox', function(){
-    selectedRow()
+        $(checkbox[i]).change(()=>{
+            if ($(checkbox[i]).attr('checked', true)) {
+                $(rows[i]).toggleClass('selectedRow')
+            }
+            else if ($(checkbox[i]).attr('checked', false)) {
+                $(rows[i]).toggleClass('selectedRow');
+            }
+            
+        });
+    }
 });
 
-
-
-    // ///THIS STILL NEEDS WORK
-    // if ($('checkbox').prop('checked') == true) {
-    //     // $('#del-sel').prop('disabled', true);
-    //     $('#del-sel').attr('style', 'background-color:red')
-    // } 
+$('body').on('change', '#sel-all', function (e) {
+    if ($('#sel-all').attr('checked', true)) {
+        $('.data-row').addClass('selectedRow')
+    }
+    if ($('#sel-all').attr('checked', false) && $('.checkbox:checked').length == 0) {
+        $('.data-row').removeClass('selectedRow')
+    }
+});

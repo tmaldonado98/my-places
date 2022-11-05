@@ -101,8 +101,7 @@ $('body').on('change', '.checkbox', function(){
     }
 });//works
 
-// $('#del-sel').css('visibility', 'hidden');
-// $('#del-sel').hide();
+
 
 $('body').on('click focus blur', '.checkbox', function(){
     
@@ -204,6 +203,11 @@ if ($(this).prop('checked', true)) {
     // }
 });
 */
+
+// $('body').on('click', '.checkbox', function(){
+
+// })
+
 
 $('body').on('click', '.see-more', function(){
     $(this).siblings('.modal').fadeIn('250ms')
