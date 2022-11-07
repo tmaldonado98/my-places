@@ -18,10 +18,15 @@ function insert(){
     
         $query = "INSERT INTO places(country, city, landmark, position) VALUES ('$country', '$city', '$landmark', '$position')";
         
-        mysqli_query($con, $query);
+        $insert = mysqli_query($con, $query);
 
 
+        if ($insert) {
+                $_SESSION['status'] = "<p>Your information has been updated</p>";
+                // header('location: places.php');
+            };
     };
+    
 
 // $display = "SELECT * FROM places";
 

@@ -154,15 +154,16 @@ echo "<p><b>Total Number Of Places: " . $rowcount . "</b></p>";
             <!-- <input id="pdf" type="button" value="Save PDF"> -->
         </div>
 
-    
+
+        
+            <div id="btn-msg">
+            <div id="btn">
+                        <input type="submit" onclick="deleteData()" class="del-sel" name="delete_sel" value="Delete Selection">
+                </form>
+            </div>    
+        
 </div id=container-table-btns>
 
-
-    <div id="btn-msg">
-    <div id="btn">
-                <input type="submit" class="del-sel" name="delete_sel" value="Delete Selection">
-        </form>
-    </div>    
         
 
 <?php 

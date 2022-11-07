@@ -11,7 +11,7 @@ $landmark = $_POST['landmark'];
     $insert = mysqli_query($con, "INSERT INTO places(country, city, landmark) VALUES ('$country', '$city', '$landmark')"); 
 };*/    
     
-echo '<h1>Where I Want To Go</h1>';
+// echo '<h1>Where I Want To Go</h1>';
 echo '<div id=container-table-btns>';
 echo    '<div id=container-table>';
     echo '<table id=table>';
@@ -71,14 +71,17 @@ echo "
                                 </form>*/."
                             </div>
                     </dialog>
-                </td>
-            </div>   
-        </tr>
-
-";
-    }
-}
-//curly brackets to end the while loop and the if statement
+                    </td>
+                    </div>   
+                    </tr>
+                    
+                    ";
+                }
+            }
+            echo "   </div>
+                </table> <br>
+            </div>" ;
+            //curly brackets to end the while loop and the if statement
 
 /*
 $markerid=$_GET['editid'];
@@ -104,37 +107,36 @@ $update = mysqli_query($con, "UPDATE places SET marker = '$markerid', country='$
 */
 
 // <a href='editRow.php?editid= $marker value= $marker  id='edit-row' name=edit></a>
- 
 
-echo "    </table> <br>
-</div>" 
-?>
 
-<?php
+
+
 $select = ("SELECT * FROM places");
 $count = mysqli_query($con, $select);
 $rowcount = mysqli_num_rows($count);
-echo "<p><b>Total Number Of Places: " . $rowcount . "</b></p>";
+echo "<div id=number-of-places><p><b>Total Number Of Places: " . $rowcount . "</b></p></div>
 
-?>
+<div id='container-print'>
+<input id='print' type='button' value='Print Page'>
+<br>
+</div>
 
-</div id=container-table-btns>
-
-
-    <div id="btn-msg">
-    <div id="btn">
-                <!-- <input type="submit" id="del-sel" name="delete_sel" value="Delete Selection"> -->
+    <div id='btn-msg'>
+    <div id='btn'>
+                <input type='button' class='del-sel' name='delete_sel' value='Delete Selection'>
         </form>
     </div>    
-        
 
-<?php 
+</div id=container-table-btns>
+";
+
+         
                 if (isset($_SESSION['status'])){
                     echo "<h4 id=fdback>" . $_SESSION['status'] ."</h4>";
                     unset ($_SESSION['status']);
                 };
                 
-            ?>
-    </div>
+           
+?>
 
 <!-- echo json_encode($result); -->

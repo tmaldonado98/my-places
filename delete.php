@@ -2,10 +2,14 @@
 include "connect.php";
 session_start();
 
-if (isset($_POST['delete_sel'])) {
+// if (isset($_POST['delete_sel'])) {
+if (isset($_POST['checkbox'])) {
+
     $marker = $_POST['checkbox'];
+    echo $marker;
+    echo 'test';
     $extract_marker = implode(', ' , $marker);
-    echo $extract_marker;
+    // echo $extract_marker;
    $query = "DELETE FROM places WHERE marker IN ($extract_marker)";
 
    $result = mysqli_query($con, $query);

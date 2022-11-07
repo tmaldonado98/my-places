@@ -15,6 +15,16 @@ $('#add-place').click(()=>{
     ///replaced SUBMIT with CLICK event 
 });
 
+
+$('body').on('keypress', '.text', function(e){
+    if (e.keyCode === 13) {
+        submitData('insert');
+    }
+//This block enables form to be posted upon pressing ENTER key.
+// Not submitted, but posted with AJAX
+});
+
+
 $('#btn1').attr('style', 'visibility:hidden');
 
 ////THIS EVENT CAPITALIZES FIRST LETTER OF EACH WORD IN EACH INPUT FIELD
@@ -102,7 +112,6 @@ $('body').on('change', '.checkbox', function(){
 });//works
 
 
-
 $('body').on('click focus blur', '.checkbox', function(){
     
     if ($('.checkbox:checked').length > 0) {
@@ -168,6 +177,9 @@ $('.data-row').mouseout(()=>{
     $('.edit-row').prop('style', 'display:none');
 });  */
 
+
+
+///updated code on rows.js.... delete later
 /*
 $('.checkbox').change(()=>{  
     // if ($('.checkbox').prop('checked') == false) {
@@ -203,10 +215,6 @@ if ($(this).prop('checked', true)) {
     // }
 });
 */
-
-// $('body').on('click', '.checkbox', function(){
-
-// })
 
 
 $('body').on('click', '.see-more', function(){
@@ -271,9 +279,9 @@ function submitData(action){
             //    alert('form data inserted');
 
             }
-        });
+        })
     })
-}
+};
 
     //AJAX DISPLAY DB DATA
 
@@ -283,15 +291,18 @@ function submitData(action){
             url: 'data.php',
             dataType: 'html',
             success: function(result){
-                $('tbody').html(result);
+                $('#container-table-btns').html(result);
+                // let numberPlaces = $('#number-of-places');
+                // $('tbody').append(numberPlaces);
                 //need to append # of places div separate from tbody
                 $('#country').val('');
                 $('#city').val('');
                 $('#landmark').val('');
                 $('#btn1').attr('style', 'visibility:hidden');
+
             }
-        });
-    }
+    });
+};
 
 ///AJAX EDIT ROW 
 
@@ -321,12 +332,19 @@ function editRowAjax(){
 
 */
 
-//AJAX DELETE
-// $('#del-sel').click(()=>{
-//     $.ajax({
-//         method: 'GET',
-//         url: 'delete.php',
+// AJAX DELETE
 
-//     }).done();
-// });
+$('body').on('submit', '.del-sel', ((event)=>{
+    event.preventDefault();
+}));
+
+function deleteData(){
+        $.ajax({
+            method: 'GET',
+            url: 'delete.php',
+            success: function () {
+                console.log('deleted');
+            }
+        })
+}
     
