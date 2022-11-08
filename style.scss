@@ -35,21 +35,29 @@ h1{
 }
 
 .del-sel{
-    background-color: rgba(189, 186, 187, 0.611);
+    // background-color: rgba(189, 186, 187, 0.611);
     width: 15rem;
+    display: block !important;
+    background-color: rgba(187, 8, 71, 0.7);
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    color: whitesmoke;
+    cursor: pointer;
+    border: 3px solid rgba(170, 170, 170, 0.481);
+    padding: 0.5rem;
     visibility: hidden;
-    // display: none;
+    transition: 250ms;
 }
-// input[name=delete_sel]{
-//     visibility: hidden;
-// }
+
 .del-sel-visible{
     visibility: visible;
+    transition: 250ms;
 }
-// #del-sel:hover{
-//     background-color: rgb(187, 8, 71);
-//     color: white;
-// }
+.del-sel:hover{
+    background-color: rgb(187, 8, 71);
+    color: white;
+}
 .edit-row{
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
@@ -102,23 +110,14 @@ td:nth-child(1){
     // border: 1px white solid;
     border-radius: 5px;
     // backdrop-filter: blur(10px);
+    transition: 250ms;
 }
 .selectedRow{
     background-color: rgb(255, 255, 255, 0.7) !important;
     color: grey !important;
+    transition: 250ms;
 }
 
-.del-sel-avail{
-    display: block !important;
-    background-color: rgb(187, 8, 71);
-    color: white;
-    font-size: 20px;
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
-    border: 3px solid rgba(170, 170, 170, 0.481);
-    padding: 0.5rem;
-}
 
 tr{
     border-spacing: 5px;

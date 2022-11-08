@@ -18,7 +18,7 @@ $('#add-place').click(()=>{
 
 $('body').on('keypress', '.text', function(e){
     if (e.keyCode === 13) {
-        submitData('insert');
+        insertData('insert');
     }
 //This block enables form to be posted upon pressing ENTER key.
 // Not submitted, but posted with AJAX
@@ -121,7 +121,7 @@ $('body').on('click focus blur', '.checkbox', function(){
         $('.del-sel').removeClass('del-sel-visible');
 
     }
-
+    console.log($('.checkbox').is(':checked'))
 });
 
 $('body').on('click', '#sel-all', function(){
@@ -218,11 +218,11 @@ if ($(this).prop('checked', true)) {
 
 
 $('body').on('click', '.see-more', function(){
-    $(this).siblings('.modal').fadeIn('250ms')
+    $(this).siblings('.modal').fadeIn('100ms')
 });
     
 $('body').on('click', '.close', function(){
-    $(this).closest('.modal').fadeOut('250ms');  
+    $(this).closest('.modal').fadeOut('100ms');  
 });
 
 
@@ -259,7 +259,7 @@ $('#city').keyup(citySuggestion(str), {
 
 
 //AJAX INSERT
-function submitData(action){
+function insertData(action){
     $(document).ready(function (){
         let data = {
             action: action,
@@ -292,9 +292,6 @@ function submitData(action){
             dataType: 'html',
             success: function(result){
                 $('#container-table-btns').html(result);
-                // let numberPlaces = $('#number-of-places');
-                // $('tbody').append(numberPlaces);
-                //need to append # of places div separate from tbody
                 $('#country').val('');
                 $('#city').val('');
                 $('#landmark').val('');
@@ -334,17 +331,62 @@ function editRowAjax(){
 
 // AJAX DELETE
 
-$('body').on('submit', '.del-sel', ((event)=>{
-    event.preventDefault();
-}));
+// $('body').on('submit', '.del-sel', ((event)=>{
+    //     event.preventDefault();
+    // }));
+
+
+// $('body').on('click', '.del-sel', function () {
+
+function loadTotalPlaces(){
+    let places = $('#total-places');
+    $.ajax({
+        type: 'GET',
+        url: 'data.php',
+        data: places,
+        success: function(result){
+            $('#total-places1').html(places)
+        }
+    })
+};
 
 function deleteData(){
+    let id = [];
+    let confirmalert = confirm('Are you sure?');
+
+    if (confirmalert == true) {
+        
+        $('.checkbox:checked').each(function (i){
+            id[i] = $(this).val();
+        });
+
+        let checkboxData = $('.checkbox').val();
+        // let data = {
+        //     action: action,
+        //     checkboxData: $('.checkbox').is(':checked')
+        // }
+        
+        
         $.ajax({
-            method: 'GET',
+            method: 'POST',
             url: 'delete.php',
+            data: {id:id},
             success: function () {
                 console.log('deleted');
+                // displayData();
+                // $('#container-table-btns').load('data.php');
+                // for (let i = 0; i < id.length; i++) {
+                //     const element = array[index];
+                    
+                // }
+                loadTotalPlaces();
+                $('.checkbox:checked').closest('.data-row').css('background','tomato');
+                $('.checkbox:checked').closest('.data-row').fadeOut('250ms');
+                $('.del-sel').removeClass('del-sel-visible');
             }
         })
+        
+    }
 }
-    
+
+// })

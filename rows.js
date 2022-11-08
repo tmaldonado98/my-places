@@ -71,7 +71,7 @@ $('body').on('focus blur', '.checkbox', function(){
                 $(rows[i]).toggleClass('selectedRow')
             }
             else if ($(checkbox[i]).attr('checked', false)) {
-                $(rows[i]).toggleClass('selectedRow');
+                $(rows[i]).toggleClass('selectedRow')
             }
             
         });

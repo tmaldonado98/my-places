@@ -1,16 +1,32 @@
 <?php
 include "connect.php";
-session_start();
+// session_start();
 
-// if (isset($_POST['delete_sel'])) {
-if (isset($_POST['checkbox'])) {
+if (isset($_POST['id'])) {
+    foreach ($_POST['id'] as $id) {
+        $sql = "DELETE FROM places WHERE marker = $id";
+        mysqli_query($con, $sql);
+    }
 
-    $marker = $_POST['checkbox'];
-    echo $marker;
-    echo 'test';
+};
+
+
+/*
+    if (isset($_POST['action'])) {
+    if ($_POST['action'] == 'delete') {
+        deleteFunct();
+    }
+};
+
+function deleteFunct(){
+    global $con;
+    
+    $marker = $_POST['action'];
+    // echo $marker;
+    // echo 'test';
     $extract_marker = implode(', ' , $marker);
-    // echo $extract_marker;
-   $query = "DELETE FROM places WHERE marker IN ($extract_marker)";
+
+    $query = "DELETE FROM places WHERE marker = $extract_marker";
 
    $result = mysqli_query($con, $query);
 
@@ -22,18 +38,17 @@ if (isset($_POST['checkbox'])) {
 //    $truncate2 = mysqli_query($con, $reset);
 //     header('location: places.php');
 
-};
-
 if ($result) {
     $_SESSION['status'] = "<p>Your information has been updated</p>";
+    $truncate;
     header('location: places.php');
 } else {
     $_SESSION['status'] = "<p>Error updating your information</p>";
     die(mysqli_error($con));
     header('location: places.php');
 } 
+};
+
+*/
 
 ?>
-
-<!-- if (isset($_GET['deleteid'])) {
-    $marker=$_GET['deleteid']; -->

@@ -60,9 +60,10 @@ echo    '<div id=container-table>';
                 $result[] = $row;
                 $marker = $row['marker'];
                 $position = $row['position'];
+                $dataId = $_POST['checkbox'];
                 // echo $marker;
 echo "            
-        <tr data-marker=$marker data-position=$position name=row class='data-row draggable ui-state-default ui-widget-content'  value= '$marker'  >
+        <tr data-marker=$marker data-position=$position data-id=$dataId name=row class='data-row draggable ui-state-default ui-widget-content'  value= '$marker'  >
             <div class=drag-container>
                 <td>
                     <svg viewBox='0 0 100 80' width='20' height='20' fill='white'>
@@ -144,7 +145,7 @@ echo "    </table> <br>
 $select = ("SELECT * FROM places");
 $count = mysqli_query($con, $select);
 $rowcount = mysqli_num_rows($count);
-echo "<p><b>Total Number Of Places: " . $rowcount . "</b></p>";
+echo "<p id=total-places1 ><b>Total Number Of Places: " . $rowcount . "</b></p>";
 
 ?>
 
@@ -158,8 +159,9 @@ echo "<p><b>Total Number Of Places: " . $rowcount . "</b></p>";
         
             <div id="btn-msg">
             <div id="btn">
-                        <input type="submit" onclick="deleteData()" class="del-sel" name="delete_sel" value="Delete Selection">
-                </form>
+                        <input type="button" onclick="deleteData('delete')" class="del-sel" name="delete_sel" value="Delete Selection">
+                        
+                    </form>
             </div>    
         
 </div id=container-table-btns>
@@ -197,7 +199,7 @@ echo "<p><b>Total Number Of Places: " . $rowcount . "</b></p>";
                         <input class="text" id="landmark" placeholder="Landmark" type="text" name="landmark"></input>
                     </div>
                     <div id="container-btn1">
-                        <input id="btn1" type="button" onclick="submitData('insert')" name="submit" value="Add New Place"></input>
+                        <input id="btn1" type="button" onclick="insertData('insert')" name="submit" value="Add New Place"></input>
                     </div>
                 </form>
                     

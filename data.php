@@ -30,9 +30,10 @@ echo    '<div id=container-table>';
                 $result[] = $row;
                 $marker = $row['marker'];
                 $position = $row['position'];
+                $dataId = $_POST['checkbox'];
                 // echo $marker;
 echo "            
-        <tr data-marker=$marker data-position=$position name=row class='data-row draggable ui-state-default ui-widget-content'  value= '$marker'  >
+        <tr data-marker=$marker data-position=$position name=row data-id=$dataId class='data-row draggable ui-state-default ui-widget-content'  value= '$marker'  >
             <div class=drag-container>
                 <td>
                     <svg viewBox='0 0 100 80' width='20' height='20' fill='white'>
@@ -114,7 +115,7 @@ $update = mysqli_query($con, "UPDATE places SET marker = '$markerid', country='$
 $select = ("SELECT * FROM places");
 $count = mysqli_query($con, $select);
 $rowcount = mysqli_num_rows($count);
-echo "<div id=number-of-places><p><b>Total Number Of Places: " . $rowcount . "</b></p></div>
+echo "<div id=total-places><p><b>Total Number Of Places: " . $rowcount . "</b></p></div>
 
 <div id='container-print'>
 <input id='print' type='button' value='Print Page'>
@@ -124,7 +125,8 @@ echo "<div id=number-of-places><p><b>Total Number Of Places: " . $rowcount . "</
     <div id='btn-msg'>
     <div id='btn'>
                 <input type='button' class='del-sel' name='delete_sel' value='Delete Selection'>
-        </form>
+        
+            </form>
     </div>    
 
 </div id=container-table-btns>
@@ -132,6 +134,7 @@ echo "<div id=number-of-places><p><b>Total Number Of Places: " . $rowcount . "</
 
          
                 if (isset($_SESSION['status'])){
+                    // onclick='deleteData()' 
                     echo "<h4 id=fdback>" . $_SESSION['status'] ."</h4>";
                     unset ($_SESSION['status']);
                 };
