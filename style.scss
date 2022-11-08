@@ -52,7 +52,6 @@ h1{
 
 .del-sel-visible{
     visibility: visible;
-    transition: 250ms;
 }
 .del-sel:hover{
     background-color: rgb(187, 8, 71);
@@ -189,6 +188,10 @@ td:where(.check-td){
     text-align: center;
     
 }
+
+// #total-places {
+//     transition: 250ms;
+// }
 
 .text{
     height: fit-content;

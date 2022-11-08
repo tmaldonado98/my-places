@@ -1,8 +1,10 @@
 $(document).ready(function(){
+    // $('tbody').sortable('refresh');
     $('tbody').sortable({
         ///disables sortable for heading row
         items: 'tr:not(#heading-row)',
         distance: 20,
+        refresh: 'true',
 
         update: function (event, ui){
             $(this).not('#heading-row').children().each(function (marker){

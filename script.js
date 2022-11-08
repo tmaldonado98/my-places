@@ -1,11 +1,12 @@
 if ( window.history.replaceState ) {
   window.history.replaceState( null, null, window.location );
 };
+let focusTop = $('body').find(('input[name=country]')).focus();
 
 $(document).ready(()=>{
     $('.text').attr('style', 'text-transform:capitalize');
     // $('.text').val('');
-    $('input[name=country]').focus();
+    focusTop;
 });
 
 $('#add-place').click(()=>{
@@ -91,15 +92,6 @@ $('body').on('click', '#sel-all', function () {
         $('input[type=checkbox]').prop("checked", $('#sel-all').prop("checked"));
 }); //works
 
-// $('.checkbox').change(()=>{
-//     if ($(this).prop("checked", false)) {
-//         $('#sel-all').prop("checked", false)
-//     };
-
-//     if ($('.checkbox:checked').length == $('.checkbox').length) {
-//         $('#sel-all').prop("checked", true)
-//     }
-// });
 
 $('body').on('change', '.checkbox', function(){
     if ($('checkbox').prop("checked", false)) {
@@ -110,7 +102,6 @@ $('body').on('change', '.checkbox', function(){
         $('#sel-all').prop("checked", true)
     }
 });//works
-
 
 $('body').on('click focus blur', '.checkbox', function(){
     
@@ -146,38 +137,6 @@ $('body').on('click', '#sel-all', function(){
 //         return false
 //     }
 // });
-
-// $('#del-sel').click(()=>{
-//     if ($('.checkbox:checked').length > 0) {
-//         return true;
-//     } 
-//     else {
-//         return false;
-//     }
-// })
-
-// $('#del-sel').click(()=>{
-    
-     
-    // if ($('.checkbox').prop('checked', true)) {
-    //     return true;
-    // } 
-
-    // else if ($('.checkbox').prop('checked', true)) {
-    //     return true;
-    // }
-// })
-
-
-////CODE TO MAKE EDIT ROW APPEAR UPON MOUSE HOVER OVER ROW
-/* $('.data-row').mouseover(()=>{
-    $('.edit-row').prop('style', 'display: block');
-});
-$('.data-row').mouseout(()=>{
-    $('.edit-row').prop('style', 'display:none');
-});  */
-
-
 
 ///updated code on rows.js.... delete later
 /*
@@ -275,26 +234,59 @@ function insertData(action){
             data: data,
             success: function (response){
                displayData();           
-                    
-            //    alert('form data inserted');
-
+               focusTop;     
             }
         })
     })
 };
 
     //AJAX DISPLAY DB DATA
+    function saveNewPositions(){
+        let positions = [];
+        $('.updated').each(function (){
+            positions.push([$(this).attr('data-marker'), $(this).attr('data-position')]);
+            $(this).removeClass('updated');
+        });
 
+        $.ajax({
+            url: 'places.php',
+            method: 'POST',
+            dataType: 'text',
+            data: {
+                update: 1,
+                positions: positions
+            }
+        });   
+    };
+    
     function displayData(){
         $.ajax({        
             type: 'GET',
             url: 'data.php',
             dataType: 'html',
             success: function(result){
-                $('#container-table-btns').html(result);
+                let loadedData = $('#container-table-btns').html(result);
+                loadedData;
+                loadedData.find('tbody').sortable({
+                    ///disables sortable for heading row
+                    items: 'tr:not(#heading-row)',
+                    distance: 20,
+                    refresh: 'true',
+            
+                    update: function (event, ui){
+                        $(this).not('#heading-row').children().each(function (marker){
+                            if ($(this).attr('data-position') != (marker+1)) {
+                                $(this).attr('data-position', (marker+1)).addClass('updated')
+                            }
+                            saveNewPositions();
+                        })
+                    }
+            
+                });
                 $('#country').val('');
                 $('#city').val('');
                 $('#landmark').val('');
+                focusTop;
                 $('#btn1').attr('style', 'visibility:hidden');
 
             }
@@ -330,63 +322,48 @@ function editRowAjax(){
 */
 
 // AJAX DELETE
-
-// $('body').on('submit', '.del-sel', ((event)=>{
-    //     event.preventDefault();
-    // }));
-
-
-// $('body').on('click', '.del-sel', function () {
-
+/*
 function loadTotalPlaces(){
-    let places = $('#total-places');
+    let places = $('body #total-places');
     $.ajax({
         type: 'GET',
         url: 'data.php',
         data: places,
-        success: function(result){
-            $('#total-places1').html(places)
+        success: function(){
+            $('#total-places').load('data.php #total-places')
         }
     })
-};
+};*/
 
 function deleteData(){
-    let id = [];
-    let confirmalert = confirm('Are you sure?');
+    $(document).ready(function (){
+        let id = [];
+        let confirmalert = confirm('Are you sure?');
+        
+        if (confirmalert == true) {
+            
+            $('.checkbox:checked').each(function (i){
+                id[i] = $(this).val();
+            });
+        
+            let checkboxData = $('.checkbox').val();
+        
+            
+            $.ajax({
+                method: 'POST',
+                url: 'delete.php',
+                data: {id:id},
+                success: function () {
+                    console.log('deleted');
+                    focusTop;
+                    displayData();
+                    // loadTotalPlaces();
 
-    if (confirmalert == true) {
-        
-        $('.checkbox:checked').each(function (i){
-            id[i] = $(this).val();
-        });
-
-        let checkboxData = $('.checkbox').val();
-        // let data = {
-        //     action: action,
-        //     checkboxData: $('.checkbox').is(':checked')
-        // }
-        
-        
-        $.ajax({
-            method: 'POST',
-            url: 'delete.php',
-            data: {id:id},
-            success: function () {
-                console.log('deleted');
-                // displayData();
-                // $('#container-table-btns').load('data.php');
-                // for (let i = 0; i < id.length; i++) {
-                //     const element = array[index];
-                    
-                // }
-                loadTotalPlaces();
-                $('.checkbox:checked').closest('.data-row').css('background','tomato');
-                $('.checkbox:checked').closest('.data-row').fadeOut('250ms');
-                $('.del-sel').removeClass('del-sel-visible');
-            }
-        })
-        
-    }
+                    // $('body').find($('.checkbox:checked').closest('.data-row')).fadeOut('250ms');
+                    // $('.del-sel').removeClass('del-sel-visible');
+                }
+            })
+            
+        }
+    })
 }
-
-// })

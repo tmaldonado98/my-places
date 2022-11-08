@@ -1,17 +1,10 @@
 <?php
 include "connect.php";
 
-
 $country = $_POST['country'];
 $city = $_POST['city'];
 $landmark = $_POST['landmark'];
-
-////SEPARATED INSERT QUERY FROM FETCH ROW DATA QUERY TO PREVENT PHP PAGE FROM INSERTING ROW INTO DB TABLE AFTER PAGE REFRESH
-/*if (isset($_POST['submit'])) {
-    $insert = mysqli_query($con, "INSERT INTO places(country, city, landmark) VALUES ('$country', '$city', '$landmark')"); 
-};*/    
     
-// echo '<h1>Where I Want To Go</h1>';
 echo '<div id=container-table-btns>';
 echo    '<div id=container-table>';
     echo '<table id=table>';
@@ -30,8 +23,6 @@ echo    '<div id=container-table>';
                 $result[] = $row;
                 $marker = $row['marker'];
                 $position = $row['position'];
-                $dataId = $_POST['checkbox'];
-                // echo $marker;
 echo "            
         <tr data-marker=$marker data-position=$position name=row data-id=$dataId class='data-row draggable ui-state-default ui-widget-content'  value= '$marker'  >
             <div class=drag-container>
@@ -112,11 +103,11 @@ $update = mysqli_query($con, "UPDATE places SET marker = '$markerid', country='$
 
 
 
+
 $select = ("SELECT * FROM places");
 $count = mysqli_query($con, $select);
 $rowcount = mysqli_num_rows($count);
 echo "<div id=total-places><p><b>Total Number Of Places: " . $rowcount . "</b></p></div>
-
 <div id='container-print'>
 <input id='print' type='button' value='Print Page'>
 <br>
@@ -124,7 +115,7 @@ echo "<div id=total-places><p><b>Total Number Of Places: " . $rowcount . "</b></
 
     <div id='btn-msg'>
     <div id='btn'>
-                <input type='button' class='del-sel' name='delete_sel' value='Delete Selection'>
+                <input type='button' onclick=deleteData('delete') class='del-sel' name='delete_sel' value='Delete Selection'>
         
             </form>
     </div>    
@@ -133,8 +124,7 @@ echo "<div id=total-places><p><b>Total Number Of Places: " . $rowcount . "</b></
 ";
 
          
-                if (isset($_SESSION['status'])){
-                    // onclick='deleteData()' 
+                if (isset($_SESSION['status'])){ 
                     echo "<h4 id=fdback>" . $_SESSION['status'] ."</h4>";
                     unset ($_SESSION['status']);
                 };

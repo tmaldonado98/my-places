@@ -60,10 +60,8 @@ echo    '<div id=container-table>';
                 $result[] = $row;
                 $marker = $row['marker'];
                 $position = $row['position'];
-                $dataId = $_POST['checkbox'];
-                // echo $marker;
 echo "            
-        <tr data-marker=$marker data-position=$position data-id=$dataId name=row class='data-row draggable ui-state-default ui-widget-content'  value= '$marker'  >
+        <tr data-marker=$marker data-position=$position name=row class='data-row draggable ui-state-default ui-widget-content'  value= '$marker'  >
             <div class=drag-container>
                 <td>
                     <svg viewBox='0 0 100 80' width='20' height='20' fill='white'>
@@ -101,6 +99,10 @@ echo "
                                     <input class='btn1' type='button' name='update' value='Update'></input>
                                 </form>*/."
                             </div>
+                            <h3>Average Weather</h3>
+                            <h3>Did You Know?</h3>
+                            <h3>Some Facts About This Place</h3>
+                        
                     </dialog>
                 </td>
             </div>   
@@ -145,7 +147,7 @@ echo "    </table> <br>
 $select = ("SELECT * FROM places");
 $count = mysqli_query($con, $select);
 $rowcount = mysqli_num_rows($count);
-echo "<p id=total-places1 ><b>Total Number Of Places: " . $rowcount . "</b></p>";
+echo "<p id=total-places ><b>Total Number Of Places: " . $rowcount . "</b></p>";
 
 ?>
 
@@ -213,25 +215,15 @@ echo "<p id=total-places1 ><b>Total Number Of Places: " . $rowcount . "</b></p>"
 
 
 
-<!-- <div id="column-w-2"> -->
-    <h3>Average Weather</h3>
-    <h3>Did You Know?</h3>
-    <h3>Some Facts About This Place</h3>
 
-
-
-
-<!-- </div> -->
 
 </section>
-
+<!-- 
 <button id="already-btn">+</button>
 <section id="already-been">
-    <div id="column-ab-1">
-    <!-- ajax see more section-->
-    
+    <div id="column-ab-1">    
     </div >
-    </section>
+    </section> -->
 
 <script defer type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <!-- jQuery UI plugin -->
