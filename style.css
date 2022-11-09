@@ -10,15 +10,11 @@ h1 {
   margin: 0 auto;
 }
 
-#btn1, .edit-row, #print, .see-more {
+#btn1, .edit-btn, #print, .see-more {
   font-size: 20px;
   text-decoration: none;
   color: inherit;
   cursor: pointer;
-}
-
-.edit-row {
-  display: none;
 }
 
 .edit-row, #print {
@@ -325,8 +321,11 @@ dialog::backdrop {
     width: 15;
     height: 15;
   }
+  .modal {
+    display: unset;
+  }
   #edit-field {
-    display: none;
+    visibility: hidden;
   }
   #btn, #print {
     display: none;

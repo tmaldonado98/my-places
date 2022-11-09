@@ -23,6 +23,7 @@ if (isset($_POST['update'])) {
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./modals.css">
     <link rel="stylesheet" href="./tableA.css">
+    <link rel="stylesheet" href="./modal-magnific-popup/magnific-popup.css">
     <link href="./jquery-ui-1.13.2.custom/jquery-ui.css">
     <link href="./jquery-ui-1.13.2.custom/jquery-ui.min.css">
 </head>
@@ -80,15 +81,17 @@ echo "
                 <td>" . ucwords($row['country']) . "</td>
                 <td>" . ucwords($row['city']) . "</td>
                 <td>" . ucwords($row['landmark']) . "</td>
-
-                <td class=container-see-more><a href=# name=see-more class=see-more value=$marker>See More</a>
-                    <dialog name=modal class=modal value=$marker>
+                
+                <td class=container-see-more><a href=#popup name=see-more class=see-more  value=$marker>See More</a>
+                </td>
+                
+                <div id=popup name=modal class='modal mfp-hide' value=$marker>
                         <div class=close>&#10006;</div>
                         <p id=modal-title><b>" . ucwords($row['landmark'])." ". ucwords($row['city'])." ". ucwords($row['country'])." " . "</b></p>
                         <a href='delete-modal.php' value= $marker  id=remove-row name=delete>Remove Place</a>
-                        <input type=button name=populate value='Edit Place' id=edit-btn> 
-                            <div id='edit-field' editid= $marker>"
-                                /*<form method='post' action='editRow.php' editid= $marker>
+                        <input type=button name=populate value='Edit Place' class=edit-btn> 
+                            <div id='edit-field' editid= $marker>
+                                <form method='post' action='editRow.php' editid= $marker>
                                     <label for='country'><p>Country</p></label>
                                     <input class='text' id='country' placeholder='Country' type='text' name='country' value='". $rcountry ."'></input>
                                     <label for='city'><p>City</p></label>
@@ -97,14 +100,13 @@ echo "
                                     <input class='text' id='landmark' placeholder='Landmark' type='text' name='landmark' value='". $rlandmark ."'></input>
                                     <br>
                                     <input class='btn1' type='button' name='update' value='Update'></input>
-                                </form>*/."
+                                </form>
                             </div>
                             <h3>Average Weather</h3>
                             <h3>Did You Know?</h3>
                             <h3>Some Facts About This Place</h3>
                         
-                    </dialog>
-                </td>
+                </div>
             </div>   
         </tr>
 
@@ -224,6 +226,8 @@ echo "<p id=total-places ><b>Total Number Of Places: " . $rowcount . "</b></p>";
     <div id="column-ab-1">    
     </div >
     </section> -->
+    
+<footer>
 
 <script defer type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <!-- jQuery UI plugin -->
@@ -232,8 +236,10 @@ echo "<p id=total-places ><b>Total Number Of Places: " . $rowcount . "</b></p>";
 <!-- <script defer src="https://cdnjs.cloudflare.com/ajax/libs/TableDnD/0.9.1/jquery.tablednd.js" integrity="sha256-d3rtug+Hg1GZPB7Y/yTcRixO/wlI78+2m08tosoRn7A=" crossorigin="anonymous"></script> -->
 <script defer type="text/javascript" src="script.js"></script>
 <script defer type="text/javascript" src="rows.js"></script>
+<script src="./modal-magnific-popup/jquery.magnific-popup.js"></script>
+<script src="modals-script.js"></script>
 
-
+</footer>
 
 <!-- jQuery Modal -->
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>

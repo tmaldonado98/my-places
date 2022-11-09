@@ -175,14 +175,14 @@ if ($(this).prop('checked', true)) {
 });
 */
 
-
+/*
 $('body').on('click', '.see-more', function(){
     $(this).siblings('.modal').fadeIn('100ms')
 });
     
 $('body').on('click', '.close', function(){
     $(this).closest('.modal').fadeOut('100ms');  
-});
+});*/
 
 
 ///Suggestions function
@@ -295,13 +295,13 @@ function insertData(action){
 
 ///AJAX EDIT ROW 
 
-$('#edit-row').click(function (event){
+$('.edit-btn').click(function (event){
     // event.preventDefault();
-    alert('test');
-    editRowAjax();
+    console.log('edit btn test');
+    // editRowAjax();
 });
 
-$('#edit-btn').click(()=>{
+$('.edit-btn').click(()=>{
     $('#edit-field').css('display: block');
 });
 

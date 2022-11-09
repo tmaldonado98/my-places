@@ -10,16 +10,14 @@ h1{
     margin: 0 auto;
 }
 // #del-sel, 
-#btn1, .edit-row, #print, .see-more{
+#btn1, .edit-btn, #print, .see-more{
     font-size: 20px;
     text-decoration: none;
     color: inherit;
     cursor: pointer;
 }
 
-.edit-row{
-    display: none;
-}
+
 
 // #del-sel, 
 .edit-row, #print{
@@ -356,9 +354,12 @@ dialog::backdrop{
     // td:hover { 
     //     color: inherit;
     // }
+    .modal{
+        display:unset;
+    }
     
     #edit-field{
-        display: none;
+        visibility: hidden;
 
     }
 

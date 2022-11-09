@@ -49,7 +49,7 @@ echo "
                         <div class=close>&#10006;</div>
                         <p id=modal-title><b>" . ucwords($row['landmark'])." ". ucwords($row['city'])." ". ucwords($row['country'])." " . "</b></p>
                         <a href='delete-modal.php' value= $marker  id=remove-row name=delete>Remove Place</a>
-                        <input type=button name=populate value='Edit Place' id=edit-btn> 
+                        <input type=button name=populate value='Edit Place' class=edit-btn> 
                             <div id='edit-field' editid= $marker>"
                                 /*<form method='post' action='editRow.php' editid= $marker>
                                     <label for='country'><p>Country</p></label>
