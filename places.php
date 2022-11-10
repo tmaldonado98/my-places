@@ -63,7 +63,7 @@ echo    '<div id=container-table>';
                 $marker = $row['marker'];
                 $position = $row['position'];
 echo "            
-        <tr data-marker=$marker data-position=$position name=row class='data-row draggable ui-state-default ui-widget-content'  value= '$marker'  >
+        <tr data-marker=$marker data-position=$position name=row class='data-row draggable ui-state-default ui-widget-content'  value=$marker>
             <div class=drag-container>
                 <td>
                     <svg viewBox='0 0 100 80' width='20' height='20' fill='white'>
@@ -89,6 +89,7 @@ echo "
                 <div id=$marker name=modal class='modal zoom-anim-dialog mfp-hide' value=$marker>
                     <p id=modal-title><b>" . ucwords($row['landmark'])." ". ucwords($row['city'])." ". ucwords($row['country'])." " . "</b></p>
                     <input type=button onclick='modalDelete($marker)' class=modal-delete name=modal_delete value='Delete Place'>
+                    
                     <div class='edit-field' editid= $marker>
                         <span class=inputs>
                             <label for='country'><p>Country</p></label>

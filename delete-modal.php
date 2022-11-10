@@ -6,8 +6,9 @@ include "connect.php";
     $row = $data->fetch_assoc();
 
 
-    $marker = $row['marker'];
-    // $_POST['rowValue'];
+    $marker = $_POST['rowData'];
+    // $row['marker'];
+    
 
     // $query = "DELETE FROM places WHERE marker=$marker";
 

@@ -340,29 +340,26 @@ function deleteData(){
             
         }
     })
-}
+};
 
-function modalDelete(data) {
+function modalDelete(rowData) {
 
-    // let rowMarker = $();    
     let confirmalert = confirm('Are you sure?');
-    let rowValue = $(this).closest('.data-row').val();
-
+    
     if (confirmalert == true) {
-        $('body').on('click', '.modal-delete', function(){
-            
-            
-            $.ajax({
-                method: 'POST',
-                url: 'delete-modal.php',
-                data: data,
-                success: function(){
-                    console.log('row deleted from modal');
-                    displayData();
-                }
-            })
+
+        console.log(rowData)
+        
+        $.ajax({
+            method: 'POST',
+            url: 'delete-modal.php',
+            data: {rowData: rowData},
+            success: function(){
+                console.log('row deleted from modal');
+                displayData();
+            }
         })
     }
 
 
-}
+};
