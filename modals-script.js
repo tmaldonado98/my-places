@@ -14,14 +14,6 @@ $(document).ready(function(){
 		removalDelay: 300,
 		mainClass: 'my-mfp-zoom-in'
     })
-    // $('body').on('click', '.container-see-more', function(){
-
-    // })
-
-
-
-
-
 
 
 

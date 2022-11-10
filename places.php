@@ -1,7 +1,5 @@
 <?php     
 include "connect.php";
-// include "editRow.php";
-session_start();
 
 if (isset($_POST['update'])) {
     foreach ($_POST['positions'] as $position) {
@@ -193,7 +191,7 @@ echo "<p id=total-places ><b>Total Number Of Places: " . $rowcount . "</b></p>";
                 <form id="add-place" method="post">
                     <div class="container-input">
                         <label for="country"><p>Country</p></label>
-                        <input class="text" id="country" placeholder="Country" type="text" name="country" "></input>
+                        <input class="text" id="country" placeholder="Country" type="text" name="country"></input>
                         <!-- onkeyup="countrySuggestion(this.value) -->
                         <p><span id='country-sug'></span></p>
                     </div>

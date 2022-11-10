@@ -232,7 +232,7 @@ function insertData(action){
             url: 'insert.php',
             type: 'POST',
             data: data,
-            success: function (response){
+            success: function (){
                displayData();           
             }
         })
@@ -319,7 +319,7 @@ function deleteData(){
         
         if (confirmalert == true) {
             
-            $('.checkbox:checked').each(function (i){
+            $('body').find('.checkbox:checked').each(function (i){
                 id[i] = $(this).val();
             });
 
@@ -356,6 +356,7 @@ function modalDelete(rowData) {
             data: {rowData: rowData},
             success: function(){
                 console.log('row deleted from modal');
+                $.magnificPopup.close();
                 displayData();
             }
         })
