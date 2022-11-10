@@ -24,6 +24,7 @@ if (isset($_POST['update'])) {
     <link rel="stylesheet" href="./modals.css">
     <link rel="stylesheet" href="./tableA.css">
     <link rel="stylesheet" href="./modal-magnific-popup/magnific-popup.css">
+    <link rel="stylesheet" href="dialog-styling.css">
     <link href="./jquery-ui-1.13.2.custom/jquery-ui.css">
     <link href="./jquery-ui-1.13.2.custom/jquery-ui.min.css">
 </head>
@@ -82,11 +83,10 @@ echo "
                 <td>" . ucwords($row['city']) . "</td>
                 <td>" . ucwords($row['landmark']) . "</td>
                 
-                <td class=container-see-more><a href=#popup name=see-more class=see-more  value=$marker>See More</a>
+                <td class=container-see-more><a href=#$marker name=see-more class='see-more open-popup-link popup-with-zoom-anim'  value=$marker>See More</a>
                 </td>
                 
-                <div id=popup name=modal class='modal mfp-hide' value=$marker>
-                        <div class=close>&#10006;</div>
+                <div id=$marker name=modal class='modal zoom-anim-dialog mfp-hide' value=$marker>
                         <p id=modal-title><b>" . ucwords($row['landmark'])." ". ucwords($row['city'])." ". ucwords($row['country'])." " . "</b></p>
                         <a href='delete-modal.php' value= $marker  id=remove-row name=delete>Remove Place</a>
                         <input type=button name=populate value='Edit Place' class=edit-btn> 
@@ -230,14 +230,14 @@ echo "<p id=total-places ><b>Total Number Of Places: " . $rowcount . "</b></p>";
 <footer>
 
 <script defer type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
 <!-- jQuery UI plugin -->
 <script defer src="./jquery-ui-1.13.2.custom/jquery-ui.js"></script>
 
 <!-- <script defer src="https://cdnjs.cloudflare.com/ajax/libs/TableDnD/0.9.1/jquery.tablednd.js" integrity="sha256-d3rtug+Hg1GZPB7Y/yTcRixO/wlI78+2m08tosoRn7A=" crossorigin="anonymous"></script> -->
 <script defer type="text/javascript" src="script.js"></script>
 <script defer type="text/javascript" src="rows.js"></script>
-<script src="./modal-magnific-popup/jquery.magnific-popup.js"></script>
-<script src="modals-script.js"></script>
+<script defer src="modals-script.js"></script>
 
 </footer>
 
