@@ -234,7 +234,6 @@ function insertData(action){
             data: data,
             success: function (response){
                displayData();           
-               focusTop;     
             }
         })
     })
@@ -295,16 +294,6 @@ function insertData(action){
 
 ///AJAX EDIT ROW 
 
-$('.edit-btn').click(function (event){
-    // event.preventDefault();
-    console.log('edit btn test');
-    // editRowAjax();
-});
-
-$('.edit-btn').click(()=>{
-    $('#edit-field').css('display: block');
-});
-
 /*
 function editRowAjax(){
     $.ajax({
@@ -322,18 +311,6 @@ function editRowAjax(){
 */
 
 // AJAX DELETE
-/*
-function loadTotalPlaces(){
-    let places = $('body #total-places');
-    $.ajax({
-        type: 'GET',
-        url: 'data.php',
-        data: places,
-        success: function(){
-            $('#total-places').load('data.php #total-places')
-        }
-    })
-};*/
 
 function deleteData(){
     $(document).ready(function (){
@@ -345,9 +322,7 @@ function deleteData(){
             $('.checkbox:checked').each(function (i){
                 id[i] = $(this).val();
             });
-        
-            let checkboxData = $('.checkbox').val();
-        
+
             
             $.ajax({
                 method: 'POST',
@@ -355,7 +330,6 @@ function deleteData(){
                 data: {id:id},
                 success: function () {
                     console.log('deleted');
-                    focusTop;
                     displayData();
                     // loadTotalPlaces();
 
@@ -366,4 +340,29 @@ function deleteData(){
             
         }
     })
+}
+
+function modalDelete(data) {
+
+    // let rowMarker = $();    
+    let confirmalert = confirm('Are you sure?');
+    let rowValue = $(this).closest('.data-row').val();
+
+    if (confirmalert == true) {
+        $('body').on('click', '.modal-delete', function(){
+            
+            
+            $.ajax({
+                method: 'POST',
+                url: 'delete-modal.php',
+                data: data,
+                success: function(){
+                    console.log('row deleted from modal');
+                    displayData();
+                }
+            })
+        })
+    }
+
+
 }

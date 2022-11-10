@@ -87,34 +87,38 @@ echo "
                 </td>
                 
                 <div id=$marker name=modal class='modal zoom-anim-dialog mfp-hide' value=$marker>
-                        <p id=modal-title><b>" . ucwords($row['landmark'])." ". ucwords($row['city'])." ". ucwords($row['country'])." " . "</b></p>
-                        <a href='delete-modal.php' value= $marker  id=remove-row name=delete>Remove Place</a>
-                        <input type=button name=populate value='Edit Place' class=edit-btn> 
-                            <div id='edit-field' editid= $marker>
-                                <form method='post' action='editRow.php' editid= $marker>
-                                    <label for='country'><p>Country</p></label>
-                                    <input class='text' id='country' placeholder='Country' type='text' name='country' value='". $rcountry ."'></input>
-                                    <label for='city'><p>City</p></label>
-                                    <input class='text' id='city' placeholder='City' type='text' name='city' value='". $rcity ."'></input>
-                                    <label for='landmark'><p>Landmark</p></label>
-                                    <input class='text' id='landmark' placeholder='Landmark' type='text' name='landmark' value='". $rlandmark ."'></input>
-                                    <br>
-                                    <input class='btn1' type='button' name='update' value='Update'></input>
-                                </form>
-                            </div>
-                            <h3>Average Weather</h3>
-                            <h3>Did You Know?</h3>
-                            <h3>Some Facts About This Place</h3>
+                    <p id=modal-title><b>" . ucwords($row['landmark'])." ". ucwords($row['city'])." ". ucwords($row['country'])." " . "</b></p>
+                    <input type=button onclick='modalDelete($marker)' class=modal-delete name=modal_delete value='Delete Place'>
+                    <div class='edit-field' editid= $marker>
+                        <span class=inputs>
+                            <label for='country'><p>Country</p></label>
+                            <input class='text' id='country' placeholder='Country' type='text' name='editCountry' value='". $rcountry ."'></input>
+                            <label for='city'><p>City</p></label>
+                            <input class='text' id='city' placeholder='City' type='text' name='editCity' value='". $rcity ."'></input>
+                            <label for='landmark'><p>Landmark</p></label>
+                            <input class='text' id='landmark' placeholder='Landmark' type='text' name='editLandmark' value='". $rlandmark ."'></input>
+                        </span>
+                        <br>
+                        <div class=update-btn>
+                            <input class='btn1' type='button' name='update' value='Update'></input>
+                        </div>
+                    </div>
+                    <h3>Average Weather</h3>
+                    <h3>Did You Know?</h3>
+                    <h3>Some Facts About This Place</h3>
                         
                 </div>
-            </div>   
+            </div class=drag-container>   
         </tr>
+                        
+                        ";
+                    }
+                }
 
-";
-    }
-}
-//curly brackets to end the while loop and the if statement
-
+                //curly brackets to end the while loop and the if statement
+                // <form method='post' class=edit-form action='editRow.php' editid= $marker>
+                // <input type=button name=populate value='Edit Place' class=edit-btn> 
+                // <a href='delete-modal.php' value= $marker  id=remove-row name=delete>Remove Place</a>
 /*
 $markerid=$_GET['editid'];
 // $marker = $row['marker'];    

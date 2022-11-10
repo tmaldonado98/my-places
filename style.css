@@ -27,6 +27,20 @@ h1 {
   font-weight: 600;
 }
 
+.inputs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.edit-field .btn1 {
+  align-self: flex-end;
+}
+
+.update-btn {
+  text-align: center;
+}
+
 .del-sel {
   width: 15rem;
   display: block !important;
@@ -320,12 +334,6 @@ dialog::backdrop {
   svg {
     width: 15;
     height: 15;
-  }
-  .modal {
-    display: unset;
-  }
-  #edit-field {
-    visibility: hidden;
   }
   #btn, #print {
     display: none;
