@@ -18,7 +18,7 @@ echo    '<div id=container-table>';
         </tr>';
         echo '';
         $result = array();
-        if($data = mysqli_query($con, "SELECT * FROM places ORDER BY position")){
+        if($data = mysqli_query($con, "SELECT * FROM places_table ORDER BY position")){
             while ($row = $data->fetch_assoc()) {
                 $result[] = $row;
                 $marker = $row['marker'];
@@ -50,15 +50,14 @@ echo "
                 <div id=$marker name=modal class='modal zoom-anim-dialog mfp-hide' value=$marker>
                     <p id=modal-title><b>" . ucwords($row['landmark'])." ". ucwords($row['city'])." ". ucwords($row['country'])." " . "</b></p>
                     <input type=button onclick='modalDelete($marker)' class=modal-delete name=modal_delete value='Delete Place'>
-                    
                     <div class='edit-field' editid= $marker>
                         <span class=inputs>
                             <label for='country'><p>Country</p></label>
-                            <input class='text' id='country' placeholder='Country' type='text' name='editCountry' value='". $rcountry ."'></input>
+                            <input class='text' id='ed-country' placeholder='Country' type='text' name='editCountry' value='". $rcountry ."'></input>
                             <label for='city'><p>City</p></label>
-                            <input class='text' id='city' placeholder='City' type='text' name='editCity' value='". $rcity ."'></input>
+                            <input class='text' id='ed-city' placeholder='City' type='text' name='editCity' value='". $rcity ."'></input>
                             <label for='landmark'><p>Landmark</p></label>
-                            <input class='text' id='landmark' placeholder='Landmark' type='text' name='editLandmark' value='". $rlandmark ."'></input>
+                            <input class='text' id='ed-landmark' placeholder='Landmark' type='text' name='editLandmark' value='". $rlandmark ."'></input>
                         </span>
                         <br>
                         <div class=update-btn>
@@ -85,7 +84,7 @@ echo "
 $markerid=$_GET['editid'];
 // $marker = $row['marker'];    
 
-$populateFields = mysqli_query($con, "SELECT * FROM places WHERE marker='$markerid'");
+$populateFields = mysqli_query($con, "SELECT * FROM places_table WHERE marker='$markerid'");
 $singleRow = mysqli_fetch_assoc($populateFields);
     $rcountry=$row['country'];
     $rcity=$row['city'];
@@ -98,7 +97,7 @@ if (isset($_GET['populate'])) {
 
 function populateFields(){
 include "connect.php";
-$update = mysqli_query($con, "UPDATE places SET marker = '$markerid', country='$country', city='$city', landmark='$landmark' WHERE marker='$markerid'"); 
+$update = mysqli_query($con, "UPDATE places_table SET marker = '$markerid', country='$country', city='$city', landmark='$landmark' WHERE marker='$markerid'"); 
 
                         
 
@@ -110,7 +109,7 @@ $update = mysqli_query($con, "UPDATE places SET marker = '$markerid', country='$
 
 
 
-$select = ("SELECT * FROM places");
+$select = ("SELECT * FROM places_table");
 $count = mysqli_query($con, $select);
 $rowcount = mysqli_num_rows($count);
 echo "<div id=total-places><p><b>Total Number Of Places: " . $rowcount . "</b></p></div>

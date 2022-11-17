@@ -55,7 +55,7 @@ echo    '<div id=container-table>';
         </tr>';
         echo '';
         $result = array();
-        if($data = mysqli_query($con, "SELECT * FROM places ORDER BY position")){
+        if($data = mysqli_query($con, "SELECT * FROM places_table ORDER BY position")){
             while ($row = $data->fetch_assoc()) {
                 $result[] = $row;
                 $marker = $row['marker'];
@@ -91,11 +91,11 @@ echo "
                     <div class='edit-field' editid= $marker>
                         <span class=inputs>
                             <label for='country'><p>Country</p></label>
-                            <input class='text' id='country' placeholder='Country' type='text' name='editCountry' value='". $rcountry ."'></input>
+                            <input class='text' id='ed-country' placeholder='Country' type='text' name='editCountry' value='". $rcountry ."'></input>
                             <label for='city'><p>City</p></label>
-                            <input class='text' id='city' placeholder='City' type='text' name='editCity' value='". $rcity ."'></input>
+                            <input class='text' id='ed-city' placeholder='City' type='text' name='editCity' value='". $rcity ."'></input>
                             <label for='landmark'><p>Landmark</p></label>
-                            <input class='text' id='landmark' placeholder='Landmark' type='text' name='editLandmark' value='". $rlandmark ."'></input>
+                            <input class='text' id='ed-landmark' placeholder='Landmark' type='text' name='editLandmark' value='". $rlandmark ."'></input>
                         </span>
                         <br>
                         <div class=update-btn>
@@ -149,7 +149,7 @@ echo "    </table> <br>
 ?>
 
 <?php
-$select = ("SELECT * FROM places");
+$select = ("SELECT * FROM places_table");
 $count = mysqli_query($con, $select);
 $rowcount = mysqli_num_rows($count);
 echo "<p id=total-places ><b>Total Number Of Places: " . $rowcount . "</b></p>";
@@ -249,7 +249,7 @@ echo "<p id=total-places ><b>Total Number Of Places: " . $rowcount . "</b></p>";
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" /> -->
 
 <?php
-mysqli_close($con);
+// mysqli_close($con);
 ?>
 </body>
 </html>

@@ -7,8 +7,8 @@
 
     $servername = 'localhost';
     $username = 'root';
-    $psw = 'letitflow0';
-    $dbname = 'test';
+    $psw = 'california14';
+    $dbname = 'places_app';
     
     $con = new mysqli($servername, $username, $psw, $dbname);
     
@@ -17,4 +17,6 @@
     } else {
      //   echo 'You are connected.';
     }
+
+    // $con->close();
 ?>

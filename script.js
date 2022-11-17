@@ -1,12 +1,12 @@
 if ( window.history.replaceState ) {
   window.history.replaceState( null, null, window.location );
 };
-let focusTop = $('body').find(('input[name=country]')).focus();
+// let focusTop = $('body').find(('input[name=country]')).focus();
 
 $(document).ready(()=>{
     $('.text').attr('style', 'text-transform:capitalize');
     // $('.text').val('');
-    focusTop;
+    // focusTop;
 });
 
 $('#add-place').click(()=>{
@@ -216,7 +216,7 @@ $('#city').keyup(citySuggestion(str), {
 */
 
 
-
+    
 //AJAX INSERT
 function insertData(action){
     $(document).ready(function (){
@@ -239,25 +239,9 @@ function insertData(action){
     })
 };
 
-    //AJAX DISPLAY DB DATA
-    function saveNewPositions(){
-        let positions = [];
-        $('.updated').each(function (){
-            positions.push([$(this).attr('data-marker'), $(this).attr('data-position')]);
-            $(this).removeClass('updated');
-        });
 
-        $.ajax({
-            url: 'places.php',
-            method: 'POST',
-            dataType: 'text',
-            data: {
-                update: 1,
-                positions: positions
-            }
-        });   
-    };
-    
+
+    //AJAX DISPLAY DB DATA
     function displayData(){
         $.ajax({        
             type: 'GET',
@@ -266,7 +250,9 @@ function insertData(action){
             success: function(result){
                 let loadedData = $('#container-table-btns').html(result);
                 loadedData;
-                loadedData.find('tbody').sortable({
+                console.log('test');
+
+                /*loadedData.find('tbody').sortable({
                     ///disables sortable for heading row
                     items: 'tr:not(#heading-row)',
                     distance: 20,
@@ -281,16 +267,35 @@ function insertData(action){
                         })
                     }
             
-                });
+                });*/
                 $('#country').val('');
                 $('#city').val('');
                 $('#landmark').val('');
-                focusTop;
+                // focusTop;
                 $('#btn1').attr('style', 'visibility:hidden');
 
             }
     });
 };
+/*
+function saveNewPositions(){
+    let positions = [];
+    $('.updated').each(function (){
+        positions.push([$(this).attr('data-marker'), $(this).attr('data-position')]);
+        $(this).removeClass('updated');
+    });
+
+    $.ajax({
+        url: 'places.php',
+        method: 'POST',
+        dataType: 'text',
+        data: {
+            update: 1,
+            positions: positions
+        }
+    });   
+}
+*/
 
 ///AJAX EDIT ROW 
 
@@ -364,3 +369,5 @@ function modalDelete(rowData) {
 
 
 };
+
+// debugger

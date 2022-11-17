@@ -2,7 +2,7 @@
 include "connect.php";
 // session_start();
 
-    $data = mysqli_query($con, "SELECT * FROM places");
+    $data = mysqli_query($con, "SELECT * FROM places_table");
     $row = $data->fetch_assoc();
 
 
@@ -15,11 +15,11 @@ include "connect.php";
     // $result = mysqli_query($con, $query);
 
     if (isset($marker)) {
-        $sql = "DELETE FROM places WHERE marker = $marker";
+        $sql = "DELETE FROM places_table WHERE marker = $marker";
         $result = mysqli_query($con, $sql);
     }
 
-    // $truncate = mysqli_query($con, "ALTER TABLE places AUTO_INCREMENT = 1");
+    // $truncate = mysqli_query($con, "ALTER TABLE places_table AUTO_INCREMENT = 1");
 
 
 

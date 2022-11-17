@@ -16,7 +16,7 @@ function insert(){
         $landmark = $_POST['landmark'];
         $position = 0;
     
-        $query = "INSERT INTO places(country, city, landmark, position) VALUES ('$country', '$city', '$landmark', '$position')";
+        $query = "INSERT INTO places_table(country, city, landmark, position) VALUES ('$country', '$city', '$landmark', '$position')";
         
         $insert = mysqli_query($con, $query);
 
@@ -28,7 +28,7 @@ function insert(){
     };
     
 
-// $display = "SELECT * FROM places";
+// $display = "SELECT * FROM places_table";
 
 // $result = mysqli_query($con, $display);
 

@@ -4,7 +4,7 @@ include "connect.php";
 
 if (isset($_POST['id'])) {
     foreach ($_POST['id'] as $id) {
-        $sql = "DELETE FROM places WHERE marker = $id";
+        $sql = "DELETE FROM places_table WHERE marker = $id";
         mysqli_query($con, $sql);
     }
 
