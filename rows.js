@@ -1,5 +1,4 @@
 $(document).ready(function(){
-    // $('tbody').sortable('refresh');
     $('tbody').sortable({
         ///disables sortable for heading row
         items: 'tr:not(#heading-row)',
@@ -88,3 +87,4 @@ $('body').on('change', '#sel-all', function (e) {
         $('.data-row').removeClass('selectedRow')
     }
 });
+// debugger

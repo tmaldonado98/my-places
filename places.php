@@ -6,7 +6,7 @@ if (isset($_POST['update'])) {
         $marker = $position[0];
         $newPosition = $position[1];
 
-        $con->query(query: "UPDATE places SET position='$newPosition' WHERE marker='$marker'");
+        $con->query(query: "UPDATE places_table SET position='$newPosition' WHERE marker='$marker'");
     }
     exit('success');
 }
@@ -232,7 +232,7 @@ echo "<p id=total-places ><b>Total Number Of Places: " . $rowcount . "</b></p>";
     
 <footer>
 
-<script defer type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script defer type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.js"></script>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
 <!-- jQuery UI plugin -->
 <script defer src="./jquery-ui-1.13.2.custom/jquery-ui.js"></script>
@@ -244,12 +244,8 @@ echo "<p id=total-places ><b>Total Number Of Places: " . $rowcount . "</b></p>";
 
 </footer>
 
-<!-- jQuery Modal -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" /> -->
-
 <?php
-// mysqli_close($con);
+mysqli_close($con);
 ?>
 </body>
 </html>
