@@ -61,7 +61,7 @@ echo "
                         </span>
                         <br>
                         <div class=update-btn>
-                            <input class='btn1' type='button' name='update' value='Update'></input>
+                            <input class='btn1' onclick=update('update') type='button' name='update' value='Update'></input>
                         </div>
                     </div>
                     <h3>Average Weather</h3>

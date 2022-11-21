@@ -250,7 +250,6 @@ function insertData(action){
             success: function(result){
                 let loadedData = $('#container-table-btns').html(result);
                 loadedData;
-                console.log('test');
 
                 loadedData.find('tbody').sortable({
                     ///disables sortable for heading row
@@ -373,14 +372,14 @@ function modalDelete(rowData) {
 //populating edit fields
 $('body').on('click', '.see-more', function(){
     
-    let country = $(this).closest('#country').text();
-    let city = $(this).closest('#city').text();
-    let landmark = $(this).closest('#landmark').text();
+    let country = $(this).find('#country').text();
+    let city = $(this).find('#city').text();
+    let landmark = $(this).find('#landmark').text();
     let marker = $('.modal').val();
     
-    $(this).closest('#ed-country').val(country);
-    $(this).closest('#ed-city').val(city);
-    $(this).closest('#ed-landmark').val(landmark);
+    $(this).find('#ed-country').text(country);
+    $(this).find('#ed-city').text(city);
+    $(this).find('#ed-landmark').text(landmark);
 
     /*$.ajax({
         method: 'POST',
@@ -404,24 +403,26 @@ $('body').on('click', '.see-more', function(){
 
 });
 
+//update function
 
 function update(action){
     let data = {
         action: action,
-        country: $('#ed-country').val(),
-        city: $('#ed-city').val(),
-        landmark: $('#ed-landmark').val(),  
+        editCountry: $('#ed-country').val(),
+        editCity: $('#ed-city').val(),
+        editLandmark: $('#ed-landmark').val(),
+        marker: $('.edit-field').val()  
       
     };
 
     $.ajax({
         url: 'editRow.php',
-        type: 'POST',
+        method: 'POST',
         data: data,
         success: function (){
            console.log('edit ajax posted')
            $.magnificPopup.close();
-            // displayData();           
+            displayData();           
         }
     })
 }

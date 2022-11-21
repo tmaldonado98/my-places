@@ -38,31 +38,30 @@ if (isset($_POST['update'])) {
 // if (isset($_GET['populate'])) 
 if (isset($_POST['action'])) {
     if ($_POST['action'] == 'update') {
-        updatePhp();
+        // updatePhp();
+        $edcountry = $_POST['editCountry'];
+        $edcity = $_POST['editCity'];
+        $edlandmark = $_POST['editLandmark'];
+        // $position = 0;
+        // $marker = $_POST['marker'];    
+        // position= '$position'
+        
+        $query = "UPDATE places_table SET country= '$edcountry', city= '$edcity', landmark= '$edlandmark' ";
+        
+        $update = mysqli_query($con, $query);
+        
+        
+        if ($update) {
+                $_SESSION['status'] = "<p>Your information has been updated</p>";
+                // header('location: places.php');
+            };
     }
 }
 
-function updatePhp(){
-    global $con;
-    // global $marker;
+// function updatePhp(){
+    // global $con;
 
-    $edcountry = $_POST['editCountry'];
-    $edcity = $_POST['editCity'];
-    $edlandmark = $_POST['editLandmark'];
-    // $position = 0;
-    $marker = $_POST['editid'];    
-    // position= '$position'
-    
-    $query = "UPDATE places_table SET country= '$edcountry', city= '$edcity', landmark= '$edlandmark' WHERE marker= $marker";
-    
-    $update = mysqli_query($con, $query);
-
-
-    if ($update) {
-            $_SESSION['status'] = "<p>Your information has been updated</p>";
-            // header('location: places.php');
-        };
-}
+// }
 
 /*
 function populateFields(){
