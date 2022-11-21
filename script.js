@@ -246,13 +246,13 @@ function insertData(action){
         $.ajax({        
             type: 'GET',
             url: 'data.php',
-            dataType: 'html',
+            dataType: 'text',
             success: function(result){
                 let loadedData = $('#container-table-btns').html(result);
                 loadedData;
                 console.log('test');
 
-                /*loadedData.find('tbody').sortable({
+                loadedData.find('tbody').sortable({
                     ///disables sortable for heading row
                     items: 'tr:not(#heading-row)',
                     distance: 20,
@@ -267,7 +267,7 @@ function insertData(action){
                         })
                     }
             
-                });*/
+                });
                 $('#country').val('');
                 $('#city').val('');
                 $('#landmark').val('');
@@ -277,7 +277,7 @@ function insertData(action){
             }
     });
 };
-/*
+
 function saveNewPositions(){
     let positions = [];
     $('.updated').each(function (){
@@ -295,7 +295,7 @@ function saveNewPositions(){
         }
     });   
 }
-*/
+
 
 ///AJAX EDIT ROW 
 
@@ -369,5 +369,62 @@ function modalDelete(rowData) {
 
 
 };
+
+//populating edit fields
+$('body').on('click', '.see-more', function(){
+    
+    let country = $(this).closest('#country').text();
+    let city = $(this).closest('#city').text();
+    let landmark = $(this).closest('#landmark').text();
+    let marker = $('.modal').val();
+    
+    $(this).closest('#ed-country').val(country);
+    $(this).closest('#ed-city').val(city);
+    $(this).closest('#ed-landmark').val(landmark);
+
+    /*$.ajax({
+        method: 'POST',
+        url: 'editRow.php',
+        dataType: 'text',
+        data: {
+                "populate_fields_post": 1,
+                "marker": marker,
+                data:data,
+                // "country": country,
+                // "city": city,
+                // "landmark": landmark,
+            } ,
+        success: function(response){
+            $('.edit-field').html(response);
+            // $('#ed-country').val(country);
+            // $('#ed-city').val(city);
+            // $('#ed-landmark').val(landmark);
+        }
+    })*/
+
+});
+
+
+function update(action){
+    let data = {
+        action: action,
+        country: $('#ed-country').val(),
+        city: $('#ed-city').val(),
+        landmark: $('#ed-landmark').val(),  
+      
+    };
+
+    $.ajax({
+        url: 'editRow.php',
+        type: 'POST',
+        data: data,
+        success: function (){
+           console.log('edit ajax posted')
+           $.magnificPopup.close();
+            // displayData();           
+        }
+    })
+}
+
 
 // debugger

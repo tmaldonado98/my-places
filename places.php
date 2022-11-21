@@ -36,6 +36,7 @@ $country = $_POST['country'];
 $city = $_POST['city'];
 $landmark = $_POST['landmark'];
 
+
 ////SEPARATED INSERT QUERY FROM FETCH ROW DATA QUERY TO PREVENT PHP PAGE FROM INSERTING ROW INTO DB TABLE AFTER PAGE REFRESH
 /*if (isset($_POST['submit'])) {
     $insert = mysqli_query($con, "INSERT INTO places(country, city, landmark) VALUES ('$country', '$city', '$landmark')"); 
@@ -81,25 +82,27 @@ echo "
                 <td>" . ucwords($row['city']) . "</td>
                 <td>" . ucwords($row['landmark']) . "</td>
                 
+                
                 <td class=container-see-more><a href=#$marker name=see-more class='see-more open-popup-link popup-with-zoom-anim'  value=$marker>See More</a>
                 </td>
                 
                 <div id=$marker name=modal class='modal zoom-anim-dialog mfp-hide' value=$marker>
                     <p id=modal-title><b>" . ucwords($row['landmark'])." ". ucwords($row['city'])." ". ucwords($row['country'])." " . "</b></p>
                     <input type=button onclick='modalDelete($marker)' class=modal-delete name=modal_delete value='Delete Place'>
-                    
+
+
                     <div class='edit-field' editid= $marker>
                         <span class=inputs>
                             <label for='country'><p>Country</p></label>
-                            <input class='text' id='ed-country' placeholder='Country' type='text' name='editCountry' value='". $rcountry ."'></input>
+                            <input class='text' id='ed-country' placeholder='Country' type='text' name='editCountry' value='$rcountry'></input>
                             <label for='city'><p>City</p></label>
-                            <input class='text' id='ed-city' placeholder='City' type='text' name='editCity' value='". $rcity ."'></input>
+                            <input class='text' id='ed-city' placeholder='City' type='text' name='editCity' value='$rcity'></input>
                             <label for='landmark'><p>Landmark</p></label>
-                            <input class='text' id='ed-landmark' placeholder='Landmark' type='text' name='editLandmark' value='". $rlandmark ."'></input>
+                            <input class='text' id='ed-landmark' placeholder='Landmark' type='text' name='editLandmark' value='$rlandmark'></input>
                         </span>
                         <br>
                         <div class=update-btn>
-                            <input class='btn1' type='button' name='update' value='Update'></input>
+                            <input class='btn1' onclick=update('update') type='button' name='update' value='Update'></input>
                         </div>
                     </div>
                     <h3>Average Weather</h3>
@@ -113,42 +116,38 @@ echo "
                         ";
                     }
                 }
-
+                // onclick=populateFields($marker)
                 //curly brackets to end the while loop and the if statement
                 // <form method='post' class=edit-form action='editRow.php' editid= $marker>
                 // <input type=button name=populate value='Edit Place' class=edit-btn> 
                 // <a href='delete-modal.php' value= $marker  id=remove-row name=delete>Remove Place</a>
+
+                
 /*
-$markerid=$_GET['editid'];
-// $marker = $row['marker'];    
-
-$populateFields = mysqli_query($con, "SELECT * FROM places WHERE marker='$markerid'");
-$singleRow = mysqli_fetch_assoc($populateFields);
-    $rcountry=$row['country'];
-    $rcity=$row['city'];
-    $rlandmark=$row['landmark'];
-
 // if (isset($_POST['update'])) 
 if (isset($_GET['populate'])) {
     populateFields();
 }
-
-function populateFields(){
-include "connect.php";
-$update = mysqli_query($con, "UPDATE places SET marker = '$markerid', country='$country', city='$city', landmark='$landmark' WHERE marker='$markerid'"); 
+$update = mysqli_query($con, "UPDATE places_table SET marker = '$markerid', country='$country', city='$city', landmark='$landmark' WHERE marker='$markerid'"); 
+// function populateFields(){}
+*/
 
                         
+  // $markerid='editid';
+                        // $populateFields = mysqli_query($con, "SELECT * FROM places_table WHERE marker='$marker'");
+                        // $singleRow = mysqli_fetch_assoc($populateFields);
+                        // $rcountry=$row['country'];
+                        // $rcity=$row['city'];
+                        // $rlandmark=$row['landmark'];
 
-*/
 
 // <a href='editRow.php?editid= $marker value= $marker  id='edit-row' name=edit></a>
  
 
 echo "    </table> <br>
-</div>" 
-?>
+</div>"; 
 
-<?php
+
 $select = ("SELECT * FROM places_table");
 $count = mysqli_query($con, $select);
 $rowcount = mysqli_num_rows($count);
@@ -190,25 +189,26 @@ echo "<p id=total-places ><b>Total Number Of Places: " . $rowcount . "</b></p>";
                 <h3 id="med-head">Add A New Place</h3>
                 <form id="add-place" method="post">
                     <div class="container-input">
-                        <label for="country"><p>Country</p></label>
+                        <!-- <label for="country"><p>Country</p></label> -->
                         <input class="text" id="country" placeholder="Country" type="text" name="country"></input>
                         <!-- onkeyup="countrySuggestion(this.value) -->
                         <p><span id='country-sug'></span></p>
                     </div>
                     <div class="container-input">
-                        <label for="city"><p>City</p></label>
+                        <!-- <label for="city"><p>City</p></label> -->
                         <input class="text" id="city" placeholder="City" type="text" name="city" ></input>
                         <!-- onkeyup="citySuggestion(this.value)" -->
                         <p><span id='city-sug'></span></p>
                     </div>
                     <div class="container-input">
-                        <label for="landmark"><p>Landmark</p></label>
+                        <!-- <label for="landmark"><p>Landmark</p></label> -->
                         <input class="text" id="landmark" placeholder="Landmark" type="text" name="landmark"></input>
                     </div>
+                </form>
+
                     <div id="container-btn1">
                         <input id="btn1" type="button" onclick="insertData('insert')" name="submit" value="Add New Place"></input>
                     </div>
-                </form>
                     
             </div>
         </div>
