@@ -78,12 +78,12 @@ echo "
 
                 </td>
 
-                <td>" . ucwords($row['country']) . "</td>
-                <td>" . ucwords($row['city']) . "</td>
-                <td>" . ucwords($row['landmark']) . "</td>
+                <td id=country-text>" . ucwords($row['country']) . "</td>
+                <td id=city-text>" . ucwords($row['city']) . "</td>
+                <td id=landmark-text>" . ucwords($row['landmark']) . "</td>
                 
                 
-                <td class=container-see-more><a href=#$marker name=see-more class='see-more open-popup-link popup-with-zoom-anim'  value=$marker>See More</a>
+                <td class=container-see-more><a href=#$marker name=see-more class='see-more open-popup-link popup-with-zoom-anim'  value=$marker editid=$marker>See More</a>
                 </td>
                 
                 <div id=$marker name=modal class='modal zoom-anim-dialog mfp-hide' value=$marker>
@@ -91,14 +91,14 @@ echo "
                     <input type=button onclick='modalDelete($marker)' class=modal-delete name=modal_delete value='Delete Place'>
 
 
-                    <div class='edit-field' editid= $marker value= $marker>
+                    <div class='edit-field' editid=$marker>
                         <span class=inputs>
                             <label for='country'><p>Country</p></label>
-                            <input class='text' id='ed-country' placeholder='Country' type='text' name='editCountry'></input>
+                            <input class='text' id='ed-country' placeholder='Country' type='text' name='editCountry' ></input>
                             <label for='city'><p>City</p></label>
-                            <input class='text' id='ed-city' placeholder='City' type='text' name='editCity'></input>
+                            <input class='text' id='ed-city' placeholder='City' type='text' name='editCity' ></input>
                             <label for='landmark'><p>Landmark</p></label>
-                            <input class='text' id='ed-landmark' placeholder='Landmark' type='text' name='editLandmark'></input>
+                            <input class='text' id='ed-landmark' placeholder='Landmark' type='text' name='editLandmark' ></input>
                         </span>
                         <br>
                         <div class=update-btn>
@@ -120,7 +120,6 @@ echo "
                 //curly brackets to end the while loop and the if statement
                 // <form method='post' class=edit-form action='editRow.php' editid= $marker>
                 // <input type=button name=populate value='Edit Place' class=edit-btn> 
-                // <a href='delete-modal.php' value= $marker  id=remove-row name=delete>Remove Place</a>
 
                 
 /*

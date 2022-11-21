@@ -50,16 +50,18 @@ echo "
                 <div id=$marker name=modal class='modal zoom-anim-dialog mfp-hide' value=$marker>
                     <p id=modal-title><b>" . ucwords($row['landmark'])." ". ucwords($row['city'])." ". ucwords($row['country'])." " . "</b></p>
                     <input type=button onclick='modalDelete($marker)' class=modal-delete name=modal_delete value='Delete Place'>
+                    
                     <div class='edit-field' editid= $marker>
                         <span class=inputs>
                             <label for='country'><p>Country</p></label>
-                            <input class='text' id='ed-country' placeholder='Country' type='text' name='editCountry' value='". $rcountry ."'></input>
+                            <input class='text' id='ed-country' placeholder='Country' type='text' name='editCountry' >" .$country. "</input>
                             <label for='city'><p>City</p></label>
-                            <input class='text' id='ed-city' placeholder='City' type='text' name='editCity' value='". $rcity ."'></input>
+                            <input class='text' id='ed-city' placeholder='City' type='text' name='editCity' >$city</input>
                             <label for='landmark'><p>Landmark</p></label>
-                            <input class='text' id='ed-landmark' placeholder='Landmark' type='text' name='editLandmark' value='". $rlandmark ."'></input>
+                            <input class='text' id='ed-landmark' placeholder='Landmark' type='text' name='editLandmark' >$landmark</input>
                         </span>
                         <br>
+                        
                         <div class=update-btn>
                             <input class='btn1' onclick=update('update') type='button' name='update' value='Update'></input>
                         </div>

@@ -370,16 +370,34 @@ function modalDelete(rowData) {
 };
 
 //populating edit fields
-$('body').on('click', '.see-more', function(){
+$('body').on('click', 'a[name=see-more]', function(){
+        
+    // let marker = $(this).data('id');
+    let country = $(this).siblings('#country-text').val();
+    let city = $(this).siblings('#city-text').val();
+    let landmark = $(this).siblings('#landmark-text').val();
+
+    // console.log(country)
+    // $('#ed-country').val(country);
+    // $('#ed-city').val(city);
+    // $('#ed-landmark').val(landmark);
     
-    let country = $(this).find('#country').text();
-    let city = $(this).find('#city').text();
-    let landmark = $(this).find('#landmark').text();
-    let marker = $('.modal').val();
     
-    $(this).find('#ed-country').text(country);
-    $(this).find('#ed-city').text(city);
-    $(this).find('#ed-landmark').text(landmark);
+    /*
+    let editField = $('.edit-field2');
+    $.ajax({
+        method: 'GET',
+        url: 'editRow.php',
+        data: {field: editField},
+        dataType: 'html',
+        success: function(data){
+            $('.edit-field').html(data)
+        }
+    });*/
+
+    // $.get('.edit-field', function(){
+
+    // })
 
     /*$.ajax({
         method: 'POST',
@@ -403,7 +421,6 @@ $('body').on('click', '.see-more', function(){
 
 });
 
-//update function
 
 function update(action){
     let data = {
@@ -411,7 +428,7 @@ function update(action){
         editCountry: $('#ed-country').val(),
         editCity: $('#ed-city').val(),
         editLandmark: $('#ed-landmark').val(),
-        marker: $('.edit-field').val()  
+        // marker: $('.see-more').data('id')  
       
     };
 
@@ -419,8 +436,9 @@ function update(action){
         url: 'editRow.php',
         method: 'POST',
         data: data,
-        success: function (){
+        success: function (response){
            console.log('edit ajax posted')
+           console.log(response);
            $.magnificPopup.close();
             displayData();           
         }
