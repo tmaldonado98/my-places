@@ -3,11 +3,11 @@ if ( window.history.replaceState ) {
 };
 // let focusTop = $('body').find(('input[name=country]')).focus();
 
-$(document).ready(()=>{
-    $('.text').attr('style', 'text-transform:capitalize');
+// $(document).ready(()=>{
+    // $('.text').attr('style', 'text-transform:capitalize');
     // $('.text').val('');
     // focusTop;
-});
+// });
 
 $('#add-place').click(()=>{
     if ($('#country').val() == '' && $('#city').val() == '' && $('#landmark').val() == '') {
@@ -32,9 +32,9 @@ $('#btn1').attr('style', 'visibility:hidden');
 /// AND INVALIDATES NUMBER KEYS. IT DOES NOT CAPITALIZE EACH FIRST LETTER FOR DB ENTRIES
 // IT ALSO ALLOWS FOR COMMAS, PERIODS, SHIFT AND CAPS BUTTONS.
 
-$('input').keypress((e)=>{
+$('body').on('keypress', 'input', function(e){
     $('.text').attr('style', 'text-transform:capitalize');
-
+    
     if (e.keyCode > 47 && e.keyCode < 65 && e.keyCode != 32) {
         return false;
     }
@@ -54,6 +54,24 @@ $('#city').keypress(()=>{
 });
 $('#landmark').keypress(()=>{
     if ($('#landmark').val().length >= 25) {
+        return false;
+    };
+});
+
+$('body').on('keypress', '#ed-country', function(){
+    if ($('#ed-country').val().length >= 25) {
+        return false;
+    };
+});
+
+$('body').on('keypress', '#ed-city', function(){
+    if ($('#ed-city').val().length >= 25) {
+        return false;
+    };
+});
+
+$('body').on('keypress', '#ed-landmark', function(){
+    if ($('#ed-landmark').val().length >= 25) {
         return false;
     };
 });
@@ -123,66 +141,6 @@ $('body').on('click', '#sel-all', function(){
         $('.del-sel').removeClass('del-sel-visible');        
     } 
 });
-
-
-
-///THESE TWO BLOCKS OF CODE DISABLE DELETE BUTTON IF NO CHECKBOXES ARE SELECTED
-// AND ENABLES THE BTN WHEN BOXES ARE SELECTED
-
-// $('body').on('click', '#del-sel', function(){
-//     if ($('.checkbox:checked').length > 0) {
-//         return true;
-//     } 
-//     else if ($('.checkbox:checked').length == 0) {
-//         return false
-//     }
-// });
-
-///updated code on rows.js.... delete later
-/*
-$('.checkbox').change(()=>{  
-    // if ($('.checkbox').prop('checked') == false) {
-    //     $('#del-sel').attr("disabled", true);
-    // }  if ($('.checkbox').prop('checked') == true) {
-    //     $('#del-sel').attr("disabled", false);
-    // } 
-
-
-    // if ($(this).prop('checked', true)) {
-    //     $('#del-sel').attr("disabled") == false;
-    // } else {
-    //     $('#del-sel').attr("disabled") ==true;
-    // }
-
-if ($(this).prop('checked', true)) {
-        $('#del-sel').prop("disabled", false);
-    } else {
-        if ($(this).prop('checked', false)) {
-            $('#del-sel').prop("disabled", true);
-        }
-    } 
-    
-
-    // else {
-    //     $('#del-sel').prop("disabled", true);
-    // } 
-    
-     
-
-    //  if ($(this).prop('checked') == false) {
-    //     $('#del-sel').attr('disabled', false);
-    // }
-});
-*/
-
-/*
-$('body').on('click', '.see-more', function(){
-    $(this).siblings('.modal').fadeIn('100ms')
-});
-    
-$('body').on('click', '.close', function(){
-    $(this).closest('.modal').fadeOut('100ms');  
-});*/
 
 
 ///Suggestions function
@@ -296,24 +254,6 @@ function saveNewPositions(){
 }
 
 
-///AJAX EDIT ROW 
-
-/*
-function editRowAjax(){
-    $.ajax({
-        type: 'GET',
-        url: 'editRow.php?editid='. $marker,
-        dataType: 'html',
-        success: function(data){
-            $('#edit-row').append('<div>');
-            $('#edit-row div').append(data);
-            $('#edit-row div content').append('</div>');
-        }
-    })
-}
-
-*/
-
 // AJAX DELETE
 
 function deleteData(){
@@ -335,10 +275,6 @@ function deleteData(){
                 success: function () {
                     console.log('deleted');
                     displayData();
-                    // loadTotalPlaces();
-
-                    // $('body').find($('.checkbox:checked').closest('.data-row')).fadeOut('250ms');
-                    // $('.del-sel').removeClass('del-sel-visible');
                 }
             })
             
@@ -369,7 +305,7 @@ function modalDelete(rowData) {
 
 };
 
-
+///AJAX EDIT ROW
 function update(action){
     let data = {
         action: action,
@@ -378,7 +314,7 @@ function update(action){
         editLandmark: $('#ed-landmark').val(),
         // marker: $('.see-more').data('id')  
       
-    };
+    }
 
     $.ajax({
         url: 'editRow.php',
@@ -386,13 +322,34 @@ function update(action){
         dataType: 'text',
         data: data,
         success: function (response){
-           console.log('edit ajax posted')
-           console.log(response);
+
+            $.ajax({
+                url: 'data.php',
+                method: 'POST',
+                dataType: 'text',
+                data: data,
+                success: function(){
+                    displayData();           
+                    console.log('edit ajax posted')
+
+                }
+            });
+
+        //    console.log(response);
            $.magnificPopup.close();
-            displayData();           
         }
     })
 }
+$('div[name=edit_field]').css('transition','250ms');
+$('div[name=edit_field]').css('visibility','hidden');
+
+// $('body').on('load', 'div[name=edit_field]', function(){
+// });
+
+$('body').on('click', '#modal-edit', function(){
+    $('div[name=edit_field]').css('transition','250ms')
+    $('div[name=edit_field]').css('visibility','visible')
+});
 
 
 // debugger

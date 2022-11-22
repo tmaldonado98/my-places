@@ -5,16 +5,33 @@
     /* position: fixed; */
     z-index: 10;
     top: 5%;
+    overflow-y: scroll;
 }
 
-.modal::backdrop{
-    background: rgba(0, 0, 0, 0.31);
-    /* opacity: 0.4; */
+#modal-title{
+    text-align: center;
+    font-size: 2.25rem;
 }
 
-.close{
-    position:relative;
-    left: 95%;
-    width: fit-content;
-    cursor: pointer;
+#search-engine{
+    height: 50vh;
+}
+
+#container-ed-del{
+    /* border: 5px solid black; */
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+}
+.edit-field{
+    transition: 250ms;
+}
+
+/*
+.edit-field-visible{
+    visibility: visible;
+}*/
+
+.fact-boxes{
+    width: 50%;
 }

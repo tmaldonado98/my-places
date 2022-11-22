@@ -91,27 +91,49 @@ echo "
                 
                 <div id=$marker name=modal class='modal zoom-anim-dialog mfp-hide' value=$marker>
                     <p id=modal-title><b>" . ucwords($row['landmark'])." ". ucwords($row['city'])." ". ucwords($row['country'])." " . "</b></p>
-                    <input type=button onclick='modalDelete($marker)' class=modal-delete name=modal_delete value='Delete Place'>
+                    <hr>
 
-
-                    <div class='edit-field' editid=$marker>
-                        <span class=inputs>
-                            <label for='country'><p>Country</p></label>
-                            <input class='text' id='ed-country' placeholder='Country' type='text' name='editCountry' value='$rcountry '></input>
-                            <label for='city'><p>City</p></label>
-                            <input class='text' id='ed-city' placeholder='City' type='text' name='editCity' value='$rcity'></input>
-                            <label for='landmark'><p>Landmark</p></label>
-                            <input class='text' id='ed-landmark' placeholder='Landmark' type='text' name='editLandmark' value='$rlandmark'></input>
-                        </span>
-                        <br>
-                        <div class=update-btn>
-                            <input class='btn1' onclick=update('update') type='button' name='update' value='Update'></input>
-                        </div>
+                    <div id=search-engine>
+                        <script async src='https://cse.google.com/cse.js?cx=22bdf86666de74d21'></script>
+                        <div class='gcse-search'></div>
                     </div>
-                    <h3>Average Weather</h3>
-                    <h3>Did You Know?</h3>
-                    <h3>Some Facts About This Place</h3>
-                        
+                    <hr>
+
+                    <div id=container-ed-del>
+                        <input type='button' name='edit' id=modal-edit value='Edit'></input>
+                        <input type=button onclick='modalDelete($marker)' id=modal-delete name=modal_delete value='Delete Place'>
+                    </div>
+                        <div class='edit-field' name=edit_field editid=$marker>
+                            <span class=inputs>
+                                <label for='country'><p>Country</p></label>
+                                <input class='ed-text' id='ed-country' placeholder='Country' type='text' name='editCountry' value='$rcountry '></input>
+                                <label for='city'><p>City</p></label>
+                                <input class='ed-text' id='ed-city' placeholder='City' type='text' name='editCity' value='$rcity'></input>
+                                <label for='landmark'><p>Landmark</p></label>
+                                <input class='ed-text' id='ed-landmark' placeholder='Landmark' type='text' name='editLandmark' value='$rlandmark'></input>
+                            </span>
+                            <br>
+                            <div class=update-btn>
+                                <input class='btn1' onclick=update('update') type='button' name='update' value='Update'></input>
+                            </div>
+                        </div>
+
+                    <div id=map>
+                        <span>Map will go here </span>
+                    </div>
+
+                    <div id=container-facts>
+                        <div class=fact-boxes>make all same class width 50%</div>
+                        <div class=fact-boxes>Currency: </div>
+                        <div class=fact-boxes>Average Weather: </div>
+                        <div class=fact-boxes>Language(s) Spoken: </div>
+                        <div class=fact-boxes>Population Size: </div>
+                        <div class=fact-boxes>Ethnic Makeup: </div>
+                        <div class=fact-boxes>Religious Demographics: </div>
+                        <div class=fact-boxes>Age Demographics: </div>
+                        <div class=fact-boxes>Look for a wikipedia/encyclopedia api to insert some historical/cultural facts here</div>
+                    </div>
+                                            
                 </div>
             </div class=drag-container>   
         </tr>
