@@ -57,10 +57,13 @@ echo    '<div id=container-table>';
         echo '';
         $result = array();
         if($data = mysqli_query($con, "SELECT * FROM places_table ORDER BY position")){
-            while ($row = $data->fetch_assoc()) {
+            while ($row = mysqli_fetch_assoc($data)) {
                 $result[] = $row;
                 $marker = $row['marker'];
                 $position = $row['position'];
+                $rcountry=ucwords($row['country']);
+                $rcity=ucwords($row['city']);
+                $rlandmark=ucwords($row['landmark']);
 echo "            
         <tr data-marker=$marker data-position=$position name=row class='data-row draggable ui-state-default ui-widget-content'  value=$marker>
             <div class=drag-container>
@@ -94,11 +97,11 @@ echo "
                     <div class='edit-field' editid=$marker>
                         <span class=inputs>
                             <label for='country'><p>Country</p></label>
-                            <input class='text' id='ed-country' placeholder='Country' type='text' name='editCountry' ></input>
+                            <input class='text' id='ed-country' placeholder='Country' type='text' name='editCountry' value='$rcountry '></input>
                             <label for='city'><p>City</p></label>
-                            <input class='text' id='ed-city' placeholder='City' type='text' name='editCity' ></input>
+                            <input class='text' id='ed-city' placeholder='City' type='text' name='editCity' value='$rcity'></input>
                             <label for='landmark'><p>Landmark</p></label>
-                            <input class='text' id='ed-landmark' placeholder='Landmark' type='text' name='editLandmark' ></input>
+                            <input class='text' id='ed-landmark' placeholder='Landmark' type='text' name='editLandmark' value='$rlandmark'></input>
                         </span>
                         <br>
                         <div class=update-btn>
@@ -135,9 +138,7 @@ $update = mysqli_query($con, "UPDATE places_table SET marker = '$markerid', coun
   // $markerid='editid';
                         // $populateFields = mysqli_query($con, "SELECT * FROM places_table WHERE marker='$marker'");
                         // $singleRow = mysqli_fetch_assoc($populateFields);
-                        // $rcountry=$row['country'];
-                        // $rcity=$row['city'];
-                        // $rlandmark=$row['landmark'];
+
 
 
 // <a href='editRow.php?editid= $marker value= $marker  id='edit-row' name=edit></a>

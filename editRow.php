@@ -29,17 +29,16 @@ if (isset($_POST['update'])) {
                 
             }*/            
             
-            if (isset($_POST['action'])) {
-                if ($_POST['action'] == 'update') {
-                    // updatePhp();
-                    $markerid=$_POST['editid'];
-                    $edcountry = $_POST['editCountry'];
-                    $edcity = $_POST['editCity'];
-                    $edlandmark = $_POST['editLandmark'];
+    if (isset($_POST['action'])) {
+        if ($_POST['action'] == 'update') {
+            // updatePhp();
+            $markerid=$_POST['editid'];
+            $edcountry = $_POST['editCountry'];
+            $edcity = $_POST['editCity'];
+            $edlandmark = $_POST['editLandmark'];
 
-
-                    $query = "UPDATE places_table SET country= '$edcountry', city= '$edcity', landmark= '$edlandmark', position= '0' WHERE marker= $markerid";         
-                    $update = mysqli_query($con, $query);
+            $query = "UPDATE places_table SET country= '$edcountry', city= '$edcity', landmark= '$edlandmark', position= '0' WHERE marker= '$markerid'";         
+            $update = mysqli_query($con, $query);
             
 
 /*marker= $markerid,
