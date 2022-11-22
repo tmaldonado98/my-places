@@ -1,5 +1,6 @@
 <?php     
 include "connect.php";
+// include "scraperapi.php";
 
 if (isset($_POST['update'])) {
     foreach ($_POST['positions'] as $position) {
@@ -25,6 +26,7 @@ if (isset($_POST['update'])) {
     <link rel="stylesheet" href="dialog-styling.css">
     <link href="./jquery-ui-1.13.2.custom/jquery-ui.css">
     <link href="./jquery-ui-1.13.2.custom/jquery-ui.min.css">
+    <script async src='https://cse.google.com/cse.js?cx=22bdf86666de74d21'></script>
 </head>
 <body>
 <section id="want">
@@ -90,18 +92,17 @@ echo "
                 </td>
                 
                 <div id=$marker name=modal class='modal zoom-anim-dialog mfp-hide' value=$marker>
-                    <p id=modal-title><b>" . ucwords($row['landmark'])." ". ucwords($row['city'])." ". ucwords($row['country'])." " . "</b></p>
+                    <p id=modal-title><b> <span id=m-landmark>" . ucwords($row['landmark'])."</span> <span id=m-city>". ucwords($row['city'])."</span> <span id=m-country>". ucwords($row['country'])."</span></b></p>
                     <hr>
 
                     <div id=search-engine>
-                        <script async src='https://cse.google.com/cse.js?cx=22bdf86666de74d21'></script>
-                        <div class='gcse-search'></div>
+                        <div class='gcse-searchresults-only'></div>                        
                     </div>
                     <hr>
 
                     <div id=container-ed-del>
-                        <input type='button' name='edit' id=modal-edit value='Edit'></input>
-                        <input type=button onclick='modalDelete($marker)' id=modal-delete name=modal_delete value='Delete Place'>
+                        <input type='button' name='edit' id=modal-edit value='Edit Place'></input>
+                        <input type=button onclick='modalDelete($marker)' id=modal-delete name=modal_delete value='Remove Place'>
                     </div>
                         <div class='edit-field' name=edit_field editid=$marker>
                             <span class=inputs>
@@ -123,14 +124,15 @@ echo "
                     </div>
 
                     <div id=container-facts>
-                        <div class=fact-boxes>make all same class width 50%</div>
-                        <div class=fact-boxes>Currency: </div>
+                        <div class=fact-boxes>Capital City: </div>
+                        <div class=fact-boxes>Local Currency: </div>
                         <div class=fact-boxes>Average Weather: </div>
                         <div class=fact-boxes>Language(s) Spoken: </div>
                         <div class=fact-boxes>Population Size: </div>
                         <div class=fact-boxes>Ethnic Makeup: </div>
                         <div class=fact-boxes>Religious Demographics: </div>
                         <div class=fact-boxes>Age Demographics: </div>
+
                         <div class=fact-boxes>Look for a wikipedia/encyclopedia api to insert some historical/cultural facts here</div>
                     </div>
                                             
@@ -141,6 +143,7 @@ echo "
                         ";
                     }
                 }
+
                 // onclick=populateFields($marker)
                 //curly brackets to end the while loop and the if statement
                 // <form method='post' class=edit-form action='editRow.php' editid= $marker>
@@ -148,6 +151,40 @@ echo "
 
                 
 /*
+                        /*$ch = curl_init();
+
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_HEADER, false);
+
+
+$dataSerp = [
+    "q" => $country, $city, $landmark,  
+   "tbm" => "isch",
+   "num" => "5",
+];
+
+curl_setopt($ch, CURLOPT_URL,   'https://customsearch.googleapis.com/customsearch/v1?key=AIzaSyAHakO0K7mac852qUCsJxSq0sozCCvy-xA&cx=22bdf86666de74d21&filter=1&q=france&searchType=image');
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    "Content-Type: application/json",
+    // $dataSerp
+    // "apikey: 1a3be160-2e79-11ed-85ee-2bfcdd59e9c8",  
+));
+$response = curl_exec($ch);
+curl_close($ch);
+
+$json = json_decode($response, true);
+
+var_dump($json);
+
+
+// curl --get https://serpapi.com/search \
+//  -d engine='google' \
+//  -d q='Coffee' \
+//  -d api_key='secret_api_key'
+
+
+
+
 // if (isset($_POST['update'])) 
 if (isset($_GET['populate'])) {
     populateFields();
@@ -263,6 +300,7 @@ echo "<p id=total-places ><b>Total Number Of Places: " . $rowcount . "</b></p>";
 <script defer type="text/javascript" src="script.js"></script>
 <script defer type="text/javascript" src="rows.js"></script>
 <script defer src="modals-script.js"></script>
+<!-- <script defer src="https://www.googleapis.com/customsearch/v1?key=AIzaSyAHakO0K7mac852qUCsJxSq0sozCCvy-xA&cx=22bdf86666de74d21&q=search query"></script> -->
 
 </footer>
 

@@ -36,32 +36,7 @@ $(document).ready(function(){
 
 });
 
-
-// function selectedRow(){
-    // let rows = $('.data-row');
-    // let checkbox = $('.checkbox');
- 
-    // for (let i = 0; i < rows.length; i++) {
-
-
-    //     // $('body').on('focus blur', checkbox[i], function(){
-    //     // })         
-        
-    //     // })
-    //     $(checkbox[i]).change(()=>{
-    //         if ($(checkbox[i]).attr('checked', true)) {
-    //             $(rows[i]).addClass('selectedRow')
-    //         }
-    //         else if ($(checkbox[i]).attr('checked', false)) {
-    //             $(rows[i]).removeClass('selectedRow')
-    //         }
-            
-    //     });
-    // }
-// };
-
 $('body').on('focus blur', '.checkbox', function(){
-    // selectedRow()
     let rows = $('.data-row');
     let checkbox = $('.checkbox');
  
@@ -87,4 +62,3 @@ $('body').on('change', '#sel-all', function (e) {
         $('.data-row').removeClass('selectedRow')
     }
 });
-// debugger

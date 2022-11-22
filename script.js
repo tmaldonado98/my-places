@@ -340,16 +340,30 @@ function update(action){
         }
     })
 }
-$('div[name=edit_field]').css('transition','250ms');
-$('div[name=edit_field]').css('visibility','hidden');
 
-// $('body').on('load', 'div[name=edit_field]', function(){
-// });
+
+$('div[name=edit_field]').css('transition','250ms');
+$('div[name=edit_field]').css('opacity','0');
+
 
 $('body').on('click', '#modal-edit', function(){
     $('div[name=edit_field]').css('transition','250ms')
-    $('div[name=edit_field]').css('visibility','visible')
+    $('div[name=edit_field]').css('opacity','1')
+});
+
+$('body').on('click', '.mfp-close', function(){
+    $('div[name=edit_field]').css('transition','250ms')
+    $('div[name=edit_field]').css('opacity','0')
+    window.history.replaceState(null, null, "?q=");
+///add also click on area outside modal
 });
 
 
-// debugger
+$('body').on('click', 'a[name=see-more]', function(){
+    let mCountry = $('#m-country').text();
+    let mCity = $('#m-city').text();
+    let mLandmark = $('#m-landmark').text();
+    console.log(mCountry);
+    window.history.replaceState(null, null, "?q="+mCountry+"&"+mCity+"&"+mLandmark);
+
+});
