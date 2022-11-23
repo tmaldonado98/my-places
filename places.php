@@ -96,7 +96,6 @@ echo "
                     <hr>
 
                     <div id=search-engine>
-                        <div class='gcse-searchresults-only'></div> 
                                               
                     </div>
                     <hr>

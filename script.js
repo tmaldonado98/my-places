@@ -1,7 +1,7 @@
 if ( window.history.replaceState ) {
   window.history.replaceState( null, null, window.location );
 };
-// let focusTop = $('body').find(('input[name=country]')).focus();
+let focusTop = $('body').find(('input[name=country]')).focus();
 
 // $(document).ready(()=>{
     // $('.text').attr('style', 'text-transform:capitalize');
@@ -228,7 +228,7 @@ function insertData(action){
                 $('#country').val('');
                 $('#city').val('');
                 $('#landmark').val('');
-                // focusTop;
+                focusTop;
                 $('#btn1').attr('style', 'visibility:hidden');
 
             }
@@ -355,11 +355,10 @@ $('body').on('click', '.mfp-close, .mfp-content', function(){
     $('div[name=edit_field]').css('transition','250ms')
     $('div[name=edit_field]').css('opacity','0')
     window.history.replaceState(null, null, "?q=");
-    let removeScript = $('head').find('script[src="https://cse.google.com/cse.js?cx=22bdf86666de74d21"]').remove();
-    removeScript;
-    if (removeScript) {
-        console.log('script removed successfully!')
-    }
+    
+    $('head').find('script[src="https://cse.google.com/cse.js?cx=22bdf86666de74d21"]').remove();
+    $('head').find('script[src="https://www.google.com/cse/static/element/f275a300093f201a/cse_element__en.js?usqp=CAI%3D"]').remove();
+    $('.gcse-searchresults-only').remove();
 });
 
 $('body').keydown(function(e){
@@ -367,18 +366,19 @@ $('body').keydown(function(e){
         $('div[name=edit_field]').css('transition','250ms')
         $('div[name=edit_field]').css('opacity','0')
         window.history.replaceState(null, null, "?q=");
-        let removeScript = $('head').find('script[src="https://cse.google.com/cse.js?cx=22bdf86666de74d21"]').remove();
-        removeScript;
-        if (removeScript) {
-            console.log('script removed successfully!')
-        }
+        
+        $('head').find('script[src="https://cse.google.com/cse.js?cx=22bdf86666de74d21"]').remove();
+        $('head').find('script[src="https://www.google.com/cse/static/element/f275a300093f201a/cse_element__en.js?usqp=CAI%3D"]').remove();
+        $('.gcse-searchresults-only').remove();
     }
 });
 
 
 $('body').on('click', 'a[name=see-more]', function(){
-    $('img').attr('loading', 'lazy');
-    $('head').append("<script async src='https://cse.google.com/cse.js?cx=22bdf86666de74d21'></script>")
+    // $('img').attr('loading', 'lazy');
+    $('#search-engine').append("<div class='gcse-searchresults-only'></div>");
+    $('head').append("<script async=true src='https://cse.google.com/cse.js?cx=22bdf86666de74d21'></script>")
+    $('.gs-previewLink').attr('target', '_blank');
     // $.getScript( 'https://cse.google.com/cse.js?cx=22bdf86666de74d21', function( data, textStatus, jqxhr ) {
     //     console.log(':)');
     // });
@@ -388,5 +388,10 @@ $('body').on('click', 'a[name=see-more]', function(){
     let mLandmark = $('#m-landmark').text();
     console.log(mCountry);
     window.history.replaceState(null, null, "?q="+mCountry +' ' + mCity +' ' + mLandmark +' ');
-
 });
+
+// $('.gs-previewLink').on('load', function() {
+//     $('.gs-previewLink').attr('target', '_blank');
+// })
+
+
