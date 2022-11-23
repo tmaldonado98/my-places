@@ -44,6 +44,10 @@
     height: 30vh;
 }
 
+.gsc-cursor{
+    font-size: 1rem;
+}
+
 /*              */
 
 #container-ed-del{

@@ -355,6 +355,11 @@ $('body').on('click', '.mfp-close, .mfp-content', function(){
     $('div[name=edit_field]').css('transition','250ms')
     $('div[name=edit_field]').css('opacity','0')
     window.history.replaceState(null, null, "?q=");
+    let removeScript = $('head').find('script[src="https://cse.google.com/cse.js?cx=22bdf86666de74d21"]').remove();
+    removeScript;
+    if (removeScript) {
+        console.log('script removed successfully!')
+    }
 });
 
 $('body').keydown(function(e){
@@ -362,15 +367,26 @@ $('body').keydown(function(e){
         $('div[name=edit_field]').css('transition','250ms')
         $('div[name=edit_field]').css('opacity','0')
         window.history.replaceState(null, null, "?q=");
+        let removeScript = $('head').find('script[src="https://cse.google.com/cse.js?cx=22bdf86666de74d21"]').remove();
+        removeScript;
+        if (removeScript) {
+            console.log('script removed successfully!')
+        }
     }
 });
 
 
 $('body').on('click', 'a[name=see-more]', function(){
+    $('img').attr('loading', 'lazy');
+    $('head').append("<script async src='https://cse.google.com/cse.js?cx=22bdf86666de74d21'></script>")
+    // $.getScript( 'https://cse.google.com/cse.js?cx=22bdf86666de74d21', function( data, textStatus, jqxhr ) {
+    //     console.log(':)');
+    // });
+
     let mCountry = $('#m-country').text();
     let mCity = $('#m-city').text();
     let mLandmark = $('#m-landmark').text();
     console.log(mCountry);
-    window.history.replaceState(null, null, "?q="+mCountry+"&"+mCity+"&"+mLandmark);
+    window.history.replaceState(null, null, "?q="+mCountry +' ' + mCity +' ' + mLandmark +' ');
 
 });

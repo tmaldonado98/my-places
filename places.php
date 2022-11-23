@@ -26,7 +26,7 @@ if (isset($_POST['update'])) {
     <link rel="stylesheet" href="dialog-styling.css">
     <link href="./jquery-ui-1.13.2.custom/jquery-ui.css">
     <link href="./jquery-ui-1.13.2.custom/jquery-ui.min.css">
-    <script async src='https://cse.google.com/cse.js?cx=22bdf86666de74d21'></script>
+    <!-- <script async src='https://cse.google.com/cse.js?cx=22bdf86666de74d21'></script> -->
 </head>
 <body>
 <section id="want">
@@ -261,7 +261,7 @@ echo "<p id=total-places ><b>Total Number Of Places: " . $rowcount . "</b></p>";
                 <form id="add-place" method="post">
                     <div class="container-input">
                         <!-- <label for="country"><p>Country</p></label> -->
-                        <input class="text" id="country" placeholder="Country" type="text" name="country"></input>
+                        <input autofocus class="text" id="country" placeholder="Country" type="text" name="country"></input>
                         <!-- onkeyup="countrySuggestion(this.value) -->
                         <p><span id='country-sug'></span></p>
                     </div>
