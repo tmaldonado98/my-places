@@ -13,9 +13,38 @@
     font-size: 2.25rem;
 }
 
+
+
+/*              */
+
 #search-engine{
     height: 50vh;
+    overflow: scroll;
 }
+
+
+.gsc-tabsArea{
+    display: none;
+}
+
+.gsc-positioningWrapper{
+    display: none;
+}
+
+.gsc-above-wrapper-area{
+    display: none;
+}
+
+.gsc-imageResult > .gsc-expansionArea{
+    display: flex;
+    overflow-x: scroll;
+}
+
+.gs-image{
+    height: 30vh;
+}
+
+/*              */
 
 #container-ed-del{
     /* border: 5px solid black; */
@@ -29,6 +58,8 @@
     visibility: visible;
 }*/
 
+
 .fact-boxes{
     width: 50%;
 }
+

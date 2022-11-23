@@ -96,7 +96,8 @@ echo "
                     <hr>
 
                     <div id=search-engine>
-                        <div class='gcse-searchresults-only'></div>                        
+                        <div class='gcse-searchresults-only'></div> 
+                                              
                     </div>
                     <hr>
 
@@ -144,37 +145,48 @@ echo "
                     }
                 }
 
-                // onclick=populateFields($marker)
                 //curly brackets to end the while loop and the if statement
                 // <form method='post' class=edit-form action='editRow.php' editid= $marker>
-                // <input type=button name=populate value='Edit Place' class=edit-btn> 
-
                 
 /*
-                        /*$ch = curl_init();
+                        
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_HEADER, false);
+        
+        
+        $dataSerp = [
+            "q" => $country, $city, $landmark,  
+           "tbm" => "isch",
+           "num" => "5",
+        ];
+        
+        curl_setopt($ch, CURLOPT_URL,   'https://customsearch.googleapis.com/customsearch/v1?key=AIzaSyAHakO0K7mac852qUCsJxSq0sozCCvy-xA&cx=22bdf86666de74d21&filter=1&q=france&searchType=image');
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+            "Content-Type: application/json",
+            // $dataSerp
+            // "apikey: 1a3be160-2e79-11ed-85ee-2bfcdd59e9c8",  
+        ));
+        $response = curl_exec($ch);
+        curl_close($ch);
+        
+        $json = json_decode($response, true);
+    echo '<pre>';
+        $dumped_json = var_dump($json);
+echo '</pre>';
 
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_HEADER, false);
+// image_results
+        $image_results = $dumped_json['link'];
 
+foreach($image_results as $result) {
+    $source = $result['string'];
 
-$dataSerp = [
-    "q" => $country, $city, $landmark,  
-   "tbm" => "isch",
-   "num" => "5",
-];
-
-curl_setopt($ch, CURLOPT_URL,   'https://customsearch.googleapis.com/customsearch/v1?key=AIzaSyAHakO0K7mac852qUCsJxSq0sozCCvy-xA&cx=22bdf86666de74d21&filter=1&q=france&searchType=image');
-curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-    "Content-Type: application/json",
-    // $dataSerp
-    // "apikey: 1a3be160-2e79-11ed-85ee-2bfcdd59e9c8",  
-));
-$response = curl_exec($ch);
-curl_close($ch);
-
-$json = json_decode($response, true);
-
-var_dump($json);
+    echo 
+    '<figure>
+        <img class=img src="'.$source.'">
+    </figure>';
+};
+                        /*
 
 
 // curl --get https://serpapi.com/search \
@@ -296,7 +308,6 @@ echo "<p id=total-places ><b>Total Number Of Places: " . $rowcount . "</b></p>";
 <!-- jQuery UI plugin -->
 <script defer src="./jquery-ui-1.13.2.custom/jquery-ui.js"></script>
 
-<!-- <script defer src="https://cdnjs.cloudflare.com/ajax/libs/TableDnD/0.9.1/jquery.tablednd.js" integrity="sha256-d3rtug+Hg1GZPB7Y/yTcRixO/wlI78+2m08tosoRn7A=" crossorigin="anonymous"></script> -->
 <script defer type="text/javascript" src="script.js"></script>
 <script defer type="text/javascript" src="rows.js"></script>
 <script defer src="modals-script.js"></script>

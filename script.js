@@ -351,11 +351,18 @@ $('body').on('click', '#modal-edit', function(){
     $('div[name=edit_field]').css('opacity','1')
 });
 
-$('body').on('click', '.mfp-close', function(){
+$('body').on('click', '.mfp-close, .mfp-content', function(){
     $('div[name=edit_field]').css('transition','250ms')
     $('div[name=edit_field]').css('opacity','0')
     window.history.replaceState(null, null, "?q=");
-///add also click on area outside modal
+});
+
+$('body').keydown(function(e){
+    if (e.keyCode === 27) {
+        $('div[name=edit_field]').css('transition','250ms')
+        $('div[name=edit_field]').css('opacity','0')
+        window.history.replaceState(null, null, "?q=");
+    }
 });
 
 
