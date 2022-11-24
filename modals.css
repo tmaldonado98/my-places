@@ -18,8 +18,9 @@
 /*              */
 
 #search-engine{
-    height: 50vh;
+    height: 65vh;
     overflow: scroll;
+    direction: rtl;
 }
 
 

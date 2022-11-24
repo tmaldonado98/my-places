@@ -1,7 +1,7 @@
-if ( window.history.replaceState ) {
-  window.history.replaceState( null, null, window.location );
-};
-let focusTop = $('body').find(('input[name=country]')).focus();
+// if ( window.history.replaceState ) {
+//   window.history.replaceState( null, null, window.location );
+// };
+// let focusTop = $('body').find(('input[name=country]')).focus();
 
 // $(document).ready(()=>{
     // $('.text').attr('style', 'text-transform:capitalize');
@@ -94,17 +94,6 @@ $('#print').click(()=>{
 
 ////THE FIRST BLOCK OF CODE SELECTS ALL BOXES WHEN SELECT ALL BTN IS CHECKED
 ///SECOND BLOCK MAKES THE CHECKED STATUS OF THE SELECT ALL BTN CONGRUENT W/ OTHER BTNS
-
-// $('#sel-all').change(()=>{
-//     if ($(this).prop('checked', true)) {
-//         $('input[type=checkbox]').prop("checked", $('#sel-all').prop("checked"));
-//         // $('#del-sel').attr('disabled', false);
-//     } 
-//     else if ($(this).prop('checked', false)) {
-//         $('.checkbox').prop("checked", false);
-//         // $('#del-sel').attr('disabled', true);
-//     }
-// });
 
 $('body').on('click', '#sel-all', function () {
         $('input[type=checkbox]').prop("checked", $('#sel-all').prop("checked"));
@@ -228,7 +217,7 @@ function insertData(action){
                 $('#country').val('');
                 $('#city').val('');
                 $('#landmark').val('');
-                focusTop;
+                // focusTop;
                 $('#btn1').attr('style', 'visibility:hidden');
 
             }
@@ -343,22 +332,45 @@ function update(action){
 
 
 $('div[name=edit_field]').css('transition','250ms');
-$('div[name=edit_field]').css('opacity','0');
+$('div[name=edit_field]').css('visibility','hidden');
 
+
+$('body').on('click', 'a[name=see-more]', function(){
+    $('#search-engine').append("<div class='gcse-searchresults-only'></div>");
+    $('head').append("<script async=true src='https://cse.google.com/cse.js?cx=22bdf86666de74d21'></script>")
+    
+    $('.gs-previewLink').attr('rel=noopener');
+
+    //rel= noreferrer
+    
+    let mCountry = $('#m-country').text();
+    let mCity = $('#m-city').text();
+    let mLandmark = $('#m-landmark').text();
+    console.log(mCountry);
+    window.history.replaceState(null, null, "?q="+mCountry +' ' + mCity +' ' + mLandmark +' ');
+});
 
 $('body').on('click', '#modal-edit', function(){
     $('div[name=edit_field]').css('transition','250ms')
-    $('div[name=edit_field]').css('opacity','1')
+    $('div[name=edit_field]').css('visibility','visible')
 });
 
-$('body').on('click', '.mfp-close, .mfp-content', function(){
-    $('div[name=edit_field]').css('transition','250ms')
-    $('div[name=edit_field]').css('opacity','0')
-    window.history.replaceState(null, null, "?q=");
+// $('body').on('click', '.mfp-close, .mfp-content', function(){
+//     $('div[name=edit_field]').css('transition','250ms')
+//     $('div[name=edit_field]').css('opacity','0')
     
+// });
+
+// if ($.magnificPopup.close()) {
+//     $('div[name=edit_field]').css('transition','250ms')
+//     $('div[name=edit_field]').css('visibility','hidden')    
+// }
+
+$('body').on('click', '.mfp-close, .mfp-content', function(){
+    window.history.replaceState(null, null, "?q=");
     $('head').find('script[src="https://cse.google.com/cse.js?cx=22bdf86666de74d21"]').remove();
     $('head').find('script[src="https://www.google.com/cse/static/element/f275a300093f201a/cse_element__en.js?usqp=CAI%3D"]').remove();
-    $('.gcse-searchresults-only').remove();
+    $('.gcse-searchresults-only').remove();    
 });
 
 $('body').keydown(function(e){
@@ -373,25 +385,5 @@ $('body').keydown(function(e){
     }
 });
 
-
-$('body').on('click', 'a[name=see-more]', function(){
-    // $('img').attr('loading', 'lazy');
-    $('#search-engine').append("<div class='gcse-searchresults-only'></div>");
-    $('head').append("<script async=true src='https://cse.google.com/cse.js?cx=22bdf86666de74d21'></script>")
-    $('.gs-previewLink').attr('target', '_blank');
-    // $.getScript( 'https://cse.google.com/cse.js?cx=22bdf86666de74d21', function( data, textStatus, jqxhr ) {
-    //     console.log(':)');
-    // });
-
-    let mCountry = $('#m-country').text();
-    let mCity = $('#m-city').text();
-    let mLandmark = $('#m-landmark').text();
-    console.log(mCountry);
-    window.history.replaceState(null, null, "?q="+mCountry +' ' + mCity +' ' + mLandmark +' ');
-});
-
-// $('.gs-previewLink').on('load', function() {
-//     $('.gs-previewLink').attr('target', '_blank');
-// })
-
+window.history.replaceState(null, null, "?q=");
 
