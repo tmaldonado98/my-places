@@ -332,7 +332,7 @@ function update(action){
 
 
 $('div[name=edit_field]').css('transition','250ms');
-$('div[name=edit_field]').css('visibility','hidden');
+$('div[name=edit_field]').css('opacity','0');
 
 
 $('body').on('click', 'a[name=see-more]', function(){
@@ -352,33 +352,44 @@ $('body').on('click', 'a[name=see-more]', function(){
 
 $('body').on('click', '#modal-edit', function(){
     $('div[name=edit_field]').css('transition','250ms')
-    $('div[name=edit_field]').css('visibility','visible')
+    $('div[name=edit_field]').css('opacity','1')
 });
 
-// $('body').on('click', '.mfp-close, .mfp-content', function(){
-//     $('div[name=edit_field]').css('transition','250ms')
-//     $('div[name=edit_field]').css('opacity','0')
-    
-// });
+$('body').on('click', '.mfp-close', function(){
+    $('div[name=edit_field]').css('transition','250ms')
+    $('div[name=edit_field]').css('opacity','0')
 
-// if ($.magnificPopup.close()) {
-//     $('div[name=edit_field]').css('transition','250ms')
-//     $('div[name=edit_field]').css('visibility','hidden')    
-// }
-
-$('body').on('click', '.mfp-close, .mfp-content', function(){
     window.history.replaceState(null, null, "?q=");
     $('head').find('script[src="https://cse.google.com/cse.js?cx=22bdf86666de74d21"]').remove();
     $('head').find('script[src="https://www.google.com/cse/static/element/f275a300093f201a/cse_element__en.js?usqp=CAI%3D"]').remove();
-    $('.gcse-searchresults-only').remove();    
+    $('.gcse-searchresults-only').remove(); 
+    
 });
+
+$('body').on('blur', '.modal', function(){
+    $('div[name=edit_field]').css('transition','250ms')
+    $('div[name=edit_field]').css('opacity','0')
+
+    window.history.replaceState(null, null, "?q=");
+    $('head').find('script[src="https://cse.google.com/cse.js?cx=22bdf86666de74d21"]').remove();
+    $('head').find('script[src="https://www.google.com/cse/static/element/f275a300093f201a/cse_element__en.js?usqp=CAI%3D"]').remove();
+    $('.gcse-searchresults-only').remove(); 
+});
+
+
+// $('body').on('click', '.mfp-close', function(){
+//     window.history.replaceState(null, null, "?q=");
+//     $('head').find('script[src="https://cse.google.com/cse.js?cx=22bdf86666de74d21"]').remove();
+//     $('head').find('script[src="https://www.google.com/cse/static/element/f275a300093f201a/cse_element__en.js?usqp=CAI%3D"]').remove();
+//     $('.gcse-searchresults-only').remove();    
+// });
 
 $('body').keydown(function(e){
     if (e.keyCode === 27) {
         $('div[name=edit_field]').css('transition','250ms')
         $('div[name=edit_field]').css('opacity','0')
-        window.history.replaceState(null, null, "?q=");
         
+        window.history.replaceState(null, null, "?q=");
         $('head').find('script[src="https://cse.google.com/cse.js?cx=22bdf86666de74d21"]').remove();
         $('head').find('script[src="https://www.google.com/cse/static/element/f275a300093f201a/cse_element__en.js?usqp=CAI%3D"]').remove();
         $('.gcse-searchresults-only').remove();
