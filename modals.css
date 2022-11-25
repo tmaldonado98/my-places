@@ -23,6 +23,9 @@
     direction: rtl;
 }
 
+.gsc-results .gsc-imageResult{
+    width: 33%;
+}
 
 .gsc-tabsArea{
     display: none;

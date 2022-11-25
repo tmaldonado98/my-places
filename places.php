@@ -30,13 +30,33 @@ if (isset($_POST['update'])) {
     <!-- <script async src='https://cse.google.com/cse.js?cx=22bdf86666de74d21'></script> -->
 </head>
 <body>
+
+<nav>
+    <div id="contact">
+        <div class='nav-btns'><a href="https://github.com/tmaldonado98" target="_blank" rel="noopener noreferrer" title="My Github Profile">Github</a></div>
+        <div class='nav-btns'><a href="mailto:tmaldonadotrs@gmail.com" target="_blank" rel="noopener noreferrer" title="Send me an email!">Email</a></div>
+    </div>
+</nav>
 <div id=container-print>
-    <i class="fa-solid fa-print fa-xl" id=print ></i>
-    <p>Print</p>
-    <i class="fa-solid fa-question" title="To save as PDF file click on 'Print' button, press on 'Destination' menu list, and select 'Save to PDF'."></i>
+    <i class="fa-solid fa-print fa-xl print" title="Print Page"></i>
+    <p class="print" title="Print Page">Print</p>
+    <i class="fa-solid fa-question" title="To save as a PDF file click on 'Print' button, press on 'Destination' menu list, and select 'Save to PDF'."></i>
 </div>
 
-<section id="want">
+<section id="want">  
+
+<h1>Where I Want To Go</h1>
+<div id=container-table-btns>
+    <div id=container-table>
+        <table id=table>
+            <tr id=heading-row>
+                <th> </th>
+                <th>Select All <input id=sel-all type=checkbox></th>
+                <th>Country</th>
+                <th>City</th>
+                <th>Landmark</th>
+            </tr>
+
 
 <?php
 
@@ -45,25 +65,6 @@ $city = $_POST['city'];
 $landmark = $_POST['landmark'];
 
 
-////SEPARATED INSERT QUERY FROM FETCH ROW DATA QUERY TO PREVENT PHP PAGE FROM INSERTING ROW INTO DB TABLE AFTER PAGE REFRESH
-/*if (isset($_POST['submit'])) {
-    $insert = mysqli_query($con, "INSERT INTO places(country, city, landmark) VALUES ('$country', '$city', '$landmark')"); 
-};*/    
-    
-echo 
-'<h1>Where I Want To Go</h1>';
-echo '<div id=container-table-btns>';
-echo    '<div id=container-table>';
-    echo '<table id=table>';
-        echo '<tr id=heading-row>
-            <th> </th>
-            <th>Select All <input id=sel-all type=checkbox></th>
-            <th>Country</th>
-            <th>City</th>
-            <th>Landmark</th>
-            
-        </tr>';
-        echo '';
         $result = array();
         if($data = mysqli_query($con, "SELECT * FROM places_table ORDER BY position")){
             while ($row = mysqli_fetch_assoc($data)) {

@@ -8,7 +8,44 @@ body {
   background-size: cover;
 }
 
+nav {
+  height: 2.5rem;
+  width: 100vw;
+  background-color: black;
+}
+
+#contact {
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  width: 20%;
+  align-items: center;
+  margin: auto auto auto 0;
+}
+
+#contact a {
+  color: antiquewhite;
+  font-size: 20px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nav-btns {
+  height: 100%;
+  width: 50%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  transition: 250ms;
+}
+
+.nav-btns:hover {
+  transition: 250ms;
+  border-bottom: 4px double antiquewhite;
+}
+
 h1 {
+  font-size: 2.25rem;
   text-align: center;
   margin: 0 auto 2rem;
   padding-top: 1rem;
@@ -27,6 +64,11 @@ h1 {
   overflow: scroll;
 }
 
+#container-table-btns {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
 #container-print {
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -40,9 +82,11 @@ h1 {
   justify-content: space-evenly;
 }
 
-#print {
-  padding: 5px;
+.print {
   cursor: pointer;
+}
+.print .print:nth-child(1) {
+  padding: 5px;
 }
 
 #container-print p {
@@ -52,6 +96,10 @@ h1 {
 #container-print i:nth-of-type(2) {
   margin-top: 0.75rem;
   cursor: pointer;
+}
+
+th {
+  font-size: 1.15rem;
 }
 
 #btn1, .edit-btn, .see-more {
@@ -99,7 +147,7 @@ h1 {
   color: white;
 }
 
-#print:hover {
+.print:hover {
   color: white;
 }
 
@@ -144,7 +192,7 @@ tr {
 
 .data-row:hover td:nth-child(1), .data-row:hover td:nth-child(2), .data-row:hover td:nth-child(3), .data-row:hover td:nth-child(4), .data-row:hover td:nth-child(5), .data-row:hover td:nth-child(6) {
   transition: 250ms;
-  background-color: rgba(181, 168, 162, 0.9);
+  background-color: rgba(159, 148, 143, 0.9);
 }
 
 tr:nth-child(even) td:nth-child(1), tr:nth-child(even) td:nth-child(2), tr:nth-child(even) td:nth-child(3), tr:nth-child(even) td:nth-child(4) {

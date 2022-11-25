@@ -87,7 +87,7 @@ $('.text').keyup((e)=>{
 });
 
 
-$('#print').click(()=>{
+$('.print').click(()=>{
     print();    
 });
 
