@@ -12,12 +12,19 @@ h1 {
   text-align: center;
   margin: 0 auto 2rem;
   padding-top: 1rem;
+  color: antiquewhite;
 }
 
 #want {
   margin: 0 auto;
   width: 80%;
   background-image: url(https://images.pexels.com/photos/3837487/pexels-photo-3837487.jpeg?auto=compress&cs=tinysrgb&w=1600);
+  border: 5px double black;
+}
+
+#container-table {
+  max-height: 55vh;
+  overflow: scroll;
 }
 
 #container-print {
@@ -33,8 +40,13 @@ h1 {
   justify-content: space-evenly;
 }
 
+#print {
+  padding: 5px;
+  cursor: pointer;
+}
+
 #container-print p {
-  margin: 0;
+  color: antiquewhite;
 }
 
 #container-print i:nth-of-type(2) {
@@ -42,21 +54,11 @@ h1 {
   cursor: pointer;
 }
 
-#btn1, .edit-btn, #print, .see-more {
+#btn1, .edit-btn, .see-more {
   font-size: 20px;
   text-decoration: none;
   color: inherit;
   cursor: pointer;
-}
-
-.edit-row, #print {
-  border: 3px outset rgba(170, 170, 170, 0.481);
-  padding: 0.5rem;
-}
-
-.edit-row:hover, #print:hover {
-  color: black;
-  font-weight: 600;
 }
 
 .inputs {
@@ -98,7 +100,6 @@ h1 {
 }
 
 #print:hover {
-  background-color: rgb(32, 26, 68);
   color: white;
 }
 
@@ -107,6 +108,7 @@ h1 {
   border-collapse: separate;
   margin: auto;
   width: 100%;
+  color: antiquewhite;
 }
 
 td {
@@ -123,7 +125,7 @@ td:nth-child(1) {
 .data-row {
   border-bottom: 1px solid black;
   row-gap: 1rem;
-  background-color: rgba(180, 165, 158, 0.9);
+  background-color: rgba(236, 220, 213, 0.8);
   color: rgb(0, 0, 0);
   font-weight: 600;
   border-radius: 5px;
@@ -131,7 +133,7 @@ td:nth-child(1) {
 }
 
 .selectedRow {
-  background-color: rgba(255, 255, 255, 0.7) !important;
+  background-color: rgba(255, 255, 255, 0.9) !important;
   color: grey !important;
   transition: 250ms;
 }
@@ -141,7 +143,8 @@ tr {
 }
 
 .data-row:hover td:nth-child(1), .data-row:hover td:nth-child(2), .data-row:hover td:nth-child(3), .data-row:hover td:nth-child(4), .data-row:hover td:nth-child(5), .data-row:hover td:nth-child(6) {
-  background-color: rgba(144, 129, 123, 0.9);
+  transition: 250ms;
+  background-color: rgba(181, 168, 162, 0.9);
 }
 
 tr:nth-child(even) td:nth-child(1), tr:nth-child(even) td:nth-child(2), tr:nth-child(even) td:nth-child(3), tr:nth-child(even) td:nth-child(4) {
@@ -180,6 +183,11 @@ td:where(.check-td) {
   padding: 0;
 }
 
+.container-see-more:hover {
+  transition: 250ms;
+  background-color: antiquewhite !important;
+}
+
 #container-add-place {
   width: 70%;
   margin: auto;
@@ -187,6 +195,7 @@ td:where(.check-td) {
 
 #head-text {
   padding: 2rem;
+  color: antiquewhite;
 }
 
 #container-add-place h3 {
@@ -203,12 +212,17 @@ td:where(.check-td) {
   width: 50%;
 }
 
+#total-places {
+  color: antiquewhite;
+}
+
 .text {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   font-size: 18px;
   width: 14rem;
+  background-color: rgba(244, 224, 224, 0.431372549);
 }
 
 #container-btn1 {
@@ -355,9 +369,6 @@ dialog::backdrop {
   svg {
     width: 15;
     height: 15;
-  }
-  #btn, #print {
-    display: none;
   }
   #container-table-btns p {
     text-align: center;

@@ -14,6 +14,7 @@ h1{
     text-align: center;
     margin: 0 auto 2rem;
     padding-top: 1rem;
+    color: antiquewhite;
 }
 
 #want{
@@ -25,6 +26,12 @@ h1{
     // background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #e3e3e3 11px ), 
     // repeating-linear-gradient( #e2e2e255, #cdcaca );
     background-image: url(https://images.pexels.com/photos/3837487/pexels-photo-3837487.jpeg?auto=compress&cs=tinysrgb&w=1600);
+    border: 5px double black;
+}
+
+#container-table{
+    max-height: 55vh;
+    overflow: scroll;
 }
 
 #container-print{
@@ -39,8 +46,13 @@ h1{
 
 }
 
+#print{
+    padding: 5px;
+    cursor: pointer;
+}
+
 #container-print p {
-    margin: 0;
+    color: antiquewhite;
 }
 #container-print i:nth-of-type(2){
     margin-top: 0.75rem;
@@ -48,7 +60,7 @@ h1{
 }
 
 // #del-sel, 
-#btn1, .edit-btn, #print, .see-more{
+#btn1, .edit-btn, .see-more{
     font-size: 20px;
     text-decoration: none;
     color: inherit;
@@ -58,17 +70,17 @@ h1{
 
 
 // #del-sel, 
-.edit-row, #print{
-    border: 3px outset rgba(170, 170, 170, 0.481);
-    padding: 0.5rem;    
-}
-// #del-sel:hover, 
-.edit-row:hover, #print:hover{
-    color: black;
-    font-weight: 600;
-//    background-color: (rgb(255, 255, 255, 0));
+// .edit-row, #print{
+//     border: 3px outset rgba(170, 170, 170, 0.481);
+//     padding: 0.5rem;    
+// }
+// // #del-sel:hover, 
+// .edit-row:hover, #print:hover{
+//     color: black;
+//     font-weight: 600;
+// //    background-color: (rgb(255, 255, 255, 0));
 
-}
+// }
 
 .inputs{
     // width: 75%;
@@ -109,7 +121,6 @@ h1{
 }
 
 #print:hover{
-    background-color: rgb(32, 26, 68);
     color: white;
 }
 
@@ -118,6 +129,7 @@ h1{
     border-collapse: separate;
     margin: auto;
     width: 100%;
+    color:antiquewhite;
 }
 
 td{
@@ -135,7 +147,7 @@ td:nth-child(1){
     border-bottom: 1px solid black;
     row-gap: 1rem;
     // background-color: rgb(219, 192, 175);
-    background-color: rgba(180, 165, 158, 0.9);
+    background-color: rgba(236, 220, 213, 0.8);
     color: rgb(0, 0, 0);
     font-weight: 600;
     // border: 1px white solid;
@@ -144,7 +156,7 @@ td:nth-child(1){
     transition: 250ms;
 }
 .selectedRow{
-    background-color: rgb(255, 255, 255, 0.7) !important;
+    background-color: rgb(255, 255, 255, 0.9) !important;
     color: grey !important;
     transition: 250ms;
 }
@@ -156,7 +168,8 @@ tr{
 
 .data-row:hover{
     td:nth-child(1),td:nth-child(2),td:nth-child(3),td:nth-child(4),td:nth-child(5),td:nth-child(6){
-        background-color: rgba(144, 129, 123, 0.9);
+        transition: 250ms;
+        background-color: rgba(181, 168, 162, 0.9);
     }
 }  
 
@@ -198,6 +211,11 @@ td:where(.check-td){
     padding: 0;
 }
 
+.container-see-more:hover{
+    transition: 250ms;
+    background-color: antiquewhite !important;
+}
+
 
 #container-add-place{
     width: 70%;
@@ -206,6 +224,7 @@ td:where(.check-td){
 
 #head-text{
     padding: 2rem;
+    color: antiquewhite;
 }
 
 #container-add-place h3{
@@ -222,11 +241,14 @@ td:where(.check-td){
     transition: 250ms;
     width: 50%;
 }
-
+#total-places {
+    color: antiquewhite;
+}
 .text{
     height: fit-content;
     font-size: 18px;
     width: 14rem;
+    background-color: #f4e0e06e;
 }
 
 #container-btn1 {
@@ -387,15 +409,7 @@ dialog::backdrop{
         width: 15;
         height: 15;
     }
-    // td:hover { 
-    //     color: inherit;
-    // }
 
-
-    #btn, #print{
-        display: none;
-        
-    }
 
     #container-table-btns p{
         text-align: center;
