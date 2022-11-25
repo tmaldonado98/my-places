@@ -26,11 +26,17 @@ if (isset($_POST['update'])) {
     <link rel="stylesheet" href="dialog-styling.css">
     <link href="./jquery-ui-1.13.2.custom/jquery-ui.css">
     <link href="./jquery-ui-1.13.2.custom/jquery-ui.min.css">
+    <script src="https://kit.fontawesome.com/602ec316c2.js" crossorigin="anonymous"></script>
     <!-- <script async src='https://cse.google.com/cse.js?cx=22bdf86666de74d21'></script> -->
 </head>
 <body>
+<div id=container-print>
+    <i class="fa-solid fa-print" id=print ></i>
+    <p>Print</p>
+    <i class="fa-solid fa-question" title="To save as PDF file click on 'Print' button, press on 'Destination' menu list, and select 'Save to PDF'."></i>
+</div>
+
 <section id="want">
-<!-- <div id="column-w-1"> -->
 
 <?php
 
@@ -44,7 +50,8 @@ $landmark = $_POST['landmark'];
     $insert = mysqli_query($con, "INSERT INTO places(country, city, landmark) VALUES ('$country', '$city', '$landmark')"); 
 };*/    
     
-echo '<h1>Where I Want To Go</h1>';
+echo 
+'<h1>Where I Want To Go</h1>';
 echo '<div id=container-table-btns>';
 echo    '<div id=container-table>';
     echo '<table id=table>';
@@ -224,15 +231,7 @@ $rowcount = mysqli_num_rows($count);
 echo "<p id=total-places ><b>Total Number Of Places: " . $rowcount . "</b></p>";
 
 ?>
-
-        <div id="container-print">
-            <input id="print" type="button" value="Print Page">
-            <br>
-            <!-- <input id="pdf" type="button" value="Save PDF"> -->
-        </div>
-
-
-        
+       
             <div id="btn-msg">
             <div id="btn">
                         <input type="button" onclick="deleteData('delete')" class="del-sel" name="delete_sel" value="Delete Selection">
