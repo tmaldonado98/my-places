@@ -401,7 +401,26 @@ $('body').ready(function(){
     $('#map').append("<script src='map-script.js'></script>");
 });
 
-// $('#map').on('DOMNodeInserted', function(){
-// })
+$('.data-row').each(function(){
+    let coText = $(this).children('#country-text').text();
+    let ciText = $(this).children('#city-text').text();
+    let laText = $(this).children('#landmark-text').text();
 
-// on('focus', '#map-section',
+    locateTxt = coText + ' ' + ciText + ' ' + laText;
+
+    $.ajax({
+        url: 'https://geocode.xyz',
+        data: {
+          auth: '803066415173447662518x121329',
+          locate: locateTxt,
+          json: '1'
+        }
+      }).done(function(data) {
+        console.log(data["longt"], data["latt"]);
+
+        const country = new maplibregl.Marker()
+        .setLngLat([data["longt"], data["latt"]])
+        .addTo(map);
+    
+      });
+})
