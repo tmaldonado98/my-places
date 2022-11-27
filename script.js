@@ -334,20 +334,43 @@ function update(action){
 $('div[name=edit_field]').css('transition','250ms');
 $('div[name=edit_field]').css('opacity','0');
 
+let mCountry = $('#m-country').text();
+let mCity = $('#m-city').text();
+let mLandmark = $('#m-landmark').text();
 
 $('body').on('click', 'a[name=see-more]', function(){
     $('#search-engine').append("<div class='gcse-searchresults-only'></div>");
     $('head').append("<script async=true src='https://cse.google.com/cse.js?cx=22bdf86666de74d21'></script>")
     
-    $('.gs-previewLink').attr('rel=noopener');
-
-    //rel= noreferrer
-    
-    let mCountry = $('#m-country').text();
-    let mCity = $('#m-city').text();
-    let mLandmark = $('#m-landmark').text();
     console.log(mCountry);
     window.history.replaceState(null, null, "?q="+mCountry +' ' + mCity +' ' + mLandmark +' ');
+
+/*    $.ajax({
+        url: 'https://geocode.xyz',
+        data: {
+        //   auth: '803066415173447662518x121329',
+          locate: ''+mCountry+''+mCity+''+mLandmark+'',
+          json: '1'
+        },
+        success: function(data) {
+            $('#modal-map').html(data);
+            console.log(data);
+        }
+      });*/
+/*
+      $.ajax({
+        url: 'https://geocode.xyz',
+        data: {
+        //   auth: 'your auth code',
+          locate: ''+mCountry+''+mCity+''+mLandmark+'',
+        //   json: '1'
+        }
+      }).done(function(data) {
+            $('#modal-map').html(data);
+            console.log(data);
+        });*/
+    //   }).done(
+    
 });
 
 $('body').on('click', '#modal-edit', function(){
@@ -398,3 +421,15 @@ $('body').keydown(function(e){
 
 window.history.replaceState(null, null, "?q=");
 
+$('body').ready(function(){
+    // $('#map').append("<iframe id='mapframe' src='https://api.maptiler.com/maps/basic-v2/?key=3UHgzHjbiaCYC7Bdr6V1#1.0/11.86735/10.54687'></iframe>")
+    // $('head').append("<script src='https://cdn.maptiler.com/maplibre-gl-js/v2.4.0/maplibre-gl.js'></script>");
+    // $('head').append("<link href='https://cdn.maptiler.com/maplibre-gl-js/v2.4.0/maplibre-gl.css' rel='stylesheet' />");
+    $('#map').append("<script src='map-script.js'></script>");
+
+});
+
+// $('#map').on('DOMNodeInserted', function(){
+// })
+
+// on('focus', '#map-section',

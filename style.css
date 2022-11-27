@@ -370,27 +370,31 @@ td:where(.check-td) {
   height: auto;
 }
 
-#map {
+#map-section {
   background-color: rgb(47, 65, 79);
   height: 100vh;
 }
 
-dialog::-webkit-backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(rgba(0, 0, 0, 0.31));
+#map-container {
+  width: 80%;
+  height: 80vh;
+  margin: auto;
 }
 
-dialog::backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(rgba(0, 0, 0, 0.31));
+#map {
+  width: 100%;
+  height: 80vh;
+  border: 4px double black;
+}
+
+#mapframe {
+  height: 90vh;
+  width: 100%;
+  margin: 2rem auto;
+}
+
+#modal-map {
+  height: 50vh;
 }
 
 @media screen and (max-width: 700px) {

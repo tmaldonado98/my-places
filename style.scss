@@ -6,8 +6,6 @@ body, html {
 body{
     background-image:  url(https://images.pexels.com/photos/697662/pexels-photo-697662.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
     background-size: cover;
-    // background-repeat: no-repeat, no-repeat;
-    // background-position: left;
 }
 
 nav{
@@ -407,23 +405,31 @@ td:where(.check-td){
 //     border: 3px black solid;
 // }
 
-#map{
+#map-section{
     background-color: rgb(47, 65, 79);
     height: 100vh;
 }
+#map-container{
+    width: 80%;
+    height: 80vh;
+    margin: auto;
+}
+#map{
+    width: 100%;
+    // margin: auto;
+    height: 80vh;
+    // position: absolute;
+    border: 4px double black;
 
-dialog::backdrop{
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(
-        rgba(0, 0, 0, 0.31)  
+}
+#mapframe{
+    height: 90vh;
+    width: 100%;
+    margin: 2rem auto;
+}
 
-    )
-     
-    /* opacity: 0.4; */
+#modal-map{
+    height: 50vh;
 }
 
 

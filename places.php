@@ -27,7 +27,10 @@ if (isset($_POST['update'])) {
     <link href="./jquery-ui-1.13.2.custom/jquery-ui.css">
     <link href="./jquery-ui-1.13.2.custom/jquery-ui.min.css">
     <script src="https://kit.fontawesome.com/602ec316c2.js" crossorigin="anonymous"></script>
-    <!-- <script async src='https://cse.google.com/cse.js?cx=22bdf86666de74d21'></script> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.8.0/leaflet.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.8.0/leaflet.js"></script> -->
+    <script src='https://cdn.maptiler.com/maplibre-gl-js/v2.4.0/maplibre-gl.js'></script>
+    <link href='https://cdn.maptiler.com/maplibre-gl-js/v2.4.0/maplibre-gl.css' rel='stylesheet'/>
 </head>
 <body>
 
@@ -127,8 +130,25 @@ echo "
                             </div>
                         </div>
 
-                    <div id=map>
+                    <div id=container-modal-map>
                         <span>Map will go here </span>
+                        <div id=modal-map>";
+
+/*                        $modalCountry = 
+
+                            $ch = curl_init();
+                            
+                            $url = 'https://geocode.xyz/?scantext={'. $landmark. ','. $city .','. $country .'}&json=1';
+                            curl_setopt($ch, CURLOPT_URL, $url);
+                            $resp = curl_exec($ch);
+                            // $json = json_decode($resp, true);
+                            // echo '<pre>';
+                            //     $dumped_json = var_dump($json);
+                            // echo '</pre>';
+                            echo $resp;
+                            curl_close($ch);
+                                            */     
+                        "</div>
                     </div>
 
                     <div id=container-facts>
@@ -286,21 +306,26 @@ echo "<p id=total-places ><b>Total Number Of Places: " . $rowcount . "</b></p>";
 
     <!-- </form> -->
 </div>
+</section>
 
-
+<section id="map-section">
+<div id="map-container">
+    <div id="map">
+        
+        
+    </div>
+</div>
 
 
 
 
 </section>
-<!-- 
-<button id="already-btn">+</button>
-<section id="already-been">
-    <div id="column-ab-1">    
-    </div >
-    </section> -->
-    
 <footer>
+</footer>
+
+<?php
+mysqli_close($con);
+?>
 
 <script defer type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.js"></script>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
@@ -312,10 +337,6 @@ echo "<p id=total-places ><b>Total Number Of Places: " . $rowcount . "</b></p>";
 <script defer src="modals-script.js"></script>
 <!-- <script defer src="https://www.googleapis.com/customsearch/v1?key=AIzaSyAHakO0K7mac852qUCsJxSq0sozCCvy-xA&cx=22bdf86666de74d21&q=search query"></script> -->
 
-</footer>
 
-<?php
-mysqli_close($con);
-?>
 </body>
 </html>
