@@ -334,42 +334,22 @@ function update(action){
 $('div[name=edit_field]').css('transition','250ms');
 $('div[name=edit_field]').css('opacity','0');
 
-let mCountry = $('#m-country').text();
-let mCity = $('#m-city').text();
-let mLandmark = $('#m-landmark').text();
 
 $('body').on('click', 'a[name=see-more]', function(){
+    let mCountry = $('#m-country').text();
+    let mCity = $('#m-city').text();
+    let mLandmark = $('#m-landmark').text();
+
+    $('.modal').css('cursor', 'progress')
     $('#search-engine').append("<div class='gcse-searchresults-only'></div>");
     $('head').append("<script async=true src='https://cse.google.com/cse.js?cx=22bdf86666de74d21'></script>")
     
+    // $('.gsc-imageResult').on('change', function(){
+    //     $('.modal').css('cursor', 'default')
+       
+    // });
     console.log(mCountry);
     window.history.replaceState(null, null, "?q="+mCountry +' ' + mCity +' ' + mLandmark +' ');
-
-/*    $.ajax({
-        url: 'https://geocode.xyz',
-        data: {
-        //   auth: '803066415173447662518x121329',
-          locate: ''+mCountry+''+mCity+''+mLandmark+'',
-          json: '1'
-        },
-        success: function(data) {
-            $('#modal-map').html(data);
-            console.log(data);
-        }
-      });*/
-/*
-      $.ajax({
-        url: 'https://geocode.xyz',
-        data: {
-        //   auth: 'your auth code',
-          locate: ''+mCountry+''+mCity+''+mLandmark+'',
-        //   json: '1'
-        }
-      }).done(function(data) {
-            $('#modal-map').html(data);
-            console.log(data);
-        });*/
-    //   }).done(
     
 });
 
@@ -400,13 +380,6 @@ $('body').on('blur', '.modal', function(){
 });
 
 
-// $('body').on('click', '.mfp-close', function(){
-//     window.history.replaceState(null, null, "?q=");
-//     $('head').find('script[src="https://cse.google.com/cse.js?cx=22bdf86666de74d21"]').remove();
-//     $('head').find('script[src="https://www.google.com/cse/static/element/f275a300093f201a/cse_element__en.js?usqp=CAI%3D"]').remove();
-//     $('.gcse-searchresults-only').remove();    
-// });
-
 $('body').keydown(function(e){
     if (e.keyCode === 27) {
         $('div[name=edit_field]').css('transition','250ms')
@@ -426,7 +399,6 @@ $('body').ready(function(){
     // $('head').append("<script src='https://cdn.maptiler.com/maplibre-gl-js/v2.4.0/maplibre-gl.js'></script>");
     // $('head').append("<link href='https://cdn.maptiler.com/maplibre-gl-js/v2.4.0/maplibre-gl.css' rel='stylesheet' />");
     $('#map').append("<script src='map-script.js'></script>");
-
 });
 
 // $('#map').on('DOMNodeInserted', function(){

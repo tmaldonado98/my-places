@@ -17,15 +17,15 @@ if (isset($_POST['update'])) {
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Travel Bucket List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>My List Of Places</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./modals.css">
     <link rel="stylesheet" href="./tableA.css">
     <link rel="stylesheet" href="./modal-magnific-popup/magnific-popup.css">
     <link rel="stylesheet" href="dialog-styling.css">
     <link href="./jquery-ui-1.13.2.custom/jquery-ui.css">
-    <link href="./jquery-ui-1.13.2.custom/jquery-ui.min.css">
+    <!-- <link href="./jquery-ui-1.13.2.custom/jquery-ui.min.css"> -->
     <script src="https://kit.fontawesome.com/602ec316c2.js" crossorigin="anonymous"></script>
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.8.0/leaflet.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.8.0/leaflet.js"></script> -->
