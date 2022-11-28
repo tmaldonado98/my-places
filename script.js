@@ -422,12 +422,12 @@ $('.data-row').each(function(){
       });
 });
 
-// $('.modal').on('load', function(){
+$('body').on('click', 'a[name=see-more]' , function(){
 
-    $('.gsc-wrapper').ready(function() {
-        let mCountry = $(this).closest('#m-country').text();
-        let mCity = $(this).closest('#m-city').text();
-        let mLandmark = $(this).closest('#m-landmark').text();
+    $('.modal').ready(function() {
+        let mCountry = $('#m-country').text();
+        let mCity = $('#m-city').text();
+        let mLandmark = $('#m-landmark').text();
         // $('#modal-map').append("<script src='map-script.js'></script>");
 
         locateTxt = mCountry + ' ' + mCity + ' ' + mLandmark;
@@ -459,4 +459,4 @@ $('.data-row').each(function(){
     
         });
     })
-// });
+});
