@@ -1,11 +1,22 @@
 .modal{
     height: 90vh;
-    width: 85%;
-    /* vertical-align:middle; */
+    /* width: 85%; */
     /* position: fixed; */
-    z-index: 10;
+    z-index: 100;
     top: 5%;
     overflow-y: scroll;
+    background: rgba(250, 235, 215, 0.85);
+	/* padding: 20px 30px; */
+	text-align: left;
+	width: 80vw;
+	/* margin: auto; */
+
+    top: 50%;
+    left: 50%;
+    margin-top: -45vh; /* Negative half of height. */
+    margin-left: -40vw; /* Negative half of width. */
+
+	position: fixed;
 }
 
 #modal-title{

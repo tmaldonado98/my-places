@@ -340,15 +340,19 @@ $('body').on('click', 'a[name=see-more]', function(){
     let mCity = $('#m-city').text();
     let mLandmark = $('#m-landmark').text();
 
+    ////****************
     $('.modal').css('cursor', 'progress')
     $('#search-engine').append("<div class='gcse-searchresults-only'></div>");
     $('head').append("<script async=true src='https://cse.google.com/cse.js?cx=22bdf86666de74d21'></script>")
+    if ($('#modal-map').ready()) {
+        $('.modal').css('cursor', 'default')
+    }
     
     // $('.gsc-imageResult').on('change', function(){
     //     $('.modal').css('cursor', 'default')
        
     // });
-    console.log(mCountry);
+    // console.log(mCountry);
     window.history.replaceState(null, null, "?q="+mCountry +' ' + mCity +' ' + mLandmark +' ');
     
 });
@@ -413,7 +417,7 @@ $('.data-row').each(function(){
           json: '1'
         }
       }).done(function(data) {
-        console.log(data["longt"], data["latt"]);
+        // console.log(data["longt"], data["latt"]);
 
         const country = new maplibregl.Marker()
         .setLngLat([data["longt"], data["latt"]])
@@ -440,15 +444,15 @@ $('body').on('click', 'a[name=see-more]' , function(){
               json: '1'
             }
           }).done(function(data) {
-            console.log(data["longt"], data["latt"]);
-            console.log(locateTxt);
+            // console.log(data["longt"], data["latt"]);
+            // console.log(locateTxt);
             
             const key = '3UHgzHjbiaCYC7Bdr6V1';
             const map = new maplibregl.Map({
                 container: 'modal-map',
                 style: `https://api.maptiler.com/maps/35df50b2-be27-431c-890b-23ce12b847e1/style.json?key=3UHgzHjbiaCYC7Bdr6V1`,
                 center: [data["longt"], data["latt"]],
-                zoom: 6
+                zoom: 5
             });
             map.addControl(new maplibregl.NavigationControl(), 'top-right');
 

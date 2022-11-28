@@ -1,12 +1,12 @@
 /* Styles for dialog window */
-div [name=modal] {
-	background: white;
-	padding: 20px 30px;
-	text-align: left;
-	max-width: 75vw;
+/* div [name=modal] {
+	background: rgba(250, 235, 215, 0.86);
+	/* padding: 20px 30px; */
+	/* text-align: left;
+	max-width: 80vw;
 	margin: 40px auto;
-	position: relative;
-}
+	position: relative; */
+/* } */ 
 
 
 /**

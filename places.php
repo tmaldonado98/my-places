@@ -19,6 +19,7 @@ if (isset($_POST['update'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no" />
     <title>My List Of Places</title>
+    <link rel="icon" href="./icons8-globe-32.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./modals.css">
     <link rel="stylesheet" href="./tableA.css">
@@ -260,6 +261,10 @@ echo "<p id=total-places ><b>Total Number Of Places: " . $rowcount . "</b></p>";
 
 </section>
 <footer>
+    <p>
+        Tomas Maldonado 2022
+    </p>
+
 </footer>
 
 <?php
