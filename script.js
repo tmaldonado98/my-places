@@ -394,10 +394,7 @@ $('body').keydown(function(e){
 
 window.history.replaceState(null, null, "?q=");
 
-$('body').ready(function(){
-    // $('#map').append("<iframe id='mapframe' src='https://api.maptiler.com/maps/basic-v2/?key=3UHgzHjbiaCYC7Bdr6V1#1.0/11.86735/10.54687'></iframe>")
-    // $('head').append("<script src='https://cdn.maptiler.com/maplibre-gl-js/v2.4.0/maplibre-gl.js'></script>");
-    // $('head').append("<link href='https://cdn.maptiler.com/maplibre-gl-js/v2.4.0/maplibre-gl.css' rel='stylesheet' />");
+$('#want').ready(function(){
     $('#map').append("<script src='map-script.js'></script>");
 });
 
@@ -423,4 +420,43 @@ $('.data-row').each(function(){
         .addTo(map);
     
       });
-})
+});
+
+// $('.modal').on('load', function(){
+
+    $('.gsc-wrapper').ready(function() {
+        let mCountry = $(this).closest('#m-country').text();
+        let mCity = $(this).closest('#m-city').text();
+        let mLandmark = $(this).closest('#m-landmark').text();
+        // $('#modal-map').append("<script src='map-script.js'></script>");
+
+        locateTxt = mCountry + ' ' + mCity + ' ' + mLandmark;
+
+        $.ajax({
+            url: 'https://geocode.xyz',
+            data: {
+              auth: '803066415173447662518x121329',
+              locate: locateTxt,
+              json: '1'
+            }
+          }).done(function(data) {
+            console.log(data["longt"], data["latt"]);
+            console.log(locateTxt);
+            
+            const key = '3UHgzHjbiaCYC7Bdr6V1';
+            const map = new maplibregl.Map({
+                container: 'modal-map',
+                style: `https://api.maptiler.com/maps/35df50b2-be27-431c-890b-23ce12b847e1/style.json?key=3UHgzHjbiaCYC7Bdr6V1`,
+                center: [data["longt"], data["latt"]],
+                zoom: 6
+            });
+            map.addControl(new maplibregl.NavigationControl(), 'top-right');
+
+
+        const country = new maplibregl.Marker()
+        .setLngLat([data["longt"], data["latt"]])
+        .addTo(map);
+    
+        });
+    })
+// });

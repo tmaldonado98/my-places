@@ -130,25 +130,12 @@ echo "
                             </div>
                         </div>
 
-                    <div id=container-modal-map>
-                        <span>Map will go here </span>
-                        <div id=modal-map>";
-
-/*                        $modalCountry = 
-
-                            $ch = curl_init();
-                            
-                            $url = 'https://geocode.xyz/?scantext={'. $landmark. ','. $city .','. $country .'}&json=1';
-                            curl_setopt($ch, CURLOPT_URL, $url);
-                            $resp = curl_exec($ch);
-                            // $json = json_decode($resp, true);
-                            // echo '<pre>';
-                            //     $dumped_json = var_dump($json);
-                            // echo '</pre>';
-                            echo $resp;
-                            curl_close($ch);
-                                            */     
-                        "</div>
+                    <div id=section-modal-map>
+                        <div id=modal-map-container>
+                            <div id=modal-map>
+                        
+                            </div>
+                        </div>
                     </div>
 
                     <div id=container-facts>
@@ -174,56 +161,8 @@ echo "
 
                 //curly brackets to end the while loop and the if statement
                 // <form method='post' class=edit-form action='editRow.php' editid= $marker>
-                
-/*
-                        
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_HEADER, false);
-        
-        
-        $dataSerp = [
-            "q" => $country, $city, $landmark,  
-           "tbm" => "isch",
-           "num" => "5",
-        ];
-        
-        curl_setopt($ch, CURLOPT_URL,   'https://customsearch.googleapis.com/customsearch/v1?key=AIzaSyAHakO0K7mac852qUCsJxSq0sozCCvy-xA&cx=22bdf86666de74d21&filter=1&q=france&searchType=image');
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-            "Content-Type: application/json",
-            // $dataSerp
-            // "apikey: 1a3be160-2e79-11ed-85ee-2bfcdd59e9c8",  
-        ));
-        $response = curl_exec($ch);
-        curl_close($ch);
-        
-        $json = json_decode($response, true);
-    echo '<pre>';
-        $dumped_json = var_dump($json);
-echo '</pre>';
 
-// image_results
-        $image_results = $dumped_json['link'];
-
-foreach($image_results as $result) {
-    $source = $result['string'];
-
-    echo 
-    '<figure>
-        <img class=img src="'.$source.'">
-    </figure>';
-};
-                        /*
-
-
-// curl --get https://serpapi.com/search \
-//  -d engine='google' \
-//  -d q='Coffee' \
-//  -d api_key='secret_api_key'
-
-
-
-
+                /*
 // if (isset($_POST['update'])) 
 if (isset($_GET['populate'])) {
     populateFields();

@@ -428,10 +428,24 @@ td:where(.check-td){
     margin: 2rem auto;
 }
 
-#modal-map{
-    height: 50vh;
+#section-modal-map{
+    background-color: rgb(47, 65, 79);
+    height: 80vh;
+    width: 100%;
 }
+#modal-map-container{
+    width: 80%;
+    height: 50vh;
+    margin: auto;
+}
+#modal-map{
+    height: inherit;
+}
+.maplibregl-canvas{
+    height: inherit;
+    width: inherit;
 
+}
 
 
 @media screen and (max-width: 700px) {
