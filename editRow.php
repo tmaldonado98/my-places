@@ -12,32 +12,17 @@ if (isset($_POST['update'])) {
     $country = $_POST['country'];
     $city = $_POST['city'];
     $landmark = $_POST['landmark'];
-  */  
-
-        // if ($populateFields) {
-
-                /*
-        echo    "<span class=inputs>
-        <label for='country'><p>Country</p></label>
-                    <input class='text' id='ed-country' placeholder='Country' type='text' name='editCountry' value='$country'></input>
-                    <label for='city'><p>City</p></label>
-                    <input class='text' id='ed-city' placeholder='City' type='text' name='editCity' value='$city'></input>
-                    <label for='landmark'><p>Landmark</p></label>
-                    <input class='text' id='ed-landmark' placeholder='Landmark' type='text' name='editLandmark' value='$landmark'></input>
-                    </span>";
-                }
-                
-            }*/            
+*/           
             
     if (isset($_POST['action'])) {
         if ($_POST['action'] == 'update') {
             // updatePhp();
-            $markerid=$_GET['editid'];
+            $markerid=$_GET['marker'];
             $edcountry = $_GET['editCountry'];
             $edcity = $_GET['editCity'];
             $edlandmark = $_GET['editLandmark'];
 
-            $query = "UPDATE places_table SET country= '$edcountry', city= '$edcity', landmark= '$edlandmark', position= '0' WHERE marker= '$markerid'";         
+            $query = "UPDATE places_table SET country = '$edcountry', city = '$edcity', landmark = '$edlandmark', position = '0' WHERE marker= '$markerid'";         
             $update = mysqli_query($con, $query);
             
 
@@ -67,12 +52,7 @@ echo                "<div class='edit-field2' editid=$marker>
         // position= '$position'
         
     }
-        
-        
-        if ($update) {
-            $_SESSION['status'] = "<p>Your information has been updated</p>";
-            // header('location: places.php');
-        };
+
     }
 // }
 

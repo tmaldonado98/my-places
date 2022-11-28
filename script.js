@@ -298,6 +298,7 @@ function modalDelete(rowData) {
 function update(action){
     let data = {
         action: action,
+        marker: $('.edit-field').val(),
         editCountry: $('#ed-country').val(),
         editCity: $('#ed-city').val(),
         editLandmark: $('#ed-landmark').val(),
@@ -317,8 +318,9 @@ function update(action){
                 method: 'POST',
                 dataType: 'text',
                 data: data,
-                success: function(){
+                success: function(data){
                     displayData();           
+                    console.log(data);
                     console.log('edit ajax posted')
 
                 }
@@ -373,7 +375,7 @@ $('body').on('click', '.mfp-close', function(){
     
 });
 
-$('body').on('blur', '.modal', function(){
+$('.modal').on('unload', function(){
     $('div[name=edit_field]').css('transition','250ms')
     $('div[name=edit_field]').css('opacity','0')
 

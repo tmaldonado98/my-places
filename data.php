@@ -28,7 +28,7 @@ echo    '<div id=container-table>';
                 $rcity=ucwords($row['city']);
                 $rlandmark=ucwords($row['landmark']);
 echo "            
-        <tr data-marker=$marker data-position=$position name=row data-id=$dataId class='data-row draggable ui-state-default ui-widget-content'  value= '$marker'  >
+        <tr data-marker=$marker data-position=$position name=row class='data-row draggable ui-state-default ui-widget-content'  value= '$marker'  >
             <div class=drag-container>
                 <td>
                     <svg viewBox='0 0 100 80' width='20' height='20' fill='white'>
@@ -132,14 +132,7 @@ echo "<div id=total-places><p><b>Total Number Of Places: " . $rowcount . "</b></
     </div>    
 
 </div id=container-table-btns>
-";
-
-         
-                if (isset($_SESSION['status'])){ 
-                    echo "<h4 id=fdback>" . $_SESSION['status'] ."</h4>";
-                    unset ($_SESSION['status']);
-                };
-                
+";                
            
 ?>
 

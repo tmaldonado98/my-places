@@ -116,7 +116,7 @@ echo "
                         <input type='button' name='edit' id=modal-edit value='Edit Place'></input>
                         <input type=button onclick='modalDelete($marker)' id=modal-delete name=modal_delete value='Remove Place'>
                     </div>
-                        <div class='edit-field' name=edit_field editid=$marker>
+                        <div class='edit-field' name=edit_field value=$marker>
                             <span class=inputs>
                                 <label for='country'><p>Country</p></label>
                                 <input class='ed-text' id='ed-country' placeholder='Country' type='text' name='editCountry' value='$rcountry '></input>
@@ -202,15 +202,6 @@ echo "<p id=total-places ><b>Total Number Of Places: " . $rowcount . "</b></p>";
         
 </div id=container-table-btns>
 
-        
-
-<?php 
-                if (isset($_SESSION['status'])){
-                    echo "<h4 id=fdback>" . $_SESSION['status'] ."</h4>";
-                    unset ($_SESSION['status']);
-                };
-                
-            ?>
     </div>
 
         
