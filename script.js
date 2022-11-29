@@ -295,49 +295,54 @@ function modalDelete(rowData) {
 };
 
 ///AJAX EDIT ROW
-function update(action){
+
+$('body').on('click', 'input[name=update]', function(){
     let data = {
-        action: action,
-        marker: $('.edit-field').val(),
-        editCountry: $('#ed-country').val(),
-        editCity: $('#ed-city').val(),
-        editLandmark: $('#ed-landmark').val(),
+        action: 'edit',
+        marker: $(this).closest('.edit-field').val(),
+        editCountry: $(this).closest('#ed-country').val(),
+        editCity: $(this).closest('#ed-city').val(),
+        editLandmark: $(this).closest('#ed-landmark').val(),
         // marker: $('.see-more').data('id')  
       
     }
-
+    console.log($('.edit-field').val());
+    console.log(data.marker, data.editCity);
+    
     $.ajax({
         url: 'editRow.php',
         method: 'POST',
         dataType: 'text',
-        data: data,
-        success: function (response){
+        data: {data: data},
 
+        success: function (response){
             $.ajax({
                 url: 'data.php',
                 method: 'POST',
                 dataType: 'text',
-                data: data,
+                data: {data: data},
                 success: function(data){
                     displayData();           
-                    console.log(data);
+                    // console.log(data);
                     console.log('edit ajax posted')
-
+    
                 }
             });
-
+    
         //    console.log(response);
            $.magnificPopup.close();
         }
     })
-}
+});
+
+
 
 
 $('div[name=edit_field]').css('transition','250ms');
 $('div[name=edit_field]').css('opacity','0');
 
 
-$('body').on('click', 'a[name=see-more]', function(){
+$('body').on('click', 'a[name=see-more], input[name=update]', function(){
     let mCountry = $('#m-country').text();
     let mCity = $('#m-city').text();
     let mLandmark = $('#m-landmark').text();

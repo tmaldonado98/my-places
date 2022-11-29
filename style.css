@@ -5,7 +5,7 @@ body, html {
 
 body {
   background-image: url(https://images.pexels.com/photos/697662/pexels-photo-697662.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
-  background-size: cover;
+  background-size: inherit;
 }
 
 nav {
@@ -110,9 +110,12 @@ th {
 }
 
 .inputs {
+  width: 70%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  margin: auto;
 }
 
 .edit-field .btn1 {
@@ -121,6 +124,7 @@ th {
 
 .update-btn {
   text-align: center;
+  width: 100%;
 }
 
 .del-sel {
@@ -319,10 +323,8 @@ td:where(.check-td) {
 }
 
 #btn {
-  width: 100%;
-  margin: 0 auto auto auto;
-  padding: 2rem 0 0 0;
-  text-align: center;
+  margin: 0 auto;
+  padding: 1rem 0 0 0;
 }
 
 @-webkit-keyframes fdback {

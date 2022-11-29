@@ -1,13 +1,12 @@
 <?php     
 include "connect.php";
-// include "scraperapi.php";
 
 if (isset($_POST['update'])) {
     foreach ($_POST['positions'] as $position) {
         $marker = $position[0];
         $newPosition = $position[1];
-
-        $con->query(query: "UPDATE places_table SET position='$newPosition' WHERE marker='$marker'");
+        $query = "UPDATE places_table SET position='$newPosition' WHERE marker='$marker'";
+        mysqli_query($con, $query);
     }
     exit('success');
 }
@@ -124,11 +123,12 @@ echo "
                                 <input class='ed-text' id='ed-city' placeholder='City' type='text' name='editCity' value='$rcity'></input>
                                 <label for='landmark'><p>Landmark</p></label>
                                 <input class='ed-text' id='ed-landmark' placeholder='Landmark' type='text' name='editLandmark' value='$rlandmark'></input>
+                                
+                                <div class=update-btn>
+                                    <input class='btn1'  type='button' name='update' value='Update'></input>
+                                </div>
                             </span>
                             <br>
-                            <div class=update-btn>
-                                <input class='btn1' onclick=update('update') type='button' name='update' value='Update'></input>
-                            </div>
                         </div>
 
                     <div id=section-modal-map>
@@ -160,6 +160,7 @@ echo "
                     }
                 }
 
+                // onclick=edit('edit')
                 //curly brackets to end the while loop and the if statement
                 // <form method='post' class=edit-form action='editRow.php' editid= $marker>
 
@@ -233,24 +234,18 @@ echo "<p id=total-places ><b>Total Number Of Places: " . $rowcount . "</b></p>";
                     
             </div>
         </div>
-    <!-- </div>         -->             
 
-    <!-- </form> -->
 </div>
 </section>
 
 <section id="map-section">
-<div id="map-container">
-    <div id="map">
-        
-        
+    <div id="map-container">
+        <div id="map">
+
+        </div>
     </div>
-</div>
-
-
-
-
 </section>
+
 <footer>
     <p>
         Tomas Maldonado 2022

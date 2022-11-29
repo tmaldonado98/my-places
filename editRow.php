@@ -15,14 +15,14 @@ if (isset($_POST['update'])) {
 */           
             
     if (isset($_POST['action'])) {
-        if ($_POST['action'] == 'update') {
+        if ($_POST['action'] == 'edit') {
             // updatePhp();
-            $markerid=$_GET['marker'];
-            $edcountry = $_GET['editCountry'];
-            $edcity = $_GET['editCity'];
-            $edlandmark = $_GET['editLandmark'];
+            $markerid=$_POST['marker'];
+            $edcountry = $_POST['editCountry'];
+            $edcity = $_POST['editCity'];
+            $edlandmark = $_POST['editLandmark'];
 
-            $query = "UPDATE places_table SET country = '$edcountry', city = '$edcity', landmark = '$edlandmark', position = '0' WHERE marker= '$markerid'";         
+            $query = "UPDATE places_table SET country = '$edcountry', city = '$edcity', landmark = '$edlandmark' WHERE marker = '$markerid'";         
             $update = mysqli_query($con, $query);
             
 
