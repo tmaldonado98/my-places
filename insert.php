@@ -21,10 +21,10 @@ function insert(){
         $insert = mysqli_query($con, $query);
 
 
-        if ($insert) {
-                $_SESSION['status'] = "<p>Your information has been updated</p>";
-                // header('location: places.php');
-            };
+        // if ($insert) {
+        //         $_SESSION['status'] = "<p>Your information has been updated</p>";
+        //         // header('location: places.php');
+        //     };
     };
     
 

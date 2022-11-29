@@ -119,7 +119,6 @@ $('body').on('click focus blur', '.checkbox', function(){
         $('.del-sel').removeClass('del-sel-visible');
 
     }
-    console.log($('.checkbox').is(':checked'))
 });
 
 $('body').on('click', '#sel-all', function(){
@@ -195,7 +194,7 @@ function insertData(action){
             url: 'data.php',
             dataType: 'text',
             success: function(result){
-                let loadedData = $('#container-table-btns').html(result);
+                let loadedData = $('#container-table-btns').load('data.php');
                 loadedData;
 
                 loadedData.find('tbody').sortable({
@@ -296,30 +295,32 @@ function modalDelete(rowData) {
 
 ///AJAX EDIT ROW
 
-$('body').on('click', 'input[name=update]', function(){
+// $('body').on('click', 'input[name=update]', 
+function update(action){
     let data = {
-        action: 'edit',
-        marker: $(this).closest('.edit-field').val(),
-        editCountry: $(this).closest('#ed-country').val(),
-        editCity: $(this).closest('#ed-city').val(),
-        editLandmark: $(this).closest('#ed-landmark').val(),
-        // marker: $('.see-more').data('id')  
-      
+        action: action,
+        marker: $('input[name=update]').attr('data-id'),
+        editCountry: $('#ed-country').val(),
+        editCity: $('#ed-city').val(),
+        editLandmark: $('#ed-landmark').val()
     }
-    console.log($('.edit-field').val());
-    console.log(data.marker, data.editCity);
-    
-    $.ajax({
-        url: 'editRow.php',
-        method: 'POST',
-        dataType: 'text',
-        data: {data: data},
 
+    $.ajax({
+        method: 'POST',
+        url: 'editRow.php',
+        data: {data: data},
+        dataType: 'text',
         success: function (response){
-            $.ajax({
+            console.log(data),
+            console.log(response),
+            displayData(),           
+            console.log('edit ajax posted')
+            $.magnificPopup.close();
+
+  /*          $.ajax({
                 url: 'data.php',
                 method: 'POST',
-                dataType: 'text',
+                // dataType: 'text',
                 data: {data: data},
                 success: function(data){
                     displayData();           
@@ -327,13 +328,12 @@ $('body').on('click', 'input[name=update]', function(){
                     console.log('edit ajax posted')
     
                 }
-            });
+            });*/
     
         //    console.log(response);
-           $.magnificPopup.close();
         }
     })
-});
+};
 
 
 
@@ -354,12 +354,7 @@ $('body').on('click', 'a[name=see-more], input[name=update]', function(){
     if ($('#modal-map').ready()) {
         $('.modal').css('cursor', 'default')
     }
-    
-    // $('.gsc-imageResult').on('change', function(){
-    //     $('.modal').css('cursor', 'default')
-       
-    // });
-    // console.log(mCountry);
+
     window.history.replaceState(null, null, "?q="+mCountry +' ' + mCity +' ' + mLandmark +' ');
     
 });

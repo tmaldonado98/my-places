@@ -146,10 +146,6 @@ $select = ("SELECT * FROM places_table");
 $count = mysqli_query($con, $select);
 $rowcount = mysqli_num_rows($count);
 echo "<div id=total-places><p><b>Total Number Of Places: " . $rowcount . "</b></p></div>
-<div id='container-print'>
-<input id='print' type='button' value='Print Page'>
-<br>
-</div>
 
     <div id='btn-msg'>
     <div id='btn'>

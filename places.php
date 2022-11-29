@@ -118,14 +118,14 @@ echo "
                         <div class='edit-field' name=edit_field value=$marker>
                             <span class=inputs>
                                 <label for='country'><p>Country</p></label>
-                                <input class='ed-text' id='ed-country' placeholder='Country' type='text' name='editCountry' value='$rcountry '></input>
+                                <input class='ed-text' id='ed-country' placeholder='Country' type='text' name='editCountry' value='$rcountry'></input>
                                 <label for='city'><p>City</p></label>
                                 <input class='ed-text' id='ed-city' placeholder='City' type='text' name='editCity' value='$rcity'></input>
                                 <label for='landmark'><p>Landmark</p></label>
-                                <input class='ed-text' id='ed-landmark' placeholder='Landmark' type='text' name='editLandmark' value='$rlandmark'></input>
+                                <input class='ed-text' id='ed-landmark' placeholder='Landmark' type='text' name='editLandmark'  value='$rlandmark'></input>
                                 
                                 <div class=update-btn>
-                                    <input class='btn1'  type='button' name='update' value='Update'></input>
+                                    <input class='btn1' data-id=$marker onclick=update('edit') type='button' name='update' value='Update'></input>
                                 </div>
                             </span>
                             <br>
@@ -160,7 +160,7 @@ echo "
                     }
                 }
 
-                // onclick=edit('edit')
+                
                 //curly brackets to end the while loop and the if statement
                 // <form method='post' class=edit-form action='editRow.php' editid= $marker>
 
