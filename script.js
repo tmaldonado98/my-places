@@ -194,7 +194,7 @@ function insertData(action){
             url: 'data.php',
             dataType: 'text',
             success: function(result){
-                let loadedData = $('#container-table-btns').load('data.php');
+                let loadedData = $('#container-table-btns').html(result);
                 loadedData;
 
                 loadedData.find('tbody').sortable({
@@ -295,46 +295,35 @@ function modalDelete(rowData) {
 
 ///AJAX EDIT ROW
 
-// $('body').on('click', 'input[name=update]', 
+// $('body').on('click', 'input[name=update]', function (){
 function update(action){
-    let data = {
-        action: action,
-        marker: $('input[name=update]').attr('data-id'),
-        editCountry: $('#ed-country').val(),
-        editCity: $('#ed-city').val(),
-        editLandmark: $('#ed-landmark').val()
-    }
 
-    $.ajax({
-        method: 'POST',
-        url: 'editRow.php',
-        data: {data: data},
-        dataType: 'text',
-        success: function (response){
-            console.log(data),
-            console.log(response),
-            displayData(),           
-            console.log('edit ajax posted')
-            $.magnificPopup.close();
-
-  /*          $.ajax({
-                url: 'data.php',
-                method: 'POST',
-                // dataType: 'text',
-                data: {data: data},
-                success: function(data){
-                    displayData();           
-                    // console.log(data);
-                    console.log('edit ajax posted')
-    
-                }
-            });*/
-    
-        //    console.log(response);
+    // $(document).ready(function (){
+        let data = {
+            action: action,
+            id: $('#editBtn').attr('dataId'),
+            edCountry: $('#ed-country').val(),
+            edCity: $('#ed-city').val(),
+            edLandmark: $('#ed-landmark').val()
         }
-    })
-};
-
+        
+        $.ajax({
+            url: 'editRow.php',
+            method: 'POST',
+            cache: false,
+            data: {data: data},
+            dataType: 'application',
+            success: function (response){
+                console.log('edit ajax posted');
+                displayData()           
+                $.magnificPopup.close();
+                console.log(data),
+                console.log(response)
+            }
+        })
+    // });
+};    
+// })
 
 
 
@@ -342,7 +331,7 @@ $('div[name=edit_field]').css('transition','250ms');
 $('div[name=edit_field]').css('opacity','0');
 
 
-$('body').on('click', 'a[name=see-more], input[name=update]', function(){
+$('body').on('click', 'a[name=see-more]', function(){
     let mCountry = $('#m-country').text();
     let mCity = $('#m-city').text();
     let mLandmark = $('#m-landmark').text();

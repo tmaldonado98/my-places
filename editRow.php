@@ -1,42 +1,40 @@
 <?php
 include("connect.php");
+        
+// $position = 0;
 
-// $markerid=$_POST['editid'];
-// $rcountry=$row['country'];
-// $rcity=$row['city'];
-// $rlandmark=$row['landmark'];
+if (isset($_POST['action'])) {
+        $markerid = $_POST['id'];
+        $edcountry = $_POST['edCountry'];
+        $edcity = $_POST['edCity'];
+        $edlandmark = $_POST['edLandmark'];
+        if ($_POST['action'] == 'edit') {
+            // updatePhp();
+            // echo 'update posted';
 
-/*
+        
+            $query = "UPDATE places_table SET country = $edcountry, city = $edcity, landmark = $edlandmark WHERE marker = $markerid";         
+            // $query = "UPDATE `places_table` SET `marker`='$markerid',`country`='$edcountry',`city`='$edcity',`landmark`='$edlandmark',`position`='$position' WHERE marker = '$markerid'";
+            $exec = mysqli_query($con, $query);
 
-if (isset($_POST['update'])) {
-    $country = $_POST['country'];
-    $city = $_POST['city'];
-    $landmark = $_POST['landmark'];
-*/           
-            
-    if (isset($_POST['edit'])) {
-        updatePhp();
-        // if ($_POST['action'] === 'edit') {
-        // } 
+        } 
     }    
-
+/*
 function updatePhp(){
     global $con;
 
-    $markerid = $_POST['marker'];
-    $edcountry = $_POST['editCountry'];
-    $edcity = $_POST['editCity'];
-    $edlandmark = $_POST['editLandmark'];
-    $position = 0;
 
-    $query = "UPDATE places_table SET country = '$edcountry', city = '$edcity', landmark = '$edlandmark' WHERE marker = '$markerid'";         
-    $exec = mysqli_query($con, $query);
+    // if(mysqli_affected_rows($con) >0 ){
+    //     echo 'success';
+    // }
 
-    if ($exec) {
-        echo 'Success';
-    } else {
-        echo 'keep trying';
-    }
-}
+    // if ($exec) {
+    //     // echo 'Success';
+    //     header('location: places.php');
+    // } else {
+    //     echo 'keep trying';
+    // }
 
+}*/
+ mysqli_close($con);
 ?>

@@ -17,7 +17,6 @@ function insert(){
         $position = 0;
     
         $query = "INSERT INTO places_table(country, city, landmark, position) VALUES ('$country', '$city', '$landmark', '$position')";
-        
         $insert = mysqli_query($con, $query);
 
 
