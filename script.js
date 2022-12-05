@@ -296,36 +296,42 @@ function modalDelete(rowData) {
 ///AJAX EDIT ROW
 
 // $('body').on('click', 'input[name=update]', function (){
-function update(action){
+function edit(action){
 
     // $(document).ready(function (){
-        let data = {
-            action: action,
-            id: $('#editBtn').attr('dataId'),
-            edCountry: $('#ed-country').val(),
-            edCity: $('#ed-city').val(),
-            edLandmark: $('#ed-landmark').val()
-        }
+        // let data = {
+        //     action: action,
+        //     id: $('#editBtn').attr('dataId'),
+        //     edCountry: $('#ed-country').val(),
+        //     edCity: $('#ed-city').val(),
+        //     edLandmark: $('#ed-landmark').val()
+        // }
         
         $.ajax({
-            url: 'editRow.php',
+            // url: 'editRow.php',
             method: 'POST',
             cache: false,
-            data: {data: data},
-            dataType: 'application',
-            success: function (response){
+            data: {
+                // action: 'edit',
+                id: $('#editBtn').attr('dataId'),
+                edCountry: $('#ed-country').val(),
+                edCity: $('#ed-city').val(),
+                edLandmark: $('#ed-landmark').val()
+            },
+            dataType: 'html',
+            success: function (){
                 console.log('edit ajax posted');
                 displayData()           
                 $.magnificPopup.close();
-                console.log(data),
-                console.log(response)
+                // console.log(data),
+                // console.log(response)
             }
         })
     // });
 };    
 // })
 
-
+/*
 
 $('div[name=edit_field]').css('transition','250ms');
 $('div[name=edit_field]').css('opacity','0');
@@ -455,3 +461,4 @@ $('body').on('click', 'a[name=see-more]' , function(){
         });
     })
 });
+*/

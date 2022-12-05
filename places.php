@@ -99,10 +99,8 @@ echo "
                 <td id=country-text>" . ucwords($row['country']) . "</td>
                 <td id=city-text>" . ucwords($row['city']) . "</td>
                 <td id=landmark-text>" . ucwords($row['landmark']) . "</td>
-                
-                
                 <td class=container-see-more><a href=#$marker name=see-more class='see-more open-popup-link popup-with-zoom-anim'  value=$marker editid=$marker>See More</a>
-                </td>
+                </td>                
                 
                 <div id=$marker name=modal class='modal zoom-anim-dialog mfp-hide' value=$marker>
                     <p id=modal-title><b> <span id=m-landmark>" . ucwords($row['landmark'])."</span> <span id=m-city>". ucwords($row['city'])."</span> <span id=m-country>". ucwords($row['country'])."</span></b></p>
@@ -128,7 +126,7 @@ echo "
                             </span>
                                 <br>
                             <div class=update-btn>
-                               <input id=editBtn class='btn1' dataId='$marker' onclick=update('edit') type='button' value='Update'>
+                               <input id=editBtn class='btn1' dataId=$marker onclick=edit('edit') type='button' value='Update'>
                             </div>
                         </div>
 
@@ -156,7 +154,24 @@ echo "
                 </div>
             </div class=drag-container>   
         </tr>
-                        
+        " ?>
+
+        <?php 
+        if (isset($_POST['id'])) {
+            $markerid = $_POST['id'];
+            $edcountry = $_POST['edCountry'];
+            $edcity = $_POST['edCity'];
+            $edlandmark = $_POST['edLandmark'];
+
+            $exec = mysqli_query($con, "UPDATE `places_table` SET `country` = '".$edcountry."', `city` = '".$edcity."', `landmark` = '".$edlandmark."' WHERE `marker` = '".$markerid."'");
+    
+            if (!$con->query($exec)) {
+                echo "query failed: (" . $con->errno . ") " . $con->error;
+                }
+        }
+        ?>
+                <?php "
+
                         ";
                     }
                 }
