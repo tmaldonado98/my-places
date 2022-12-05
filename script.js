@@ -298,7 +298,7 @@ function modalDelete(rowData) {
 // $('body').on('click', 'input[name=update]', function (){
 function edit(action){
 
-    // $(document).ready(function (){
+    $(document).ready(function (){
         // let data = {
         //     action: action,
         //     id: $('#editBtn').attr('dataId'),
@@ -310,7 +310,7 @@ function edit(action){
         $.ajax({
             // url: 'editRow.php',
             method: 'POST',
-            cache: false,
+            // cache: false,
             data: {
                 // action: 'edit',
                 id: $('#editBtn').attr('dataId'),
@@ -323,15 +323,12 @@ function edit(action){
                 console.log('edit ajax posted');
                 displayData()           
                 $.magnificPopup.close();
-                // console.log(data),
-                // console.log(response)
             }
         })
-    // });
+    });
 };    
 // })
 
-/*
 
 $('div[name=edit_field]').css('transition','250ms');
 $('div[name=edit_field]').css('opacity','0');
@@ -343,12 +340,12 @@ $('body').on('click', 'a[name=see-more]', function(){
     let mLandmark = $('#m-landmark').text();
 
     ////****************
-    $('.modal').css('cursor', 'progress')
+    $('.modal').addClass('cursorProgress')
     $('#search-engine').append("<div class='gcse-searchresults-only'></div>");
     $('head').append("<script async=true src='https://cse.google.com/cse.js?cx=22bdf86666de74d21'></script>")
-    if ($('#modal-map').ready()) {
-        $('.modal').css('cursor', 'default')
-    }
+    // if ($('#modal-map').ready()) {
+    //     $('.modal').removeClass('cursorProgress')
+    // }
 
     window.history.replaceState(null, null, "?q="+mCountry +' ' + mCity +' ' + mLandmark +' ');
     
@@ -395,32 +392,35 @@ $('body').keydown(function(e){
 
 window.history.replaceState(null, null, "?q=");
 
-$('#want').ready(function(){
+$('#map-section').ready(function(){
     $('#map').append("<script src='map-script.js'></script>");
 });
 
-$('.data-row').each(function(){
-    let coText = $(this).children('#country-text').text();
-    let ciText = $(this).children('#city-text').text();
-    let laText = $(this).children('#landmark-text').text();
+$('#container-table-btns').ready(function(){
+
+    $('.data-row').each(function(){
+        let coText = $(this).children('#country-text').text();
+        let ciText = $(this).children('#city-text').text();
+        let laText = $(this).children('#landmark-text').text();
 
     locateTxt = coText + ' ' + ciText + ' ' + laText;
 
-    $.ajax({
-        url: 'https://geocode.xyz',
-        data: {
-          auth: '803066415173447662518x121329',
-          locate: locateTxt,
-          json: '1'
-        }
-      }).done(function(data) {
-        // console.log(data["longt"], data["latt"]);
+        $.ajax({
+            url: 'https://geocode.xyz',
+            data: {
+              auth: '803066415173447662518x121329',
+              locate: locateTxt,
+              json: '1'
+            }
+          }).done(function(data) {
+            // console.log(data["longt"], data["latt"]);
 
-        const country = new maplibregl.Marker()
-        .setLngLat([data["longt"], data["latt"]])
-        .addTo(map);
-    
-      });
+            const country = new maplibregl.Marker()
+            .setLngLat([data["longt"], data["latt"]])
+            .addTo(map);
+        
+        })
+    })  
 });
 
 $('body').on('click', 'a[name=see-more]' , function(){
@@ -461,4 +461,3 @@ $('body').on('click', 'a[name=see-more]' , function(){
         });
     })
 });
-*/

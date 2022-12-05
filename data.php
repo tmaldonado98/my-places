@@ -74,7 +74,7 @@ echo "
                                 <input class='ed-text' id='ed-landmark' placeholder='Landmark' type='text' name='editLandmark' value='$rlandmark'>
                             
                                 <div class=update-btn>
-                                    <input class='btn1'  type='button' name='update' value='Update'>
+                                    <input id=editBtn class='btn1' dataId=$marker onclick=edit('edit') type='button' value='Update'>
                                 </div>
                             </span>
                             <br>

@@ -20,10 +20,10 @@ if (isset($_POST['update'])) {
     <title>My List Of Places</title>
     <link rel="icon" href="./icons8-globe-32.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./modals.css">
-    <link rel="stylesheet" href="./tableA.css">
+    <!-- <link rel="stylesheet" href="./modals.css"> -->
+    <!-- <link rel="stylesheet" href="./tableA.css"> -->
     <link rel="stylesheet" href="./modal-magnific-popup/magnific-popup.css">
-    <link rel="stylesheet" href="dialog-styling.css">
+    <!-- <link rel="stylesheet" href="dialog-styling.css"> -->
     <link href="./jquery-ui-1.13.2.custom/jquery-ui.css">
     <!-- <link href="./jquery-ui-1.13.2.custom/jquery-ui.min.css"> -->
     <script src="https://kit.fontawesome.com/602ec316c2.js" crossorigin="anonymous"></script>
@@ -115,7 +115,7 @@ echo "
                         <input type='button' name='edit' id=modal-edit value='Edit Place'></input>
                         <input type=button onclick='modalDelete($marker)' id=modal-delete name=modal_delete value='Remove Place'>
                     </div>
-                        <div class='edit-field'>
+                        <div class='edit-field' name=edit_field>
                             <span class=inputs>
                                 <label for='country'><p>Country</p></label>
                                 <input class='ed-text' id='ed-country' placeholder='Country' type='text' name='editCountry' value=$rcountry>
@@ -154,9 +154,10 @@ echo "
                 </div>
             </div class=drag-container>   
         </tr>
-        " ?>
 
-        <?php 
+                        ";
+                    }
+                }
         if (isset($_POST['id'])) {
             $markerid = $_POST['id'];
             $edcountry = $_POST['edCountry'];
@@ -165,43 +166,13 @@ echo "
 
             $exec = mysqli_query($con, "UPDATE `places_table` SET `country` = '".$edcountry."', `city` = '".$edcity."', `landmark` = '".$edlandmark."' WHERE `marker` = '".$markerid."'");
     
-            if (!$con->query($exec)) {
-                echo "query failed: (" . $con->errno . ") " . $con->error;
-                }
-        }
-        ?>
-                <?php "
+            // if (!$con->query($exec)) {
+            //     echo "query failed: (" . $con->errno . ") " . $con->error;
+            //     }
+        } 
 
-                        ";
-                    }
-                }
-
-                
-                //curly brackets to end the while loop and the if statement
-                // <form method='post' class=edit-form action='editRow.php' editid= $marker>
-
-                /*
-// if (isset($_POST['update'])) 
-if (isset($_GET['populate'])) {
-    populateFields();
-}
-$update = mysqli_query($con, "UPDATE places_table SET marker = '$markerid', country='$country', city='$city', landmark='$landmark' WHERE marker='$markerid'"); 
-// function populateFields(){}
-*/
-
-                        
-  // $markerid='editid';
-                        // $populateFields = mysqli_query($con, "SELECT * FROM places_table WHERE marker='$marker'");
-                        // $singleRow = mysqli_fetch_assoc($populateFields);
-
-
-
-// <a href='editRow.php?editid= $marker value= $marker  id='edit-row' name=edit></a>
- 
-
-echo "    </table> <br>
+echo "    </table>
 </div>"; 
-
 
 $select = ("SELECT * FROM places_table");
 $count = mysqli_query($con, $select);

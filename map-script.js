@@ -6,15 +6,3 @@ const map = new maplibregl.Map({
     zoom: 1.35
 });
 map.addControl(new maplibregl.NavigationControl(), 'top-right');
-
-// let lat;
-// let long;
-/*
-const country = new maplibregl.Marker()
-    .setLngLat([lat, long])
-    .addTo(map);
-
-    map.on('error', function(err) {
-    throw new Error("To load the map, you must replace YOUR_MAPTILER_API_KEY_HERE first, see README");
-});
-*/
