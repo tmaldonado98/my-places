@@ -25,11 +25,11 @@ include "connect.php";
 
     if ($result) {
         $_SESSION['status'] = "<p>Your information has been updated</p>";
-        header('location: places.php');
+        header('location: index.php');
     } else {
         $_SESSION['status'] = "<p>Error updating your information</p>";
         die(mysqli_error($con));
-        header('location: places.php');
+        header('location: index.php');
     }
 
 

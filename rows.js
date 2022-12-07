@@ -2,7 +2,7 @@ $(document).ready(function(){
     $('tbody').sortable({
         ///disables sortable for heading row
         items: 'tr:not(#heading-row)',
-        distance: 20,
+        // distance: 20,
         refresh: 'true',
 
         update: function (event, ui){
@@ -15,7 +15,7 @@ $(document).ready(function(){
         }
 
     });   
-
+/*
     function saveNewPositions(){
         let positions = [];
         $('.updated').each(function (){
@@ -33,14 +33,13 @@ $(document).ready(function(){
             }
         });   
     }
+    */
 
-});
-
-$('body').on('focus blur', '.checkbox', function(){
-    let rows = $('.data-row');
-    let checkbox = $('.checkbox');
- 
-    for (let i = 0; i < rows.length; i++) {
+   $('body').on('focus blur', '.checkbox', function(){
+       let rows = $('.data-row');
+       let checkbox = $('.checkbox');
+       
+       for (let i = 0; i < rows.length; i++) {
 
         $(checkbox[i]).change(()=>{
             if ($(checkbox[i]).attr('checked', true)) {
@@ -61,4 +60,7 @@ $('body').on('change', '#sel-all', function (e) {
     if ($('#sel-all').attr('checked', false) && $('.checkbox:checked').length == 0) {
         $('.data-row').removeClass('selectedRow')
     }
+});
+
+
 });

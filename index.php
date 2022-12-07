@@ -20,16 +20,9 @@ if (isset($_POST['update'])) {
     <title>My List Of Places</title>
     <link rel="icon" href="./icons8-globe-32.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="./style.css">
-    <!-- <link rel="stylesheet" href="./modals.css"> -->
-    <!-- <link rel="stylesheet" href="./tableA.css"> -->
     <link rel="stylesheet" href="./modal-magnific-popup/magnific-popup.css">
-    <!-- <link rel="stylesheet" href="dialog-styling.css"> -->
     <link href="./jquery-ui-1.13.2.custom/jquery-ui.css">
-    <!-- <link href="./jquery-ui-1.13.2.custom/jquery-ui.min.css"> -->
     <script src="https://kit.fontawesome.com/602ec316c2.js" crossorigin="anonymous"></script>
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.8.0/leaflet.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.8.0/leaflet.js"></script> -->
-    <script src='https://cdn.maptiler.com/maplibre-gl-js/v2.4.0/maplibre-gl.js'></script>
     <link href='https://cdn.maptiler.com/maplibre-gl-js/v2.4.0/maplibre-gl.css' rel='stylesheet'/>
 </head>
 <body>
@@ -58,6 +51,7 @@ if (isset($_POST['update'])) {
                 <th>Country</th>
                 <th>City</th>
                 <th>Landmark</th>
+                <th> </th>
             </tr>
 
 
@@ -126,7 +120,7 @@ echo "
                             </span>
                                 <br>
                             <div class=update-btn>
-                               <input id=editBtn class='btn1' dataId=$marker onclick=edit('edit') type='button' value='Update'>
+                               <input class=editBtn dataId=$marker onclick=edit('edit') type='button' value='Update'>
                             </div>
                         </div>
 
@@ -136,19 +130,6 @@ echo "
                         
                             </div>
                         </div>
-                    </div>
-
-                    <div id=container-facts>
-                        <div class=fact-boxes>Capital City: </div>
-                        <div class=fact-boxes>Local Currency: </div>
-                        <div class=fact-boxes>Average Weather: </div>
-                        <div class=fact-boxes>Language(s) Spoken: </div>
-                        <div class=fact-boxes>Population Size: </div>
-                        <div class=fact-boxes>Ethnic Makeup: </div>
-                        <div class=fact-boxes>Religious Demographics: </div>
-                        <div class=fact-boxes>Age Demographics: </div>
-
-                        <div class=fact-boxes>Look for a wikipedia/encyclopedia api to insert some historical/cultural facts here</div>
                     </div>
                                             
                 </div>
@@ -196,24 +177,20 @@ echo "<p id=total-places ><b>Total Number Of Places: " . $rowcount . "</b></p>";
         <div id="container-add-place">
             <div id="head-text">
                 <h3 id="med-head">Add A New Place</h3>
-                <form id="add-place" method="post">
+                <div id="add-place">
                     <div class="container-input">
-                        <!-- <label for="country"><p>Country</p></label> -->
+                        <label for="country"><p>Country</p></label>
                         <input autofocus class="text" id="country" placeholder="Country" type="text" name="country"></input>
-                        <!-- onkeyup="countrySuggestion(this.value) -->
-                        <p><span id='country-sug'></span></p>
                     </div>
                     <div class="container-input">
-                        <!-- <label for="city"><p>City</p></label> -->
+                        <label for="city"><p>City</p></label>
                         <input class="text" id="city" placeholder="City" type="text" name="city" ></input>
-                        <!-- onkeyup="citySuggestion(this.value)" -->
-                        <p><span id='city-sug'></span></p>
                     </div>
                     <div class="container-input">
-                        <!-- <label for="landmark"><p>Landmark</p></label> -->
+                        <label for="landmark"><p>Landmark</p></label>
                         <input class="text" id="landmark" placeholder="Landmark" type="text" name="landmark"></input>
                     </div>
-                </form>
+                </div>
 
                     <div id="container-btn1">
                         <input id="btn1" type="button" onclick="insertData('insert')" name="submit" value="Add New Place"></input>
@@ -246,14 +223,28 @@ mysqli_close($con);
 
 <script defer type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.js"></script>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
 <!-- jQuery UI plugin -->
 <script defer src="./jquery-ui-1.13.2.custom/jquery-ui.js"></script>
 
 <script defer type="text/javascript" src="script.js"></script>
 <script defer type="text/javascript" src="rows.js"></script>
+<script src='https://cdn.maptiler.com/maplibre-gl-js/v2.4.0/maplibre-gl.js'></script>
 <script defer src="modals-script.js"></script>
 <!-- <script defer src="https://www.googleapis.com/customsearch/v1?key=AIzaSyAHakO0K7mac852qUCsJxSq0sozCCvy-xA&cx=22bdf86666de74d21&q=search query"></script> -->
 
+<!-- 
+<div id=container-facts>
+                        <div class=fact-boxes>Capital City: </div>
+                        <div class=fact-boxes>Local Currency: </div>
+                        <div class=fact-boxes>Average Weather: </div>
+                        <div class=fact-boxes>Language(s) Spoken: </div>
+                        <div class=fact-boxes>Population Size: </div>
+                        <div class=fact-boxes>Ethnic Makeup: </div>
+                        <div class=fact-boxes>Religious Demographics: </div>
+                        <div class=fact-boxes>Age Demographics: </div>
 
+                        <div class=fact-boxes>Look for a wikipedia/encyclopedia api to insert some historical/cultural facts here</div>
+                    </div> -->
 </body>
 </html>

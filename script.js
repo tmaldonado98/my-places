@@ -1,20 +1,16 @@
 // if ( window.history.replaceState ) {
 //   window.history.replaceState( null, null, window.location );
 // };
-// let focusTop = $('body').find(('input[name=country]')).focus();
-
 // $(document).ready(()=>{
-    // $('.text').attr('style', 'text-transform:capitalize');
-    // $('.text').val('');
-    // focusTop;
-// });
+
+
 
 $('#add-place').click(()=>{
-    if ($('#country').val() == '' && $('#city').val() == '' && $('#landmark').val() == '') {
-        return false
-    }
-    ///replaced SUBMIT with CLICK event 
+if ($('#country').val() == '' && $('#city').val() == '' && $('#landmark').val() == '') {
+    return false
+}
 });
+    ///replaced SUBMIT with CLICK event 
 
 
 $('body').on('keypress', '.text', function(e){
@@ -104,7 +100,7 @@ $('body').on('change', '.checkbox', function(){
     if ($('checkbox').prop("checked", false)) {
         $('#sel-all').prop("checked", false)
     };
-
+    
     if ($('.checkbox:checked').length == $('.checkbox').length) {
         $('#sel-all').prop("checked", true)
     }
@@ -117,7 +113,7 @@ $('body').on('click focus blur', '.checkbox', function(){
 
     } else if ($('.checkbox:checked').length == 0) {
         $('.del-sel').removeClass('del-sel-visible');
-
+        
     }
 });
 
@@ -171,9 +167,9 @@ function insertData(action){
             country: $('#country').val(),
             city: $('#city').val(),
             landmark: $('#landmark').val(),  
-              
+            
         };
-
+        
         $.ajax({
             url: 'insert.php',
             type: 'POST',
@@ -200,7 +196,7 @@ function insertData(action){
                 loadedData.find('tbody').sortable({
                     ///disables sortable for heading row
                     items: 'tr:not(#heading-row)',
-                    distance: 20,
+                    // distance: 20,
                     refresh: 'true',
             
                     update: function (event, ui){
@@ -231,7 +227,7 @@ function saveNewPositions(){
     });
 
     $.ajax({
-        url: 'places.php',
+        url: 'index.php',
         method: 'POST',
         dataType: 'text',
         data: {
@@ -333,19 +329,15 @@ function edit(action){
 $('div[name=edit_field]').css('transition','250ms');
 $('div[name=edit_field]').css('opacity','0');
 
-
+/*
 $('body').on('click', 'a[name=see-more]', function(){
     let mCountry = $('#m-country').text();
     let mCity = $('#m-city').text();
     let mLandmark = $('#m-landmark').text();
 
     ////****************
-    $('.modal').addClass('cursorProgress')
     $('#search-engine').append("<div class='gcse-searchresults-only'></div>");
     $('head').append("<script async=true src='https://cse.google.com/cse.js?cx=22bdf86666de74d21'></script>")
-    // if ($('#modal-map').ready()) {
-    //     $('.modal').removeClass('cursorProgress')
-    // }
 
     window.history.replaceState(null, null, "?q="+mCountry +' ' + mCity +' ' + mLandmark +' ');
     
@@ -461,3 +453,6 @@ $('body').on('click', 'a[name=see-more]' , function(){
         });
     })
 });
+
+*/
+// });

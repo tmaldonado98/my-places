@@ -122,16 +122,27 @@ th {
   align-self: flex-end;
 }
 
-.update-btn {
+.editBtn {
   text-align: center;
   width: 100%;
+  background-color: rgba(187, 8, 71, 0);
+  font-size: 20px;
+  text-decoration: none;
+  color: whitesmoke;
+  cursor: pointer;
+  border: 2px solid rgba(170, 170, 170, 0.481);
+  padding: 0.5rem;
+  transition: 250ms;
+}
+
+.editBtn:hover {
+  border: 5px solid white;
 }
 
 .del-sel {
   width: 15rem;
   display: block !important;
   background-color: rgba(187, 8, 71, 0.7);
-  color: white;
   font-size: 20px;
   text-decoration: none;
   color: whitesmoke;
@@ -197,10 +208,6 @@ tr {
 .data-row:hover td:nth-child(1), .data-row:hover td:nth-child(2), .data-row:hover td:nth-child(3), .data-row:hover td:nth-child(4), .data-row:hover td:nth-child(5), .data-row:hover td:nth-child(6) {
   transition: 250ms;
   background-color: rgba(159, 148, 143, 0.9);
-}
-
-tr:nth-child(even) td:nth-child(1), tr:nth-child(even) td:nth-child(2), tr:nth-child(even) td:nth-child(3), tr:nth-child(even) td:nth-child(4) {
-  background-color: rgba(144, 144, 144, 0.084);
 }
 
 #sel-all {
