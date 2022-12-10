@@ -62,7 +62,7 @@ echo "
 
                     <div id=container-ed-del>
                         <input type='button' name='edit' id=modal-edit value='Edit Place'></input>
-                        <input type=button onclick='modalDelete($marker)' id=modal-delete name=modal_delete value='Remove Place'>
+                        <input type=button id=modal-delete name=modal_delete value='Remove Place'>
                     </div>
                         <div class='edit-field' name=edit_field value=$marker>
                             <span class=inputs>
@@ -74,7 +74,7 @@ echo "
                                 <input class='ed-text' id='ed-landmark' placeholder='Landmark' type='text' name='editLandmark' value='$rlandmark'>
                             
                                 <div class=update-btn>
-                                    <input id=editBtn class='btn1' dataId=$marker onclick=edit('edit') type='button' value='Update'>
+                                    <input id=editBtn class='btn1' dataId=$marker type='button' value='Update'>
                                 </div>
                             </span>
                             <br>
@@ -149,7 +149,7 @@ echo "<div id=total-places><p><b>Total Number Of Places: " . $rowcount . "</b></
 
     <div id='btn-msg'>
     <div id='btn'>
-                <input type='button' onclick=deleteData('delete') class='del-sel' name='delete_sel' value='Delete Selection'>
+                <input type='button' class='del-sel' name='delete_sel' value='Delete Selection'>
         
             </form>
     </div>    

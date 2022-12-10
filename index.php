@@ -106,8 +106,8 @@ echo "
                     <hr>
 
                     <div id=container-ed-del>
-                        <input type='button' name='edit' id=modal-edit value='Edit Place'></input>
-                        <input type=button onclick='modalDelete($marker)' id=modal-delete name=modal_delete value='Remove Place'>
+                        <input type='button' name='edit' class=modal-edit value='Edit Place'></input>
+                        <input type=button dataId=$marker class=modal-delete name=modal_delete value='Remove Place'>
                     </div>
                         <div class='edit-field' name=edit_field>
                             <span class=inputs>
@@ -120,7 +120,7 @@ echo "
                             </span>
                                 <br>
                             <div class=update-btn>
-                               <input class=editBtn dataId=$marker onclick=edit('edit') type='button' value='Update'>
+                               <input class=editBtn dataId=$marker type='button' value='Update'>
                             </div>
                         </div>
 
@@ -164,7 +164,7 @@ echo "<p id=total-places ><b>Total Number Of Places: " . $rowcount . "</b></p>";
        
             <div id="btn-msg">
             <div id="btn">
-                        <input type="button" onclick="deleteData('delete')" class="del-sel" name="delete_sel" value="Delete Selection">
+                        <input type="button" class="del-sel" name="delete_sel" value="Delete Selection">
                         
                     </form>
             </div>    
@@ -192,10 +192,9 @@ echo "<p id=total-places ><b>Total Number Of Places: " . $rowcount . "</b></p>";
                     </div>
                 </div>
 
-                    <div id="container-btn1">
-                        <input id="btn1" type="button" onclick="insertData('insert')" name="submit" value="Add New Place"></input>
+                    <div id="container-insertBtn">
+                        <input id="insertBtn" type="button" value="Add New Place"></input>
                     </div>
-                    
             </div>
         </div>
 
@@ -228,9 +227,9 @@ mysqli_close($con);
 <script defer src="./jquery-ui-1.13.2.custom/jquery-ui.js"></script>
 
 <script defer type="text/javascript" src="script.js"></script>
-<script defer type="text/javascript" src="rows.js"></script>
+<!-- <script defer type="text/javascript" src="rows.js"></script> -->
 <script src='https://cdn.maptiler.com/maplibre-gl-js/v2.4.0/maplibre-gl.js'></script>
-<script defer src="modals-script.js"></script>
+<!-- <script defer src="modals-script.js"></script> -->
 <!-- <script defer src="https://www.googleapis.com/customsearch/v1?key=AIzaSyAHakO0K7mac852qUCsJxSq0sozCCvy-xA&cx=22bdf86666de74d21&q=search query"></script> -->
 
 <!-- 

@@ -1,11 +1,26 @@
 // if ( window.history.replaceState ) {
 //   window.history.replaceState( null, null, window.location );
 // };
-// $(document).ready(()=>{
+$(document).ready(()=>{
+
+$('tbody').sortable({
+    ///disables sortable for heading row
+    items: 'tr:not(#heading-row)',
+    // distance: 20,
+    refresh: 'true',
+
+    update: function (event, ui){
+        $(this).not('#heading-row').children().each(function (marker){
+            if ($(this).attr('data-position') != (marker+1)) {
+                $(this).attr('data-position', (marker+1)).addClass('updated')
+            }
+            saveNewPositions();
+        })
+    }
+});
 
 
-
-$('#add-place').click(()=>{
+$('#insertBtn').click(()=>{
 if ($('#country').val() == '' && $('#city').val() == '' && $('#landmark').val() == '') {
     return false
 }
@@ -14,15 +29,28 @@ if ($('#country').val() == '' && $('#city').val() == '' && $('#landmark').val() 
 
 
 $('body').on('keypress', '.text', function(e){
-    if (e.keyCode === 13) {
-        insertData('insert');
+    if (e.keyCode === 13) {    
+        let insert = 'insert';
+        let data = {
+            action: insert,
+            country: $('#country').val(),
+            city: $('#city').val(),
+            landmark: $('#landmark').val(),  
+        };
+
+        $.ajax({
+            url: 'insert.php',
+            type: 'POST',
+            data: data,
+            success: function (){
+               displayData();           
+            }
+        })
     }
 //This block enables form to be posted upon pressing ENTER key.
 // Not submitted, but posted with AJAX
 });
 
-
-$('#btn1').attr('style', 'visibility:hidden');
 
 ////THIS EVENT CAPITALIZES FIRST LETTER OF EACH WORD IN EACH INPUT FIELD
 /// AND INVALIDATES NUMBER KEYS. IT DOES NOT CAPITALIZE EACH FIRST LETTER FOR DB ENTRIES
@@ -30,6 +58,7 @@ $('#btn1').attr('style', 'visibility:hidden');
 
 $('body').on('keypress', 'input', function(e){
     $('.text').attr('style', 'text-transform:capitalize');
+    $('.ed-text').attr('style', 'text-transform:capitalize');
     
     if (e.keyCode > 47 && e.keyCode < 65 && e.keyCode != 32) {
         return false;
@@ -76,9 +105,9 @@ $('body').on('keypress', '#ed-landmark', function(){
 // THE THREE TEXT FIELDS. THIS IS DONE IN ORDER TO AVOID ADDING EMPTY ROWS INTO DB
 $('.text').keyup((e)=>{
     if ($('#country').val().length > 0 || $('#city').val().length > 0 || $('#landmark').val().length > 0) {
-        $('#btn1').attr('style', 'visibility:visible');
+        $('#insertBtn').attr('style', 'opacity:1');
     } else {
-        $('#btn1').attr('style', 'visibility:hidden'); 
+        $('#insertBtn').attr('style', 'opacity:0'); 
     };
 });
 
@@ -127,6 +156,34 @@ $('body').on('click', '#sel-all', function(){
 });
 
 
+$('body').on('focus blur', '.checkbox', function(){
+    let rows = $('.data-row');
+    let checkbox = $('.checkbox');
+    
+    for (let i = 0; i < rows.length; i++) {
+
+     $(checkbox[i]).change(()=>{
+         if ($(checkbox[i]).attr('checked', true)) {
+             $(rows[i]).toggleClass('selectedRow')
+         }
+         else if ($(checkbox[i]).attr('checked', false)) {
+             $(rows[i]).toggleClass('selectedRow')
+         }
+         
+     });
+ }
+});
+
+$('body').on('change', '#sel-all', function (e) {
+ if ($('#sel-all').attr('checked', true)) {
+     $('.data-row').addClass('selectedRow')
+ }
+ if ($('#sel-all').attr('checked', false) && $('.checkbox:checked').length == 0) {
+     $('.data-row').removeClass('selectedRow')
+ }
+});
+
+
 ///Suggestions function
 /*
 function countrySuggestion(str){
@@ -160,26 +217,26 @@ $('#city').keyup(citySuggestion(str), {
 
     
 //AJAX INSERT
-function insertData(action){
-    $(document).ready(function (){
-        let data = {
-            action: action,
-            country: $('#country').val(),
-            city: $('#city').val(),
-            landmark: $('#landmark').val(),  
-            
-        };
+$('body').on('click', '#insertBtn', function (){
+
+    let insert = 'insert';
+    let data = {
+        action: insert,
+        country: $('#country').val(),
+        city: $('#city').val(),
+        landmark: $('#landmark').val(),  
         
-        $.ajax({
-            url: 'insert.php',
-            type: 'POST',
-            data: data,
-            success: function (){
-               displayData();           
-            }
-        })
+    };
+        
+    $.ajax({
+        url: 'insert.php',
+        type: 'POST',
+        data: data,
+        success: function (){
+           displayData();           
+        }
     })
-};
+});
 
 
 
@@ -212,8 +269,7 @@ function insertData(action){
                 $('#country').val('');
                 $('#city').val('');
                 $('#landmark').val('');
-                // focusTop;
-                $('#btn1').attr('style', 'visibility:hidden');
+                $('#insertBtn').attr('style', 'opacity:0');
 
             }
     });
@@ -239,9 +295,7 @@ function saveNewPositions(){
 
 
 // AJAX DELETE
-
-function deleteData(){
-    $(document).ready(function (){
+$('body').on('click', '.del-sel', function(){
         let id = [];
         let confirmalert = confirm('Are you sure?');
         
@@ -251,11 +305,12 @@ function deleteData(){
                 id[i] = $(this).val();
             });
 
-            
             $.ajax({
                 method: 'POST',
                 url: 'delete.php',
-                data: {id:id},
+                data: {
+                id:id,
+                },
                 success: function () {
                     console.log('deleted');
                     displayData();
@@ -263,13 +318,13 @@ function deleteData(){
             })
             
         }
-    })
-};
+});
 
-function modalDelete(rowData) {
+$('body').on('click', '.modal-delete', function(){
 
     let confirmalert = confirm('Are you sure?');
-    
+    let rowData = $(this).attr('dataId');
+
     if (confirmalert == true) {
 
         console.log(rowData)
@@ -285,51 +340,57 @@ function modalDelete(rowData) {
             }
         })
     }
+    
+    
+    // }
+});
 
-
-};
 
 ///AJAX EDIT ROW
 
-// $('body').on('click', 'input[name=update]', function (){
-function edit(action){
+$('body').on('click', '.editBtn', function (){
 
-    $(document).ready(function (){
-        // let data = {
-        //     action: action,
-        //     id: $('#editBtn').attr('dataId'),
-        //     edCountry: $('#ed-country').val(),
-        //     edCity: $('#ed-city').val(),
-        //     edLandmark: $('#ed-landmark').val()
-        // }
+    $.ajax({
+        // url: 'editRow.php',
+        method: 'POST',
+        // cache: false,
+        data: {
+            // action: 'edit',
+            id: $('.editBtn').attr('dataId'),
+            edCountry: $('#ed-country').val(),
+            edCity: $('#ed-city').val(),
+            edLandmark: $('#ed-landmark').val()
+        },
+        dataType: 'html',
+        success: function (){
+            console.log('edit ajax posted');
+            displayData()           
+            $.magnificPopup.close();
+        }
+    })
+});
+
+
+
+$('body').on('mouseover', '.popup-with-zoom-anim', function (){
+    $('.popup-with-zoom-anim').magnificPopup({
+        type: 'inline',
+
+        fixedContentPos: false,
+        fixedBgPos: true,
+
+        overflowY: 'auto',
+
+        closeBtnInside: true,
+        preloader: false,
         
-        $.ajax({
-            // url: 'editRow.php',
-            method: 'POST',
-            // cache: false,
-            data: {
-                // action: 'edit',
-                id: $('#editBtn').attr('dataId'),
-                edCountry: $('#ed-country').val(),
-                edCity: $('#ed-city').val(),
-                edLandmark: $('#ed-landmark').val()
-            },
-            dataType: 'html',
-            success: function (){
-                console.log('edit ajax posted');
-                displayData()           
-                $.magnificPopup.close();
-            }
-        })
+        midClick: true,
+        removalDelay: 300,
+        mainClass: 'my-mfp-zoom-in'
     });
-};    
-// })
+});
 
 
-$('div[name=edit_field]').css('transition','250ms');
-$('div[name=edit_field]').css('opacity','0');
-
-/*
 $('body').on('click', 'a[name=see-more]', function(){
     let mCountry = $('#m-country').text();
     let mCity = $('#m-city').text();
@@ -343,7 +404,7 @@ $('body').on('click', 'a[name=see-more]', function(){
     
 });
 
-$('body').on('click', '#modal-edit', function(){
+$('body').on('click', '.modal-edit', function(){
     $('div[name=edit_field]').css('transition','250ms')
     $('div[name=edit_field]').css('opacity','1')
 });
@@ -418,6 +479,10 @@ $('#container-table-btns').ready(function(){
 $('body').on('click', 'a[name=see-more]' , function(){
 
     $('.modal').ready(function() {
+        $('div[name=edit_field]').css('transition','250ms');
+        $('div[name=edit_field]').css('opacity','0');
+    
+
         let mCountry = $('#m-country').text();
         let mCity = $('#m-city').text();
         let mLandmark = $('#m-landmark').text();
@@ -454,5 +519,5 @@ $('body').on('click', 'a[name=see-more]' , function(){
     })
 });
 
-*/
-// });
+
+});
