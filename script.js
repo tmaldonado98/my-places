@@ -4,8 +4,10 @@
 $(document).ready(()=>{
 
 $('tbody').sortable({
-    ///disables sortable for heading row
+    handle: '#handle',
     items: 'tr:not(#heading-row)',
+    // , td:not(td:nth-of-type(n+2))
+    ///disables sortable for heading row
     // distance: 20,
     refresh: 'true',
 

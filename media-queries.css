@@ -1,0 +1,71 @@
+@media screen and (max-width: 1000px) {
+  #add-place {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 900px) {
+  #container-print {
+    display: none;
+  }
+  #want {
+    width: 100%;
+  }
+  #container-table-btns {
+    margin: 0;
+  }
+  th:nth-of-type(-n+2) {
+    display: none;
+  }
+  td:nth-of-type(-n+2) {
+    display: none;
+  }
+  #btn-msg {
+    display: none !important;
+  }
+  .container-input {
+    margin: 0;
+  }
+  td, .see-more, .editBtn {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 700px) {
+  #contact {
+    width: auto;
+  }
+  #container-table-btns {
+    width: 100%;
+  }
+  #table {
+    width: 100%;
+  }
+  tbody {
+    border-spacing: 0;
+    border-collapse: collapse;
+  }
+  td, .see-more {
+    padding: 0;
+    border-spacing: 0;
+  }
+  svg {
+    width: 15;
+    height: 15;
+  }
+  #container-table-btns p {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  #container-print {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 450px) and (max-width: 549px) {
+  td {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 550px) and (max-width: 699px) {
+  td {
+    font-size: 1.15rem;
+  }
+}/*# sourceMappingURL=media-queries.css.map */

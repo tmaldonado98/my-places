@@ -30,8 +30,8 @@ echo    '<div id=container-table>';
 echo "            
         <tr data-marker=$marker data-position=$position name=row class='data-row draggable ui-state-default ui-widget-content'  value= '$marker'  >
             <div class=drag-container>
-                <td>
-                    <svg viewBox='0 0 100 80' width='20' height='20' fill='white'>
+                <td id='handle'>
+                    <svg viewBox='0 0 100 80' width='20' height='20' fill='black'>
                         <rect width='100' height='15' rx='8'></rect>
                         <rect y='30' width='100' height='15' rx='8'></rect>
                         <rect y='60' width='100' height='15' rx='8'></rect>

@@ -20,6 +20,7 @@ if (isset($_POST['update'])) {
     <title>My List Of Places</title>
     <link rel="icon" href="./icons8-globe-32.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./media-queries.css">
     <link rel="stylesheet" href="./modal-magnific-popup/magnific-popup.css">
     <link href="./jquery-ui-1.13.2.custom/jquery-ui.css">
     <script src="https://kit.fontawesome.com/602ec316c2.js" crossorigin="anonymous"></script>
@@ -76,7 +77,7 @@ $landmark = $_POST['landmark'];
 echo "            
         <tr data-marker=$marker data-position=$position name=row class='data-row draggable ui-state-default ui-widget-content'  value=$marker>
             <div class=drag-container>
-                <td>
+                <td id='handle'>
                     <svg viewBox='0 0 100 80' width='20' height='20' fill='black'>
                         <rect width='100' height='15' rx='8'></rect>
                         <rect y='30' width='100' height='15' rx='8'></rect>
@@ -219,20 +220,16 @@ echo "<p id=total-places ><b>Total Number Of Places: " . $rowcount . "</b></p>";
 <?php
 mysqli_close($con);
 ?>
-
 <script defer type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.js"></script>
+
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
 
 <!-- jQuery UI plugin -->
 <script defer src="./jquery-ui-1.13.2.custom/jquery-ui.js"></script>
-
+    
 <script defer type="text/javascript" src="script.js"></script>
-<!-- <script defer type="text/javascript" src="rows.js"></script> -->
 <script src='https://cdn.maptiler.com/maplibre-gl-js/v2.4.0/maplibre-gl.js'></script>
-<!-- <script defer src="modals-script.js"></script> -->
-<!-- <script defer src="https://www.googleapis.com/customsearch/v1?key=AIzaSyAHakO0K7mac852qUCsJxSq0sozCCvy-xA&cx=22bdf86666de74d21&q=search query"></script> -->
-
-<!-- 
+<!--   I left this markup commented out to possibly be included in a future version of this project.
 <div id=container-facts>
                         <div class=fact-boxes>Capital City: </div>
                         <div class=fact-boxes>Local Currency: </div>

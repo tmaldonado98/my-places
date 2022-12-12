@@ -10,9 +10,50 @@ input[type=text]{
     font-size: 1.25rem;
 }
 
-body{
-    background-image:  url(https://images.pexels.com/photos/697662/pexels-photo-697662.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
-    background-size: inherit;
+
+@media screen and (min-width: 901px) {
+    body{
+        background-image:  url(https://images.pexels.com/photos/697662/pexels-photo-697662.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+        background-size: inherit;
+    }
+
+    //putting all hovers here
+    .nav-btns:hover{
+        transition: 250ms;
+        border-bottom: 4px double antiquewhite;
+    
+    }
+    .modal-edit:hover, .modal-delete:hover{
+        border: 2px solid #ffffff;
+    }
+    .editBtn:hover{
+        border: 2px solid white;
+        background-color: rgba(255, 255, 255, 0.293);
+    }
+    .del-sel:hover{
+        background-color: rgb(187, 8, 71);
+        color: white;
+    }
+    
+    .print:hover{
+        color: white;
+    }
+
+    .data-row:hover{
+        td:nth-child(n+1){
+            transition: 250ms;
+            background-color: rgba(159, 148, 143, 0.9);
+        }
+    } 
+    #insertBtn:hover{
+        border: 1.5rem, rgb(87, 87, 87);
+        background-color: white;
+        color: rgb(58, 84, 160);
+    }
+    .container-see-more:hover{
+        transition: 250ms;
+        background-color: antiquewhite !important;
+    }
 }
 
 nav{
@@ -46,11 +87,7 @@ nav{
     transition: 250ms;
 
 }
-.nav-btns:hover{
-    transition: 250ms;
-    border-bottom: 4px double antiquewhite;
 
-}
 // .nav-btns:nth-of-type(1){
 //     border-right: 0.5px antiquewhite double;
 
@@ -76,7 +113,7 @@ h1{
     // background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #e3e3e3 11px ), 
     // repeating-linear-gradient( #e2e2e255, #cdcaca );
     background-image: url(https://images.pexels.com/photos/3837487/pexels-photo-3837487.jpeg?auto=compress&cs=tinysrgb&w=1600);
-    border: 5px double black;
+    border-bottom: 5px double black;
 }
 
 #container-table{
@@ -121,7 +158,7 @@ th{
     font-size: 1.15rem;
 }
 
-#insertBtn, .edit-btn, .see-more{
+#insertBtn, .see-more{
     font-size: 20px;
     text-decoration: none;
     color: inherit;
@@ -167,9 +204,7 @@ th{
     padding: 0.25rem;
     border: 2px solid rgba(170, 170, 170, 0.481);
 }
-.modal-edit:hover, .modal-delete:hover{
-    border: 2px solid #ffffff;
-}
+
 //div
 .update-btn{
     text-align: center;
@@ -188,10 +223,7 @@ th{
     padding: 0.5rem;
     transition: 250ms;   
 }
-.editBtn:hover{
-    border: 2px solid white;
-    background-color: rgba(255, 255, 255, 0.293);
-}
+
 
 .del-sel{
     width: 15rem;
@@ -211,14 +243,7 @@ th{
 .del-sel-visible{
     opacity: 1;
 }
-.del-sel:hover{
-    background-color: rgb(187, 8, 71);
-    color: white;
-}
 
-.print:hover{
-    color: white;
-}
 
 #table{
     border-spacing: 0.2rem;
@@ -258,12 +283,7 @@ tr{
     border-spacing: 5px;
 }
 
-.data-row:hover{
-    td:nth-child(1),td:nth-child(2),td:nth-child(3),td:nth-child(4),td:nth-child(5),td:nth-child(6){
-        transition: 250ms;
-        background-color: rgba(159, 148, 143, 0.9);
-    }
-}  
+ 
 
 
 // tr:nth-child(even){
@@ -302,12 +322,6 @@ td:where(.check-td){
     // width: fit-content;
     padding: 0;
 }
-
-.container-see-more:hover{
-    transition: 250ms;
-    background-color: antiquewhite !important;
-}
-
 
 #container-add-place{
     width: 70%;
@@ -361,17 +375,13 @@ td:where(.check-td){
     opacity: 0;
     transition: 400ms;
 }
-#insertBtn:hover{
-    border: 1.5rem, rgb(87, 87, 87);
-    background-color: white;
-    color: rgb(58, 84, 160);
-}
+
 
 .container-input {
     margin: 1rem 0;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 1rem;
 }
 // .container-input label{
 //     align-items: center;
@@ -507,71 +517,6 @@ footer p {
     text-align: center;
     padding: 0.5rem 0;
 
-}
-
-@media screen and (max-width: 700px) {
-    // #want{
-    //     width: 100%;
-    // }
-    #container-table-btns{
-        width: 100%;
-
-    }
-    #table{
-        // border-spacing: 0 12px;
-        width: 100%;
-    }
-    tbody{
-        border-spacing: 0;
-        border-collapse: collapse;
-    }
-    td, .see-more{
-        padding: 0;
-        // font-size: 1.85rem;
-        border-spacing: 0;
-    }
-
-    // .container-see-more{
-    //     border: 0.1px black solid;
-    // }
-    .edit-row, .checkbox, .check-td{
-        display: none;
-    }
-
-    tr th:nth-child(5),tr th:nth-child(6), tr th:nth-child(5){
-        display: none;
-    }
-
-    svg{
-        width: 15;
-        height: 15;
-    }
-
-
-    #container-table-btns p{
-        text-align: center;
-        font-size: 0.9rem;
-    }
-
-    #container-print{
-        text-align: center;
-    }
-
-    // #pdf{
-    //     display: block;
-    // }
-}
-
-@media screen and (min-width: 450px) and (max-width: 549px) {
-    td{
-        font-size: 1rem;
-    }
-}    
-
-@media screen and (min-width: 550px) and (max-width: 699px) {
-    td{
-        font-size: 1.15rem;
-    }
 }
 
 //magnific popup modal styling
