@@ -6,8 +6,6 @@ $(document).ready(()=>{
 $('tbody').sortable({
     handle: '#handle',
     items: 'tr:not(#heading-row)',
-    // , td:not(td:nth-of-type(n+2))
-    ///disables sortable for heading row
     // distance: 20,
     refresh: 'true',
 
@@ -416,7 +414,7 @@ $('body').on('click', '.see-more', function(){
 
     ////****************
     $('.search-engine').append("<div class='gcse-searchresults-only'></div>");
-    $('head').append("<script async=true src='https://cse.google.com/cse.js?cx=22bdf86666de74d21'></script>")
+    $('head').append("<script async=true src='https://cse.google.com/cse.js?cx=22bdf86666de74d21'></script>");
 
     window.history.replaceState(null, null, "?q="+mCountry +' ' + mCity +' ' + mLandmark +' ');
     
@@ -424,14 +422,9 @@ $('body').on('click', '.see-more', function(){
 
 $('body').on('click', '.modal-edit', function(){
     $('.edit-field').addClass('edit-field-visible');
-
-    //     $('div[name=edit_field]').css('transition','250ms')
-//     $('div[name=edit_field]').css('opacity','1')
 });
 
 $('body').on('click', '.mfp-close', function(){
-    // $('div[name=edit_field]').css('transition','250ms')
-    // $('div[name=edit_field]').css('opacity','0')
     $('.edit-field').removeClass('edit-field-visible');
 
     window.history.replaceState(null, null, "?q=");
@@ -442,8 +435,6 @@ $('body').on('click', '.mfp-close', function(){
 });
 
 $('.modal').on('unload', function(){
-    // $('div[name=edit_field]').css('transition','250ms')
-    // $('div[name=edit_field]').css('opacity','0')
     $('.edit-field').removeClass('edit-field-visible');
 
     window.history.replaceState(null, null, "?q=");
@@ -455,8 +446,6 @@ $('.modal').on('unload', function(){
 
 $('body').keydown(function(e){
     if (e.keyCode === 27) {
-        // $('div[name=edit_field]').css('transition','250ms')
-        // $('div[name=edit_field]').css('opacity','0')
         $('.edit-field').removeClass('edit-field-visible');
         
         window.history.replaceState(null, null, "?q=");
@@ -468,6 +457,7 @@ $('body').keydown(function(e){
 
 window.history.replaceState(null, null, "?q=");
 
+///change to append script upon dom modification
 $('#map-section').ready(function(){
     $('#map').append("<script src='map-script.js'></script>");
 });
@@ -499,11 +489,9 @@ $('#container-table-btns').ready(function(){
     })  
 });
 
-$('body').on('click', 'a[name=see-more]' , function(){
+$('body').on('click', '.see-more' , function(){
 
     $('.modal').ready(function() {
-        // $('div[name=edit_field]').css('transition','250ms');
-        // $('div[name=edit_field]').css('opacity','0');
         $('.edit-field').removeClass('edit-field-visible');
 
         let mCountry = $('#m-country').text();

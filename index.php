@@ -113,11 +113,11 @@ echo "
                         <div class='edit-field' name=edit_field>
                             <span class=inputs>
                                 <label for='country'><p>Country</p></label>
-                                <input class='ed-text' id='ed-country' placeholder='Country' type='text' name='editCountry' value=$rcountry>
+                                <input class='ed-text' id='ed-country' placeholder='Country' type='text' autocomplete='off' name='editCountry' value=$rcountry>
                                 <label for='city'><p>City</p></label>
-                                <input class='ed-text' id='ed-city' placeholder='City' type='text' name='editCity' value=$rcity>
+                                <input class='ed-text' id='ed-city' placeholder='City' type='text' autocomplete='off' name='editCity' value=$rcity>
                                 <label for='landmark'><p>Landmark</p></label>
-                                <input class='ed-text' id='ed-landmark' placeholder='Landmark' type='text' name='editLandmark' value=$rlandmark>
+                                <input class='ed-text' id='ed-landmark' placeholder='Landmark' type='text' autocomplete='off' name='editLandmark' value=$rlandmark>
                             </span>
                                 <br>
                             <div class=update-btn>
@@ -181,15 +181,15 @@ echo "<p id=total-places ><b>Total Number Of Places: " . $rowcount . "</b></p>";
                 <div id="add-place">
                     <div class="container-input">
                         <label for="country"><p>Country</p></label>
-                        <input autofocus class="text" id="country" placeholder="Country" type="text" name="country"></input>
+                        <input autofocus autocomplete='off' class="text" id="country" placeholder="Country" type="text" name="country"></input>
                     </div>
                     <div class="container-input">
                         <label for="city"><p>City</p></label>
-                        <input class="text" id="city" placeholder="City" type="text" name="city" ></input>
+                        <input autocomplete='off' class="text" id="city" placeholder="City" type="text" name="city" ></input>
                     </div>
                     <div class="container-input">
                         <label for="landmark"><p>Landmark</p></label>
-                        <input class="text" id="landmark" placeholder="Landmark" type="text" name="landmark"></input>
+                        <input autocomplete='off' class="text" id="landmark" placeholder="Landmark" type="text" name="landmark"></input>
                     </div>
                 </div>
 
