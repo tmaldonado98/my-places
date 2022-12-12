@@ -100,14 +100,14 @@ echo "
                     <p id=modal-title><b> <span id=m-landmark>" . ucwords($row['landmark'])."</span> <span id=m-city>". ucwords($row['city'])."</span> <span id=m-country>". ucwords($row['country'])."</span></b></p>
                     <hr>
 
-                    <div id=search-engine>
+                    <div class=search-engine>
                                               
                     </div>
                     <hr>
 
                     <div id=container-ed-del>
                         <input type='button' name='edit' class=modal-edit value='Edit Place'></input>
-                        <input type=button dataId=$marker class=modal-delete name=modal_delete value='Remove Place'>
+                        <input type='button' dataId=$marker class=modal-delete name=modal_delete value='Remove Place'>
                     </div>
                         <div class='edit-field' name=edit_field>
                             <span class=inputs>

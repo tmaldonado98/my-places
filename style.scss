@@ -3,6 +3,13 @@ body, html {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+input[type=button], input[type=text]{
+    font-family: inherit;
+}
+input[type=text]{
+    font-size: 1.25rem;
+}
+
 body{
     background-image:  url(https://images.pexels.com/photos/697662/pexels-photo-697662.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
     background-size: inherit;
@@ -75,6 +82,7 @@ h1{
 #container-table{
     max-height: 55vh;
     overflow: scroll;
+    margin: 0;
 }
 
 #container-table-btns{
@@ -143,24 +151,46 @@ th{
     flex-wrap: wrap;
     margin: auto;
 }
-.edit-field .btn1{
+.edit-field{
     align-self: flex-end;
+}
+
+.modal-edit, .modal-delete{
+    text-align: center;
+    width: fit-content;
+    background-color: rgba(187, 8, 71, 0);
+    font-size: 1.2rem;
+    // text-decoration: none;
+    cursor: pointer;
+    font-family: inherit;
+    transition: 350ms;
+    padding: 0.25rem;
+    border: 2px solid rgba(170, 170, 170, 0.481);
+}
+.modal-edit:hover, .modal-delete:hover{
+    border: 2px solid #ffffff;
+}
+//div
+.update-btn{
+    text-align: center;
+    margin: auto auto 1.5rem auto;
 }
 
 .editBtn{
     text-align: center;
-    width: 100%;
+    width: 15%;
     background-color: rgba(187, 8, 71, 0);
-    font-size: 20px;
+    font-size: 1.35rem;
     text-decoration: none;
-    color: whitesmoke;
+    // color: whitesmoke;
     cursor: pointer;
     border: 2px solid rgba(170, 170, 170, 0.481);
     padding: 0.5rem;
-    transition: 250ms;    
+    transition: 250ms;   
 }
 .editBtn:hover{
-    border: 5px solid white;
+    border: 2px solid white;
+    background-color: rgba(255, 255, 255, 0.293);
 }
 
 .del-sel{
@@ -174,12 +204,12 @@ th{
     cursor: pointer;
     border: 3px solid rgba(170, 170, 170, 0.481);
     padding: 0.5rem;
-    visibility: hidden;
+    opacity: 0;
     transition: 250ms;
 }
 
 .del-sel-visible{
-    visibility: visible;
+    opacity: 1;
 }
 .del-sel:hover{
     background-color: rgb(187, 8, 71);
@@ -350,17 +380,17 @@ td:where(.check-td){
 #btn-msg{
     display: flex;
     flex-direction: column;
-    margin: 2.5rem auto;
+    margin: 0rem auto;
 }
 
-#msg{
-    width: 100%;
-    display: flex;
-    margin: auto;
-    gap: 15%;
-    align-items: center;
-    padding: 2rem 0 0 0;
-}
+// #msg{
+//     width: 100%;
+//     display: flex;
+//     margin: auto;
+//     gap: 15%;
+//     align-items: center;
+//     padding: 2rem 0 0 0;
+// }
 
 #btn{
     margin: 0 auto;
@@ -636,8 +666,14 @@ footer p {
     font-size: 2.25rem;
 }
 
-
-
+.edit-field{
+    transition: 250ms;
+    opacity: 0;
+}
+.edit-field-visible{
+    transition: 250ms;
+    opacity: 1;
+}
 /*              */
 
 #search-engine{

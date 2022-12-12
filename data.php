@@ -52,17 +52,17 @@ echo "
                 </td>
 
                 <div id=$marker name=modal class='modal zoom-anim-dialog mfp-hide' value=$marker>
-                    <p id=modal-title><b>" . ucwords($row['landmark'])." ". ucwords($row['city'])." ". ucwords($row['country'])." " . "</b></p>
+                    <p id=modal-title><b> <span id=m-landmark>" . ucwords($row['landmark'])."</span> <span id=m-city>". ucwords($row['city'])."</span> <span id=m-country>". ucwords($row['country'])."</span></b></p>
                     <hr>
 
-                    <div id=search-engine>
+                    <div class=search-engine>
                                               
                     </div>
                     <hr>
 
                     <div id=container-ed-del>
-                        <input type='button' name='edit' id=modal-edit value='Edit Place'></input>
-                        <input type=button id=modal-delete name=modal_delete value='Remove Place'>
+                        <input type='button' name='edit' class=modal-edit value='Edit Place'></input>
+                        <input type=button class=modal-delete name=modal_delete value='Remove Place'>
                     </div>
                         <div class='edit-field' name=edit_field value=$marker>
                             <span class=inputs>
@@ -72,12 +72,11 @@ echo "
                                 <input class='ed-text' id='ed-city' placeholder='City' type='text' name='editCity' value='$rcity'>
                                 <label for='landmark'><p>Landmark</p></label>
                                 <input class='ed-text' id='ed-landmark' placeholder='Landmark' type='text' name='editLandmark' value='$rlandmark'>
-                            
-                                <div class=update-btn>
-                                    <input id=editBtn class='btn1' dataId=$marker type='button' value='Update'>
-                                </div>
                             </span>
-                            <br>
+                                <br>
+                            <div class=update-btn>
+                                <input class=editBtn dataId=$marker type='button' value='Update'>
+                            </div>
                         </div>
 
                     <div id=section-modal-map>
@@ -86,19 +85,6 @@ echo "
                         
                             </div>
                         </div>
-                    </div>
-
-                    <div id=container-facts>
-                        <div class=fact-boxes>Capital City: </div>
-                        <div class=fact-boxes>Local Currency: </div>
-                        <div class=fact-boxes>Average Weather: </div>
-                        <div class=fact-boxes>Language(s) Spoken: </div>
-                        <div class=fact-boxes>Population Size: </div>
-                        <div class=fact-boxes>Ethnic Makeup: </div>
-                        <div class=fact-boxes>Religious Demographics: </div>
-                        <div class=fact-boxes>Age Demographics: </div>
-
-                        <div class=fact-boxes>Look for a wikipedia/encyclopedia api to insert some historical/cultural facts here</div>
                     </div>
                                             
                 </div>

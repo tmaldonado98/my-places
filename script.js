@@ -21,9 +21,9 @@ $('tbody').sortable({
 
 
 $('#insertBtn').click(()=>{
-if ($('#country').val() == '' && $('#city').val() == '' && $('#landmark').val() == '') {
-    return false
-}
+    if ($('#country').val() == '' && $('#city').val() == '' && $('#landmark').val() == '') {
+        return false
+    }
 });
     ///replaced SUBMIT with CLICK event 
 
@@ -351,9 +351,7 @@ $('body').on('click', '.modal-delete', function(){
 $('body').on('click', '.editBtn', function (){
 
     $.ajax({
-        // url: 'editRow.php',
         method: 'POST',
-        // cache: false,
         data: {
             // action: 'edit',
             id: $('.editBtn').attr('dataId'),
@@ -370,6 +368,24 @@ $('body').on('click', '.editBtn', function (){
     })
 });
 
+//send update query upon enter key press
+$('body').on('keypress', '.ed-text', function(e){
+    if (e.keyCode === 13) {    
+        $.ajax({
+            method: 'POST',
+            data: {
+                id: $('.editBtn').attr('dataId'),
+                edCountry: $('#ed-country').val(),
+                edCity: $('#ed-city').val(),
+                edLandmark: $('#ed-landmark').val()
+            },
+            success: function (){
+               displayData();    
+               $.magnificPopup.close();       
+            }
+        })
+    }
+});
 
 
 $('body').on('mouseover', '.popup-with-zoom-anim', function (){
@@ -391,13 +407,13 @@ $('body').on('mouseover', '.popup-with-zoom-anim', function (){
 });
 
 
-$('body').on('click', 'a[name=see-more]', function(){
+$('body').on('click', '.see-more', function(){
     let mCountry = $('#m-country').text();
     let mCity = $('#m-city').text();
     let mLandmark = $('#m-landmark').text();
 
     ////****************
-    $('#search-engine').append("<div class='gcse-searchresults-only'></div>");
+    $('.search-engine').append("<div class='gcse-searchresults-only'></div>");
     $('head').append("<script async=true src='https://cse.google.com/cse.js?cx=22bdf86666de74d21'></script>")
 
     window.history.replaceState(null, null, "?q="+mCountry +' ' + mCity +' ' + mLandmark +' ');
@@ -405,13 +421,16 @@ $('body').on('click', 'a[name=see-more]', function(){
 });
 
 $('body').on('click', '.modal-edit', function(){
-    $('div[name=edit_field]').css('transition','250ms')
-    $('div[name=edit_field]').css('opacity','1')
+    $('.edit-field').addClass('edit-field-visible');
+
+    //     $('div[name=edit_field]').css('transition','250ms')
+//     $('div[name=edit_field]').css('opacity','1')
 });
 
 $('body').on('click', '.mfp-close', function(){
-    $('div[name=edit_field]').css('transition','250ms')
-    $('div[name=edit_field]').css('opacity','0')
+    // $('div[name=edit_field]').css('transition','250ms')
+    // $('div[name=edit_field]').css('opacity','0')
+    $('.edit-field').removeClass('edit-field-visible');
 
     window.history.replaceState(null, null, "?q=");
     $('head').find('script[src="https://cse.google.com/cse.js?cx=22bdf86666de74d21"]').remove();
@@ -421,8 +440,9 @@ $('body').on('click', '.mfp-close', function(){
 });
 
 $('.modal').on('unload', function(){
-    $('div[name=edit_field]').css('transition','250ms')
-    $('div[name=edit_field]').css('opacity','0')
+    // $('div[name=edit_field]').css('transition','250ms')
+    // $('div[name=edit_field]').css('opacity','0')
+    $('.edit-field').removeClass('edit-field-visible');
 
     window.history.replaceState(null, null, "?q=");
     $('head').find('script[src="https://cse.google.com/cse.js?cx=22bdf86666de74d21"]').remove();
@@ -433,8 +453,9 @@ $('.modal').on('unload', function(){
 
 $('body').keydown(function(e){
     if (e.keyCode === 27) {
-        $('div[name=edit_field]').css('transition','250ms')
-        $('div[name=edit_field]').css('opacity','0')
+        // $('div[name=edit_field]').css('transition','250ms')
+        // $('div[name=edit_field]').css('opacity','0')
+        $('.edit-field').removeClass('edit-field-visible');
         
         window.history.replaceState(null, null, "?q=");
         $('head').find('script[src="https://cse.google.com/cse.js?cx=22bdf86666de74d21"]').remove();
@@ -479,9 +500,9 @@ $('#container-table-btns').ready(function(){
 $('body').on('click', 'a[name=see-more]' , function(){
 
     $('.modal').ready(function() {
-        $('div[name=edit_field]').css('transition','250ms');
-        $('div[name=edit_field]').css('opacity','0');
-    
+        // $('div[name=edit_field]').css('transition','250ms');
+        // $('div[name=edit_field]').css('opacity','0');
+        $('.edit-field').removeClass('edit-field-visible');
 
         let mCountry = $('#m-country').text();
         let mCity = $('#m-city').text();
