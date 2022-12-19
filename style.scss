@@ -139,9 +139,9 @@ h1{
 
 }
 
-.print{
+.print, .share{
     cursor: pointer;
-    .print:nth-child(1){
+    .print:nth-child(1), .print:nth-child(3){
         padding: 5px;
     }
 }
@@ -150,8 +150,8 @@ h1{
     color: antiquewhite;
 }
 #container-print i:nth-of-type(2){
-    margin-top: 0.75rem;
-    cursor:pointer;
+    margin: 0.75rem 0;
+    cursor: help;
 }
 
 th{

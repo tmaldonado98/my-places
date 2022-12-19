@@ -116,6 +116,14 @@ $('.print').click(()=>{
     print();    
 });
 
+$('.share').click(()=>{
+    if (navigator.share) {
+        navigator.share({
+            title: 'Your list of places',
+            url: 'https://google.com'
+        })
+    }
+});
 
 ////THE FIRST BLOCK OF CODE SELECTS ALL BOXES WHEN SELECT ALL BTN IS CHECKED
 ///SECOND BLOCK MAKES THE CHECKED STATUS OF THE SELECT ALL BTN CONGRUENT W/ OTHER BTNS
@@ -430,7 +438,7 @@ $('body').on('click', '.mfp-close', function(){
     window.history.replaceState(null, null, "?q=");
     $('head').find('script[src="https://cse.google.com/cse.js?cx=22bdf86666de74d21"]').remove();
     $('head').find('script[src="https://www.google.com/cse/static/element/f275a300093f201a/cse_element__en.js?usqp=CAI%3D"]').remove();
-    $('.gcse-searchresults-only').remove(); 
+    $('.search-engine').find('.gcse-searchresults-only').remove(); 
     
 });
 
@@ -440,7 +448,7 @@ $('.modal').on('unload', function(){
     window.history.replaceState(null, null, "?q=");
     $('head').find('script[src="https://cse.google.com/cse.js?cx=22bdf86666de74d21"]').remove();
     $('head').find('script[src="https://www.google.com/cse/static/element/f275a300093f201a/cse_element__en.js?usqp=CAI%3D"]').remove();
-    $('.gcse-searchresults-only').remove(); 
+    $('.search-engine').find('.gcse-searchresults-only').remove(); 
 });
 
 
@@ -451,7 +459,7 @@ $('body').keydown(function(e){
         window.history.replaceState(null, null, "?q=");
         $('head').find('script[src="https://cse.google.com/cse.js?cx=22bdf86666de74d21"]').remove();
         $('head').find('script[src="https://www.google.com/cse/static/element/f275a300093f201a/cse_element__en.js?usqp=CAI%3D"]').remove();
-        $('.gcse-searchresults-only').remove();
+        $('.search-engine').find('.gcse-searchresults-only').remove();
     }
 });
 

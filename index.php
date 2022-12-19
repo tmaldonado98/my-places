@@ -38,6 +38,10 @@ if (isset($_POST['update'])) {
     <i class="fa-solid fa-print fa-xl print" title="Print Page"></i>
     <p class="print" title="Print Page">Print</p>
     <i class="fa-solid fa-question" title="To save as a PDF file click on 'Print' button, press on 'Destination' menu list, and select 'Save to PDF'."></i>
+    
+            
+    <p class="share" title="Share your list"><i class="fa-regular fa-xl fa-share-from-square share"></i> Share</span>
+    
 </div>
 
 <section id="want">  
