@@ -32,16 +32,15 @@ if (isset($_POST['update'])) {
     <div id="contact">
         <div class='nav-btns'><a href="https://github.com/tmaldonado98" target="_blank" rel="noopener noreferrer" title="My Github Profile">Github</a></div>
         <div class='nav-btns'><a href="mailto:tmaldonadotrs@gmail.com" target="_blank" rel="noopener noreferrer" title="Send me an email!">Email</a></div>
+        <div class='nav-btns'><p class="share" title="Share your list"><i class="fa-regular fa-xl fa-share-from-square share"></i> Share</span>
+</div>
     </div>
 </nav>
 <div id=container-print>
     <i class="fa-solid fa-print fa-xl print" title="Print Page"></i>
     <p class="print" title="Print Page">Print</p>
     <i class="fa-solid fa-question" title="To save as a PDF file click on 'Print' button, press on 'Destination' menu list, and select 'Save to PDF'."></i>
-    
-            
-    <p class="share" title="Share your list"><i class="fa-regular fa-xl fa-share-from-square share"></i> Share</span>
-    
+        
 </div>
 
 <section id="want">  

@@ -223,6 +223,16 @@ $('#city').keyup(citySuggestion(str), {
 */
 
 
+if ($.magnificPopup.close()){
+    $('.edit-field').removeClass('edit-field-visible');
+
+    window.history.replaceState(null, null, "?q=");
+    $('head').find('script[src="https://cse.google.com/cse.js?cx=22bdf86666de74d21"]').remove();
+    $('head').find('script[src="https://www.google.com/cse/static/element/f275a300093f201a/cse_element__en.js?usqp=CAI%3D"]').remove();
+    $('.search-engine').find('.gsc-control-cse').remove(); 
+};
+
+
     
 //AJAX INSERT
 $('body').on('click', '#insertBtn', function (){
@@ -438,17 +448,20 @@ $('body').on('click', '.mfp-close', function(){
     window.history.replaceState(null, null, "?q=");
     $('head').find('script[src="https://cse.google.com/cse.js?cx=22bdf86666de74d21"]').remove();
     $('head').find('script[src="https://www.google.com/cse/static/element/f275a300093f201a/cse_element__en.js?usqp=CAI%3D"]').remove();
-    $('.search-engine').find('.gcse-searchresults-only').remove(); 
-    
+    $('.search-engine').find('.gsc-control-cse').remove(); 
+    // .gcse-searchresults-only
 });
 
-$('.modal').on('unload', function(){
-    $('.edit-field').removeClass('edit-field-visible');
-
-    window.history.replaceState(null, null, "?q=");
-    $('head').find('script[src="https://cse.google.com/cse.js?cx=22bdf86666de74d21"]').remove();
-    $('head').find('script[src="https://www.google.com/cse/static/element/f275a300093f201a/cse_element__en.js?usqp=CAI%3D"]').remove();
-    $('.search-engine').find('.gcse-searchresults-only').remove(); 
+$('body').on('ready', '.modal', function(){
+    
+    if ($('.mfp-bg').DOMNodeRemoved()){
+        $('.edit-field').removeClass('edit-field-visible');
+    
+        window.history.replaceState(null, null, "?q=");
+        $('head').find('script[src="https://cse.google.com/cse.js?cx=22bdf86666de74d21"]').remove();
+        $('head').find('script[src="https://www.google.com/cse/static/element/f275a300093f201a/cse_element__en.js?usqp=CAI%3D"]').remove();
+        $('.search-engine').find('.gsc-control-cse').remove(); 
+    }; 
 });
 
 
@@ -459,7 +472,7 @@ $('body').keydown(function(e){
         window.history.replaceState(null, null, "?q=");
         $('head').find('script[src="https://cse.google.com/cse.js?cx=22bdf86666de74d21"]').remove();
         $('head').find('script[src="https://www.google.com/cse/static/element/f275a300093f201a/cse_element__en.js?usqp=CAI%3D"]').remove();
-        $('.search-engine').find('.gcse-searchresults-only').remove();
+        $('.search-engine').find('.gsc-control-cse').remove();
     }
 });
 
