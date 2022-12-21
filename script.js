@@ -223,14 +223,14 @@ $('#city').keyup(citySuggestion(str), {
 */
 
 
-if ($.magnificPopup.close()){
-    $('.edit-field').removeClass('edit-field-visible');
+// if ($.magnificPopup.close()){
+//     $('.edit-field').removeClass('edit-field-visible');
 
-    window.history.replaceState(null, null, "?q=");
-    $('head').find('script[src="https://cse.google.com/cse.js?cx=22bdf86666de74d21"]').remove();
-    $('head').find('script[src="https://www.google.com/cse/static/element/f275a300093f201a/cse_element__en.js?usqp=CAI%3D"]').remove();
-    $('.search-engine').find('.gsc-control-cse').remove(); 
-};
+//     window.history.replaceState(null, null, "?q=");
+//     $('head').find('script[src="https://cse.google.com/cse.js?cx=22bdf86666de74d21"]').remove();
+//     $('head').find('script[src="https://www.google.com/cse/static/element/f275a300093f201a/cse_element__en.js?usqp=CAI%3D"]').remove();
+//     $('.search-engine').find('.gsc-control-cse').remove(); 
+// };
 
 
     
@@ -416,6 +416,7 @@ $('body').on('mouseover', '.popup-with-zoom-anim', function (){
         overflowY: 'auto',
 
         closeBtnInside: true,
+        closeOnBgClick: false,
         preloader: false,
         
         midClick: true,
@@ -451,18 +452,22 @@ $('body').on('click', '.mfp-close', function(){
     $('.search-engine').find('.gsc-control-cse').remove(); 
     // .gcse-searchresults-only
 });
+    
+    // $('.mfp-wrap').on('unload', function(event){
 
-$('body').on('ready', '.modal', function(){
-    
-    if ($('.mfp-bg').DOMNodeRemoved()){
-        $('.edit-field').removeClass('edit-field-visible');
-    
-        window.history.replaceState(null, null, "?q=");
-        $('head').find('script[src="https://cse.google.com/cse.js?cx=22bdf86666de74d21"]').remove();
-        $('head').find('script[src="https://www.google.com/cse/static/element/f275a300093f201a/cse_element__en.js?usqp=CAI%3D"]').remove();
-        $('.search-engine').find('.gsc-control-cse').remove(); 
-    }; 
-});
+    //     // if ($('.mfp-wrap').attr('display', 'none')) {
+    //         // event.stopPropagation();
+            
+    //         $('.edit-field').removeClass('edit-field-visible');
+            
+    //         window.history.replaceState(null, null, "?q=");
+    //         $('head').find('script[src="https://cse.google.com/cse.js?cx=22bdf86666de74d21"]').remove();
+    //         $('head').find('script[src="https://www.google.com/cse/static/element/f275a300093f201a/cse_element__en.js?usqp=CAI%3D"]').remove();
+    //         $('.search-engine').find('.gsc-control-cse').remove(); 
+            
+    //         console.log('test passed')
+    //     // }
+    // });
 
 
 $('body').keydown(function(e){
