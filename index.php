@@ -25,6 +25,8 @@ if (isset($_POST['update'])) {
     <link href="./jquery-ui-1.13.2.custom/jquery-ui.css">
     <script src="https://kit.fontawesome.com/602ec316c2.js" crossorigin="anonymous"></script>
     <link href='https://cdn.maptiler.com/maplibre-gl-js/v2.4.0/maplibre-gl.css' rel='stylesheet'/>
+    <!-- jQuery UI plugin -->
+<script defer src="./jquery-ui-1.13.2.custom/jquery-ui.js"></script>
 </head>
 <body>
 
@@ -226,9 +228,6 @@ mysqli_close($con);
 <script defer type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.js"></script>
 
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-
-<!-- jQuery UI plugin -->
-<script defer src="./jquery-ui-1.13.2.custom/jquery-ui.js"></script>
     
 <script defer type="text/javascript" src="script.js"></script>
 <script src='https://cdn.maptiler.com/maplibre-gl-js/v2.4.0/maplibre-gl.js'></script>
