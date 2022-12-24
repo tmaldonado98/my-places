@@ -99,8 +99,8 @@ nav{
 h1{
     font-size: 2.25rem;
     text-align: center;
-    margin: 0 auto 2rem;
-    padding-top: 1rem;
+    margin: 0 1rem 2rem 1rem;
+    padding-top: 5rem;
     color: antiquewhite;
 }
 
@@ -123,8 +123,10 @@ h1{
 }
 
 #container-table-btns{
-    margin-left: 1rem;
-    margin-right: 1rem;
+    width: 95%;
+    margin: auto;
+    // margin-left: 1rem;
+    // margin-right: 1rem;
 }
 
 #container-print{

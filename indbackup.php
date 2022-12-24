@@ -10,7 +10,7 @@ if (isset($_POST['update'])) {
     }
     exit('success');
 }
-?>
+?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,7 +32,7 @@ if (isset($_POST['update'])) {
     <div id="contact">
         <div class='nav-btns'><a href="https://github.com/tmaldonado98" target="_blank" rel="noopener noreferrer" title="My Github Profile">Github</a></div>
         <div class='nav-btns'><a href="mailto:tmaldonadotrs@gmail.com" target="_blank" rel="noopener noreferrer" title="Send me an email!">Email</a></div>
-        <div class='nav-btns'><p class="share" title="Share your list"><i class="fa-regular fa-xl fa-share-from-square share"></i> Share</p>
+        <div class='nav-btns'><p class="share" title="Share your list"><i class="fa-regular fa-xl fa-share-from-square share"></i> Share</span>
 </div>
     </div>
 </nav>
@@ -223,21 +223,30 @@ echo "<p id=total-places ><b>Total Number Of Places: " . $rowcount . "</b></p>";
 <?php
 mysqli_close($con);
 ?>
-    <script defer src="https://code.jquery.com/jquery-3.6.1.js"></script>
+<script defer type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.js"></script>
 
-    <script defer src="script.js"></script>
-
-    <!-- <script defer src='map-script.js'></script> -->
-
-        <!-- jQuery UI plugin -->
-    <script defer src="jquery-ui.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
     
-    <script defer src="sortable-script.js"></script>
+<script defer type="text/javascript" src="script.js"></script>
 
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-    
-        
-    <script src='https://cdn.maptiler.com/maplibre-gl-js/v2.4.0/maplibre-gl.js'></script>
-    
+<script defer type="text/javascript" src="sortable-script.js"></script>
+
+    <!-- jQuery UI plugin -->
+<script defer src="./jquery-ui-1.13.2.custom/jquery-ui.js"></script>
+
+<script src='https://cdn.maptiler.com/maplibre-gl-js/v2.4.0/maplibre-gl.js'></script>
+<!--   I left this markup commented out to possibly be included in a future version of this project.
+<div id=container-facts>
+                        <div class=fact-boxes>Capital City: </div>
+                        <div class=fact-boxes>Local Currency: </div>
+                        <div class=fact-boxes>Average Weather: </div>
+                        <div class=fact-boxes>Language(s) Spoken: </div>
+                        <div class=fact-boxes>Population Size: </div>
+                        <div class=fact-boxes>Ethnic Makeup: </div>
+                        <div class=fact-boxes>Religious Demographics: </div>
+                        <div class=fact-boxes>Age Demographics: </div>
+
+                        <div class=fact-boxes>Look for a wikipedia/encyclopedia api to insert some historical/cultural facts here</div>
+                    </div> -->
 </body>
 </html>

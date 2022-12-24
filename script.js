@@ -3,21 +3,21 @@
 // };
 $(document).ready(()=>{
 
-$('tbody').sortable({
-    handle: '#handle',
-    items: 'tr:not(#heading-row)',
-    // distance: 20,
-    refresh: 'true',
+// $('tbody').sortable({
+//     handle: '#handle',
+//     items: 'tr:not(#heading-row)',
+//     // distance: 20,
+//     refresh: 'true',
 
-    update: function (event, ui){
-        $(this).not('#heading-row').children().each(function (marker){
-            if ($(this).attr('data-position') != (marker+1)) {
-                $(this).attr('data-position', (marker+1)).addClass('updated')
-            }
-            saveNewPositions();
-        })
-    }
-});
+//     update: function (event, ui){
+//         $(this).not('#heading-row').children().each(function (marker){
+//             if ($(this).attr('data-position') != (marker+1)) {
+//                 $(this).attr('data-position', (marker+1)).addClass('updated')
+//             }
+//             saveNewPositions();
+//         })
+//     }
+// });
 
 
 $('#insertBtn').click(()=>{
@@ -119,8 +119,8 @@ $('.print').click(()=>{
 $('.share').click(()=>{
     if (navigator.share) {
         navigator.share({
-            title: 'Your list of places',
-            url: 'https://google.com'
+            title: 'My List Of Places',
+            url: 'https://myplaces.rf.gd/?q='
         })
     }
 });
@@ -258,40 +258,40 @@ $('body').on('click', '#insertBtn', function (){
 
 
 
-    //AJAX DISPLAY DB DATA
-    function displayData(){
-        $.ajax({        
-            type: 'GET',
-            url: 'data.php',
-            dataType: 'text',
-            success: function(result){
-                let loadedData = $('#container-table-btns').html(result);
-                loadedData;
+//     //AJAX DISPLAY DB DATA
+//     function displayData(){
+//         $.ajax({        
+//             type: 'GET',
+//             url: 'data.php',
+//             dataType: 'text',
+//             success: function(result){
+//                 let loadedData = $('#container-table-btns').html(result);
+//                 loadedData;
 
-                loadedData.find('tbody').sortable({
-                    ///disables sortable for heading row
-                    items: 'tr:not(#heading-row)',
-                    // distance: 20,
-                    refresh: 'true',
+//                 loadedData.find('tbody').sortable({
+//                     ///disables sortable for heading row
+//                     items: 'tr:not(#heading-row)',
+//                     // distance: 20,
+//                     refresh: 'true',
             
-                    update: function (event, ui){
-                        $(this).not('#heading-row').children().each(function (marker){
-                            if ($(this).attr('data-position') != (marker+1)) {
-                                $(this).attr('data-position', (marker+1)).addClass('updated')
-                            }
-                            saveNewPositions();
-                        })
-                    }
+//                     update: function (event, ui){
+//                         $(this).not('#heading-row').children().each(function (marker){
+//                             if ($(this).attr('data-position') != (marker+1)) {
+//                                 $(this).attr('data-position', (marker+1)).addClass('updated')
+//                             }
+//                             saveNewPositions();
+//                         })
+//                     }
             
-                });
-                $('#country').val('');
-                $('#city').val('');
-                $('#landmark').val('');
-                $('#insertBtn').attr('style', 'opacity:0');
+//                 });
+//                 $('#country').val('');
+//                 $('#city').val('');
+//                 $('#landmark').val('');
+//                 $('#insertBtn').attr('style', 'opacity:0');
 
-            }
-    });
-};
+//             }
+//     });
+// };
 
 function saveNewPositions(){
     let positions = [];
@@ -432,9 +432,9 @@ $('body').on('click', '.see-more', function(){
     let mLandmark = $('#m-landmark').text();
 
     ////****************
-    $('.search-engine').append("<div class='gcse-searchresults-only'></div>");
+    $('.search-engine').append("<div class='gcse-searchresults-only data-mobileLayout='enabled''></div>");
     $('head').append("<script async=true src='https://cse.google.com/cse.js?cx=22bdf86666de74d21'></script>");
-
+    // $('.gsc-control-cse').attr()
     window.history.replaceState(null, null, "?q="+mCountry +' ' + mCity +' ' + mLandmark +' ');
     
 });
@@ -484,9 +484,9 @@ $('body').keydown(function(e){
 window.history.replaceState(null, null, "?q=");
 
 ///change to append script upon dom modification
-$('#map-section').ready(function(){
-    $('#map').append("<script src='map-script.js'></script>");
-});
+// $('#map-section').ready(function(){
+//     $('#map').append("<script src='map-script.js'></script>");
+// });
 
 $('#container-table-btns').ready(function(){
 

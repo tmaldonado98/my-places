@@ -5,7 +5,6 @@ $country = $_POST['country'];
 $city = $_POST['city'];
 $landmark = $_POST['landmark'];
     
-echo '<div id=container-table-btns>';
 echo    '<div id=container-table>';
     echo '<table id=table>';
         echo '<tr id=heading-row>

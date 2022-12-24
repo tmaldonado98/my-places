@@ -7,6 +7,15 @@
   #add-place {
     gap: 1rem;
   }
+  .gsc-results .gsc-imageResult {
+    width: 33%;
+    flex-basis: auto;
+  }
+}
+@media screen and (min-width: 901px) {
+  .share {
+    display: none;
+  }
 }
 @media screen and (max-width: 900px) {
   #container-print {
@@ -14,9 +23,6 @@
   }
   #want {
     width: 100%;
-  }
-  #container-table-btns {
-    margin: 0;
   }
   th:nth-of-type(-n+2) {
     display: none;
@@ -33,6 +39,14 @@
   td, .see-more {
     font-size: 1rem;
   }
+  .gsc-control-cse {
+    max-height: 50vh;
+    overflow-y: auto;
+  }
+  .gsc-results .gsc-imageResult {
+    width: 33%;
+    flex-basis: 100%;
+  }  
   .editBtn {
     width: auto;
   }
@@ -52,11 +66,8 @@
   #contact {
     width: auto;
   }
-  #container-table-btns {
-    width: 100%;
-  }
-  #table {
-    width: 100%;
+  #contact a, .nav-btns {
+    font-size: 17px;
   }
   tbody {
     border-spacing: 0;
@@ -87,4 +98,4 @@
   td {
     font-size: 1.15rem;
   }
-}/*# sourceMappingURL=media-queries.css.map */
+} /*# sourceMappingURL=media-queries.css.map *//*# sourceMappingURL=media-queries.css.map */
