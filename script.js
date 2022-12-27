@@ -116,11 +116,18 @@ $('.print').click(()=>{
     print();    
 });
 
+let shareData = {
+    title: 'My List Of Places',
+    text: 'My List Of Places',
+    url: 'https://myplaces.rf.gd/?q='
+}
+
 $('.share').click(()=>{
     if (navigator.share) {
         navigator.share({
-            title: 'My List Of Places',
-            url: 'https://myplaces.rf.gd/?q='
+            url: 'https://myplaces.rf.gd/?q=',
+            title: 'My List Of Places'
+            
         })
     }
 });

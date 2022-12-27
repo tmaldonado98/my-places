@@ -544,11 +544,11 @@ footer p {
   overflow: scroll;
   direction: rtl;
 }
-
+/* 
 .gsc-results .gsc-imageResult {
   width: 33%;
   flex-basis: 100%;
-}
+} */
 
 .gsc-tabsArea {
   display: none;

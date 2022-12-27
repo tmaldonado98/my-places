@@ -13,7 +13,7 @@
   }
 }
 @media screen and (min-width: 901px) {
-  .share {
+  .share, #share {
     display: none;
   }
 }
@@ -43,7 +43,7 @@
     max-height: 50vh;
     overflow-y: auto;
   }
-  .gsc-results .gsc-imageResult {
+  .gsc-results, .gsc-imageResult {
     width: 33%;
     flex-basis: 100%;
   }  

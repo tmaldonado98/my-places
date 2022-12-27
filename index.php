@@ -16,7 +16,7 @@ if (isset($_POST['update'])) {
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>My List Of Places</title>
     <link rel="icon" href="./icons8-globe-32.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="./style.css">
@@ -27,13 +27,13 @@ if (isset($_POST['update'])) {
     <link href='https://cdn.maptiler.com/maplibre-gl-js/v2.4.0/maplibre-gl.css' rel='stylesheet'/>
 </head>
 <body>
-
+<!-- ,maximum-scale=1,user-scalable=no -->
 <nav>
     <div id="contact">
         <div class='nav-btns'><a href="https://github.com/tmaldonado98" target="_blank" rel="noopener noreferrer" title="My Github Profile">Github</a></div>
-        <div class='nav-btns'><a href="mailto:tmaldonadotrs@gmail.com" target="_blank" rel="noopener noreferrer" title="Send me an email!">Email</a></div>
-        <div class='nav-btns'><p class="share" title="Share your list"><i class="fa-regular fa-xl fa-share-from-square share"></i> Share</p>
-</div>
+        <div class='nav-btns'><a href="mailto:tmaldonadotrs@gmail.com" target="_blank" rel="noopener noreferrer" title="Send Me An Email!">Email</a></div>
+        <div class='nav-btns'><a href="https://www.linkedin.com/in/tom%C3%A1s-maldonado-9b396420a/" target="_blank" rel="noopener noreferrer" title="My LinkedIn Profile">LinkedIn</a></div>
+        <div id="share" class='nav-btns'><p class="share" title="Share your list"><i class="fa-regular fa-xl fa-share-from-square share"></i> Share</p></div>
     </div>
 </nav>
 <div id=container-print>
