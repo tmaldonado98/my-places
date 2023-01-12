@@ -350,6 +350,17 @@ td:where(.check-td) {
   margin: 0rem auto;
 }
 
+#btn-msg ul {
+  color: white;
+  font-style: italic;
+  font-size: 1.2rem;
+}
+
+#btn-msg ul li{
+  padding: 1.5px;
+
+}
+
 #btn {
   margin: 0 auto;
   padding: 1rem 0 0 0;

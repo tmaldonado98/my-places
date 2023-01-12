@@ -5,11 +5,17 @@
     
     session_start();
 
-    $servername = 'sql111.epizy.com';
-    $username = 'epiz_33241387';
-    $psw = 'lMJe6WpNlqY';
-    $dbname = 'epiz_33241387_places_app';
+    // $servername = 'sql111.epizy.com';
+    // $username = 'epiz_33241387';
+    // $psw = 'lMJe6WpNlqY';
+    // $dbname = 'epiz_33241387_places_app';
     
+    $servername = 'localhost';
+    $username = 'root';
+    $psw = 'california14';
+    $dbname = 'places_app';
+
+
     $con = new mysqli($servername, $username, $psw, $dbname);
     
     if ($con->connect_error) {

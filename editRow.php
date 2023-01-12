@@ -15,22 +15,6 @@ if (isset($_POST['id'])) {
         }
     }; 
     // };    
-/*
-function updatePhp(){
-    global $con;
 
-
-    // if(mysqli_affected_rows($con) >0 ){
-    //     echo 'success';
-    // }
-
-    // if ($exec) {
-    //     // echo 'Success';
-    //     header('location: places.php');
-    // } else {
-    //     echo 'keep trying';
-    // }
-
-}*/
  mysqli_close($con);
 ?>

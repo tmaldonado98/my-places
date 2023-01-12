@@ -167,6 +167,11 @@ echo "<p id=total-places ><b>Total Number Of Places: " . $rowcount . "</b></p>";
 ?>
        
             <div id="btn-msg">
+                <ul>
+                    <li>Check out 'See More' section to learn about your place!</li>
+                    <li>Edit or delete place in the 'See More' section</li>
+                    <li>Be sure to contribute to the list!</li>
+                </ul>
             <div id="btn">
                         <input type="button" class="del-sel" name="delete_sel" value="Delete Selection">
                         

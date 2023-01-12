@@ -229,17 +229,6 @@ $('#city').keyup(citySuggestion(str), {
 
 */
 
-
-// if ($.magnificPopup.close()){
-//     $('.edit-field').removeClass('edit-field-visible');
-
-//     window.history.replaceState(null, null, "?q=");
-//     $('head').find('script[src="https://cse.google.com/cse.js?cx=22bdf86666de74d21"]').remove();
-//     $('head').find('script[src="https://www.google.com/cse/static/element/f275a300093f201a/cse_element__en.js?usqp=CAI%3D"]').remove();
-//     $('.search-engine').find('.gsc-control-cse').remove(); 
-// };
-
-
     
 //AJAX INSERT
 $('body').on('click', '#insertBtn', function (){
@@ -439,9 +428,8 @@ $('body').on('click', '.see-more', function(){
     let mLandmark = $('#m-landmark').text();
 
     ////****************
-    $('.search-engine').append("<div class='gcse-searchresults-only data-mobileLayout='enabled''></div>");
-    $('head').append("<script async=true src='https://cse.google.com/cse.js?cx=22bdf86666de74d21'></script>");
-    // $('.gsc-control-cse').attr()
+    // $('.search-engine').append("<div class='gcse-searchresults-only data-mobileLayout='enabled''></div>");
+    // $('head').append("<script async=true src='https://cse.google.com/cse.js?cx=22bdf86666de74d21'></script>");
     window.history.replaceState(null, null, "?q="+mCountry +' ' + mCity +' ' + mLandmark +' ');
     
 });
@@ -454,36 +442,20 @@ $('body').on('click', '.mfp-close', function(){
     $('.edit-field').removeClass('edit-field-visible');
 
     window.history.replaceState(null, null, "?q=");
-    $('head').find('script[src="https://cse.google.com/cse.js?cx=22bdf86666de74d21"]').remove();
-    $('head').find('script[src="https://www.google.com/cse/static/element/f275a300093f201a/cse_element__en.js?usqp=CAI%3D"]').remove();
+    // $('head').find('script[src="https://cse.google.com/cse.js?cx=22bdf86666de74d21"]').remove();
+    // $('head').find('script[src="https://www.google.com/cse/static/element/f275a300093f201a/cse_element__en.js?usqp=CAI%3D"]').remove();
     $('.search-engine').find('.gsc-control-cse').remove(); 
     // .gcse-searchresults-only
 });
     
-    // $('.mfp-wrap').on('unload', function(event){
-
-    //     // if ($('.mfp-wrap').attr('display', 'none')) {
-    //         // event.stopPropagation();
-            
-    //         $('.edit-field').removeClass('edit-field-visible');
-            
-    //         window.history.replaceState(null, null, "?q=");
-    //         $('head').find('script[src="https://cse.google.com/cse.js?cx=22bdf86666de74d21"]').remove();
-    //         $('head').find('script[src="https://www.google.com/cse/static/element/f275a300093f201a/cse_element__en.js?usqp=CAI%3D"]').remove();
-    //         $('.search-engine').find('.gsc-control-cse').remove(); 
-            
-    //         console.log('test passed')
-    //     // }
-    // });
-
 
 $('body').keydown(function(e){
     if (e.keyCode === 27) {
         $('.edit-field').removeClass('edit-field-visible');
         
         window.history.replaceState(null, null, "?q=");
-        $('head').find('script[src="https://cse.google.com/cse.js?cx=22bdf86666de74d21"]').remove();
-        $('head').find('script[src="https://www.google.com/cse/static/element/f275a300093f201a/cse_element__en.js?usqp=CAI%3D"]').remove();
+        // $('head').find('script[src="https://cse.google.com/cse.js?cx=22bdf86666de74d21"]').remove();
+        // $('head').find('script[src="https://www.google.com/cse/static/element/f275a300093f201a/cse_element__en.js?usqp=CAI%3D"]').remove();
         $('.search-engine').find('.gsc-control-cse').remove();
     }
 });
@@ -504,7 +476,7 @@ $('#container-table-btns').ready(function(){
 
     locateTxt = coText + ' ' + ciText + ' ' + laText;
 
-        $.ajax({
+       /*$.ajax({
             url: 'https://geocode.xyz',
             data: {
               auth: '803066415173447662518x121329',
@@ -518,7 +490,7 @@ $('#container-table-btns').ready(function(){
             .setLngLat([data["longt"], data["latt"]])
             .addTo(map);
         
-        })
+        })*/
     })  
 });
 
@@ -532,9 +504,19 @@ $('body').on('click', '.see-more' , function(){
         let mLandmark = $('#m-landmark').text();
         // $('#modal-map').append("<script src='map-script.js'></script>");
 
+        //to add commas between words in modal title
+        let commaSeparate = (()=>{
+            let placeArray = ([$('#m-landmark'), $('#m-city'), $('#m-country')].join(', '));
+            
+            // placeArray
+            
+        })
+        commaSeparate();
+
+
         locateTxt = mCountry + ' ' + mCity + ' ' + mLandmark;
 
-        $.ajax({
+        /*$.ajax({
             url: 'https://geocode.xyz',
             data: {
               auth: '803066415173447662518x121329',
@@ -559,7 +541,7 @@ $('body').on('click', '.see-more' , function(){
         .setLngLat([data["longt"], data["latt"]])
         .addTo(map);
     
-        });
+        });*/
     })
 });
 
