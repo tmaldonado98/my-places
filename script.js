@@ -1,6 +1,9 @@
 // if ( window.history.replaceState ) {
 //   window.history.replaceState( null, null, window.location );
 // };
+
+// import worldcities from './worldcities.json';
+// console.log(worldcities);
 $(document).ready(()=>{
 
 // $('tbody').sortable({
@@ -116,12 +119,6 @@ $('.print').click(()=>{
     print();    
 });
 
-let shareData = {
-    title: 'My List Of Places',
-    text: 'My List Of Places',
-    url: 'https://myplaces.rf.gd/?q='
-}
-
 $('.share').click(()=>{
     if (navigator.share) {
         navigator.share({
@@ -228,6 +225,17 @@ $('#city').keyup(citySuggestion(str), {
 });
 
 */
+
+
+// if ($.magnificPopup.close()){
+//     $('.edit-field').removeClass('edit-field-visible');
+
+//     window.history.replaceState(null, null, "?q=");
+//     $('head').find('script[src="https://cse.google.com/cse.js?cx=22bdf86666de74d21"]').remove();
+//     $('head').find('script[src="https://www.google.com/cse/static/element/f275a300093f201a/cse_element__en.js?usqp=CAI%3D"]').remove();
+//     $('.search-engine').find('.gsc-control-cse').remove(); 
+// };
+
 
     
 //AJAX INSERT
@@ -428,8 +436,9 @@ $('body').on('click', '.see-more', function(){
     let mLandmark = $('#m-landmark').text();
 
     ////****************
-    // $('.search-engine').append("<div class='gcse-searchresults-only data-mobileLayout='enabled''></div>");
-    // $('head').append("<script async=true src='https://cse.google.com/cse.js?cx=22bdf86666de74d21'></script>");
+    $('.search-engine').append("<div class='gcse-searchresults-only'></div>");
+    $('head').append("<script async=true src='https://cse.google.com/cse.js?cx=22bdf86666de74d21'></script>");
+
     window.history.replaceState(null, null, "?q="+mCountry +' ' + mCity +' ' + mLandmark +' ');
     
 });
@@ -442,20 +451,36 @@ $('body').on('click', '.mfp-close', function(){
     $('.edit-field').removeClass('edit-field-visible');
 
     window.history.replaceState(null, null, "?q=");
-    // $('head').find('script[src="https://cse.google.com/cse.js?cx=22bdf86666de74d21"]').remove();
-    // $('head').find('script[src="https://www.google.com/cse/static/element/f275a300093f201a/cse_element__en.js?usqp=CAI%3D"]').remove();
+    $('head').find('script[src="https://cse.google.com/cse.js?cx=22bdf86666de74d21"]').remove();
+    $('head').find('script[src="https://www.google.com/cse/static/element/f275a300093f201a/cse_element__en.js?usqp=CAI%3D"]').remove();
     $('.search-engine').find('.gsc-control-cse').remove(); 
     // .gcse-searchresults-only
 });
     
+    // $('.mfp-wrap').on('unload', function(event){
+
+    //     // if ($('.mfp-wrap').attr('display', 'none')) {
+    //         // event.stopPropagation();
+            
+    //         $('.edit-field').removeClass('edit-field-visible');
+            
+    //         window.history.replaceState(null, null, "?q=");
+    //         $('head').find('script[src="https://cse.google.com/cse.js?cx=22bdf86666de74d21"]').remove();
+    //         $('head').find('script[src="https://www.google.com/cse/static/element/f275a300093f201a/cse_element__en.js?usqp=CAI%3D"]').remove();
+    //         $('.search-engine').find('.gsc-control-cse').remove(); 
+            
+    //         console.log('test passed')
+    //     // }
+    // });
+
 
 $('body').keydown(function(e){
     if (e.keyCode === 27) {
         $('.edit-field').removeClass('edit-field-visible');
         
         window.history.replaceState(null, null, "?q=");
-        // $('head').find('script[src="https://cse.google.com/cse.js?cx=22bdf86666de74d21"]').remove();
-        // $('head').find('script[src="https://www.google.com/cse/static/element/f275a300093f201a/cse_element__en.js?usqp=CAI%3D"]').remove();
+        $('head').find('script[src="https://cse.google.com/cse.js?cx=22bdf86666de74d21"]').remove();
+        $('head').find('script[src="https://www.google.com/cse/static/element/f275a300093f201a/cse_element__en.js?usqp=CAI%3D"]').remove();
         $('.search-engine').find('.gsc-control-cse').remove();
     }
 });
@@ -463,10 +488,10 @@ $('body').keydown(function(e){
 window.history.replaceState(null, null, "?q=");
 
 ///change to append script upon dom modification
-// $('#map-section').ready(function(){
-//     $('#map').append("<script src='map-script.js'></script>");
-// });
-
+$('#map-section').ready(function(){
+    $('#map').append("<script src='map-script.js'></script>");
+});
+/*
 $('#container-table-btns').ready(function(){
 
     $('.data-row').each(function(){
@@ -476,7 +501,7 @@ $('#container-table-btns').ready(function(){
 
     locateTxt = coText + ' ' + ciText + ' ' + laText;
 
-       /*$.ajax({
+        $.ajax({
             url: 'https://geocode.xyz',
             data: {
               auth: '803066415173447662518x121329',
@@ -490,9 +515,9 @@ $('#container-table-btns').ready(function(){
             .setLngLat([data["longt"], data["latt"]])
             .addTo(map);
         
-        })*/
+        })
     })  
-});
+});*/
 
 $('body').on('click', '.see-more' , function(){
 
@@ -504,19 +529,9 @@ $('body').on('click', '.see-more' , function(){
         let mLandmark = $('#m-landmark').text();
         // $('#modal-map').append("<script src='map-script.js'></script>");
 
-        //to add commas between words in modal title
-        let commaSeparate = (()=>{
-            let placeArray = ([$('#m-landmark'), $('#m-city'), $('#m-country')].join(', '));
-            
-            // placeArray
-            
-        })
-        commaSeparate();
+        let locateTxt = mCountry + ' ' + mCity + ' ' + mLandmark;
 
-
-        locateTxt = mCountry + ' ' + mCity + ' ' + mLandmark;
-
-        /*$.ajax({
+        $.ajax({
             url: 'https://geocode.xyz',
             data: {
               auth: '803066415173447662518x121329',
@@ -540,8 +555,61 @@ $('body').on('click', '.see-more' , function(){
         const country = new maplibregl.Marker()
         .setLngLat([data["longt"], data["latt"]])
         .addTo(map);
+        });
+
+        $.getJSON("worldcities.json", function(data){
+            console.log(data)
+
+            $.each(data.worldcities, function (){
+                if (mCountry  == (this["country"]) && mCity == (this["city"])) {
+                    $('#section-facts').append((this["country"]) + (this["city"]));
+                    console.log((this["country"]) + (this["city"]));
+                } 
+                else if (mCountry  == (this["country"]) && mCity == (this["city_ascii"])) {
+                    $('#section-facts').append((this["country"]) + (this["city_ascii"]));
+                    console.log((this["country"]) + (this["city_ascii"]));
+                }
+            })
+
+            // if ($('#modal-title') == $('#m-country') && $('#m-city')) {
     
-        });*/
+
+            //     $.each(data.worldcities, function (){
+            //         if (mCountry  == (this["country"]) && mCity == (this["city"])) {
+            //             $('#section-facts').html((this["country"]) + (this["city"]));
+            //             console.log((this["country"]) + (this["city"]));
+            //         } 
+            //         else if (mCountry  == (this["country"]) && mCity == (this["city_ascii"])) {
+            //             $('#section-facts').html((this["country"]) + (this["city_ascii"]));
+            //             console.log((this["country"]) + (this["city_ascii"]));
+            //         }
+            //     })
+            // }
+            // else if ($('#m-country')) {
+            //     $.each(data.worldcities, function (){
+            //         if (mCountry  == (this["country"])) {
+            //             $('#section-facts').html((this["country"]));
+            //             console.log((this["country"]));
+            //         }
+            //     }) 
+            // }
+            // else if ($('#m-city')) {
+            //     $.each(data.worldcities, function (){
+            //         if (mCity  == (this["city"])) {
+            //             $('#section-facts').html(this["city"]);
+            //             console.log((this["city"]));
+            //         } else if (mCity  == (this["city_ascii"])) {
+            //             $('#section-facts').html(this["city_ascii"]);
+            //             console.log(this["city_ascii"]); 
+            //         }
+            //     }) 
+            // }
+
+            // })
+
+        });
+
+
     })
 });
 

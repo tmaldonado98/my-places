@@ -30,9 +30,10 @@ if (isset($_POST['update'])) {
 <!-- ,maximum-scale=1,user-scalable=no -->
 <nav>
     <div id="contact">
-        <div class='nav-btns'><a href="https://github.com/tmaldonado98" target="_blank" rel="noopener noreferrer" title="My Github Profile">Github</a></div>
-        <div class='nav-btns'><a href="mailto:tmaldonadotrs@gmail.com" target="_blank" rel="noopener noreferrer" title="Send Me An Email!">Email</a></div>
-        <div class='nav-btns'><a href="https://www.linkedin.com/in/tom%C3%A1s-maldonado-9b396420a/" target="_blank" rel="noopener noreferrer" title="My LinkedIn Profile">LinkedIn</a></div>
+        <div class='nav-btns'><a href="https://github.com/tmaldonado98" target="_blank" rel="noopener noreferrer" title="My Github Profile"><i class="fa-brands fa-github fa-xl"></i></a></div>
+        <div class='nav-btns'><a href="mailto:tmaldonadotrs@gmail.com" target="_blank" rel="noopener noreferrer" title="Send Me An Email!"><i class="fa-solid fa-envelope fa-xl"></i></a></div>
+        <div class='nav-btns'><a href="https://www.linkedin.com/in/tom%C3%A1s-maldonado-9b396420a/" target="_blank" rel="noopener noreferrer" title="My LinkedIn Profile"><i class="fa-brands fa-linkedin fa-xl"></i></a></div>
+
         <div id="share" class='nav-btns'><p class="share" title="Share your list"><i class="fa-regular fa-xl fa-share-from-square share"></i> Share</p></div>
     </div>
 </nav>
@@ -135,8 +136,26 @@ echo "
                             </div>
                         </div>
                     </div>
-                                            
+                
+                    <div id=container-section-facts>
+                        <div id=facts>
+                            <p>As of 2021</p>
+                            <p id=fCountry><b>Country:</b> </p>
+                            <p id=countryPop><b>Country Total Population:</b> </p>
+                            <p id=fMigrants><b>% of Country Inhabitants International Migrants:</b> </p>
+                            <p id=fCity><b>City:</b> </p>
+                            <p id=cityPop><b>City Population:</b> </p>
+                            <p id=fRel><b>National Religious Demographics:</b> </p>
+                            <p id=fRel><b>National Ethnic Demographics:</b> </p>
+                            <p id=fRel><b>National Average GDP per Capita:</b> </p>
+
+                            <p>Sources: WorldBank, </p>
+                        </div>
+                    </div>
+
+
                 </div>
+
             </div class=drag-container>   
         </tr>
 
@@ -168,8 +187,8 @@ echo "<p id=total-places ><b>Total Number Of Places: " . $rowcount . "</b></p>";
        
             <div id="btn-msg">
                 <ul>
-                    <li>Check out 'See More' section to learn about your place!</li>
-                    <li>Edit or delete place in the 'See More' section</li>
+                    <li>Click on 'See More' section to learn about your place!</li>
+                    <li>Edit or delete a place in the 'See More' section</li>
                     <li>Be sure to contribute to the list!</li>
                 </ul>
             <div id="btn">
@@ -230,7 +249,7 @@ mysqli_close($con);
 ?>
     <script defer src="https://code.jquery.com/jquery-3.6.1.js"></script>
 
-    <script defer src="script.js"></script>
+    <script defer type="module" src="script.js"></script>
 
     <!-- <script defer src='map-script.js'></script> -->
 

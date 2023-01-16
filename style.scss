@@ -395,6 +395,15 @@ td:where(.check-td){
     margin: 0rem auto;
 }
 
+#btn-msg ul {
+    color: white;
+    font-size: 1.25rem;
+    font-style: italic;
+}
+
+#btn-msg ul li {
+    padding: 1.5px;
+}
 // #msg{
 //     width: 100%;
 //     display: flex;

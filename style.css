@@ -1,7 +1,6 @@
 body, html {
   margin: 0 auto;
   font-family: Georgia, "Times New Roman", Times, serif;
-  overflow-x: hidden;
 }
 
 input[type=button], input[type=text] {
@@ -98,7 +97,7 @@ h1 {
 
 #container-table {
   max-height: 55vh;
-  overflow: auto;
+  overflow: scroll;
   margin: 0;
 }
 
@@ -122,7 +121,6 @@ h1 {
 
 .print, .share {
   cursor: pointer;
-  color: antiquewhite;
 }
 .print .print:nth-child(1), .print .print:nth-child(3), .share .print:nth-child(1), .share .print:nth-child(3) {
   padding: 5px;
@@ -352,13 +350,12 @@ td:where(.check-td) {
 
 #btn-msg ul {
   color: white;
+  font-size: 1.25rem;
   font-style: italic;
-  font-size: 1.2rem;
 }
 
-#btn-msg ul li{
+#btn-msg ul li {
   padding: 1.5px;
-
 }
 
 #btn {
@@ -413,7 +410,7 @@ td:where(.check-td) {
 
 #map-section {
   background-color: rgb(47, 65, 79);
-  height: auto;
+  height: 100vh;
   display: flex;
   align-content: center;
 }
@@ -421,7 +418,7 @@ td:where(.check-td) {
 #map-container {
   width: 80%;
   height: 80vh;
-  margin: 4rem auto;
+  margin: auto;
 }
 
 #map {
@@ -550,16 +547,16 @@ footer p {
   opacity: 1;
 }
 
+/*              */
 #search-engine {
   height: 55vh;
   overflow: scroll;
   direction: rtl;
 }
-/* 
+
 .gsc-results .gsc-imageResult {
   width: 33%;
-  flex-basis: 100%;
-} */
+}
 
 .gsc-tabsArea {
   display: none;
