@@ -140,11 +140,11 @@ echo "
                     <div id=container-section-facts>
                         <div id=facts>
                             <p>As of 2021</p>
-                            <p id=fCountry><b>Country:</b> </p>
+                            <p><b>Country:</b> <span id=fCountry></span></p>
                             <p id=countryPop><b>Country Total Population:</b> </p>
                             <p id=fMigrants><b>% of Country Inhabitants International Migrants:</b> </p>
-                            <p id=fCity><b>City:</b> </p>
-                            <p id=cityPop><b>City Population:</b> </p>
+                            <p><b>City:</b> <span id=fCity></span> </p>
+                            <p><b>City Population:</b> <span id=cityPop></span> </p>
                             <p id=fRel><b>National Religious Demographics:</b> </p>
                             <p id=fRel><b>National Ethnic Demographics:</b> </p>
                             <p id=fRel><b>National Average GDP per Capita:</b> </p>
@@ -185,12 +185,12 @@ echo "<p id=total-places ><b>Total Number Of Places: " . $rowcount . "</b></p>";
 
 ?>
        
+       <ul>
+           <li>Click on <b>'See More'</b> section to learn about your place!</li>
+           <li>Edit or delete a place in the <b>'See More'</b> section</li>
+           <li>Be sure to contribute to the list!</li>
+       </ul>
             <div id="btn-msg">
-                <ul>
-                    <li>Click on 'See More' section to learn about your place!</li>
-                    <li>Edit or delete a place in the 'See More' section</li>
-                    <li>Be sure to contribute to the list!</li>
-                </ul>
             <div id="btn">
                         <input type="button" class="del-sel" name="delete_sel" value="Delete Selection">
                         
@@ -231,9 +231,14 @@ echo "<p id=total-places ><b>Total Number Of Places: " . $rowcount . "</b></p>";
 
 <section id="map-section">
     <div id="map-container">
+        <h2>Your Places</h2>
         <div id="map">
 
-        </div>
+            </div>
+            <p>To see the <u>updated map</u> please refresh the page after editing the list.</p>
+            
+        
+        
     </div>
 </section>
 

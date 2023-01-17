@@ -348,13 +348,13 @@ td:where(.check-td) {
   margin: 0rem auto;
 }
 
-#btn-msg ul {
+ul, #map-container p {
   color: white;
   font-size: 1.25rem;
   font-style: italic;
 }
 
-#btn-msg ul li {
+ul li {
   padding: 1.5px;
 }
 
@@ -418,7 +418,13 @@ td:where(.check-td) {
 #map-container {
   width: 80%;
   height: 80vh;
-  margin: auto;
+  margin: 0 auto;
+}
+
+#map-container h2 {
+  color: antiquewhite;
+  text-align: center;
+  font-size: 2.25rem;
 }
 
 #map {

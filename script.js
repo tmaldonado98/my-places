@@ -122,7 +122,7 @@ $('.print').click(()=>{
 $('.share').click(()=>{
     if (navigator.share) {
         navigator.share({
-            url: 'https://myplaces.rf.gd/?q=',
+            url: 'https://myplaces.rf.gd/',
             title: 'My List Of Places'
             
         })
@@ -491,33 +491,71 @@ window.history.replaceState(null, null, "?q=");
 $('#map-section').ready(function(){
     $('#map').append("<script src='map-script.js'></script>");
 });
-/*
-$('#container-table-btns').ready(function(){
 
+///function for main map markers
+$('#map').ready(function(){
+    console.log('caca');
+    
     $('.data-row').each(function(){
         let coText = $(this).children('#country-text').text();
         let ciText = $(this).children('#city-text').text();
         let laText = $(this).children('#landmark-text').text();
 
-    locateTxt = coText + ' ' + ciText + ' ' + laText;
+    // locateTxt = coText + ' ' + ciText + ' ' + laText;
 
-        $.ajax({
-            url: 'https://geocode.xyz',
-            data: {
-              auth: '803066415173447662518x121329',
-              locate: locateTxt,
-              json: '1'
-            }
-          }).done(function(data) {
-            // console.log(data["longt"], data["latt"]);
+        // $.ajax({
+        //     url: 'https://geocode.xyz',
+        //     data: {
+        //       auth: '803066415173447662518x121329',
+        //       locate: locateTxt,
+        //       json: '1'
+        //     }
+        //   }).done(function(data) {
+        //     // console.log(data["longt"], data["latt"]);
 
-            const country = new maplibregl.Marker()
-            .setLngLat([data["longt"], data["latt"]])
-            .addTo(map);
+        //     const country = new maplibregl.Marker()
+        //     .setLngLat([data["longt"], data["latt"]])
+        //     .addTo(map);
+        // })
         
-        })
+        $.getJSON("worldcities.json", function(data){
+
+            $.each(data.worldcities, function (){
+
+                if (coText.length > 0 && ciText.length > 0) {
+                    if (coText  == (this["country"].apply()) && ciText == (this["city"].apply())) {
+                        console.log(coText)
+                    
+                        // const country = new maplibregl.Marker()
+                        // .setLngLat([this["lng"].apply(), this["lat"].apply()])
+                        // .addTo(map);
+
+                        // return false;
+                    }
+                } 
+                else if (coText.length > 0 && ciText.length === 0) {
+                    if (coText  == (this["country"].apply())) {
+                    
+                        // const country = new maplibregl.Marker()
+                        // .setLngLat([this["lng"].apply(), this["lat"].apply()])
+                        // .addTo(map);
+
+                    }
+                }
+                
+                
+                
+                // else if (condition) {
+                    
+                // }
+
+            });//main closing bracket for each
+
+        });
+
+    
     })  
-});*/
+});
 
 $('body').on('click', '.see-more' , function(){
 
@@ -527,42 +565,36 @@ $('body').on('click', '.see-more' , function(){
         let mCountry = $('#m-country').text();
         let mCity = $('#m-city').text();
         let mLandmark = $('#m-landmark').text();
-        // $('#modal-map').append("<script src='map-script.js'></script>");
-
-        let locateTxt = mCountry + ' ' + mCity + ' ' + mLandmark;
-
-        $.ajax({
-            url: 'https://geocode.xyz',
-            data: {
-              auth: '803066415173447662518x121329',
-              locate: locateTxt,
-              json: '1'
-            }
-          }).done(function(data) {
-            // console.log(data["longt"], data["latt"]);
-            // console.log(locateTxt);
-            
-            const key = '3UHgzHjbiaCYC7Bdr6V1';
-            const map = new maplibregl.Map({
-                container: 'modal-map',
-                style: `https://api.maptiler.com/maps/35df50b2-be27-431c-890b-23ce12b847e1/style.json?key=3UHgzHjbiaCYC7Bdr6V1`,
-                center: [data["longt"], data["latt"]],
-                zoom: 5
-            });
-            map.addControl(new maplibregl.NavigationControl(), 'top-right');
-
-
-        const country = new maplibregl.Marker()
-        .setLngLat([data["longt"], data["latt"]])
-        .addTo(map);
-        });
 
         $.getJSON("worldcities.json", function(data){
-            console.log(data)
+            // console.log(data)
 
             $.each(data.worldcities, function (){
+
                 if (mCountry  == (this["country"]) && mCity == (this["city"])) {
-                    $('#section-facts').append((this["country"]) + (this["city"]));
+                    $('#fCountry').html(this["country"]);
+                    $('#fCity').html(this["city"]);
+                    $('#cityPop').html(Number(this["population"]).toLocaleString("en-US"));
+
+                    if (map.center === ([this["lng"], this["lat"]]) && country) {
+                        return false
+                    } else {
+
+                        const key = '3UHgzHjbiaCYC7Bdr6V1';
+                        const map = new maplibregl.Map({
+                            container: 'modal-map',
+                            style: `https://api.maptiler.com/maps/35df50b2-be27-431c-890b-23ce12b847e1/style.json?key=3UHgzHjbiaCYC7Bdr6V1`,
+                            center: [this["lng"], this["lat"]],
+                            zoom: 4
+                        });
+                        map.addControl(new maplibregl.NavigationControl(), 'top-right');
+            
+            
+                    // const country = new maplibregl.Marker()
+                    // .setLngLat([this["lng"], this["lat"]])
+                    // .addTo(map);
+                    }
+
                     console.log((this["country"]) + (this["city"]));
                 } 
                 else if (mCountry  == (this["country"]) && mCity == (this["city_ascii"])) {
@@ -571,41 +603,6 @@ $('body').on('click', '.see-more' , function(){
                 }
             })
 
-            // if ($('#modal-title') == $('#m-country') && $('#m-city')) {
-    
-
-            //     $.each(data.worldcities, function (){
-            //         if (mCountry  == (this["country"]) && mCity == (this["city"])) {
-            //             $('#section-facts').html((this["country"]) + (this["city"]));
-            //             console.log((this["country"]) + (this["city"]));
-            //         } 
-            //         else if (mCountry  == (this["country"]) && mCity == (this["city_ascii"])) {
-            //             $('#section-facts').html((this["country"]) + (this["city_ascii"]));
-            //             console.log((this["country"]) + (this["city_ascii"]));
-            //         }
-            //     })
-            // }
-            // else if ($('#m-country')) {
-            //     $.each(data.worldcities, function (){
-            //         if (mCountry  == (this["country"])) {
-            //             $('#section-facts').html((this["country"]));
-            //             console.log((this["country"]));
-            //         }
-            //     }) 
-            // }
-            // else if ($('#m-city')) {
-            //     $.each(data.worldcities, function (){
-            //         if (mCity  == (this["city"])) {
-            //             $('#section-facts').html(this["city"]);
-            //             console.log((this["city"]));
-            //         } else if (mCity  == (this["city_ascii"])) {
-            //             $('#section-facts').html(this["city_ascii"]);
-            //             console.log(this["city_ascii"]); 
-            //         }
-            //     }) 
-            // }
-
-            // })
 
         });
 
