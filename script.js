@@ -68,6 +68,24 @@ $('body').on('keypress', 'input', function(e){
     }
 });
 
+let countrySuggestion = [];
+
+$.getJSON("countriesonly.json", function(result){
+    $.each(result.countriesonly, function(val){
+        // $('#country').keyup(()=>{
+            countrySuggestion.push(result.countriesonly);
+            // if (str.substring == this.name["common"].substring) {
+            //     $('#countryList').append('<option></option>').val(this.name["common"])
+            //     console.log('test');
+            // }
+            // });
+        })
+    })
+    $("#country" ).autocomplete({
+        source: countrySuggestion
+      });
+
+
 ///THESE THREE KEYPRESS EVENTS INVALIDATE CHARACTERS WHEN FIELDS REACH A CHARACTER
 /// COUNT OF 20.
 $('#country').keypress(()=>{
@@ -75,6 +93,7 @@ $('#country').keypress(()=>{
         return false;
     };
 });
+
 $('#city').keypress(()=>{
     if ($('#city').val().length >= 25) {
         return false;
@@ -205,7 +224,7 @@ function countrySuggestion(str){
     } else {
         $.ajax({
             method: 'GET',
-            url: 'suggest.php',
+            url: 'suggest.php?q=+str',
             dataType: 'php',
             success: function(result) {
                 $('#country-sug').html(this.result)
@@ -560,9 +579,9 @@ $('body').on('click', '.see-more' , function(){
 
                     if (mCountry  == (this["country"]) && mCity == (this["city"])) {
                                                     
-                        $('#fCountry').html(this["country"]);
-                        $('#fCity').html(this["city"]);
-                        $('#cityPop').html(Number(this["population"]).toLocaleString("en-US"));
+                        $('#fCountry').children('span').html(this["country"]);
+                        $('#fCity').children('span').html(this["city"]);
+                        $('#cityPop').children('span').html(Number(this["population"]).toLocaleString("en-US"));
 
                         
                         const key = '3UHgzHjbiaCYC7Bdr6V1';
@@ -580,7 +599,8 @@ $('body').on('click', '.see-more' , function(){
                         
 
                         console.log((this["country"]) + (this["city"]));
-                    }
+                    };
+
                 })
                 
                 
@@ -605,7 +625,7 @@ $('body').on('click', '.see-more' , function(){
                         .setLngLat([this.latlng[1], this.latlng[0]])
                         .addTo(map);                     
                                                 
-                        $('#fCountry').html(this.name["common"]);
+                        $('#fCountry').children('span').html(this.name["common"]);
                         $('#fCity').prop('display', 'none');
                         $('#cityPop').prop('display', 'none');
                     }
@@ -627,9 +647,20 @@ $('body').on('click', '.see-more' , function(){
         $.getJSON("countrieswcoordinates.json", function(info){
             $.each(info.countries, function(){
                 if (mCountry  === (this.name["common"])) {
-                    $('#fCurr').html(this.currencies["AWG"].name);
+                    $('#fCurr').children('span').html(JSON.stringify(this.currencies).replace(/[{}"]/g, ''));
+                    $('#fCapital').children('span').html(this.capital);
                     
-            
+                    if (mCity.toLowerCase() == (this["capital"].toLowerCase())) {
+                        $('#fCity').hide();
+                        $('#cityPop').hide();
+
+                    } else {
+                        // $('#fCity').children('span').html(this.)
+                            //must be run with worldcities.json loop
+
+                    }
+
+
                 }
             })
         })

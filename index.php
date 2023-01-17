@@ -23,6 +23,7 @@ if (isset($_POST['update'])) {
     <link rel="stylesheet" href="./media-queries.css">
     <link rel="stylesheet" href="./modal-magnific-popup/magnific-popup.css">
     <link href="./jquery-ui-1.13.2.custom/jquery-ui.css">
+    <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"> -->
     <script src="https://kit.fontawesome.com/602ec316c2.js" crossorigin="anonymous"></script>
     <link href='https://cdn.maptiler.com/maplibre-gl-js/v2.4.0/maplibre-gl.css' rel='stylesheet'/>
 </head>
@@ -145,9 +146,10 @@ echo "
                             <p id=fCapital><b>Capital City:</b> <span></span></p>
                             <p id=fCapPop><b>Capital City Population:</b> <span></span></p>
 
-                            <p id=fMigrants><b>% of Country Inhabitants International Migrants:</b> </p>
                             <p id=fCity><b>Your City:</b> <span ></span> </p>
                             <p id=cityPop><b>City Population:</b> <span></span> </p>
+                            
+                            <p id=fMigrants><b>% of Country Inhabitants International Migrants:</b> </p>
                             <p id=fRel><b>National Religious Demographics:</b> </p>
                             <p id=fRel><b>National Ethnic Demographics:</b> </p>
                             <p id=fRel><b>National Average GDP per Capita:</b> </p>
@@ -216,9 +218,12 @@ echo "<p id=total-places ><b>Total Number Of Places: " . $rowcount . "</b></p>";
                 <h3 id="med-head">Add A New Place</h3>
                 <div id="add-place">
                     <div class="container-input">
-                        <p>(Recommended)</p>
+                        <span>(Recommended)</span>
                         <label for="country"><p>Country</p></label>
-                        <input autofocus autocomplete='off' class="text" id="country" placeholder="Country" type="text" name="country"></input>
+                        <input list="countryList" autofocus autocomplete='on' class="text" id="country" placeholder="Country" type="text" name="country"></input>
+                        <!-- <datalist id="countryList">
+                            <option value=""></option>
+                        </datalist> -->
                     </div>
                     <div class="container-input">
                         <label for="city"><p>City</p></label>
@@ -241,7 +246,7 @@ echo "<p id=total-places ><b>Total Number Of Places: " . $rowcount . "</b></p>";
 
 <section id="map-section">
     <div id="map-container">
-        <h2>Your Places</h2>
+        <h2>Your Map</h2>
         <div id="map">
 
             </div>
@@ -270,6 +275,9 @@ mysqli_close($con);
 
         <!-- jQuery UI plugin -->
     <script defer src="jquery-ui.js"></script>
+
+    <!-- <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script> -->
+
     
     <script defer src="sortable-script.js"></script>
 
