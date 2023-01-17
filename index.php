@@ -140,16 +140,24 @@ echo "
                     <div id=container-section-facts>
                         <div id=facts>
                             <p>As of 2021</p>
-                            <p><b>Country:</b> <span id=fCountry></span></p>
+                            <p id=fCountry><b>Country:</b> <span></span></p>
                             <p id=countryPop><b>Country Total Population:</b> </p>
+                            <p id=fCapital><b>Capital City:</b> <span></span></p>
+                            <p id=fCapPop><b>Capital City Population:</b> <span></span></p>
+
                             <p id=fMigrants><b>% of Country Inhabitants International Migrants:</b> </p>
-                            <p><b>City:</b> <span id=fCity></span> </p>
-                            <p><b>City Population:</b> <span id=cityPop></span> </p>
+                            <p id=fCity><b>Your City:</b> <span ></span> </p>
+                            <p id=cityPop><b>City Population:</b> <span></span> </p>
                             <p id=fRel><b>National Religious Demographics:</b> </p>
                             <p id=fRel><b>National Ethnic Demographics:</b> </p>
                             <p id=fRel><b>National Average GDP per Capita:</b> </p>
+                            <p id=fCurr><b>National Currency:</b> <span></span> </p>
+
 
                             <p>Sources: WorldBank, </p>
+
+
+                            <!-- flag -->
                         </div>
                     </div>
 
@@ -189,6 +197,7 @@ echo "<p id=total-places ><b>Total Number Of Places: " . $rowcount . "</b></p>";
            <li>Click on <b>'See More'</b> section to learn about your place!</li>
            <li>Edit or delete a place in the <b>'See More'</b> section</li>
            <li>Be sure to contribute to the list!</li>
+           <!-- <li>To avoid error, make sure to remove empty spaces at the </li> -->
        </ul>
             <div id="btn-msg">
             <div id="btn">
@@ -207,6 +216,7 @@ echo "<p id=total-places ><b>Total Number Of Places: " . $rowcount . "</b></p>";
                 <h3 id="med-head">Add A New Place</h3>
                 <div id="add-place">
                     <div class="container-input">
+                        <p>(Recommended)</p>
                         <label for="country"><p>Country</p></label>
                         <input autofocus autocomplete='off' class="text" id="country" placeholder="Country" type="text" name="country"></input>
                     </div>

@@ -36,9 +36,9 @@ $('body').on('keypress', '.text', function(e){
         let insert = 'insert';
         let data = {
             action: insert,
-            country: $('#country').val(),
-            city: $('#city').val(),
-            landmark: $('#landmark').val(),  
+            country: $('#country').val().trim(),
+            city: $('#city').val().trim(),
+            landmark: $('#landmark').val().trim(),  
         };
 
         $.ajax({
@@ -244,9 +244,9 @@ $('body').on('click', '#insertBtn', function (){
     let insert = 'insert';
     let data = {
         action: insert,
-        country: $('#country').val(),
-        city: $('#city').val(),
-        landmark: $('#landmark').val(),  
+        country: $('#country').val().trim(),
+        city: $('#city').val().trim(),
+        landmark: $('#landmark').val().trim(),  
         
     };
         
@@ -377,9 +377,9 @@ $('body').on('click', '.editBtn', function (){
         data: {
             // action: 'edit',
             id: $('.editBtn').attr('dataId'),
-            edCountry: $('#ed-country').val(),
-            edCity: $('#ed-city').val(),
-            edLandmark: $('#ed-landmark').val()
+            edCountry: $('#ed-country').val().trim(),
+            edCity: $('#ed-city').val().trim(),
+            edLandmark: $('#ed-landmark').val().trim()
         },
         dataType: 'html',
         success: function (){
@@ -397,9 +397,9 @@ $('body').on('keypress', '.ed-text', function(e){
             method: 'POST',
             data: {
                 id: $('.editBtn').attr('dataId'),
-                edCountry: $('#ed-country').val(),
-                edCity: $('#ed-city').val(),
-                edLandmark: $('#ed-landmark').val()
+                edCountry: $('#ed-country').val().trim(),
+                edCity: $('#ed-city').val().trim(),
+                edLandmark: $('#ed-landmark').val().trim()
             },
             success: function (){
                displayData();    
@@ -494,66 +494,50 @@ $('#map-section').ready(function(){
 
 ///function for main map markers
 $('#map').ready(function(){
-    console.log('caca');
+    // console.log('test');
     
     $('.data-row').each(function(){
         let coText = $(this).children('#country-text').text();
         let ciText = $(this).children('#city-text').text();
-        let laText = $(this).children('#landmark-text').text();
-
-    // locateTxt = coText + ' ' + ciText + ' ' + laText;
-
-        // $.ajax({
-        //     url: 'https://geocode.xyz',
-        //     data: {
-        //       auth: '803066415173447662518x121329',
-        //       locate: locateTxt,
-        //       json: '1'
-        //     }
-        //   }).done(function(data) {
-        //     // console.log(data["longt"], data["latt"]);
-
-        //     const country = new maplibregl.Marker()
-        //     .setLngLat([data["longt"], data["latt"]])
-        //     .addTo(map);
-        // })
+        // let laText = $(this).children('#landmark-text').text();
         
-        $.getJSON("worldcities.json", function(data){
+        if (coText.length > 0 && ciText.length > 0) {
+            $.getJSON("worldcities.json", function(data){
 
-            $.each(data.worldcities, function (){
+                $.each(data.worldcities, function (){
 
-                if (coText.length > 0 && ciText.length > 0) {
-                    if (coText  == (this["country"].apply()) && ciText == (this["city"].apply())) {
-                        console.log(coText)
+                    if (coText  === (this["country"]) && ciText === (this["city"])) {
+                        // console.log(coText)
                     
-                        // const country = new maplibregl.Marker()
-                        // .setLngLat([this["lng"].apply(), this["lat"].apply()])
-                        // .addTo(map);
-
-                        // return false;
+                        const country = new maplibregl.Marker()
+                        .setLngLat([this["lng"], this["lat"]])
+                        .addTo(map);
                     }
-                } 
-                else if (coText.length > 0 && ciText.length === 0) {
-                    if (coText  == (this["country"].apply())) {
                     
-                        // const country = new maplibregl.Marker()
-                        // .setLngLat([this["lng"].apply(), this["lat"].apply()])
-                        // .addTo(map);
+
+                    
+                });//main closing bracket for each
+
+            });
+
+        }                
+        else if (coText.length > 0 && ciText.length === 0) {
+            $.getJSON("countrieswcoordinates.json", function(resp){
+                $.each(resp.countries, function(){
+                    
+                    if (coText  === (this.name["common"])) {
+                    
+                        const country = new maplibregl.Marker()
+                        .setLngLat([this.latlng[1], this.latlng[0]])
+                        .addTo(map);
 
                     }
-                }
+                })
                 
-                
-                
-                // else if (condition) {
-                    
-                // }
-
-            });//main closing bracket for each
-
-        });
-
-    
+            })        
+            } else{
+                console.log('error')
+            }
     })  
 });
 
@@ -566,20 +550,21 @@ $('body').on('click', '.see-more' , function(){
         let mCity = $('#m-city').text();
         let mLandmark = $('#m-landmark').text();
 
-        $.getJSON("worldcities.json", function(data){
-            // console.log(data)
+        // let jCountry = $()
 
-            $.each(data.worldcities, function (){
+        if (mCountry.length > 0 && mCity.length > 0) {
+            $.getJSON("worldcities.json", function(data){
+                // console.log(data)
 
-                if (mCountry  == (this["country"]) && mCity == (this["city"])) {
-                    $('#fCountry').html(this["country"]);
-                    $('#fCity').html(this["city"]);
-                    $('#cityPop').html(Number(this["population"]).toLocaleString("en-US"));
+                $.each(data.worldcities, function (){
 
-                    if (map.center === ([this["lng"], this["lat"]]) && country) {
-                        return false
-                    } else {
+                    if (mCountry  == (this["country"]) && mCity == (this["city"])) {
+                                                    
+                        $('#fCountry').html(this["country"]);
+                        $('#fCity').html(this["city"]);
+                        $('#cityPop').html(Number(this["population"]).toLocaleString("en-US"));
 
+                        
                         const key = '3UHgzHjbiaCYC7Bdr6V1';
                         const map = new maplibregl.Map({
                             container: 'modal-map',
@@ -588,23 +573,68 @@ $('body').on('click', '.see-more' , function(){
                             zoom: 4
                         });
                         map.addControl(new maplibregl.NavigationControl(), 'top-right');
-            
-            
-                    // const country = new maplibregl.Marker()
-                    // .setLngLat([this["lng"], this["lat"]])
-                    // .addTo(map);
+                                                
+                        const country = new maplibregl.Marker()
+                        .setLngLat([this["lng"], this["lat"]])
+                        .addTo(map);
+                        
+
+                        console.log((this["country"]) + (this["city"]));
+                    }
+                })
+                
+                
+            });//end of getjson block
+        } //end of if block
+        else if (mCountry.length > 0 && mCity.length === 0) {
+            $.getJSON("countrieswcoordinates.json", function(resp){
+                $.each(resp.countries, function(){
+                    
+                    if (mCountry  === (this.name["common"])) {
+                        const key = '3UHgzHjbiaCYC7Bdr6V1';
+                        const map = new maplibregl.Map({
+                            container: 'modal-map',
+                            style: `https://api.maptiler.com/maps/35df50b2-be27-431c-890b-23ce12b847e1/style.json?key=3UHgzHjbiaCYC7Bdr6V1`,
+                            center: [this.latlng[1], this.latlng[0]],
+                            zoom: 4
+                        });
+
+                        map.addControl(new maplibregl.NavigationControl(), 'top-right');
+
+                        const country = new maplibregl.Marker()
+                        .setLngLat([this.latlng[1], this.latlng[0]])
+                        .addTo(map);                     
+                                                
+                        $('#fCountry').html(this.name["common"]);
+                        $('#fCity').prop('display', 'none');
+                        $('#cityPop').prop('display', 'none');
                     }
 
-                    console.log((this["country"]) + (this["city"]));
-                } 
-                else if (mCountry  == (this["country"]) && mCity == (this["city_ascii"])) {
-                    $('#section-facts').append((this["country"]) + (this["city_ascii"]));
-                    console.log((this["country"]) + (this["city_ascii"]));
+
+                })//each block
+
+
+                
+            })///getjson block
+        }
+        
+        
+        // else if (mCountry  == (this["country"]) && mCity == (this["city_ascii"])) {
+        //     $('#section-facts').append((this["country"]) + (this["city_ascii"]));
+        //     console.log((this["country"]) + (this["city_ascii"]));
+        // }
+        
+        $.getJSON("countrieswcoordinates.json", function(info){
+            $.each(info.countries, function(){
+                if (mCountry  === (this.name["common"])) {
+                    $('#fCurr').html(this.currencies["AWG"].name);
+                    
+            
                 }
             })
+        })
 
 
-        });
 
 
     })
