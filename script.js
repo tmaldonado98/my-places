@@ -69,7 +69,7 @@ $('body').on('keypress', 'input', function(e){
 });
 
 let countrySuggestion = [];
-
+/*
 $.getJSON("countriesonly.json", function(result){
     $.each(result.countriesonly, function(val){
         // $('#country').keyup(()=>{
@@ -84,7 +84,7 @@ $.getJSON("countriesonly.json", function(result){
     $("#country" ).autocomplete({
         source: countrySuggestion
       });
-
+*/
 
 ///THESE THREE KEYPRESS EVENTS INVALIDATE CHARACTERS WHEN FIELDS REACH A CHARACTER
 /// COUNT OF 20.
