@@ -115,11 +115,13 @@ echo "
                 </td>                
                 
                 <div id=$marker name=modal class='modal zoom-anim-dialog mfp-hide' value=$marker>
-                    <p id=modal-title><b> <span id=m-landmark>" . ucwords($row['landmark'])."</span> <span id=m-city>". ucwords($row['city'])."</span> <span id=m-country>". ucwords($row['country'])."</span></b></p>
+                    <div id=modal-title><b> <span id=m-landmark>" . ucwords($row['landmark'])."</span><span id=mlc>,</span> <span id=m-city>". ucwords($row['city'])."</span><span id=mcc>,</span> <span id=m-country>". ucwords($row['country'])."</span></b></div>
                     <hr>
 
-                    <div class=search-engine>
-                                              
+                    <div id=container-search-engine>
+                        <div class=search-engine>
+                                                  
+                        </div>
                     </div>
                     <hr>
 

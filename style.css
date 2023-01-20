@@ -516,6 +516,17 @@ ul li {
   margin: 2rem auto;
 }
 
+/* Modal  */
+
+#container-search-engine {
+  background-color: rgb(135, 163, 184);
+
+}
+
+.gsc-control-cse {
+  background-color: black !important;
+}
+
 #section-modal-map {
   background-color: rgb(47, 65, 79);
   height: 80vh;
@@ -534,6 +545,32 @@ ul li {
 
 #modal-map {
   height: inherit;
+}
+
+#container-section-facts {
+  display: flex;
+  align-items: center;
+}
+
+#facts {
+  width: 50%;
+}
+.flag-container {
+  width: 50%;
+}
+#flag {
+  /* align-items: center; */
+  text-align: center;
+}
+
+#container-news {
+  height: 80vh;
+  background-color: rgba(133, 110, 75, 0.49);
+}
+
+#container-people-of {
+  height: 80vh;
+  background-color: rgba(174, 181, 136, 0.49);
 }
 
 .cursorProgress {
@@ -617,7 +654,14 @@ footer p {
 
 #modal-title {
   text-align: center;
-  font-size: 2.25rem;
+  font-size: 2.75rem;
+  border: 2px black solid;
+  padding: 0.75rem;
+  border-radius: 40px;
+  width: fit-content;
+  margin: 1.5rem auto;
+  background-color: ivory;
+  /* text-shadow: 3px 4px black; */
 }
 
 .edit-field {
@@ -639,6 +683,7 @@ footer p {
 
 .gsc-results .gsc-imageResult {
   width: 33%;
+  background-color: black !important;
 }
 
 .gsc-tabsArea {

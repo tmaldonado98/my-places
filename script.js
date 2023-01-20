@@ -477,6 +477,13 @@ $('body').on('click', '.see-more', function(){
     let mCity = $('#m-city').text();
     let mLandmark = $('#m-landmark').text();
 
+    // console.log(Object.keys($('#modal-title')).join(", "));
+    const arrayModalTitle = $('#modal-title').children('span');
+
+    for (const span in arrayModalTitle) {
+
+    }
+
     ////****************
     $('.search-engine').append("<div class='gcse-searchresults-only'></div>");
     $('head').append("<script async=true src='https://cse.google.com/cse.js?cx=22bdf86666de74d21'></script>");
@@ -542,6 +549,7 @@ $('#map').ready(function(){
         let coText = $(this).children('#country-text').text();
         let ciText = $(this).children('#city-text').text();
         // let laText = $(this).children('#landmark-text').text();
+
         
         if (coText.length > 0 && ciText.length > 0) {
             $.getJSON("worldcities.json", function(data){
@@ -586,11 +594,20 @@ $('#map').ready(function(){
 $('body').on('click', '.see-more' , function(){
 
     $('.modal').ready(function() {
-        $('.edit-field').removeClass('edit-field-visible');
+        $('.edit-field').removeClass('edit-field-visible');       
 
         let mCountry = $('#m-country').text();
         let mCity = $('#m-city').text();
         let mLandmark = $('#m-landmark').text();
+
+        if (mLandmark.length == 0) {
+            $('#m-landmark').hide();
+            $('#mlc').hide();
+        }        
+        else if (mCity.length == 0) {
+            $('#m-city').hide();
+            $('#mcc').hide()
+        }
 
         if (mCountry.length > 0 && mCity.length > 0) {
             $.getJSON("worldcities.json", function(data){
@@ -692,14 +709,13 @@ $('body').on('click', '.see-more' , function(){
 
                     $('#fLangs').children('span').html(
                         JSON.stringify(arrayLangObjs.join(", "))
-                        .replace(/[[]]"]/g, ''));
+                        .toString()
+                        .replace(/[""]"]/g, ''));
                     
                     if (mCity == (this["capital"])) {
                         $('#fCity').hide();
                     } else if (mCity != (this["capital"])) {
                         $('#cityPop').children('b').prepend('Your ');
-                        // $('#fCity').children('span').html(this.)
-                            //must be run with worldcities.json loop
 
                     }
 
@@ -718,6 +734,11 @@ $('body').on('click', '.see-more' , function(){
             })
         })
 
+
+        if (mCountry.length === 0 && mCity.length > 0) {
+            $('#section-modal-map').hide()
+            $('#container-section-facts').hide()
+        }
 
     })
 });
