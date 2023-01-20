@@ -30,13 +30,25 @@ if (isset($_POST['update'])) {
 <body>
 <!-- ,maximum-scale=1,user-scalable=no -->
 <nav>
-    <div id="contact">
-        <div class='nav-btns'><a href="https://github.com/tmaldonado98" target="_blank" rel="noopener noreferrer" title="My Github Profile"><i class="fa-brands fa-github fa-xl"></i></a></div>
-        <div class='nav-btns'><a href="mailto:tmaldonadotrs@gmail.com" target="_blank" rel="noopener noreferrer" title="Send Me An Email!"><i class="fa-solid fa-envelope fa-xl"></i></a></div>
-        <div class='nav-btns'><a href="https://www.linkedin.com/in/tom%C3%A1s-maldonado-9b396420a/" target="_blank" rel="noopener noreferrer" title="My LinkedIn Profile"><i class="fa-brands fa-linkedin fa-xl"></i></a></div>
+    <!-- <div id="contact" >
+        <div class='nav-btns' title="Contact Me!" data-modal-target="contact-modal">Contact</div>
 
-        <div id="share" class='nav-btns'><p class="share" title="Share your list"><i class="fa-regular fa-xl fa-share-from-square share"></i> Share</p></div>
+        <div id="contact-modal" class="active">
+            <div id="contact-modal-title">
+                <h3>Let's Get In Touch</h3>
+                <button id="contact-close-btn" data-close-btn>&times;</button>
+            </div>
+            
+            <div id="modal-body">
+                <div class='nav-btns'><a href="https://github.com/tmaldonado98" target="_blank" rel="noopener noreferrer" title="My Github Profile"><i class="fa-brands fa-github fa-xl"></i></a></div>
+                <div class='nav-btns'><a href="mailto:tmaldonadotrs@gmail.com" target="_blank" rel="noopener noreferrer" title="Send Me An Email!"><i class="fa-solid fa-envelope fa-xl"></i></a></div>
+                <div class='nav-btns'><a href="https://www.linkedin.com/in/tom%C3%A1s-maldonado-9b396420a/" target="_blank" rel="noopener noreferrer" title="My LinkedIn Profile"><i class="fa-brands fa-linkedin fa-xl"></i></a></div>
+                <div id="share" class='nav-btns'><p class="share" title="Share your list"><i class="fa-regular fa-xl fa-share-from-square share"></i> Share</p></div>
+
+            </div>               
+        </div>   
     </div>
+    <div class="active" id="overlay"></div> -->
 </nav>
 <div id=container-print>
     <i class="fa-solid fa-print fa-xl print" title="Print Page"></i>
@@ -142,24 +154,44 @@ echo "
                         <div id=facts>
                             <p>As of 2021</p>
                             <p id=fCountry><b>Country:</b> <span></span></p>
-                            <p id=countryPop><b>Country Total Population:</b> </p>
+                            <p id=countryPop><b>Country Total Population:</b> <span></span> </p>
                             <p id=fCapital><b>Capital City:</b> <span></span></p>
-                            <p id=fCapPop><b>Capital City Population:</b> <span></span></p>
 
-                            <p id=fCity><b>Your City:</b> <span ></span> </p>
+                            <p id=fCity><b>Your City:</b> <span></span> </p>
                             <p id=cityPop><b>City Population:</b> <span></span> </p>
-                            
-                            <p id=fMigrants><b>% of Country Inhabitants International Migrants:</b> </p>
+                            <p id=fLangs><b>Main Language(s) Spoken:</b> <span></span> </p>
+
                             <p id=fRel><b>National Religious Demographics:</b> </p>
                             <p id=fRel><b>National Ethnic Demographics:</b> </p>
                             <p id=fRel><b>National Average GDP per Capita:</b> </p>
+                            <p id=fMigrants><b>% of Country Inhabitants International Migrants:</b> </p>
                             <p id=fCurr><b>National Currency:</b> <span></span> </p>
+                            
+                            <h2 class=constr>**Site still under construction</h2>
 
 
-                            <p>Sources: WorldBank, </p>
+                            <p>Sources: WorldBank, </p>                          
 
+                        </div>
 
-                            <!-- flag -->
+                        <div class=flag-container>
+                            <div id=flag>
+                                flag goes here
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div id=container-news>
+                        <div id=news>
+                            'news' cse section here
+                        </div>
+                    </div>
+
+                    <div id=container-people-of>
+                        <div id=people-of>
+                            'people of' cse section here
+                            
                         </div>
                     </div>
 
@@ -201,6 +233,8 @@ echo "<p id=total-places ><b>Total Number Of Places: " . $rowcount . "</b></p>";
            <li>Be sure to contribute to the list!</li>
            <!-- <li>To avoid error, make sure to remove empty spaces at the </li> -->
        </ul>
+
+       <h2 class="constr">**Site still under construction</h2>
             <div id="btn-msg">
             <div id="btn">
                         <input type="button" class="del-sel" name="delete_sel" value="Delete Selection">
@@ -475,6 +509,7 @@ echo "<p id=total-places ><b>Total Number Of Places: " . $rowcount . "</b></p>";
                         </datalist>
                     </div>
                     <div class="container-input">
+                        <span>  </span>
                         <label for="city"><p>City</p></label>
                         <input autocomplete='off' list="cityList" class="text" id="city" placeholder="City" type="text" name="city" ></input>
                         <datalist id="cityList">
@@ -726,7 +761,8 @@ echo "<p id=total-places ><b>Total Number Of Places: " . $rowcount . "</b></p>";
                         </datalist>
                     </div>
                     <div class="container-input">
-                        <label for="landmark"><p>Landmark</p></label>
+                        <span>  </span>
+                        <label for="landmark"><p>Landmark/Place</p></label>
                         <input autocomplete='off' class="text" id="landmark" placeholder="Landmark" type="text" name="landmark"></input>
                     </div>
                 </div>
@@ -741,11 +777,13 @@ echo "<p id=total-places ><b>Total Number Of Places: " . $rowcount . "</b></p>";
 </section>
 
 <section id="map-section">
+    
     <div id="map-container">
-        <h2>Your Map</h2>
-        <div id="map">
-
+        <div><h2>Your Map</h2></div>
+            <div id="map" class="border-w-bg">
+    
             </div>
+        <br>
             <p>To see the <u>updated map</u> please refresh the page after editing the list.</p>
             
         

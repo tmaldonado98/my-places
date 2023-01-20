@@ -1,11 +1,34 @@
-// if ( window.history.replaceState ) {
-//   window.history.replaceState( null, null, window.location );
-// };
-
-// import worldcities from './worldcities.json';
-// console.log(worldcities);
 $(document).ready(()=>{
+    /*
+    const openModalBtns = $('data-modal-target');
+    const closeModalBtns = $('data-close-btn');
+    const overlay = $('#overlay');
 
+    $('data-modal-target').on('click', () => {
+        let modal = $('data-modal-target');
+        function openModal(modal){
+
+        }
+    });
+
+    function openModal(modal){
+        if(modal == null){
+            return false
+        } else {
+            modal.addClass('active');
+            overlay.addClass('active');
+        }
+    }
+
+    function closeModal(modal){
+        if(modal == null){
+            return false
+        } else {
+            modal.removeClass('active');
+            overlay.removeClass('active');
+        }
+    }
+*/
 // $('tbody').sortable({
 //     handle: '#handle',
 //     items: 'tr:not(#heading-row)',
@@ -569,11 +592,8 @@ $('body').on('click', '.see-more' , function(){
         let mCity = $('#m-city').text();
         let mLandmark = $('#m-landmark').text();
 
-        // let jCountry = $()
-
         if (mCountry.length > 0 && mCity.length > 0) {
             $.getJSON("worldcities.json", function(data){
-                // console.log(data)
 
                 $.each(data.worldcities, function (){
 
@@ -626,8 +646,7 @@ $('body').on('click', '.see-more' , function(){
                         .addTo(map);                     
                                                 
                         $('#fCountry').children('span').html(this.name["common"]);
-                        $('#fCity').prop('display', 'none');
-                        $('#cityPop').prop('display', 'none');
+
                     }
 
 
@@ -647,14 +666,38 @@ $('body').on('click', '.see-more' , function(){
         $.getJSON("countrieswcoordinates.json", function(info){
             $.each(info.countries, function(){
                 if (mCountry  === (this.name["common"])) {
-                    $('#fCurr').children('span').html(JSON.stringify(this.currencies).replace(/[{}"]/g, ''));
-                    $('#fCapital').children('span').html(this.capital);
-                    
-                    if (mCity.toLowerCase() == (this["capital"].toLowerCase())) {
-                        $('#fCity').hide();
-                        $('#cityPop').hide();
 
-                    } else {
+                    const currencies = this.currencies;
+                    const arrayCurrKeys = Object.keys(currencies);
+                    const arrayCurrObjs = Object.values(currencies);
+                    console.log(Object.values(currencies));
+
+                    $('#fCurr').children('span').html(
+                        (JSON.stringify(arrayCurrObjs[0].name) + ' (' + arrayCurrKeys[0] +'), ' + JSON.stringify(arrayCurrObjs[0].symbol))
+                    .replace(/[{}"]/g, ''));
+
+                        
+                    
+                    
+                    // $('#fCurr').children('span').html(JSON.stringify(this.currencies).replace(/[{}"]/g, ''));
+                    $('#fCapital').children('span').html(this.capital);
+
+
+                    const languages = this.languages;
+                    // const arrayLangKeys = Object.keys(languages);
+                    const arrayLangObjs = Object.values(languages);
+                    console.log(Object.values(languages));
+
+                    
+
+                    $('#fLangs').children('span').html(
+                        JSON.stringify(arrayLangObjs.join(", "))
+                        .replace(/[[]]"]/g, ''));
+                    
+                    if (mCity == (this["capital"])) {
+                        $('#fCity').hide();
+                    } else if (mCity != (this["capital"])) {
+                        $('#cityPop').children('b').prepend('Your ');
                         // $('#fCity').children('span').html(this.)
                             //must be run with worldcities.json loop
 
@@ -666,6 +709,14 @@ $('body').on('click', '.see-more' , function(){
         })
 
 
+        $.getJSON('worldbankcountries.json', function(list){
+            $.each(list, function(){
+                if (mCountry == this.field1) {
+                    $('#countryPop').children('span').html(Number(this.field2).toLocaleString("en-US"));
+
+                }
+            })
+        })
 
 
     })
