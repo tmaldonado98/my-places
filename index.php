@@ -511,7 +511,7 @@ echo "<p id=total-places ><b>Total Number Of Places: " . $rowcount . "</b></p>";
                         </datalist>
                     </div>
                     <div class="container-input">
-                        <span>  </span>
+                        <span> (Recommended) </span>
                         <label for="city"><p>City</p></label>
                         <input autocomplete='off' list="cityList" class="text" id="city" placeholder="City" type="text" name="city" ></input>
                         <datalist id="cityList">
@@ -763,7 +763,7 @@ echo "<p id=total-places ><b>Total Number Of Places: " . $rowcount . "</b></p>";
                         </datalist>
                     </div>
                     <div class="container-input">
-                        <span>  </span>
+                        <span> (Recommended) </span>
                         <label for="landmark"><p>Landmark/Place</p></label>
                         <input autocomplete='off' class="text" id="landmark" placeholder="Landmark" type="text" name="landmark"></input>
                     </div>
@@ -791,6 +791,7 @@ echo "<p id=total-places ><b>Total Number Of Places: " . $rowcount . "</b></p>";
         
         
     </div>
+    
 </section>
 
 <footer>

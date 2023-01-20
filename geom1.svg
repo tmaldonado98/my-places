@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 2560 1600" enable-background="new 0 0 2560 1600" xml:space="preserve">
+<pattern  width="193" height="193" patternUnits="userSpaceOnUse" id="New_Pattern" viewBox="32.9999 -226 193 193" overflow="visible">
+	<g>
+		<polygon fill="none" points="32.9999,-226 225.9999,-226 225.9999,-33 32.9999,-33 		"/>
+		<g>
+			<polygon fill="none" stroke="#FFFFFF" stroke-width="9" stroke-miterlimit="10" points="254.1352,-101.1824 197.5,-101.1824 
+				197.5,-157.8176 254.1352,-157.8176 			"/>
+		</g>
+		<g>
+			<polygon fill="none" stroke="#FFFFFF" stroke-width="9" stroke-miterlimit="10" points="101.1824,-61.1352 61.1352,-101.1824 
+				61.1352,-157.8176 101.1824,-197.8648 157.8176,-197.8648 197.8648,-157.8176 197.8648,-101.1824 157.8176,-61.1352 			"/>
+			<polygon fill="none" stroke="#FFFFFF" stroke-width="9" stroke-miterlimit="10" points="157.8176,-4.5 101.1824,-4.5 
+				101.1824,-61.1352 157.8176,-61.1352 			"/>
+			<polygon fill="none" stroke="#FFFFFF" stroke-width="9" stroke-miterlimit="10" points="61.1352,-101.1824 4.5,-101.1824 
+				4.5,-157.8176 61.1352,-157.8176 			"/>
+		</g>
+		<g>
+			<polygon fill="none" stroke="#FFFFFF" stroke-width="9" stroke-miterlimit="10" points="157.8176,-197.5 101.1824,-197.5 
+				101.1824,-254.1352 157.8176,-254.1352 			"/>
+		</g>
+	</g>
+</pattern>
+<pattern  width="193" height="193" patternUnits="userSpaceOnUse" id="New_Pattern_2" viewBox="61.1347 -334.0474 193 193" overflow="visible">
+	<g>
+		<polygon fill="none" points="61.1347,-334.0474 254.1347,-334.0474 254.1347,-141.0474 61.1347,-141.0474 		"/>
+		<g>
+			<g>
+				<polygon fill="none" stroke="#000000" stroke-width="9" stroke-miterlimit="10" points="294.1819,-4.5002 254.1348,-44.5474 
+					254.1348,-101.1826 294.1819,-141.2298 350.8172,-141.2298 390.8643,-101.1826 390.8643,-44.5474 350.8172,-4.5002 				"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				<polygon fill="none" stroke="#000000" stroke-width="9" stroke-miterlimit="10" points="101.1819,-4.5002 61.1348,-44.5474 
+					61.1348,-101.1826 101.1819,-141.2298 157.8172,-141.2298 197.8643,-101.1826 197.8643,-44.5474 157.8172,-4.5002 				"/>
+			</g>
+			
+				<line fill="none" stroke="#000000" stroke-width="9" stroke-miterlimit="10" x1="157.8172" y1="-140.865" x2="101.1819" y2="-140.865"/>
+		</g>
+		<g>
+			<g>
+				<polygon fill="none" stroke="#000000" stroke-width="9" stroke-miterlimit="10" points="294.1819,-197.5002 254.1348,-237.5474 
+					254.1348,-294.1826 294.1819,-334.2298 350.8172,-334.2298 390.8643,-294.1826 390.8643,-237.5474 350.8172,-197.5002 				"/>
+				
+					<line fill="none" stroke="#000000" stroke-width="9" stroke-miterlimit="10" x1="254.1348" y1="-294.1826" x2="254.1348" y2="-237.5474"/>
+			</g>
+		</g>
+		<g>
+			<polygon fill="none" stroke="#000000" stroke-width="9" stroke-miterlimit="10" points="254.1348,-237.5474 197.4995,-237.5474 
+				197.4995,-294.1826 254.1348,-294.1826 			"/>
+			<g>
+				<polygon fill="none" stroke="#000000" stroke-width="9" stroke-miterlimit="10" points="101.1819,-197.5002 61.1348,-237.5474 
+					61.1348,-294.1826 101.1819,-334.2298 157.8172,-334.2298 197.8643,-294.1826 197.8643,-237.5474 157.8172,-197.5002 				"/>
+				<polygon fill="none" stroke="#000000" stroke-width="9" stroke-miterlimit="10" points="157.8172,-140.865 101.1819,-140.865 
+					101.1819,-197.5002 157.8172,-197.5002 				"/>
+				
+					<line fill="none" stroke="#000000" stroke-width="9" stroke-miterlimit="10" x1="61.1348" y1="-294.1826" x2="61.1348" y2="-237.5474"/>
+			</g>
+			
+				<line fill="none" stroke="#000000" stroke-width="9" stroke-miterlimit="10" x1="157.8172" y1="-333.865" x2="101.1819" y2="-333.865"/>
+		</g>
+		<g>
+			<polygon fill="none" stroke="#000000" stroke-width="9" stroke-miterlimit="10" points="61.1348,-237.5474 4.4995,-237.5474 
+				4.4995,-294.1826 61.1348,-294.1826 			"/>
+		</g>
+		<g>
+			<g>
+				<polygon fill="none" stroke="#000000" stroke-width="9" stroke-miterlimit="10" points="157.8172,-333.865 101.1819,-333.865 
+					101.1819,-390.5002 157.8172,-390.5002 				"/>
+			</g>
+		</g>
+	</g>
+</pattern>
+<rect fill="url(#New_Pattern)" width="2560" height="1600"/>
+<rect fill="url(#New_Pattern_2)" width="2560" height="1600"/>
+</svg>

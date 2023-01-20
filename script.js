@@ -607,6 +607,8 @@ $('body').on('click', '.see-more' , function(){
         else if (mCity.length == 0) {
             $('#m-city').hide();
             $('#mcc').hide()
+        } else if (mCity.length > 0 && mCountry.length == 0) {
+            $('#mcc').hide()
         }
 
         if (mCountry.length > 0 && mCity.length > 0) {
