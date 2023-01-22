@@ -600,16 +600,22 @@ $('body').on('click', '.see-more' , function(){
         let mCity = $('#m-city').text();
         let mLandmark = $('#m-landmark').text();
 
-        if (mLandmark.length == 0) {
+        if (mLandmark.length <= 0) {
             $('#m-landmark').hide();
             $('#mlc').hide();
         }        
-        else if (mCity.length == 0) {
+        if (mCity.length <= 1) {
             $('#m-city').hide();
-            $('#mcc').hide()
-        } else if (mCity.length > 0 && mCountry.length == 0) {
-            $('#mcc').hide()
+            $('#mcc').hide();
+        } 
+        if (mCountry.length <= 1) {
+            $('#m-country').hide();
+            $('#mcc').hide();
+        } 
+        if (mCountry.length <= 1 && mCity.length <= 1) {
+            $('#mlc').hide();
         }
+
 
         if (mCountry.length > 0 && mCity.length > 0) {
             $.getJSON("worldcities.json", function(data){
@@ -731,9 +737,11 @@ $('body').on('click', '.see-more' , function(){
         })
 
 
-        if (mCountry.length === 0 && mCity.length > 0) {
-            $('#section-modal-map').hide()
-            $('#container-section-facts').hide()
+        if (mCountry.length === 0) {
+            $('#section-modal-map').hide();
+            $('#container-section-facts').hide();
+            $('#container-people-of').hide();
+            $('.flag-container').hide();
         }
 
 
@@ -743,23 +751,26 @@ $('body').on('click', '.see-more' , function(){
 
 
                     const religions = this;
-                    // const arrayRelKeys = Object.keys(religions);
-                    // const arrayRelObjs = Object.values(religions);
                     const {Country, Region, Unaffiliated, Year, ...rest} = religions;
                     console.log(rest);
-                    // console.log(arrayRelKeys);
-                    // console.log(arrayRelObjs);
+                    let valWithPercentage = [];
+                    for (const key in rest) {
+
+                        valWithPercentage.push(JSON.stringify(key +': '+ rest[key]+ '%,')
+                        .replace(/[""]/g, ''));
+
+                    };
                     
-                    $.each(Object.values[data], function() {
-                        return this + '%';
-                    })
-                    $('#fRel').children('span').html(JSON.stringify(rest, '', ' ')
-                    .replace(/[{}"]/g, '')); 
-                    $('#fRel').children('span').append(
+                    console.log(valWithPercentage);
+                    let elements = '';
+                    for (let i = 0; i < valWithPercentage.length; i++) {
+                        elements += (valWithPercentage[i]+'<br>')
+    
+                    }
+                    $('#fRel').children('span').html(elements);
                 }
             })
         })
-        // Object.key(Country)
 
     })
 });

@@ -116,33 +116,34 @@ echo "
                 
                 <div id=$marker name=modal class='modal zoom-anim-dialog mfp-hide' value=$marker>
                     <div id=modal-title><b> <span id=m-landmark>" . ucwords($row['landmark'])."</span><span id=mlc>,</span> <span id=m-city>". ucwords($row['city'])."</span><span id=mcc>,</span> <span id=m-country>". ucwords($row['country'])."</span></b></div>
-                    <hr>
+                    
 
                     <div id=container-search-engine>
                         <div class=search-engine>
                                                   
                         </div>
                     </div>
-                    <hr>
-
-                    <div id=container-ed-del>
-                        <input type='button' name='edit' class=modal-edit value='Edit Place'></input>
-                        <input type='button' dataId=$marker class=modal-delete name=modal_delete value='Remove Place'>
-                    </div>
-                        <div class='edit-field' name=edit_field>
-                            <span class=inputs>
-                                <label for='country'><p>Country</p></label>
-                                <input class='ed-text' id='ed-country' placeholder='Country' type='text' autocomplete='off' name='editCountry' value=$rcountry>
-                                <label for='city'><p>City</p></label>
-                                <input class='ed-text' id='ed-city' placeholder='City' type='text' autocomplete='off' name='editCity' value=$rcity>
-                                <label for='landmark'><p>Landmark</p></label>
-                                <input class='ed-text' id='ed-landmark' placeholder='Landmark' type='text' autocomplete='off' name='editLandmark' value=$rlandmark>
-                            </span>
-                                <br>
-                            <div class=update-btn>
-                               <input class=editBtn dataId=$marker type='button' value='Update'>
-                            </div>
+                    
+                    <section id=section-edit>
+                        <div id=container-ed-del>
+                            <input type='button' name='edit' class=modal-edit value='Edit Place'></input>
+                            <input type='button' dataId=$marker class=modal-delete name=modal_delete value='Remove Place'>
                         </div>
+                            <div class='edit-field' name=edit_field>
+                                <span class=inputs>
+                                    <label for='country'><p>Country</p></label>
+                                    <input class='ed-text' id='ed-country' placeholder='Country' type='text' autocomplete='off' name='editCountry' value=$rcountry>
+                                    <label for='city'><p>City</p></label>
+                                    <input class='ed-text' id='ed-city' placeholder='City' type='text' autocomplete='off' name='editCity' value=$rcity>
+                                    <label for='landmark'><p>Landmark</p></label>
+                                    <input class='ed-text' id='ed-landmark' placeholder='Landmark/Place' type='text' autocomplete='off' name='editLandmark' value=$rlandmark>
+                                </span>
+                                    <br>
+                                <div class=update-btn>
+                                   <input class=editBtn dataId=$marker type='button' value='Update'>
+                                </div>
+                            </div>
+                    </section>
 
                     <div id=section-modal-map>
                         <div id=modal-map-container>
@@ -180,6 +181,11 @@ echo "
                             <div id=flag>
                                 flag goes here
                             </div>
+
+                            <div id=weather>
+                                weather api here?
+                            </div>
+
                         </div>
 
                     </div>
@@ -765,7 +771,7 @@ echo "<p id=total-places ><b>Total Number Of Places: " . $rowcount . "</b></p>";
                     <div class="container-input">
                         <span> (Recommended) </span>
                         <label for="landmark"><p>Landmark/Place</p></label>
-                        <input autocomplete='off' class="text" id="landmark" placeholder="Landmark" type="text" name="landmark"></input>
+                        <input autocomplete='off' class="text" id="landmark" placeholder="Landmark/Place" type="text" name="landmark"></input>
                     </div>
                 </div>
 

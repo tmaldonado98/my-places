@@ -144,11 +144,18 @@ nav {
 }
 
 h1 {
-  font-size: 2.25rem;
+  font-size: 3.25rem;
   text-align: center;
-  margin: 0 1rem 2rem 1rem;
-  padding-top: 5rem;
+  /* margin: 0 1rem 2rem 1rem; */
+  padding: 2rem;
   color: antiquewhite;
+  width: fit-content;
+  margin: auto;
+  background-color: #fffff059;
+  border-radius: 40px;
+  backdrop-filter: blur(10px);
+  text-shadow: 5px 5px 5px black;
+  box-shadow: 0 4px 20px rgba(255, 255, 240, 0.34);
 }
 
 #want {
@@ -224,23 +231,27 @@ th {
   align-self: flex-end;
 }
 
-.modal-edit, .modal-delete {
+.modal-edit, .modal-delete, .editBtn {
   text-align: center;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  background-color: rgba(187, 8, 71, 0);
-  font-size: 1.2rem;
   cursor: pointer;
   font-family: inherit;
   transition: 350ms;
-  padding: 0.25rem;
   border: 2px solid rgba(170, 170, 170, 0.481);
+
+  border-radius: 16px;
+  padding: 8px;
+  text-shadow: 0px 0px 10px ivory;
+  background-color: rgba(251, 251, 251, 0.43);
+  font-size: 1.5rem;
 }
 
 .update-btn {
   text-align: center;
   margin: auto auto 1.5rem auto;
+  padding-bottom: 1rem;
 }
 
 .editBtn {
@@ -534,16 +545,17 @@ ul li {
 /* Modal  */
 
 #container-search-engine {
-  background-color: rgb(135, 163, 184);
+  /* background-color: rgb(135, 163, 184); */
 
 }
 
 .gsc-control-cse {
-  background-color: black !important;
+  background-color: rgba(255, 255, 240, 0) !important;
+  border: none !important;
 }
 
 #section-modal-map {
-  background-color: rgb(47, 65, 79);
+  /* background-color: rgb(47, 65, 79); */
   height: 80vh;
   width: 100%;
   display: flex;
@@ -569,6 +581,11 @@ ul li {
 
 #facts {
   width: 50%;
+  background-color: #fffff02b;
+  font-size: 1.25rem;
+  backdrop-filter: blur(5px);
+  border-radius: 30px;
+  padding: 1.25rem;
 }
 .flag-container {
   width: 50%;
@@ -648,14 +665,16 @@ footer p {
   opacity: 0;
 }
 
+.mfp-close {
+  color: ivory !important;
+}
+
 .modal {
   height: 90vh;
-  /* width: 85%; */
-  /* position: fixed; */
   z-index: 100;
   top: 5%;
   overflow-y: scroll;
-  background: rgba(250, 235, 215, 0.85);
+  background: rgba(250, 235, 215, 0.3);
   /* padding: 20px 30px; */
   text-align: left;
   width: 80vw;
@@ -665,18 +684,27 @@ footer p {
   margin-top: -45vh; /* Negative half of height. */
   margin-left: -40vw; /* Negative half of width. */
   position: fixed;
+  border-radius: 30px;
+  box-shadow: 0 4px 30px rgba(255, 255, 240, 0.501);
+  backdrop-filter: blur(4px);
 }
 
 #modal-title {
   text-align: center;
-  font-size: 2.75rem;
-  border: 2px black solid;
-  padding: 0.75rem;
+  font-size: 3rem;
+  border: 1px #fffff04d solid;
+  padding: 1rem;
   border-radius: 40px;
-  width: fit-content;
+  width: 50%;
   margin: 1.5rem auto;
-  background-color: ivory;
-  /* text-shadow: 3px 4px black; */
+  background-color: #fffff02b;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 30px #fffff06e;
+}
+
+#modal-title b {
+  text-shadow: 5px 5px 5px black;
+  color: ivory;
 }
 
 .edit-field {
@@ -690,15 +718,20 @@ footer p {
 }
 
 /*              */
-#search-engine {
-  height: 55vh;
-  overflow: scroll;
-  direction: rtl;
+.search-engine {
+  /* height: 55vh; */
+  /* overflow: scroll; */
+  /* direction: rtl; */
+
+  /* backdrop-filter: blur(5px);
+  background-color: #fffff038;
+  border-radius: 30px; */
+
 }
 
 .gsc-results .gsc-imageResult {
   width: 33%;
-  background-color: black !important;
+  background-color: rgba(255, 255, 240, 0) !important;
 }
 
 .gsc-tabsArea {
@@ -726,12 +759,19 @@ footer p {
   font-size: 1rem;
 }
 
+#section-edit {
+  backdrop-filter: blur(5px);
+  background-color: #fffff038;
+  border-radius: 30px;  
+}
+
 /*              */
 #container-ed-del {
   /* border: 5px solid black; */
   margin: 0 auto;
   width: 100%;
   text-align: center;
+  padding-top: 1rem;
 }
 
 /*
