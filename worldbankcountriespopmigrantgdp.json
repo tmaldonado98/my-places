@@ -1,0 +1,1604 @@
+﻿[
+    {
+        "country": null,
+        "population": null,
+        "migrant": "2015",
+        "gdppc": "2021"
+    },
+    {
+        "country": "Aruba",
+        "population": "106537",
+        "migrant": "34.76210186",
+        "gdppc": "29342.1008575886"
+    },
+    {
+        "country": "Africa Eastern and Southern",
+        "population": "702976832",
+        "migrant": "1.734291789",
+        "gdppc": "1537.3360209254"
+    },
+    {
+        "country": "Afghanistan",
+        "population": "40099462",
+        "migrant": "1.175546927",
+        "gdppc": "368.754614175459"
+    },
+    {
+        "country": "Africa Western and Central",
+        "population": "478185907",
+        "migrant": "2.086486494",
+        "gdppc": "1757.03062622138"
+    },
+    {
+        "country": "Angola",
+        "population": "34503774",
+        "migrant": "0.42700468",
+        "gdppc": "1953.53375721508"
+    },
+    {
+        "country": "Albania",
+        "population": "2811666",
+        "migrant": "1.98903641",
+        "gdppc": "6492.87201224634"
+    },
+    {
+        "country": "Andorra",
+        "population": "79034",
+        "migrant": "59.7136492",
+        "gdppc": "42137.3272710372"
+    },
+    {
+        "country": "Arab World",
+        "population": "456520777",
+        "migrant": "8.85290671",
+        "gdppc": "6266.35991574864"
+    },
+    {
+        "country": "United Arab Emirates",
+        "population": "9365145",
+        "migrant": "88.40404837",
+        "gdppc": "44315.5541834116"
+    },
+    {
+        "country": "Argentina",
+        "population": "45808747",
+        "migrant": "4.805292335",
+        "gdppc": "10636.1201956183"
+    },
+    {
+        "country": "Armenia",
+        "population": "2790974",
+        "migrant": "6.335892888",
+        "gdppc": "4966.51347122366"
+    },
+    {
+        "country": "American Samoa",
+        "population": "45035",
+        "migrant": "41.80200943",
+        "gdppc": "15743.3107582991"
+    },
+    {
+        "country": "Antigua and Barbuda",
+        "population": "93219",
+        "migrant": "30.58550611",
+        "gdppc": "15781.3957017982"
+    },
+    {
+        "country": "Australia",
+        "population": "25688079",
+        "migrant": "28.21840969",
+        "gdppc": "60443.1091649968"
+    },
+    {
+        "country": "Austria",
+        "population": "8955797",
+        "migrant": "17.46572625",
+        "gdppc": "53637.7057109897"
+    },
+    {
+        "country": "Azerbaijan",
+        "population": "10137750",
+        "migrant": "2.709061584",
+        "gdppc": "5387.99797495383"
+    },
+    {
+        "country": "Burundi",
+        "population": "12551213",
+        "migrant": "2.565632229",
+        "gdppc": "221.477676223363"
+    },
+    {
+        "country": "Belgium",
+        "population": "11592952",
+        "migrant": "12.28353319",
+        "gdppc": "51247.0143531626"
+    },
+    {
+        "country": "Benin",
+        "population": "12996895",
+        "migrant": "2.255540965",
+        "gdppc": "1319.1549945174"
+    },
+    {
+        "country": "Burkina Faso",
+        "population": "22100683",
+        "migrant": "3.892039853",
+        "gdppc": "893.077155776863"
+    },
+    {
+        "country": "Bangladesh",
+        "population": "169356251",
+        "migrant": "0.883753735",
+        "gdppc": "2457.92487986361"
+    },
+    {
+        "country": "Bulgaria",
+        "population": "6877743",
+        "migrant": "1.428196392",
+        "gdppc": "12221.4966064171"
+    },
+    {
+        "country": "Bahrain",
+        "population": "1463265",
+        "migrant": "51.12678501",
+        "gdppc": "26562.9691354026"
+    },
+    {
+        "country": "Bahamas, The",
+        "population": "407906",
+        "migrant": "15.28430309",
+        "gdppc": "27478.3896289831"
+    },
+    {
+        "country": "Bosnia and Herzegovina",
+        "population": "3270943",
+        "migrant": "0.91336484",
+        "gdppc": "7143.3105484321"
+    },
+    {
+        "country": "Belarus",
+        "population": "9340314",
+        "migrant": "11.40401056",
+        "gdppc": "7302.25779418774"
+    },
+    {
+        "country": "Belize",
+        "population": "400031",
+        "migrant": "14.99080123",
+        "gdppc": "6228.26730928353"
+    },
+    {
+        "country": "Bermuda",
+        "population": "63867",
+        "migrant": "30.84639701",
+        "gdppc": "114090.328338579"
+    },
+    {
+        "country": "Bolivia",
+        "population": "12079472",
+        "migrant": "1.333267442",
+        "gdppc": "3345.19658873831"
+    },
+    {
+        "country": "Brazil",
+        "population": "214326223",
+        "migrant": "0.3433132",
+        "gdppc": "7507.16097080234"
+    },
+    {
+        "country": "Barbados",
+        "population": "281200",
+        "migrant": "12.12990166",
+        "gdppc": "17225.4623044097"
+    },
+    {
+        "country": "Brunei Darussalam",
+        "population": "445373",
+        "migrant": "24.27597191",
+        "gdppc": "31449.0765620727"
+    },
+    {
+        "country": "Bhutan",
+        "population": "777486",
+        "migrant": "6.595769395",
+        "gdppc": "3266.36490519183"
+    },
+    {
+        "country": "Botswana",
+        "population": "2588423",
+        "migrant": "7.100334367",
+        "gdppc": "6805.22127398897"
+    },
+    {
+        "country": "Central African Republic",
+        "population": "5457154",
+        "migrant": "1.665172192",
+        "gdppc": "461.137490166508"
+    },
+    {
+        "country": "Canada",
+        "population": "38246108",
+        "migrant": "21.80166365",
+        "gdppc": "51987.9390529728"
+    },
+    {
+        "country": "Central Europe and the Baltics",
+        "population": "101430997",
+        "migrant": "3.278495272",
+        "gdppc": "18751.026511843"
+    },
+    {
+        "country": "Switzerland",
+        "population": "8703405",
+        "migrant": "29.38668554",
+        "gdppc": "91991.6004583563"
+    },
+    {
+        "country": "Channel Islands",
+        "population": "172683",
+        "migrant": "50.28162647",
+        "gdppc": ""
+    },
+    {
+        "country": "Chile",
+        "population": "19493184",
+        "migrant": "2.615513217",
+        "gdppc": "16265.0959767147"
+    },
+    {
+        "country": "China",
+        "population": "1412360000",
+        "migrant": "0.071076396",
+        "gdppc": "12556.3331200058"
+    },
+    {
+        "country": "Cote d'Ivoire",
+        "population": "27478249",
+        "migrant": "9.582598655",
+        "gdppc": "2549.04129724734"
+    },
+    {
+        "country": "Cameroon",
+        "population": "27198628",
+        "migrant": "1.636313704",
+        "gdppc": "1666.93273443122"
+    },
+    {
+        "country": "Congo, Dem. Rep.",
+        "population": "95894118",
+        "migrant": "0.706246281",
+        "gdppc": "577.209215199828"
+    },
+    {
+        "country": "Congo, Rep.",
+        "population": "5835806",
+        "migrant": "8.505799369",
+        "gdppc": "2290.38289133244"
+    },
+    {
+        "country": "Colombia",
+        "population": "51516562",
+        "migrant": "0.276047227",
+        "gdppc": "6104.1367093039"
+    },
+    {
+        "country": "Comoros",
+        "population": "821625",
+        "migrant": "1.592316297",
+        "gdppc": "1577.47102705052"
+    },
+    {
+        "country": "Cabo Verde",
+        "population": "587925",
+        "migrant": "2.867232018",
+        "gdppc": "3293.23305430614"
+    },
+    {
+        "country": "Costa Rica",
+        "population": "5153957",
+        "migrant": "8.771009911",
+        "gdppc": "12472.4437294954"
+    },
+    {
+        "country": "Caribbean small states",
+        "population": "7481877",
+        "migrant": "4.900340409",
+        "gdppc": "10063.6912979586"
+    },
+    {
+        "country": "Cuba",
+        "population": "11256372",
+        "migrant": "0.117089665",
+        "gdppc": ""
+    },
+    {
+        "country": "Curacao",
+        "population": "152369",
+        "migrant": "23.92511593",
+        "gdppc": "17717.5964802588"
+    },
+    {
+        "country": "Cayman Islands",
+        "population": "68136",
+        "migrant": "39.56509414",
+        "gdppc": "86568.7696368603"
+    },
+    {
+        "country": "Cyprus",
+        "population": "1244188",
+        "migrant": "16.83403415",
+        "gdppc": "31551.81640625"
+    },
+    {
+        "country": "Czechia",
+        "population": "10505772",
+        "migrant": "3.84222568",
+        "gdppc": "26821.2452279995"
+    },
+    {
+        "country": "Germany",
+        "population": "83196078",
+        "migrant": "14.8790513",
+        "gdppc": "51203.5544731043"
+    },
+    {
+        "country": "Djibouti",
+        "population": "1105557",
+        "migrant": "12.65412041",
+        "gdppc": "3150.43672926335"
+    },
+    {
+        "country": "Dominica",
+        "population": "72412",
+        "migrant": "9.246009906",
+        "gdppc": "7653.17187042868"
+    },
+    {
+        "country": "Denmark",
+        "population": "5856733",
+        "migrant": "10.09899135",
+        "gdppc": "68007.7566732954"
+    },
+    {
+        "country": "Dominican Republic",
+        "population": "11117873",
+        "migrant": "3.947079853",
+        "gdppc": "8476.75215730978"
+    },
+    {
+        "country": "Algeria",
+        "population": "44177969",
+        "migrant": "0.611072023",
+        "gdppc": "3690.62787797599"
+    },
+    {
+        "country": "East Asia & Pacific (excluding high income)",
+        "population": "2123673456",
+        "migrant": "0.417701143",
+        "gdppc": "9771.64820574671"
+    },
+    {
+        "country": "Early-demographic dividend",
+        "population": "3411889059",
+        "migrant": "1.660207201",
+        "gdppc": "3702.69278613251"
+    },
+    {
+        "country": "East Asia & Pacific",
+        "population": "2370204347",
+        "migrant": "1.133822422",
+        "gdppc": "13041.7811855841"
+    },
+    {
+        "country": "Europe & Central Asia (excluding high income)",
+        "population": "401575218",
+        "migrant": "7.141955011",
+        "gdppc": "8758.93855271138"
+    },
+    {
+        "country": "Europe & Central Asia",
+        "population": "923777214",
+        "migrant": "9.468712066",
+        "gdppc": "27152.4712288326"
+    },
+    {
+        "country": "Ecuador",
+        "population": "17797737",
+        "migrant": "2.400299101",
+        "gdppc": "5965.13287054416"
+    },
+    {
+        "country": "Egypt, Arab Rep.",
+        "population": "109262178",
+        "migrant": "0.537267287",
+        "gdppc": "3698.83498105861"
+    },
+    {
+        "country": "Euro area",
+        "population": "343067846",
+        "migrant": "12.21947794",
+        "gdppc": "42450.1537720293"
+    },
+    {
+        "country": "Eritrea",
+        "population": "3620312",
+        "migrant": "",
+        "gdppc": ""
+    },
+    {
+        "country": "Spain",
+        "population": "47415750",
+        "migrant": "12.69023719",
+        "gdppc": "30103.513733191"
+    },
+    {
+        "country": "Estonia",
+        "population": "1330932",
+        "migrant": "15.41630922",
+        "gdppc": "27943.701219882"
+    },
+    {
+        "country": "Ethiopia",
+        "population": "120283026",
+        "migrant": "1.079526012",
+        "gdppc": "925.077428048534"
+    },
+    {
+        "country": "European Union",
+        "population": "447199800",
+        "migrant": "10.36338917",
+        "gdppc": "38411.062779601"
+    },
+    {
+        "country": "Fragile and conflict affected situations",
+        "population": "1001462452",
+        "migrant": "2.220525249",
+        "gdppc": "1784.73432479422"
+    },
+    {
+        "country": "Finland",
+        "population": "5541017",
+        "migrant": "5.739683257",
+        "gdppc": "53654.7502964259"
+    },
+    {
+        "country": "Fiji",
+        "population": "924610",
+        "migrant": "1.541341374",
+        "gdppc": "4646.6127232145"
+    },
+    {
+        "country": "France",
+        "population": "67749632",
+        "migrant": "12.08847938",
+        "gdppc": "43658.9789781222"
+    },
+    {
+        "country": "Faroe Islands",
+        "population": "52889",
+        "migrant": "11.44629557",
+        "gdppc": "69010.3098011151"
+    },
+    {
+        "country": "Micronesia, Fed. Sts.",
+        "population": "113131",
+        "migrant": "2.638330461",
+        "gdppc": "3571.33676887856"
+    },
+    {
+        "country": "Gabon",
+        "population": "2341179",
+        "migrant": "15.55585953",
+        "gdppc": "8635.32569443437"
+    },
+    {
+        "country": "United Kingdom",
+        "population": "67326569",
+        "migrant": "13.20097825",
+        "gdppc": "46510.2827819127"
+    },
+    {
+        "country": "Georgia",
+        "population": "3708610",
+        "migrant": "4.220248352",
+        "gdppc": "5023.27437961979"
+    },
+    {
+        "country": "Ghana",
+        "population": "32833031",
+        "migrant": "1.457397152",
+        "gdppc": "2363.29929621422"
+    },
+    {
+        "country": "Gibraltar",
+        "population": "32669",
+        "migrant": "34.34522147",
+        "gdppc": ""
+    },
+    {
+        "country": "Guinea",
+        "population": "13531906",
+        "migrant": "1.811566559",
+        "gdppc": "1189.17599946631"
+    },
+    {
+        "country": "Gambia, The",
+        "population": "2639916",
+        "migrant": "9.670886483",
+        "gdppc": "772.152395143237"
+    },
+    {
+        "country": "Guinea-Bissau",
+        "population": "2060721",
+        "migrant": "1.210903718",
+        "gdppc": "795.118569260485"
+    },
+    {
+        "country": "Equatorial Guinea",
+        "population": "1634466",
+        "migrant": "1.280974132",
+        "gdppc": "7506.66752306086"
+    },
+    {
+        "country": "Greece",
+        "population": "10641221",
+        "migrant": "11.34237737",
+        "gdppc": "20192.5963039061"
+    },
+    {
+        "country": "Grenada",
+        "population": "124610",
+        "migrant": "6.606131524",
+        "gdppc": "9010.57224466261"
+    },
+    {
+        "country": "Greenland",
+        "population": "56653",
+        "migrant": "10.69483501",
+        "gdppc": ""
+    },
+    {
+        "country": "Guatemala",
+        "population": "17109746",
+        "migrant": "0.467187672",
+        "gdppc": "5025.5422907779"
+    },
+    {
+        "country": "Guam",
+        "population": "170534",
+        "migrant": "44.78853342",
+        "gdppc": "35904.8635462723"
+    },
+    {
+        "country": "Guyana",
+        "population": "804567",
+        "migrant": "2.005514382",
+        "gdppc": "9998.54431136155"
+    },
+    {
+        "country": "High income",
+        "population": "1240629858",
+        "migrant": "13.3438486",
+        "gdppc": "48225.2412096793"
+    },
+    {
+        "country": "Hong Kong SAR, China",
+        "population": "7413100",
+        "migrant": "38.94993992",
+        "gdppc": "49800.5424137576"
+    },
+    {
+        "country": "Honduras",
+        "population": "10278345",
+        "migrant": "0.347613516",
+        "gdppc": "2771.71746050946"
+    },
+    {
+        "country": "Heavily indebted poor countries (HIPC)",
+        "population": "861156745",
+        "migrant": "1.672764621",
+        "gdppc": "1035.89255286148"
+    },
+    {
+        "country": "Croatia",
+        "population": "3899000",
+        "migrant": "13.60471399",
+        "gdppc": "17685.3252834553"
+    },
+    {
+        "country": "Haiti",
+        "population": "11447569",
+        "migrant": "0.3690482",
+        "gdppc": "1829.59304417211"
+    },
+    {
+        "country": "Hungary",
+        "population": "9709891",
+        "migrant": "4.562465252",
+        "gdppc": "18728.1218948689"
+    },
+    {
+        "country": "IBRD only",
+        "population": "4917520297",
+        "migrant": "1.368705182",
+        "gdppc": "7221.4063511037"
+    },
+    {
+        "country": "IDA & IBRD total",
+        "population": "6695397735",
+        "migrant": "1.427808425",
+        "gdppc": "5682.46667679398"
+    },
+    {
+        "country": "IDA total",
+        "population": "1777877438",
+        "migrant": "1.606479767",
+        "gdppc": "1426.02871329881"
+    },
+    {
+        "country": "IDA blend",
+        "population": "595016031",
+        "migrant": "1.681212951",
+        "gdppc": "1842.77104941479"
+    },
+    {
+        "country": "Indonesia",
+        "population": "273753191",
+        "migrant": "0.127675543",
+        "gdppc": "4332.70928089396"
+    },
+    {
+        "country": "IDA only",
+        "population": "1182861407",
+        "migrant": "1.567965642",
+        "gdppc": "1216.37298905564"
+    },
+    {
+        "country": "Isle of Man",
+        "population": "84263",
+        "migrant": "51.51629073",
+        "gdppc": ""
+    },
+    {
+        "country": "India",
+        "population": "1407563842",
+        "migrant": "0.399752709",
+        "gdppc": "2256.59040870506"
+    },
+    {
+        "country": "Not classified",
+        "population": "",
+        "migrant": "",
+        "gdppc": ""
+    },
+    {
+        "country": "Ireland",
+        "population": "5033165",
+        "migrant": "15.91693657",
+        "gdppc": "100172.079253421"
+    },
+    {
+        "country": "Iran, Islamic Rep.",
+        "population": "87923432",
+        "migrant": "3.446397535",
+        "gdppc": "4091.20918670534"
+    },
+    {
+        "country": "Iraq",
+        "population": "43533592",
+        "migrant": "0.971576098",
+        "gdppc": "4775.3774539013"
+    },
+    {
+        "country": "Iceland",
+        "population": "372520",
+        "migrant": "11.3901495",
+        "gdppc": "68727.636664709"
+    },
+    {
+        "country": "Israel",
+        "population": "9364000",
+        "migrant": "24.94690004",
+        "gdppc": "52170.7118623335"
+    },
+    {
+        "country": "Italy",
+        "population": "59109668",
+        "migrant": "9.680767742",
+        "gdppc": "35657.4975631691"
+    },
+    {
+        "country": "Jamaica",
+        "population": "2827695",
+        "migrant": "0.829367047",
+        "gdppc": "5183.58130458676"
+    },
+    {
+        "country": "Jordan",
+        "population": "11148278",
+        "migrant": "40.9771116",
+        "gdppc": "4103.25896599583"
+    },
+    {
+        "country": "Japan",
+        "population": "125681593",
+        "migrant": "1.614775057",
+        "gdppc": "39312.6603730693"
+    },
+    {
+        "country": "Kazakhstan",
+        "population": "19000988",
+        "migrant": "20.12330509",
+        "gdppc": "10373.7897924367"
+    },
+    {
+        "country": "Kenya",
+        "population": "53005614",
+        "migrant": "2.354722885",
+        "gdppc": "2081.79985458438"
+    },
+    {
+        "country": "Kyrgyz Republic",
+        "population": "6691800",
+        "migrant": "3.440796423",
+        "gdppc": "1276.7003650159"
+    },
+    {
+        "country": "Cambodia",
+        "population": "16589023",
+        "migrant": "0.474794451",
+        "gdppc": "1625.23501955454"
+    },
+    {
+        "country": "Kiribati",
+        "population": "128874",
+        "migrant": "2.80458625",
+        "gdppc": "1606.46251377314"
+    },
+    {
+        "country": "St. Kitts and Nevis",
+        "population": "47606",
+        "migrant": "13.39343554",
+        "gdppc": "18082.6101907478"
+    },
+    {
+        "country": "Korea, Rep.",
+        "population": "51744876",
+        "migrant": "2.639159354",
+        "gdppc": "34997.7816427848"
+    },
+    {
+        "country": "Kuwait",
+        "population": "4250114",
+        "migrant": "73.63955073",
+        "gdppc": ""
+    },
+    {
+        "country": "Latin America & Caribbean (excluding high income)",
+        "population": "593308001",
+        "migrant": "1.083747926",
+        "gdppc": "7728.03330913836"
+    },
+    {
+        "country": "Lao PDR",
+        "population": "7425057",
+        "migrant": "0.327020359",
+        "gdppc": "2535.6234315211"
+    },
+    {
+        "country": "Lebanon",
+        "population": "5592631",
+        "migrant": "34.1456803",
+        "gdppc": "4136.14634699332"
+    },
+    {
+        "country": "Liberia",
+        "population": "5193416",
+        "migrant": "2.526491982",
+        "gdppc": "675.66318584916"
+    },
+    {
+        "country": "Libya",
+        "population": "6735277",
+        "migrant": "12.28244987",
+        "gdppc": "6357.19555043805"
+    },
+    {
+        "country": "St. Lucia",
+        "population": "179651",
+        "migrant": "6.903280558",
+        "gdppc": "9414.22623085983"
+    },
+    {
+        "country": "Latin America & Caribbean",
+        "population": "654981699",
+        "migrant": "1.419050203",
+        "gdppc": "8327.60519038266"
+    },
+    {
+        "country": "Least developed countries: UN classification",
+        "population": "1099568566",
+        "migrant": "1.252031922",
+        "gdppc": "1150.03014767511"
+    },
+    {
+        "country": "Low income",
+        "population": "718255072",
+        "migrant": "1.56767422",
+        "gdppc": "704.508786523468"
+    },
+    {
+        "country": "Liechtenstein",
+        "population": "39039",
+        "migrant": "62.59625376",
+        "gdppc": ""
+    },
+    {
+        "country": "Sri Lanka",
+        "population": "22156000",
+        "migrant": "0.186850018",
+        "gdppc": "4013.68765683604"
+    },
+    {
+        "country": "Lower middle income",
+        "population": "3398187527",
+        "migrant": "1.039419982",
+        "gdppc": "2572.70514396668"
+    },
+    {
+        "country": "Low & middle income",
+        "population": "6619578961",
+        "migrant": "1.392415024",
+        "gdppc": "5491.92212029334"
+    },
+    {
+        "country": "Lesotho",
+        "population": "2281454",
+        "migrant": "0.307818842",
+        "gdppc": "1094.09818489303"
+    },
+    {
+        "country": "Late-demographic dividend",
+        "population": "2321862159",
+        "migrant": "2.063336637",
+        "gdppc": "11465.857770559"
+    },
+    {
+        "country": "Lithuania",
+        "population": "2800839",
+        "migrant": "4.726089623",
+        "gdppc": "23723.3402510345"
+    },
+    {
+        "country": "Luxembourg",
+        "population": "640064",
+        "migrant": "43.96413394",
+        "gdppc": "133590.146975586"
+    },
+    {
+        "country": "Latvia",
+        "population": "1884490",
+        "migrant": "13.35324026",
+        "gdppc": "21148.1629405415"
+    },
+    {
+        "country": "Macao SAR, China",
+        "population": "686607",
+        "migrant": "58.32190277",
+        "gdppc": "43873.5911643329"
+    },
+    {
+        "country": "St. Martin (French part)",
+        "population": "31948",
+        "migrant": "",
+        "gdppc": ""
+    },
+    {
+        "country": "Morocco",
+        "population": "37076584",
+        "migrant": "0.257467738",
+        "gdppc": "3795.38012695313"
+    },
+    {
+        "country": "Monaco",
+        "population": "36686",
+        "migrant": "55.76846625",
+        "gdppc": "234315.460503547"
+    },
+    {
+        "country": "Moldova",
+        "population": "2615199",
+        "migrant": "3.512106598",
+        "gdppc": "5230.66173289497"
+    },
+    {
+        "country": "Madagascar",
+        "population": "28915653",
+        "migrant": "0.132347777",
+        "gdppc": "500.511031950657"
+    },
+    {
+        "country": "Maldives",
+        "population": "521457",
+        "migrant": "25.87218175",
+        "gdppc": "10366.2933584066"
+    },
+    {
+        "country": "Middle East & North Africa",
+        "population": "486167363",
+        "migrant": "9.145181855",
+        "gdppc": "7562.82507779443"
+    },
+    {
+        "country": "Mexico",
+        "population": "126705138",
+        "migrant": "0.939364727",
+        "gdppc": "10045.6805004963"
+    },
+    {
+        "country": "Marshall Islands",
+        "population": "42050",
+        "migrant": "6.197044893",
+        "gdppc": "6172.14506539834"
+    },
+    {
+        "country": "Middle income",
+        "population": "5901323889",
+        "migrant": "1.373259414",
+        "gdppc": "6074.0849211156"
+    },
+    {
+        "country": "North Macedonia",
+        "population": "2065092",
+        "migrant": "6.289774173",
+        "gdppc": "6694.64112581709"
+    },
+    {
+        "country": "Mali",
+        "population": "21904983",
+        "migrant": "2.063359738",
+        "gdppc": "873.794862375503"
+    },
+    {
+        "country": "Malta",
+        "population": "518536",
+        "migrant": "9.898488069",
+        "gdppc": "33486.671983855"
+    },
+    {
+        "country": "Myanmar",
+        "population": "53798084",
+        "migrant": "0.136014603",
+        "gdppc": "1209.92694225482"
+    },
+    {
+        "country": "Middle East & North Africa (excluding high income)",
+        "population": "418047201",
+        "migrant": "3.324472472",
+        "gdppc": "3565.23934309396"
+    },
+    {
+        "country": "Montenegro",
+        "population": "619211",
+        "migrant": "13.19007768",
+        "gdppc": "9465.70399879557"
+    },
+    {
+        "country": "Mongolia",
+        "population": "3347782",
+        "migrant": "0.595444478",
+        "gdppc": "4566.14015433014"
+    },
+    {
+        "country": "Northern Mariana Islands",
+        "population": "49481",
+        "migrant": "39.30996913",
+        "gdppc": ""
+    },
+    {
+        "country": "Mozambique",
+        "population": "32077072",
+        "migrant": "0.796801385",
+        "gdppc": "491.839112773674"
+    },
+    {
+        "country": "Mauritania",
+        "population": "4614974",
+        "migrant": "3.396676733",
+        "gdppc": "2166.04679858214"
+    },
+    {
+        "country": "Mauritius",
+        "population": "1266060",
+        "migrant": "2.24510922",
+        "gdppc": "9106.23720230699"
+    },
+    {
+        "country": "Malawi",
+        "population": "19889742",
+        "migrant": "1.249811795",
+        "gdppc": "634.835660105302"
+    },
+    {
+        "country": "Malaysia",
+        "population": "33573874",
+        "migrant": "8.289348916",
+        "gdppc": "11109.2618387745"
+    },
+    {
+        "country": "North America",
+        "population": "370203720",
+        "migrant": "15.22581782",
+        "gdppc": "68369.6627865258"
+    },
+    {
+        "country": "Namibia",
+        "population": "2530151",
+        "migrant": "3.818401435",
+        "gdppc": "4865.55776470864"
+    },
+    {
+        "country": "New Caledonia",
+        "population": "271030",
+        "migrant": "24.43390418",
+        "gdppc": "37159.5467662165"
+    },
+    {
+        "country": "Niger",
+        "population": "25252722",
+        "migrant": "0.951072208",
+        "gdppc": "590.629454795899"
+    },
+    {
+        "country": "Nigeria",
+        "population": "213401323",
+        "migrant": "0.658124088",
+        "gdppc": "2065.74906750923"
+    },
+    {
+        "country": "Nicaragua",
+        "population": "6850540",
+        "migrant": "0.661982706",
+        "gdppc": "2045.53540189014"
+    },
+    {
+        "country": "Netherlands",
+        "population": "17533044",
+        "migrant": "11.69568274",
+        "gdppc": "57767.8788108173"
+    },
+    {
+        "country": "Norway",
+        "population": "5408320",
+        "migrant": "14.23561116",
+        "gdppc": "89154.2760934922"
+    },
+    {
+        "country": "Nepal",
+        "population": "30034989",
+        "migrant": "1.817645553",
+        "gdppc": "1208.21853383767"
+    },
+    {
+        "country": "Nauru",
+        "population": "12511",
+        "migrant": "31.0898063",
+        "gdppc": "10648.1413901852"
+    },
+    {
+        "country": "New Zealand",
+        "population": "5122600",
+        "migrant": "22.95970035",
+        "gdppc": "48781.0266328884"
+    },
+    {
+        "country": "OECD members",
+        "population": "1372736513",
+        "migrant": "9.71786966",
+        "gdppc": "42446.8593225577"
+    },
+    {
+        "country": "Oman",
+        "population": "4520471",
+        "migrant": "41.08587362",
+        "gdppc": "19509.4664633867"
+    },
+    {
+        "country": "Other small states",
+        "population": "32708003",
+        "migrant": "14.92688504",
+        "gdppc": "13878.8148434096"
+    },
+    {
+        "country": "Pakistan",
+        "population": "231402117",
+        "migrant": "1.920846061",
+        "gdppc": "1505.01019279429"
+    },
+    {
+        "country": "Panama",
+        "population": "4351267",
+        "migrant": "4.701027527",
+        "gdppc": "14617.6044816372"
+    },
+    {
+        "country": "Peru",
+        "population": "33715471",
+        "migrant": "0.289645141",
+        "gdppc": "6621.57433601881"
+    },
+    {
+        "country": "Philippines",
+        "population": "113880328",
+        "migrant": "0.210390539",
+        "gdppc": "3460.53096344408"
+    },
+    {
+        "country": "Palau",
+        "population": "18024",
+        "migrant": "26.60278991",
+        "gdppc": "12083.8881491345"
+    },
+    {
+        "country": "Papua New Guinea",
+        "population": "9949437",
+        "migrant": "0.338376609",
+        "gdppc": "2672.94579035518"
+    },
+    {
+        "country": "Poland",
+        "population": "37747124",
+        "migrant": "1.604180837",
+        "gdppc": "17999.9099495446"
+    },
+    {
+        "country": "Pre-demographic dividend",
+        "population": "1011043183",
+        "migrant": "1.574998014",
+        "gdppc": "1411.4592703128"
+    },
+    {
+        "country": "Puerto Rico",
+        "population": "3263584",
+        "migrant": "7.465496392",
+        "gdppc": "32640.710335631"
+    },
+    {
+        "country": "Korea, Dem. People's Rep.",
+        "population": "25971909",
+        "migrant": "0.192635219",
+        "gdppc": ""
+    },
+    {
+        "country": "Portugal",
+        "population": "10325147",
+        "migrant": "8.089593589",
+        "gdppc": "24567.5092651"
+    },
+    {
+        "country": "Paraguay",
+        "population": "6703799",
+        "migrant": "2.356666686",
+        "gdppc": "5891.49996504641"
+    },
+    {
+        "country": "West Bank and Gaza",
+        "population": "4922749",
+        "migrant": "5.473039752",
+        "gdppc": "3663.96905468875"
+    },
+    {
+        "country": "Pacific island small states",
+        "population": "2602173",
+        "migrant": "2.002526774",
+        "gdppc": "3643.84543691992"
+    },
+    {
+        "country": "Post-demographic dividend",
+        "population": "1116796245",
+        "migrant": "12.08825319",
+        "gdppc": "49223.5950344334"
+    },
+    {
+        "country": "French Polynesia",
+        "population": "304032",
+        "migrant": "10.63006606",
+        "gdppc": "19914.6035133645"
+    },
+    {
+        "country": "Qatar",
+        "population": "2688235",
+        "migrant": "75.49762789",
+        "gdppc": "66838.357433014"
+    },
+    {
+        "country": "Romania",
+        "population": "19119880",
+        "migrant": "1.163134803",
+        "gdppc": "14858.2294290445"
+    },
+    {
+        "country": "Russian Federation",
+        "population": "143449286",
+        "migrant": "8.11621786",
+        "gdppc": "12194.77734375"
+    },
+    {
+        "country": "Rwanda",
+        "population": "13461888",
+        "migrant": "3.803080984",
+        "gdppc": "822.3479885942"
+    },
+    {
+        "country": "South Asia",
+        "population": "1901911604",
+        "migrant": "0.666691631",
+        "gdppc": "2149.8215950035"
+    },
+    {
+        "country": "Saudi Arabia",
+        "population": "35950396",
+        "migrant": "32.29494249",
+        "gdppc": "23185.8707917797"
+    },
+    {
+        "country": "Sudan",
+        "population": "45657202",
+        "migrant": "1.251344542",
+        "gdppc": "751.821350097656"
+    },
+    {
+        "country": "Senegal",
+        "population": "16876720",
+        "migrant": "1.739951417",
+        "gdppc": "1636.89320864296"
+    },
+    {
+        "country": "Singapore",
+        "population": "5453566",
+        "migrant": "45.39179191",
+        "gdppc": "72794.0030226738"
+    },
+    {
+        "country": "Solomon Islands",
+        "population": "707851",
+        "migrant": "0.442947201",
+        "gdppc": "2304.84456746354"
+    },
+    {
+        "country": "Sierra Leone",
+        "population": "8420641",
+        "migrant": "1.413457295",
+        "gdppc": "480.039211301066"
+    },
+    {
+        "country": "El Salvador",
+        "population": "6314167",
+        "migrant": "0.686271613",
+        "gdppc": "4551.18466141298"
+    },
+    {
+        "country": "San Marino",
+        "population": "33745",
+        "migrant": "14.84220132",
+        "gdppc": ""
+    },
+    {
+        "country": "Somalia",
+        "population": "17065581",
+        "migrant": "0.234455884",
+        "gdppc": "446.981559635259"
+    },
+    {
+        "country": "Serbia",
+        "population": "6834326",
+        "migrant": "9.122622084",
+        "gdppc": "9230.17831602601"
+    },
+    {
+        "country": "Sub-Saharan Africa (excluding high income)",
+        "population": "1181063481",
+        "migrant": "1.876405514",
+        "gdppc": "1625.18311846119"
+    },
+    {
+        "country": "South Sudan",
+        "population": "10748272",
+        "migrant": "6.67856204",
+        "gdppc": ""
+    },
+    {
+        "country": "Sub-Saharan Africa",
+        "population": "1181162739",
+        "migrant": "1.877463188",
+        "gdppc": "1626.27792590406"
+    },
+    {
+        "country": "Small states",
+        "population": "42792053",
+        "migrant": "12.28251418",
+        "gdppc": "12588.9277948417"
+    },
+    {
+        "country": "Sao Tome and Principe",
+        "population": "223107",
+        "migrant": "1.25772286",
+        "gdppc": "2360.54355385897"
+    },
+    {
+        "country": "Suriname",
+        "population": "612985",
+        "migrant": "8.625811501",
+        "gdppc": "4869.13422621242"
+    },
+    {
+        "country": "Slovak Republic",
+        "population": "5447247",
+        "migrant": "3.265417899",
+        "gdppc": "21391.9253336042"
+    },
+    {
+        "country": "Slovenia",
+        "population": "2108079",
+        "migrant": "11.41296409",
+        "gdppc": "29291.4006234431"
+    },
+    {
+        "country": "Sweden",
+        "population": "10415811",
+        "migrant": "16.76755875",
+        "gdppc": "61028.7380600287"
+    },
+    {
+        "country": "Eswatini",
+        "population": "1192271",
+        "migrant": "2.453747951",
+        "gdppc": "3978.4035281759"
+    },
+    {
+        "country": "Sint Maarten (Dutch part)",
+        "population": "42846",
+        "migrant": "70.44779972",
+        "gdppc": ""
+    },
+    {
+        "country": "Seychelles",
+        "population": "99258",
+        "migrant": "13.25890682",
+        "gdppc": "14653.3093943039"
+    },
+    {
+        "country": "Syrian Arab Republic",
+        "population": "21324367",
+        "migrant": "4.730134388",
+        "gdppc": ""
+    },
+    {
+        "country": "Turks and Caicos Islands",
+        "population": "45114",
+        "migrant": "34.03710067",
+        "gdppc": "20908.5827016004"
+    },
+    {
+        "country": "Chad",
+        "population": "17179740",
+        "migrant": "3.682771371",
+        "gdppc": "685.690284124456"
+    },
+    {
+        "country": "East Asia & Pacific (IDA & IBRD countries)",
+        "population": "2097669023",
+        "migrant": "0.4196285",
+        "gdppc": "9880.09606977467"
+    },
+    {
+        "country": "Europe & Central Asia (IDA & IBRD countries)",
+        "population": "462341222",
+        "migrant": "6.474420806",
+        "gdppc": "9842.05226527455"
+    },
+    {
+        "country": "Togo",
+        "population": "8644829",
+        "migrant": "3.79000676",
+        "gdppc": "973.206129076133"
+    },
+    {
+        "country": "Thailand",
+        "population": "71601103",
+        "migrant": "5.758232652",
+        "gdppc": "7066.19054595323"
+    },
+    {
+        "country": "Tajikistan",
+        "population": "9750064",
+        "migrant": "3.242910896",
+        "gdppc": "897.047510293411"
+    },
+    {
+        "country": "Turkmenistan",
+        "population": "6341855",
+        "migrant": "3.654711583",
+        "gdppc": ""
+    },
+    {
+        "country": "Latin America & the Caribbean (IDA & IBRD countries)",
+        "population": "639188695",
+        "migrant": "1.361019379",
+        "gdppc": "8108.91586994813"
+    },
+    {
+        "country": "Timor-Leste",
+        "population": "1320942",
+        "migrant": "0.914442949",
+        "gdppc": "2741.39393111832"
+    },
+    {
+        "country": "Middle East & North Africa (IDA & IBRD countries)",
+        "population": "413124452",
+        "migrant": "3.299932799",
+        "gdppc": "3564.06602531565"
+    },
+    {
+        "country": "Tonga",
+        "population": "106017",
+        "migrant": "5.397946689",
+        "gdppc": "4426.00063706281"
+    },
+    {
+        "country": "South Asia (IDA & IBRD)",
+        "population": "1901911604",
+        "migrant": "0.666691631",
+        "gdppc": "2149.8215950035"
+    },
+    {
+        "country": "Sub-Saharan Africa (IDA & IBRD countries)",
+        "population": "1181162739",
+        "migrant": "1.877463188",
+        "gdppc": "1626.27792590406"
+    },
+    {
+        "country": "Trinidad and Tobago",
+        "population": "1525663",
+        "migrant": "3.66763033",
+        "gdppc": "16032.5027680992"
+    },
+    {
+        "country": "Tunisia",
+        "population": "12262946",
+        "migrant": "0.503849717",
+        "gdppc": "3807.13915027254"
+    },
+    {
+        "country": "Turkiye",
+        "population": "84775404",
+        "migrant": "3.769001103",
+        "gdppc": "9661.23597511355"
+    },
+    {
+        "country": "Tuvalu",
+        "population": "11204",
+        "migrant": "1.421944332",
+        "gdppc": "5632.00299343641"
+    },
+    {
+        "country": "Tanzania",
+        "population": "63588334",
+        "migrant": "0.48853553",
+        "gdppc": "1099.28759765625"
+    },
+    {
+        "country": "Uganda",
+        "population": "45853778",
+        "migrant": "1.920126168",
+        "gdppc": "883.892032311279"
+    },
+    {
+        "country": "Ukraine",
+        "population": "43792855",
+        "migrant": "10.78646116",
+        "gdppc": "4835.57177734375"
+    },
+    {
+        "country": "Upper middle income",
+        "population": "2503136362",
+        "migrant": "1.806382078",
+        "gdppc": "10828.0506944074"
+    },
+    {
+        "country": "Uruguay",
+        "population": "3426260",
+        "migrant": "2.092316749",
+        "gdppc": "17313.1883484186"
+    },
+    {
+        "country": "United States",
+        "population": "331893745",
+        "migrant": "14.49065352",
+        "gdppc": "70248.6290002242"
+    },
+    {
+        "country": "Uzbekistan",
+        "population": "34915100",
+        "migrant": "3.91690324",
+        "gdppc": "1983.06472288992"
+    },
+    {
+        "country": "St. Vincent and the Grenadines",
+        "population": "104332",
+        "migrant": "4.181359741",
+        "gdppc": "8666.38704104884"
+    },
+    {
+        "country": "Venezuela, RB",
+        "population": "28199867",
+        "migrant": "4.514736572",
+        "gdppc": ""
+    },
+    {
+        "country": "British Virgin Islands",
+        "population": "31122",
+        "migrant": "57.46920344",
+        "gdppc": ""
+    },
+    {
+        "country": "Virgin Islands (U.S.)",
+        "population": "105870",
+        "migrant": "53.36387841",
+        "gdppc": ""
+    },
+    {
+        "country": "Vietnam",
+        "population": "97468029",
+        "migrant": "0.077897131",
+        "gdppc": "3756.48912117326"
+    },
+    {
+        "country": "Vanuatu",
+        "population": "319137",
+        "migrant": "1.204222904",
+        "gdppc": "2996.62106154483"
+    },
+    {
+        "country": "World",
+        "population": "7888408686",
+        "migrant": "3.330424745",
+        "gdppc": "12234.7968020033"
+    },
+    {
+        "country": "Samoa",
+        "population": "218764",
+        "migrant": "2.550872544",
+        "gdppc": "3857.31846401804"
+    },
+    {
+        "country": "Kosovo",
+        "population": "1786038",
+        "migrant": "",
+        "gdppc": "5269.78390114389"
+    },
+    {
+        "country": "Yemen, Rep.",
+        "population": "32981641",
+        "migrant": "1.282529228",
+        "gdppc": ""
+    },
+    {
+        "country": "South Africa",
+        "population": "59392255",
+        "migrant": "5.767090449",
+        "gdppc": "7055.04477598783"
+    },
+    {
+        "country": "Zambia",
+        "population": "19473125",
+        "migrant": "0.78902565",
+        "gdppc": "1137.34363269164"
+    },
+    {
+        "country": "Zimbabwe",
+        "population": "15993524",
+        "migrant": "2.556382525",
+        "gdppc": "1773.92041088078"
+    }
+]

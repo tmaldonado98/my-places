@@ -417,7 +417,7 @@ td:where(.check-td) {
   color: black;
   background-color: #fffff085;
   padding: 0.25rem;
-  border: 1px black solid;
+  border: 1px ivory solid;
   border-radius: 10px;
 }
 

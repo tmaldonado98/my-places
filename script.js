@@ -693,21 +693,14 @@ $('body').on('click', '.see-more' , function(){
 
                     $('#fCurr').children('span').html(
                         (JSON.stringify(arrayCurrObjs[0].name) + ' (' + arrayCurrKeys[0] +'), ' + JSON.stringify(arrayCurrObjs[0].symbol))
-                    .replace(/[{}"]/g, ''));
-
-                        
+                    .replace(/[{}"]/g, ''));                 
                     
-                    
-                    // $('#fCurr').children('span').html(JSON.stringify(this.currencies).replace(/[{}"]/g, ''));
                     $('#fCapital').children('span').html(this.capital);
 
 
                     const languages = this.languages;
-                    // const arrayLangKeys = Object.keys(languages);
                     const arrayLangObjs = Object.values(languages);
-                    console.log(Object.values(languages));
-
-                    
+                    console.log(Object.values(languages));                   
 
                     $('#fLangs').children('span').html(
                         JSON.stringify(arrayLangObjs.join(", "))
@@ -727,11 +720,12 @@ $('body').on('click', '.see-more' , function(){
         })
 
 
-        $.getJSON('worldbankcountries.json', function(list){
+        $.getJSON('worldbankcountriespopmigrantgdp.json', function(list){
             $.each(list, function(){
-                if (mCountry == this.field1) {
-                    $('#countryPop').children('span').html(Number(this.field2).toLocaleString("en-US"));
-
+                if (mCountry == this.country) {
+                    $('#countryPop').children('span').html(Number(this.population).toLocaleString("en-US"));
+                    $('#fGdp').children('span').html('$' + (Number(this.gdppc)).toLocaleString("en-US"));
+                    $('#fMigrants').children('span').html(Number(this.migrant).toFixed(2) + '% of the total population is from immigrant origin.');
                 }
             })
         })
@@ -741,6 +735,31 @@ $('body').on('click', '.see-more' , function(){
             $('#section-modal-map').hide()
             $('#container-section-facts').hide()
         }
+
+
+        $.getJSON('religiousdemographicspercentage.json', function(data){
+            $.each(data, function(){
+                if (mCountry == this.Country) {
+
+
+                    const religions = this;
+                    // const arrayRelKeys = Object.keys(religions);
+                    // const arrayRelObjs = Object.values(religions);
+                    const {Country, Region, Unaffiliated, Year, ...rest} = religions;
+                    console.log(rest);
+                    // console.log(arrayRelKeys);
+                    // console.log(arrayRelObjs);
+                    
+                    $.each(Object.values[data], function() {
+                        return this + '%';
+                    })
+                    $('#fRel').children('span').html(JSON.stringify(rest, '', ' ')
+                    .replace(/[{}"]/g, '')); 
+                    $('#fRel').children('span').append(
+                }
+            })
+        })
+        // Object.key(Country)
 
     })
 });

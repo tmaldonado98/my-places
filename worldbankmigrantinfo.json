@@ -1,0 +1,1074 @@
+﻿[
+    {
+        "country": "Last Updated Date",
+        "perc": ""
+    },
+    {
+        "country": "Country Name",
+        "perc": "2015"
+    },
+    {
+        "country": "Aruba",
+        "perc": "34.76210186"
+    },
+    {
+        "country": "Africa Eastern and Southern",
+        "perc": "1.734291789"
+    },
+    {
+        "country": "Afghanistan",
+        "perc": "1.175546927"
+    },
+    {
+        "country": "Africa Western and Central",
+        "perc": "2.086486494"
+    },
+    {
+        "country": "Angola",
+        "perc": "0.42700468"
+    },
+    {
+        "country": "Albania",
+        "perc": "1.98903641"
+    },
+    {
+        "country": "Andorra",
+        "perc": "59.7136492"
+    },
+    {
+        "country": "Arab World",
+        "perc": "8.85290671"
+    },
+    {
+        "country": "United Arab Emirates",
+        "perc": "88.40404837"
+    },
+    {
+        "country": "Argentina",
+        "perc": "4.805292335"
+    },
+    {
+        "country": "Armenia",
+        "perc": "6.335892888"
+    },
+    {
+        "country": "American Samoa",
+        "perc": "41.80200943"
+    },
+    {
+        "country": "Antigua and Barbuda",
+        "perc": "30.58550611"
+    },
+    {
+        "country": "Australia",
+        "perc": "28.21840969"
+    },
+    {
+        "country": "Austria",
+        "perc": "17.46572625"
+    },
+    {
+        "country": "Azerbaijan",
+        "perc": "2.709061584"
+    },
+    {
+        "country": "Burundi",
+        "perc": "2.565632229"
+    },
+    {
+        "country": "Belgium",
+        "perc": "12.28353319"
+    },
+    {
+        "country": "Benin",
+        "perc": "2.255540965"
+    },
+    {
+        "country": "Burkina Faso",
+        "perc": "3.892039853"
+    },
+    {
+        "country": "Bangladesh",
+        "perc": "0.883753735"
+    },
+    {
+        "country": "Bulgaria",
+        "perc": "1.428196392"
+    },
+    {
+        "country": "Bahrain",
+        "perc": "51.12678501"
+    },
+    {
+        "country": "Bahamas, The",
+        "perc": "15.28430309"
+    },
+    {
+        "country": "Bosnia and Herzegovina",
+        "perc": "0.91336484"
+    },
+    {
+        "country": "Belarus",
+        "perc": "11.40401056"
+    },
+    {
+        "country": "Belize",
+        "perc": "14.99080123"
+    },
+    {
+        "country": "Bermuda",
+        "perc": "30.84639701"
+    },
+    {
+        "country": "Bolivia",
+        "perc": "1.333267442"
+    },
+    {
+        "country": "Brazil",
+        "perc": "0.3433132"
+    },
+    {
+        "country": "Barbados",
+        "perc": "12.12990166"
+    },
+    {
+        "country": "Brunei Darussalam",
+        "perc": "24.27597191"
+    },
+    {
+        "country": "Bhutan",
+        "perc": "6.595769395"
+    },
+    {
+        "country": "Botswana",
+        "perc": "7.100334367"
+    },
+    {
+        "country": "Central African Republic",
+        "perc": "1.665172192"
+    },
+    {
+        "country": "Canada",
+        "perc": "21.80166365"
+    },
+    {
+        "country": "Central Europe and the Baltics",
+        "perc": "3.278495272"
+    },
+    {
+        "country": "Switzerland",
+        "perc": "29.38668554"
+    },
+    {
+        "country": "Channel Islands",
+        "perc": "50.28162647"
+    },
+    {
+        "country": "Chile",
+        "perc": "2.615513217"
+    },
+    {
+        "country": "China",
+        "perc": "0.071076396"
+    },
+    {
+        "country": "Cote d'Ivoire",
+        "perc": "9.582598655"
+    },
+    {
+        "country": "Cameroon",
+        "perc": "1.636313704"
+    },
+    {
+        "country": "Congo, Dem. Rep.",
+        "perc": "0.706246281"
+    },
+    {
+        "country": "Congo, Rep.",
+        "perc": "8.505799369"
+    },
+    {
+        "country": "Colombia",
+        "perc": "0.276047227"
+    },
+    {
+        "country": "Comoros",
+        "perc": "1.592316297"
+    },
+    {
+        "country": "Cabo Verde",
+        "perc": "2.867232018"
+    },
+    {
+        "country": "Costa Rica",
+        "perc": "8.771009911"
+    },
+    {
+        "country": "Caribbean small states",
+        "perc": "4.900340409"
+    },
+    {
+        "country": "Cuba",
+        "perc": "0.117089665"
+    },
+    {
+        "country": "Curacao",
+        "perc": "23.92511593"
+    },
+    {
+        "country": "Cayman Islands",
+        "perc": "39.56509414"
+    },
+    {
+        "country": "Cyprus",
+        "perc": "16.83403415"
+    },
+    {
+        "country": "Czechia",
+        "perc": "3.84222568"
+    },
+    {
+        "country": "Germany",
+        "perc": "14.8790513"
+    },
+    {
+        "country": "Djibouti",
+        "perc": "12.65412041"
+    },
+    {
+        "country": "Dominica",
+        "perc": "9.246009906"
+    },
+    {
+        "country": "Denmark",
+        "perc": "10.09899135"
+    },
+    {
+        "country": "Dominican Republic",
+        "perc": "3.947079853"
+    },
+    {
+        "country": "Algeria",
+        "perc": "0.611072023"
+    },
+    {
+        "country": "East Asia & Pacific (excluding high income)",
+        "perc": "0.417701143"
+    },
+    {
+        "country": "Early-demographic dividend",
+        "perc": "1.660207201"
+    },
+    {
+        "country": "East Asia & Pacific",
+        "perc": "1.133822422"
+    },
+    {
+        "country": "Europe & Central Asia (excluding high income)",
+        "perc": "7.141955011"
+    },
+    {
+        "country": "Europe & Central Asia",
+        "perc": "9.468712066"
+    },
+    {
+        "country": "Ecuador",
+        "perc": "2.400299101"
+    },
+    {
+        "country": "Egypt, Arab Rep.",
+        "perc": "0.537267287"
+    },
+    {
+        "country": "Euro area",
+        "perc": "12.21947794"
+    },
+    {
+        "country": "Eritrea",
+        "perc": ""
+    },
+    {
+        "country": "Spain",
+        "perc": "12.69023719"
+    },
+    {
+        "country": "Estonia",
+        "perc": "15.41630922"
+    },
+    {
+        "country": "Ethiopia",
+        "perc": "1.079526012"
+    },
+    {
+        "country": "European Union",
+        "perc": "10.36338917"
+    },
+    {
+        "country": "Fragile and conflict affected situations",
+        "perc": "2.220525249"
+    },
+    {
+        "country": "Finland",
+        "perc": "5.739683257"
+    },
+    {
+        "country": "Fiji",
+        "perc": "1.541341374"
+    },
+    {
+        "country": "France",
+        "perc": "12.08847938"
+    },
+    {
+        "country": "Faroe Islands",
+        "perc": "11.44629557"
+    },
+    {
+        "country": "Micronesia, Fed. Sts.",
+        "perc": "2.638330461"
+    },
+    {
+        "country": "Gabon",
+        "perc": "15.55585953"
+    },
+    {
+        "country": "United Kingdom",
+        "perc": "13.20097825"
+    },
+    {
+        "country": "Georgia",
+        "perc": "4.220248352"
+    },
+    {
+        "country": "Ghana",
+        "perc": "1.457397152"
+    },
+    {
+        "country": "Gibraltar",
+        "perc": "34.34522147"
+    },
+    {
+        "country": "Guinea",
+        "perc": "1.811566559"
+    },
+    {
+        "country": "Gambia, The",
+        "perc": "9.670886483"
+    },
+    {
+        "country": "Guinea-Bissau",
+        "perc": "1.210903718"
+    },
+    {
+        "country": "Equatorial Guinea",
+        "perc": "1.280974132"
+    },
+    {
+        "country": "Greece",
+        "perc": "11.34237737"
+    },
+    {
+        "country": "Grenada",
+        "perc": "6.606131524"
+    },
+    {
+        "country": "Greenland",
+        "perc": "10.69483501"
+    },
+    {
+        "country": "Guatemala",
+        "perc": "0.467187672"
+    },
+    {
+        "country": "Guam",
+        "perc": "44.78853342"
+    },
+    {
+        "country": "Guyana",
+        "perc": "2.005514382"
+    },
+    {
+        "country": "High income",
+        "perc": "13.3438486"
+    },
+    {
+        "country": "Hong Kong SAR, China",
+        "perc": "38.94993992"
+    },
+    {
+        "country": "Honduras",
+        "perc": "0.347613516"
+    },
+    {
+        "country": "Heavily indebted poor countries (HIPC)",
+        "perc": "1.672764621"
+    },
+    {
+        "country": "Croatia",
+        "perc": "13.60471399"
+    },
+    {
+        "country": "Haiti",
+        "perc": "0.3690482"
+    },
+    {
+        "country": "Hungary",
+        "perc": "4.562465252"
+    },
+    {
+        "country": "IBRD only",
+        "perc": "1.368705182"
+    },
+    {
+        "country": "IDA & IBRD total",
+        "perc": "1.427808425"
+    },
+    {
+        "country": "IDA total",
+        "perc": "1.606479767"
+    },
+    {
+        "country": "IDA blend",
+        "perc": "1.681212951"
+    },
+    {
+        "country": "Indonesia",
+        "perc": "0.127675543"
+    },
+    {
+        "country": "IDA only",
+        "perc": "1.567965642"
+    },
+    {
+        "country": "Isle of Man",
+        "perc": "51.51629073"
+    },
+    {
+        "country": "India",
+        "perc": "0.399752709"
+    },
+    {
+        "country": "Not classified",
+        "perc": ""
+    },
+    {
+        "country": "Ireland",
+        "perc": "15.91693657"
+    },
+    {
+        "country": "Iran, Islamic Rep.",
+        "perc": "3.446397535"
+    },
+    {
+        "country": "Iraq",
+        "perc": "0.971576098"
+    },
+    {
+        "country": "Iceland",
+        "perc": "11.3901495"
+    },
+    {
+        "country": "Israel",
+        "perc": "24.94690004"
+    },
+    {
+        "country": "Italy",
+        "perc": "9.680767742"
+    },
+    {
+        "country": "Jamaica",
+        "perc": "0.829367047"
+    },
+    {
+        "country": "Jordan",
+        "perc": "40.9771116"
+    },
+    {
+        "country": "Japan",
+        "perc": "1.614775057"
+    },
+    {
+        "country": "Kazakhstan",
+        "perc": "20.12330509"
+    },
+    {
+        "country": "Kenya",
+        "perc": "2.354722885"
+    },
+    {
+        "country": "Kyrgyz Republic",
+        "perc": "3.440796423"
+    },
+    {
+        "country": "Cambodia",
+        "perc": "0.474794451"
+    },
+    {
+        "country": "Kiribati",
+        "perc": "2.80458625"
+    },
+    {
+        "country": "St. Kitts and Nevis",
+        "perc": "13.39343554"
+    },
+    {
+        "country": "Korea, Rep.",
+        "perc": "2.639159354"
+    },
+    {
+        "country": "Kuwait",
+        "perc": "73.63955073"
+    },
+    {
+        "country": "Latin America & Caribbean (excluding high income)",
+        "perc": "1.083747926"
+    },
+    {
+        "country": "Lao PDR",
+        "perc": "0.327020359"
+    },
+    {
+        "country": "Lebanon",
+        "perc": "34.1456803"
+    },
+    {
+        "country": "Liberia",
+        "perc": "2.526491982"
+    },
+    {
+        "country": "Libya",
+        "perc": "12.28244987"
+    },
+    {
+        "country": "St. Lucia",
+        "perc": "6.903280558"
+    },
+    {
+        "country": "Latin America & Caribbean",
+        "perc": "1.419050203"
+    },
+    {
+        "country": "Least developed countries: UN classification",
+        "perc": "1.252031922"
+    },
+    {
+        "country": "Low income",
+        "perc": "1.56767422"
+    },
+    {
+        "country": "Liechtenstein",
+        "perc": "62.59625376"
+    },
+    {
+        "country": "Sri Lanka",
+        "perc": "0.186850018"
+    },
+    {
+        "country": "Lower middle income",
+        "perc": "1.039419982"
+    },
+    {
+        "country": "Low & middle income",
+        "perc": "1.392415024"
+    },
+    {
+        "country": "Lesotho",
+        "perc": "0.307818842"
+    },
+    {
+        "country": "Late-demographic dividend",
+        "perc": "2.063336637"
+    },
+    {
+        "country": "Lithuania",
+        "perc": "4.726089623"
+    },
+    {
+        "country": "Luxembourg",
+        "perc": "43.96413394"
+    },
+    {
+        "country": "Latvia",
+        "perc": "13.35324026"
+    },
+    {
+        "country": "Macao SAR, China",
+        "perc": "58.32190277"
+    },
+    {
+        "country": "St. Martin (French part)",
+        "perc": ""
+    },
+    {
+        "country": "Morocco",
+        "perc": "0.257467738"
+    },
+    {
+        "country": "Monaco",
+        "perc": "55.76846625"
+    },
+    {
+        "country": "Moldova",
+        "perc": "3.512106598"
+    },
+    {
+        "country": "Madagascar",
+        "perc": "0.132347777"
+    },
+    {
+        "country": "Maldives",
+        "perc": "25.87218175"
+    },
+    {
+        "country": "Middle East & North Africa",
+        "perc": "9.145181855"
+    },
+    {
+        "country": "Mexico",
+        "perc": "0.939364727"
+    },
+    {
+        "country": "Marshall Islands",
+        "perc": "6.197044893"
+    },
+    {
+        "country": "Middle income",
+        "perc": "1.373259414"
+    },
+    {
+        "country": "North Macedonia",
+        "perc": "6.289774173"
+    },
+    {
+        "country": "Mali",
+        "perc": "2.063359738"
+    },
+    {
+        "country": "Malta",
+        "perc": "9.898488069"
+    },
+    {
+        "country": "Myanmar",
+        "perc": "0.136014603"
+    },
+    {
+        "country": "Middle East & North Africa (excluding high income)",
+        "perc": "3.324472472"
+    },
+    {
+        "country": "Montenegro",
+        "perc": "13.19007768"
+    },
+    {
+        "country": "Mongolia",
+        "perc": "0.595444478"
+    },
+    {
+        "country": "Northern Mariana Islands",
+        "perc": "39.30996913"
+    },
+    {
+        "country": "Mozambique",
+        "perc": "0.796801385"
+    },
+    {
+        "country": "Mauritania",
+        "perc": "3.396676733"
+    },
+    {
+        "country": "Mauritius",
+        "perc": "2.24510922"
+    },
+    {
+        "country": "Malawi",
+        "perc": "1.249811795"
+    },
+    {
+        "country": "Malaysia",
+        "perc": "8.289348916"
+    },
+    {
+        "country": "North America",
+        "perc": "15.22581782"
+    },
+    {
+        "country": "Namibia",
+        "perc": "3.818401435"
+    },
+    {
+        "country": "New Caledonia",
+        "perc": "24.43390418"
+    },
+    {
+        "country": "Niger",
+        "perc": "0.951072208"
+    },
+    {
+        "country": "Nigeria",
+        "perc": "0.658124088"
+    },
+    {
+        "country": "Nicaragua",
+        "perc": "0.661982706"
+    },
+    {
+        "country": "Netherlands",
+        "perc": "11.69568274"
+    },
+    {
+        "country": "Norway",
+        "perc": "14.23561116"
+    },
+    {
+        "country": "Nepal",
+        "perc": "1.817645553"
+    },
+    {
+        "country": "Nauru",
+        "perc": "31.0898063"
+    },
+    {
+        "country": "New Zealand",
+        "perc": "22.95970035"
+    },
+    {
+        "country": "OECD members",
+        "perc": "9.71786966"
+    },
+    {
+        "country": "Oman",
+        "perc": "41.08587362"
+    },
+    {
+        "country": "Other small states",
+        "perc": "14.92688504"
+    },
+    {
+        "country": "Pakistan",
+        "perc": "1.920846061"
+    },
+    {
+        "country": "Panama",
+        "perc": "4.701027527"
+    },
+    {
+        "country": "Peru",
+        "perc": "0.289645141"
+    },
+    {
+        "country": "Philippines",
+        "perc": "0.210390539"
+    },
+    {
+        "country": "Palau",
+        "perc": "26.60278991"
+    },
+    {
+        "country": "Papua New Guinea",
+        "perc": "0.338376609"
+    },
+    {
+        "country": "Poland",
+        "perc": "1.604180837"
+    },
+    {
+        "country": "Pre-demographic dividend",
+        "perc": "1.574998014"
+    },
+    {
+        "country": "Puerto Rico",
+        "perc": "7.465496392"
+    },
+    {
+        "country": "Korea, Dem. People's Rep.",
+        "perc": "0.192635219"
+    },
+    {
+        "country": "Portugal",
+        "perc": "8.089593589"
+    },
+    {
+        "country": "Paraguay",
+        "perc": "2.356666686"
+    },
+    {
+        "country": "West Bank and Gaza",
+        "perc": "5.473039752"
+    },
+    {
+        "country": "Pacific island small states",
+        "perc": "2.002526774"
+    },
+    {
+        "country": "Post-demographic dividend",
+        "perc": "12.08825319"
+    },
+    {
+        "country": "French Polynesia",
+        "perc": "10.63006606"
+    },
+    {
+        "country": "Qatar",
+        "perc": "75.49762789"
+    },
+    {
+        "country": "Romania",
+        "perc": "1.163134803"
+    },
+    {
+        "country": "Russian Federation",
+        "perc": "8.11621786"
+    },
+    {
+        "country": "Rwanda",
+        "perc": "3.803080984"
+    },
+    {
+        "country": "South Asia",
+        "perc": "0.666691631"
+    },
+    {
+        "country": "Saudi Arabia",
+        "perc": "32.29494249"
+    },
+    {
+        "country": "Sudan",
+        "perc": "1.251344542"
+    },
+    {
+        "country": "Senegal",
+        "perc": "1.739951417"
+    },
+    {
+        "country": "Singapore",
+        "perc": "45.39179191"
+    },
+    {
+        "country": "Solomon Islands",
+        "perc": "0.442947201"
+    },
+    {
+        "country": "Sierra Leone",
+        "perc": "1.413457295"
+    },
+    {
+        "country": "El Salvador",
+        "perc": "0.686271613"
+    },
+    {
+        "country": "San Marino",
+        "perc": "14.84220132"
+    },
+    {
+        "country": "Somalia",
+        "perc": "0.234455884"
+    },
+    {
+        "country": "Serbia",
+        "perc": "9.122622084"
+    },
+    {
+        "country": "Sub-Saharan Africa (excluding high income)",
+        "perc": "1.876405514"
+    },
+    {
+        "country": "South Sudan",
+        "perc": "6.67856204"
+    },
+    {
+        "country": "Sub-Saharan Africa",
+        "perc": "1.877463188"
+    },
+    {
+        "country": "Small states",
+        "perc": "12.28251418"
+    },
+    {
+        "country": "Sao Tome and Principe",
+        "perc": "1.25772286"
+    },
+    {
+        "country": "Suriname",
+        "perc": "8.625811501"
+    },
+    {
+        "country": "Slovak Republic",
+        "perc": "3.265417899"
+    },
+    {
+        "country": "Slovenia",
+        "perc": "11.41296409"
+    },
+    {
+        "country": "Sweden",
+        "perc": "16.76755875"
+    },
+    {
+        "country": "Eswatini",
+        "perc": "2.453747951"
+    },
+    {
+        "country": "Sint Maarten (Dutch part)",
+        "perc": "70.44779972"
+    },
+    {
+        "country": "Seychelles",
+        "perc": "13.25890682"
+    },
+    {
+        "country": "Syrian Arab Republic",
+        "perc": "4.730134388"
+    },
+    {
+        "country": "Turks and Caicos Islands",
+        "perc": "34.03710067"
+    },
+    {
+        "country": "Chad",
+        "perc": "3.682771371"
+    },
+    {
+        "country": "East Asia & Pacific (IDA & IBRD countries)",
+        "perc": "0.4196285"
+    },
+    {
+        "country": "Europe & Central Asia (IDA & IBRD countries)",
+        "perc": "6.474420806"
+    },
+    {
+        "country": "Togo",
+        "perc": "3.79000676"
+    },
+    {
+        "country": "Thailand",
+        "perc": "5.758232652"
+    },
+    {
+        "country": "Tajikistan",
+        "perc": "3.242910896"
+    },
+    {
+        "country": "Turkmenistan",
+        "perc": "3.654711583"
+    },
+    {
+        "country": "Latin America & the Caribbean (IDA & IBRD countries)",
+        "perc": "1.361019379"
+    },
+    {
+        "country": "Timor-Leste",
+        "perc": "0.914442949"
+    },
+    {
+        "country": "Middle East & North Africa (IDA & IBRD countries)",
+        "perc": "3.299932799"
+    },
+    {
+        "country": "Tonga",
+        "perc": "5.397946689"
+    },
+    {
+        "country": "South Asia (IDA & IBRD)",
+        "perc": "0.666691631"
+    },
+    {
+        "country": "Sub-Saharan Africa (IDA & IBRD countries)",
+        "perc": "1.877463188"
+    },
+    {
+        "country": "Trinidad and Tobago",
+        "perc": "3.66763033"
+    },
+    {
+        "country": "Tunisia",
+        "perc": "0.503849717"
+    },
+    {
+        "country": "Turkiye",
+        "perc": "3.769001103"
+    },
+    {
+        "country": "Tuvalu",
+        "perc": "1.421944332"
+    },
+    {
+        "country": "Tanzania",
+        "perc": "0.48853553"
+    },
+    {
+        "country": "Uganda",
+        "perc": "1.920126168"
+    },
+    {
+        "country": "Ukraine",
+        "perc": "10.78646116"
+    },
+    {
+        "country": "Upper middle income",
+        "perc": "1.806382078"
+    },
+    {
+        "country": "Uruguay",
+        "perc": "2.092316749"
+    },
+    {
+        "country": "United States",
+        "perc": "14.49065352"
+    },
+    {
+        "country": "Uzbekistan",
+        "perc": "3.91690324"
+    },
+    {
+        "country": "St. Vincent and the Grenadines",
+        "perc": "4.181359741"
+    },
+    {
+        "country": "Venezuela, RB",
+        "perc": "4.514736572"
+    },
+    {
+        "country": "British Virgin Islands",
+        "perc": "57.46920344"
+    },
+    {
+        "country": "Virgin Islands (U.S.)",
+        "perc": "53.36387841"
+    },
+    {
+        "country": "Vietnam",
+        "perc": "0.077897131"
+    },
+    {
+        "country": "Vanuatu",
+        "perc": "1.204222904"
+    },
+    {
+        "country": "World",
+        "perc": "3.330424745"
+    },
+    {
+        "country": "Samoa",
+        "perc": "2.550872544"
+    },
+    {
+        "country": "Kosovo",
+        "perc": ""
+    },
+    {
+        "country": "Yemen, Rep.",
+        "perc": "1.282529228"
+    },
+    {
+        "country": "South Africa",
+        "perc": "5.767090449"
+    },
+    {
+        "country": "Zambia",
+        "perc": "0.78902565"
+    },
+    {
+        "country": "Zimbabwe",
+        "perc": "2.556382525"
+    }
+]

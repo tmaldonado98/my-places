@@ -163,10 +163,10 @@ echo "
                             <p id=cityPop><b>City Population:</b> <span></span> </p>
                             <p id=fLangs><b>Main Language(s) Spoken:</b> <span></span> </p>
 
-                            <p id=fRel><b>National Religious Demographics:</b> </p>
-                            <p id=fRel><b>National Ethnic Demographics:</b> </p>
-                            <p id=fRel><b>National Average GDP per Capita:</b> </p>
-                            <p id=fMigrants><b>% of Country Inhabitants International Migrants:</b> </p>
+                            <p id=fRel><b>National Religious Demographics (as of 2020):</b> <br><span></span> </p>
+                            <p id=fEthnic><b>National Ethnic Demographics:</b> <span></span> </p>
+                            <p id=fGdp><b>National Average GDP per Capita (in USD):</b> <span></span> </p>
+                            <p id=fMigrants><b>% of Country Inhabitants International Migrants:</b> <br><span></span> </p>
                             <p id=fCurr><b>National Currency:</b> <span></span> </p>
                             
                             <h2 class=constr>**Site still under construction</h2>

@@ -1,0 +1,1054 @@
+﻿[
+    {},
+    {
+        "Data Source": "Last Updated Date"
+    },
+    {},
+    {
+        "Data Source": "Country Name",
+        "undefined": "2021"
+    },
+    {
+        "Data Source": "Aruba",
+        "undefined": "29342.1008575886"
+    },
+    {
+        "Data Source": "Africa Eastern and Southern",
+        "undefined": "1537.3360209254"
+    },
+    {
+        "Data Source": "Afghanistan",
+        "undefined": "368.754614175459"
+    },
+    {
+        "Data Source": "Africa Western and Central",
+        "undefined": "1757.03062622138"
+    },
+    {
+        "Data Source": "Angola",
+        "undefined": "1953.53375721508"
+    },
+    {
+        "Data Source": "Albania",
+        "undefined": "6492.87201224634"
+    },
+    {
+        "Data Source": "Andorra",
+        "undefined": "42137.3272710372"
+    },
+    {
+        "Data Source": "Arab World",
+        "undefined": "6266.35991574864"
+    },
+    {
+        "Data Source": "United Arab Emirates",
+        "undefined": "44315.5541834116"
+    },
+    {
+        "Data Source": "Argentina",
+        "undefined": "10636.1201956183"
+    },
+    {
+        "Data Source": "Armenia",
+        "undefined": "4966.51347122366"
+    },
+    {
+        "Data Source": "American Samoa",
+        "undefined": "15743.3107582991"
+    },
+    {
+        "Data Source": "Antigua and Barbuda",
+        "undefined": "15781.3957017982"
+    },
+    {
+        "Data Source": "Australia",
+        "undefined": "60443.1091649968"
+    },
+    {
+        "Data Source": "Austria",
+        "undefined": "53637.7057109897"
+    },
+    {
+        "Data Source": "Azerbaijan",
+        "undefined": "5387.99797495383"
+    },
+    {
+        "Data Source": "Burundi",
+        "undefined": "221.477676223363"
+    },
+    {
+        "Data Source": "Belgium",
+        "undefined": "51247.0143531626"
+    },
+    {
+        "Data Source": "Benin",
+        "undefined": "1319.1549945174"
+    },
+    {
+        "Data Source": "Burkina Faso",
+        "undefined": "893.077155776863"
+    },
+    {
+        "Data Source": "Bangladesh",
+        "undefined": "2457.92487986361"
+    },
+    {
+        "Data Source": "Bulgaria",
+        "undefined": "12221.4966064171"
+    },
+    {
+        "Data Source": "Bahrain",
+        "undefined": "26562.9691354026"
+    },
+    {
+        "Data Source": "Bahamas, The",
+        "undefined": "27478.3896289831"
+    },
+    {
+        "Data Source": "Bosnia and Herzegovina",
+        "undefined": "7143.3105484321"
+    },
+    {
+        "Data Source": "Belarus",
+        "undefined": "7302.25779418774"
+    },
+    {
+        "Data Source": "Belize",
+        "undefined": "6228.26730928353"
+    },
+    {
+        "Data Source": "Bermuda",
+        "undefined": "114090.328338579"
+    },
+    {
+        "Data Source": "Bolivia",
+        "undefined": "3345.19658873831"
+    },
+    {
+        "Data Source": "Brazil",
+        "undefined": "7507.16097080234"
+    },
+    {
+        "Data Source": "Barbados",
+        "undefined": "17225.4623044097"
+    },
+    {
+        "Data Source": "Brunei Darussalam",
+        "undefined": "31449.0765620727"
+    },
+    {
+        "Data Source": "Bhutan",
+        "undefined": "3266.36490519183"
+    },
+    {
+        "Data Source": "Botswana",
+        "undefined": "6805.22127398897"
+    },
+    {
+        "Data Source": "Central African Republic",
+        "undefined": "461.137490166508"
+    },
+    {
+        "Data Source": "Canada",
+        "undefined": "51987.9390529728"
+    },
+    {
+        "Data Source": "Central Europe and the Baltics",
+        "undefined": "18751.026511843"
+    },
+    {
+        "Data Source": "Switzerland",
+        "undefined": "91991.6004583563"
+    },
+    {
+        "Data Source": "Channel Islands"
+    },
+    {
+        "Data Source": "Chile",
+        "undefined": "16265.0959767147"
+    },
+    {
+        "Data Source": "China",
+        "undefined": "12556.3331200058"
+    },
+    {
+        "Data Source": "Cote d'Ivoire",
+        "undefined": "2549.04129724734"
+    },
+    {
+        "Data Source": "Cameroon",
+        "undefined": "1666.93273443122"
+    },
+    {
+        "Data Source": "Congo, Dem. Rep.",
+        "undefined": "577.209215199828"
+    },
+    {
+        "Data Source": "Congo, Rep.",
+        "undefined": "2290.38289133244"
+    },
+    {
+        "Data Source": "Colombia",
+        "undefined": "6104.1367093039"
+    },
+    {
+        "Data Source": "Comoros",
+        "undefined": "1577.47102705052"
+    },
+    {
+        "Data Source": "Cabo Verde",
+        "undefined": "3293.23305430614"
+    },
+    {
+        "Data Source": "Costa Rica",
+        "undefined": "12472.4437294954"
+    },
+    {
+        "Data Source": "Caribbean small states",
+        "undefined": "10063.6912979586"
+    },
+    {
+        "Data Source": "Cuba"
+    },
+    {
+        "Data Source": "Curacao",
+        "undefined": "17717.5964802588"
+    },
+    {
+        "Data Source": "Cayman Islands",
+        "undefined": "86568.7696368603"
+    },
+    {
+        "Data Source": "Cyprus",
+        "undefined": "31551.81640625"
+    },
+    {
+        "Data Source": "Czechia",
+        "undefined": "26821.2452279995"
+    },
+    {
+        "Data Source": "Germany",
+        "undefined": "51203.5544731043"
+    },
+    {
+        "Data Source": "Djibouti",
+        "undefined": "3150.43672926335"
+    },
+    {
+        "Data Source": "Dominica",
+        "undefined": "7653.17187042868"
+    },
+    {
+        "Data Source": "Denmark",
+        "undefined": "68007.7566732954"
+    },
+    {
+        "Data Source": "Dominican Republic",
+        "undefined": "8476.75215730978"
+    },
+    {
+        "Data Source": "Algeria",
+        "undefined": "3690.62787797599"
+    },
+    {
+        "Data Source": "East Asia & Pacific (excluding high income)",
+        "undefined": "9771.64820574671"
+    },
+    {
+        "Data Source": "Early-demographic dividend",
+        "undefined": "3702.69278613251"
+    },
+    {
+        "Data Source": "East Asia & Pacific",
+        "undefined": "13041.7811855841"
+    },
+    {
+        "Data Source": "Europe & Central Asia (excluding high income)",
+        "undefined": "8758.93855271138"
+    },
+    {
+        "Data Source": "Europe & Central Asia",
+        "undefined": "27152.4712288326"
+    },
+    {
+        "Data Source": "Ecuador",
+        "undefined": "5965.13287054416"
+    },
+    {
+        "Data Source": "Egypt, Arab Rep.",
+        "undefined": "3698.83498105861"
+    },
+    {
+        "Data Source": "Euro area",
+        "undefined": "42450.1537720293"
+    },
+    {
+        "Data Source": "Eritrea"
+    },
+    {
+        "Data Source": "Spain",
+        "undefined": "30103.513733191"
+    },
+    {
+        "Data Source": "Estonia",
+        "undefined": "27943.701219882"
+    },
+    {
+        "Data Source": "Ethiopia",
+        "undefined": "925.077428048534"
+    },
+    {
+        "Data Source": "European Union",
+        "undefined": "38411.062779601"
+    },
+    {
+        "Data Source": "Fragile and conflict affected situations",
+        "undefined": "1784.73432479422"
+    },
+    {
+        "Data Source": "Finland",
+        "undefined": "53654.7502964259"
+    },
+    {
+        "Data Source": "Fiji",
+        "undefined": "4646.6127232145"
+    },
+    {
+        "Data Source": "France",
+        "undefined": "43658.9789781222"
+    },
+    {
+        "Data Source": "Faroe Islands",
+        "undefined": "69010.3098011151"
+    },
+    {
+        "Data Source": "Micronesia, Fed. Sts.",
+        "undefined": "3571.33676887856"
+    },
+    {
+        "Data Source": "Gabon",
+        "undefined": "8635.32569443437"
+    },
+    {
+        "Data Source": "United Kingdom",
+        "undefined": "46510.2827819127"
+    },
+    {
+        "Data Source": "Georgia",
+        "undefined": "5023.27437961979"
+    },
+    {
+        "Data Source": "Ghana",
+        "undefined": "2363.29929621422"
+    },
+    {
+        "Data Source": "Gibraltar"
+    },
+    {
+        "Data Source": "Guinea",
+        "undefined": "1189.17599946631"
+    },
+    {
+        "Data Source": "Gambia, The",
+        "undefined": "772.152395143237"
+    },
+    {
+        "Data Source": "Guinea-Bissau",
+        "undefined": "795.118569260485"
+    },
+    {
+        "Data Source": "Equatorial Guinea",
+        "undefined": "7506.66752306086"
+    },
+    {
+        "Data Source": "Greece",
+        "undefined": "20192.5963039061"
+    },
+    {
+        "Data Source": "Grenada",
+        "undefined": "9010.57224466261"
+    },
+    {
+        "Data Source": "Greenland"
+    },
+    {
+        "Data Source": "Guatemala",
+        "undefined": "5025.5422907779"
+    },
+    {
+        "Data Source": "Guam",
+        "undefined": "35904.8635462723"
+    },
+    {
+        "Data Source": "Guyana",
+        "undefined": "9998.54431136155"
+    },
+    {
+        "Data Source": "High income",
+        "undefined": "48225.2412096793"
+    },
+    {
+        "Data Source": "Hong Kong SAR, China",
+        "undefined": "49800.5424137576"
+    },
+    {
+        "Data Source": "Honduras",
+        "undefined": "2771.71746050946"
+    },
+    {
+        "Data Source": "Heavily indebted poor countries (HIPC)",
+        "undefined": "1035.89255286148"
+    },
+    {
+        "Data Source": "Croatia",
+        "undefined": "17685.3252834553"
+    },
+    {
+        "Data Source": "Haiti",
+        "undefined": "1829.59304417211"
+    },
+    {
+        "Data Source": "Hungary",
+        "undefined": "18728.1218948689"
+    },
+    {
+        "Data Source": "IBRD only",
+        "undefined": "7221.4063511037"
+    },
+    {
+        "Data Source": "IDA & IBRD total",
+        "undefined": "5682.46667679398"
+    },
+    {
+        "Data Source": "IDA total",
+        "undefined": "1426.02871329881"
+    },
+    {
+        "Data Source": "IDA blend",
+        "undefined": "1842.77104941479"
+    },
+    {
+        "Data Source": "Indonesia",
+        "undefined": "4332.70928089396"
+    },
+    {
+        "Data Source": "IDA only",
+        "undefined": "1216.37298905564"
+    },
+    {
+        "Data Source": "Isle of Man"
+    },
+    {
+        "Data Source": "India",
+        "undefined": "2256.59040870506"
+    },
+    {
+        "Data Source": "Not classified"
+    },
+    {
+        "Data Source": "Ireland",
+        "undefined": "100172.079253421"
+    },
+    {
+        "Data Source": "Iran, Islamic Rep.",
+        "undefined": "4091.20918670534"
+    },
+    {
+        "Data Source": "Iraq",
+        "undefined": "4775.3774539013"
+    },
+    {
+        "Data Source": "Iceland",
+        "undefined": "68727.636664709"
+    },
+    {
+        "Data Source": "Israel",
+        "undefined": "52170.7118623335"
+    },
+    {
+        "Data Source": "Italy",
+        "undefined": "35657.4975631691"
+    },
+    {
+        "Data Source": "Jamaica",
+        "undefined": "5183.58130458676"
+    },
+    {
+        "Data Source": "Jordan",
+        "undefined": "4103.25896599583"
+    },
+    {
+        "Data Source": "Japan",
+        "undefined": "39312.6603730693"
+    },
+    {
+        "Data Source": "Kazakhstan",
+        "undefined": "10373.7897924367"
+    },
+    {
+        "Data Source": "Kenya",
+        "undefined": "2081.79985458438"
+    },
+    {
+        "Data Source": "Kyrgyz Republic",
+        "undefined": "1276.7003650159"
+    },
+    {
+        "Data Source": "Cambodia",
+        "undefined": "1625.23501955454"
+    },
+    {
+        "Data Source": "Kiribati",
+        "undefined": "1606.46251377314"
+    },
+    {
+        "Data Source": "St. Kitts and Nevis",
+        "undefined": "18082.6101907478"
+    },
+    {
+        "Data Source": "Korea, Rep.",
+        "undefined": "34997.7816427848"
+    },
+    {
+        "Data Source": "Kuwait"
+    },
+    {
+        "Data Source": "Latin America & Caribbean (excluding high income)",
+        "undefined": "7728.03330913836"
+    },
+    {
+        "Data Source": "Lao PDR",
+        "undefined": "2535.6234315211"
+    },
+    {
+        "Data Source": "Lebanon",
+        "undefined": "4136.14634699332"
+    },
+    {
+        "Data Source": "Liberia",
+        "undefined": "675.66318584916"
+    },
+    {
+        "Data Source": "Libya",
+        "undefined": "6357.19555043805"
+    },
+    {
+        "Data Source": "St. Lucia",
+        "undefined": "9414.22623085983"
+    },
+    {
+        "Data Source": "Latin America & Caribbean",
+        "undefined": "8327.60519038266"
+    },
+    {
+        "Data Source": "Least developed countries: UN classification",
+        "undefined": "1150.03014767511"
+    },
+    {
+        "Data Source": "Low income",
+        "undefined": "704.508786523468"
+    },
+    {
+        "Data Source": "Liechtenstein"
+    },
+    {
+        "Data Source": "Sri Lanka",
+        "undefined": "4013.68765683604"
+    },
+    {
+        "Data Source": "Lower middle income",
+        "undefined": "2572.70514396668"
+    },
+    {
+        "Data Source": "Low & middle income",
+        "undefined": "5491.92212029334"
+    },
+    {
+        "Data Source": "Lesotho",
+        "undefined": "1094.09818489303"
+    },
+    {
+        "Data Source": "Late-demographic dividend",
+        "undefined": "11465.857770559"
+    },
+    {
+        "Data Source": "Lithuania",
+        "undefined": "23723.3402510345"
+    },
+    {
+        "Data Source": "Luxembourg",
+        "undefined": "133590.146975586"
+    },
+    {
+        "Data Source": "Latvia",
+        "undefined": "21148.1629405415"
+    },
+    {
+        "Data Source": "Macao SAR, China",
+        "undefined": "43873.5911643329"
+    },
+    {
+        "Data Source": "St. Martin (French part)"
+    },
+    {
+        "Data Source": "Morocco",
+        "undefined": "3795.38012695313"
+    },
+    {
+        "Data Source": "Monaco",
+        "undefined": "234315.460503547"
+    },
+    {
+        "Data Source": "Moldova",
+        "undefined": "5230.66173289497"
+    },
+    {
+        "Data Source": "Madagascar",
+        "undefined": "500.511031950657"
+    },
+    {
+        "Data Source": "Maldives",
+        "undefined": "10366.2933584066"
+    },
+    {
+        "Data Source": "Middle East & North Africa",
+        "undefined": "7562.82507779443"
+    },
+    {
+        "Data Source": "Mexico",
+        "undefined": "10045.6805004963"
+    },
+    {
+        "Data Source": "Marshall Islands",
+        "undefined": "6172.14506539834"
+    },
+    {
+        "Data Source": "Middle income",
+        "undefined": "6074.0849211156"
+    },
+    {
+        "Data Source": "North Macedonia",
+        "undefined": "6694.64112581709"
+    },
+    {
+        "Data Source": "Mali",
+        "undefined": "873.794862375503"
+    },
+    {
+        "Data Source": "Malta",
+        "undefined": "33486.671983855"
+    },
+    {
+        "Data Source": "Myanmar",
+        "undefined": "1209.92694225482"
+    },
+    {
+        "Data Source": "Middle East & North Africa (excluding high income)",
+        "undefined": "3565.23934309396"
+    },
+    {
+        "Data Source": "Montenegro",
+        "undefined": "9465.70399879557"
+    },
+    {
+        "Data Source": "Mongolia",
+        "undefined": "4566.14015433014"
+    },
+    {
+        "Data Source": "Northern Mariana Islands"
+    },
+    {
+        "Data Source": "Mozambique",
+        "undefined": "491.839112773674"
+    },
+    {
+        "Data Source": "Mauritania",
+        "undefined": "2166.04679858214"
+    },
+    {
+        "Data Source": "Mauritius",
+        "undefined": "9106.23720230699"
+    },
+    {
+        "Data Source": "Malawi",
+        "undefined": "634.835660105302"
+    },
+    {
+        "Data Source": "Malaysia",
+        "undefined": "11109.2618387745"
+    },
+    {
+        "Data Source": "North America",
+        "undefined": "68369.6627865258"
+    },
+    {
+        "Data Source": "Namibia",
+        "undefined": "4865.55776470864"
+    },
+    {
+        "Data Source": "New Caledonia",
+        "undefined": "37159.5467662165"
+    },
+    {
+        "Data Source": "Niger",
+        "undefined": "590.629454795899"
+    },
+    {
+        "Data Source": "Nigeria",
+        "undefined": "2065.74906750923"
+    },
+    {
+        "Data Source": "Nicaragua",
+        "undefined": "2045.53540189014"
+    },
+    {
+        "Data Source": "Netherlands",
+        "undefined": "57767.8788108173"
+    },
+    {
+        "Data Source": "Norway",
+        "undefined": "89154.2760934922"
+    },
+    {
+        "Data Source": "Nepal",
+        "undefined": "1208.21853383767"
+    },
+    {
+        "Data Source": "Nauru",
+        "undefined": "10648.1413901852"
+    },
+    {
+        "Data Source": "New Zealand",
+        "undefined": "48781.0266328884"
+    },
+    {
+        "Data Source": "OECD members",
+        "undefined": "42446.8593225577"
+    },
+    {
+        "Data Source": "Oman",
+        "undefined": "19509.4664633867"
+    },
+    {
+        "Data Source": "Other small states",
+        "undefined": "13878.8148434096"
+    },
+    {
+        "Data Source": "Pakistan",
+        "undefined": "1505.01019279429"
+    },
+    {
+        "Data Source": "Panama",
+        "undefined": "14617.6044816372"
+    },
+    {
+        "Data Source": "Peru",
+        "undefined": "6621.57433601881"
+    },
+    {
+        "Data Source": "Philippines",
+        "undefined": "3460.53096344408"
+    },
+    {
+        "Data Source": "Palau",
+        "undefined": "12083.8881491345"
+    },
+    {
+        "Data Source": "Papua New Guinea",
+        "undefined": "2672.94579035518"
+    },
+    {
+        "Data Source": "Poland",
+        "undefined": "17999.9099495446"
+    },
+    {
+        "Data Source": "Pre-demographic dividend",
+        "undefined": "1411.4592703128"
+    },
+    {
+        "Data Source": "Puerto Rico",
+        "undefined": "32640.710335631"
+    },
+    {
+        "Data Source": "Korea, Dem. People's Rep."
+    },
+    {
+        "Data Source": "Portugal",
+        "undefined": "24567.5092651"
+    },
+    {
+        "Data Source": "Paraguay",
+        "undefined": "5891.49996504641"
+    },
+    {
+        "Data Source": "West Bank and Gaza",
+        "undefined": "3663.96905468875"
+    },
+    {
+        "Data Source": "Pacific island small states",
+        "undefined": "3643.84543691992"
+    },
+    {
+        "Data Source": "Post-demographic dividend",
+        "undefined": "49223.5950344334"
+    },
+    {
+        "Data Source": "French Polynesia",
+        "undefined": "19914.6035133645"
+    },
+    {
+        "Data Source": "Qatar",
+        "undefined": "66838.357433014"
+    },
+    {
+        "Data Source": "Romania",
+        "undefined": "14858.2294290445"
+    },
+    {
+        "Data Source": "Russian Federation",
+        "undefined": "12194.77734375"
+    },
+    {
+        "Data Source": "Rwanda",
+        "undefined": "822.3479885942"
+    },
+    {
+        "Data Source": "South Asia",
+        "undefined": "2149.8215950035"
+    },
+    {
+        "Data Source": "Saudi Arabia",
+        "undefined": "23185.8707917797"
+    },
+    {
+        "Data Source": "Sudan",
+        "undefined": "751.821350097656"
+    },
+    {
+        "Data Source": "Senegal",
+        "undefined": "1636.89320864296"
+    },
+    {
+        "Data Source": "Singapore",
+        "undefined": "72794.0030226738"
+    },
+    {
+        "Data Source": "Solomon Islands",
+        "undefined": "2304.84456746354"
+    },
+    {
+        "Data Source": "Sierra Leone",
+        "undefined": "480.039211301066"
+    },
+    {
+        "Data Source": "El Salvador",
+        "undefined": "4551.18466141298"
+    },
+    {
+        "Data Source": "San Marino"
+    },
+    {
+        "Data Source": "Somalia",
+        "undefined": "446.981559635259"
+    },
+    {
+        "Data Source": "Serbia",
+        "undefined": "9230.17831602601"
+    },
+    {
+        "Data Source": "Sub-Saharan Africa (excluding high income)",
+        "undefined": "1625.18311846119"
+    },
+    {
+        "Data Source": "South Sudan"
+    },
+    {
+        "Data Source": "Sub-Saharan Africa",
+        "undefined": "1626.27792590406"
+    },
+    {
+        "Data Source": "Small states",
+        "undefined": "12588.9277948417"
+    },
+    {
+        "Data Source": "Sao Tome and Principe",
+        "undefined": "2360.54355385897"
+    },
+    {
+        "Data Source": "Suriname",
+        "undefined": "4869.13422621242"
+    },
+    {
+        "Data Source": "Slovak Republic",
+        "undefined": "21391.9253336042"
+    },
+    {
+        "Data Source": "Slovenia",
+        "undefined": "29291.4006234431"
+    },
+    {
+        "Data Source": "Sweden",
+        "undefined": "61028.7380600287"
+    },
+    {
+        "Data Source": "Eswatini",
+        "undefined": "3978.4035281759"
+    },
+    {
+        "Data Source": "Sint Maarten (Dutch part)"
+    },
+    {
+        "Data Source": "Seychelles",
+        "undefined": "14653.3093943039"
+    },
+    {
+        "Data Source": "Syrian Arab Republic"
+    },
+    {
+        "Data Source": "Turks and Caicos Islands",
+        "undefined": "20908.5827016004"
+    },
+    {
+        "Data Source": "Chad",
+        "undefined": "685.690284124456"
+    },
+    {
+        "Data Source": "East Asia & Pacific (IDA & IBRD countries)",
+        "undefined": "9880.09606977467"
+    },
+    {
+        "Data Source": "Europe & Central Asia (IDA & IBRD countries)",
+        "undefined": "9842.05226527455"
+    },
+    {
+        "Data Source": "Togo",
+        "undefined": "973.206129076133"
+    },
+    {
+        "Data Source": "Thailand",
+        "undefined": "7066.19054595323"
+    },
+    {
+        "Data Source": "Tajikistan",
+        "undefined": "897.047510293411"
+    },
+    {
+        "Data Source": "Turkmenistan"
+    },
+    {
+        "Data Source": "Latin America & the Caribbean (IDA & IBRD countries)",
+        "undefined": "8108.91586994813"
+    },
+    {
+        "Data Source": "Timor-Leste",
+        "undefined": "2741.39393111832"
+    },
+    {
+        "Data Source": "Middle East & North Africa (IDA & IBRD countries)",
+        "undefined": "3564.06602531565"
+    },
+    {
+        "Data Source": "Tonga",
+        "undefined": "4426.00063706281"
+    },
+    {
+        "Data Source": "South Asia (IDA & IBRD)",
+        "undefined": "2149.8215950035"
+    },
+    {
+        "Data Source": "Sub-Saharan Africa (IDA & IBRD countries)",
+        "undefined": "1626.27792590406"
+    },
+    {
+        "Data Source": "Trinidad and Tobago",
+        "undefined": "16032.5027680992"
+    },
+    {
+        "Data Source": "Tunisia",
+        "undefined": "3807.13915027254"
+    },
+    {
+        "Data Source": "Turkiye",
+        "undefined": "9661.23597511355"
+    },
+    {
+        "Data Source": "Tuvalu",
+        "undefined": "5632.00299343641"
+    },
+    {
+        "Data Source": "Tanzania",
+        "undefined": "1099.28759765625"
+    },
+    {
+        "Data Source": "Uganda",
+        "undefined": "883.892032311279"
+    },
+    {
+        "Data Source": "Ukraine",
+        "undefined": "4835.57177734375"
+    },
+    {
+        "Data Source": "Upper middle income",
+        "undefined": "10828.0506944074"
+    },
+    {
+        "Data Source": "Uruguay",
+        "undefined": "17313.1883484186"
+    },
+    {
+        "Data Source": "United States",
+        "undefined": "70248.6290002242"
+    },
+    {
+        "Data Source": "Uzbekistan",
+        "undefined": "1983.06472288992"
+    },
+    {
+        "Data Source": "St. Vincent and the Grenadines",
+        "undefined": "8666.38704104884"
+    },
+    {
+        "Data Source": "Venezuela, RB"
+    },
+    {
+        "Data Source": "British Virgin Islands"
+    },
+    {
+        "Data Source": "Virgin Islands (U.S.)"
+    },
+    {
+        "Data Source": "Vietnam",
+        "undefined": "3756.48912117326"
+    },
+    {
+        "Data Source": "Vanuatu",
+        "undefined": "2996.62106154483"
+    },
+    {
+        "Data Source": "World",
+        "undefined": "12234.7968020033"
+    },
+    {
+        "Data Source": "Samoa",
+        "undefined": "3857.31846401804"
+    },
+    {
+        "Data Source": "Kosovo",
+        "undefined": "5269.78390114389"
+    },
+    {
+        "Data Source": "Yemen, Rep."
+    },
+    {
+        "Data Source": "South Africa",
+        "undefined": "7055.04477598783"
+    },
+    {
+        "Data Source": "Zambia",
+        "undefined": "1137.34363269164"
+    },
+    {
+        "Data Source": "Zimbabwe",
+        "undefined": "1773.92041088078"
+    }
+]
