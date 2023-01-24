@@ -224,11 +224,7 @@ th {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin: auto;
-}
-
-.edit-field {
-  align-self: flex-end;
+  margin: 2rem auto;
 }
 
 .modal-edit, .modal-delete, .editBtn {
@@ -767,6 +763,11 @@ footer p {
   backdrop-filter: blur(5px);
   background-color: #fffff038;
   border-radius: 30px;  
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
 }
 
 /*              */

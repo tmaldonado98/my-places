@@ -472,10 +472,6 @@ $('body').on('mouseover', '.popup-with-zoom-anim', function (){
 });
 
 let scriptPlaceCse = "<script id=script-place-cse async=true src='https://cse.google.com/cse.js?cx=22bdf86666de74d21'></script>";
-function hideLoader(){
-    $('.lds-ring').fadeOut();
-    console.log('aewjwhejq')
-}
 
 
 $('body').on('click', '.see-more', function(){
@@ -577,34 +573,37 @@ $('#map').ready(function(){
     })  
 });
 
+
+
 $('body').on('click', '.see-more' , function(){
 
-    $('.modal').ready(function() {
-        $('.edit-field').removeClass('edit-field-visible');       
+    $('.edit-field').removeClass('edit-field-visible');       
+    let mCountry = $('#m-country').text();
+    let mCity = $('#m-city').text();
+    let mLandmark = $('#m-landmark').text();
 
-        let mCountry = $('#m-country').text();
-        let mCity = $('#m-city').text();
-        let mLandmark = $('#m-landmark').text();
-
-        if (mLandmark.length <= 0) {
-            $('#m-landmark').hide();
-            $('#mlc').hide();
-        }        
-        if (mCity.length <= 1) {
-            $('#m-city').hide();
-            $('#mcc').hide();
-        } 
-        if (mCountry.length <= 1) {
-            $('#m-country').hide();
-            $('#mcc').hide();
-        } 
-        if (mCountry.length <= 1 && mCity.length <= 1) {
-            $('#mlc').hide();
-        }
-    });
-
-    $('#section-modal-map').on('mouseenter', function () {
-
+    if (mLandmark.length <= 0) {
+        $('#m-landmark').hide();
+        $('#mlc').hide();
+    }        
+    if (mCity.length <= 1) {
+        $('#m-city').hide();
+        $('#mcc').hide();
+    } 
+    if (mCountry.length <= 1) {
+        $('#m-country').hide();
+        $('#mcc').hide();
+    } 
+    if (mCountry.length <= 1 && mCity.length <= 1) {
+        $('#mlc').hide();
+    }
+   
+    setTimeout(() => {
+        $('.lds-ring').css('display', 'none')
+    }, 4000);
+    
+    setTimeout(() => {
+    
         if (mCountry.length > 0 && mCity.length > 0) {
             $.getJSON("worldcities.json", function(data){
 
@@ -764,9 +763,12 @@ $('body').on('click', '.see-more' , function(){
             })
         })
 
-    })
-});
-
+    }, 6000);
 
 });
+// });
 
+
+});
+
+// });

@@ -89,8 +89,7 @@ $landmark = $_POST['landmark'];
                 $rcountry=ucwords($row['country']);
                 $rcity=ucwords($row['city']);
                 $rlandmark=ucwords($row['landmark']);
-                $edit = 'edit';
-
+                
 echo "            
         <tr data-marker=$marker data-position=$position name=row class='data-row draggable ui-state-default ui-widget-content'  value=$marker>
             <div class=drag-container>
@@ -263,7 +262,7 @@ echo "<p id=total-places ><b>Total Number Of Places: " . $rowcount . "</b></p>";
                     <div class="container-input">
                         <span>(Recommended)</span>
                         <label for="country"><p>Country</p></label>
-                        <input list="countryList" autofocus autocomplete='off' class="text" id="country" placeholder="Country" type="text" name="country"></input>
+                        <input list="countryList" autocomplete='off' class="text" id="country" placeholder="Country" type="text" name="country"></input>
                         <datalist id="countryList">
                             <option value="Aruba"></option>
                             <option value="Afghanistan"></option>
