@@ -119,6 +119,7 @@ echo "
                     
 
                     <div id=container-search-engine>
+                        <div class=lds-ring><div></div><div></div><div></div><div></div></div>
                         <div class=search-engine>
                                                   
                         </div>
@@ -810,6 +811,7 @@ echo "<p id=total-places ><b>Total Number Of Places: " . $rowcount . "</b></p>";
 <?php
 mysqli_close($con);
 ?>
+    <section id="scripts">
     <script defer src="https://code.jquery.com/jquery-3.6.1.js"></script>
 
     <script defer type="module" src="script.js"></script>
@@ -828,6 +830,6 @@ mysqli_close($con);
     
         
     <script src='https://cdn.maptiler.com/maplibre-gl-js/v2.4.0/maplibre-gl.js'></script>
-    
+    </section>
 </body>
 </html>

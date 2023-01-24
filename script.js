@@ -471,23 +471,29 @@ $('body').on('mouseover', '.popup-with-zoom-anim', function (){
     });
 });
 
+let scriptPlaceCse = "<script id=script-place-cse async=true src='https://cse.google.com/cse.js?cx=22bdf86666de74d21'></script>";
+function hideLoader(){
+    $('.lds-ring').fadeOut();
+    console.log('aewjwhejq')
+}
+
 
 $('body').on('click', '.see-more', function(){
     let mCountry = $('#m-country').text();
     let mCity = $('#m-city').text();
     let mLandmark = $('#m-landmark').text();
 
-    // console.log(Object.keys($('#modal-title')).join(", "));
-    const arrayModalTitle = $('#modal-title').children('span');
 
-    for (const span in arrayModalTitle) {
-
-    }
-
-    ////****************
     $('.search-engine').append("<div class='gcse-searchresults-only'></div>");
-    $('head').append("<script async=true src='https://cse.google.com/cse.js?cx=22bdf86666de74d21'></script>");
-
+    $('#scripts').append(scriptPlaceCse);
+    
+    setTimeout(() => {
+        $('.lds-ring').css('display', 'none')
+      }, 4000);
+    // $('.gsc-control-cse').onload(function(){
+    //     hideLoader();
+    //     console.log('testtest');
+    // });
     window.history.replaceState(null, null, "?q="+mCountry +' ' + mCity +' ' + mLandmark +' ');
     
 });
@@ -496,41 +502,23 @@ $('body').on('click', '.modal-edit', function(){
     $('.edit-field').addClass('edit-field-visible');
 });
 
-$('body').on('click', '.mfp-close', function(){
+function unloadModalCse(){
     $('.edit-field').removeClass('edit-field-visible');
 
     window.history.replaceState(null, null, "?q=");
     $('head').find('script[src="https://cse.google.com/cse.js?cx=22bdf86666de74d21"]').remove();
     $('head').find('script[src="https://www.google.com/cse/static/element/f275a300093f201a/cse_element__en.js?usqp=CAI%3D"]').remove();
     $('.search-engine').find('.gsc-control-cse').remove(); 
-    // .gcse-searchresults-only
+    $('.lds-ring').css('display', 'block');
+}
+
+$('body').on('click', '.mfp-close', function(){
+    unloadModalCse();
 });
     
-    // $('.mfp-wrap').on('unload', function(event){
-
-    //     // if ($('.mfp-wrap').attr('display', 'none')) {
-    //         // event.stopPropagation();
-            
-    //         $('.edit-field').removeClass('edit-field-visible');
-            
-    //         window.history.replaceState(null, null, "?q=");
-    //         $('head').find('script[src="https://cse.google.com/cse.js?cx=22bdf86666de74d21"]').remove();
-    //         $('head').find('script[src="https://www.google.com/cse/static/element/f275a300093f201a/cse_element__en.js?usqp=CAI%3D"]').remove();
-    //         $('.search-engine').find('.gsc-control-cse').remove(); 
-            
-    //         console.log('test passed')
-    //     // }
-    // });
-
-
 $('body').keydown(function(e){
     if (e.keyCode === 27) {
-        $('.edit-field').removeClass('edit-field-visible');
-        
-        window.history.replaceState(null, null, "?q=");
-        $('head').find('script[src="https://cse.google.com/cse.js?cx=22bdf86666de74d21"]').remove();
-        $('head').find('script[src="https://www.google.com/cse/static/element/f275a300093f201a/cse_element__en.js?usqp=CAI%3D"]').remove();
-        $('.search-engine').find('.gsc-control-cse').remove();
+        unloadModalCse();
     }
 });
 
@@ -543,7 +531,6 @@ $('#map-section').ready(function(){
 
 ///function for main map markers
 $('#map').ready(function(){
-    // console.log('test');
     
     $('.data-row').each(function(){
         let coText = $(this).children('#country-text').text();
@@ -557,7 +544,6 @@ $('#map').ready(function(){
                 $.each(data.worldcities, function (){
 
                     if (coText  === (this["country"]) && ciText === (this["city"])) {
-                        // console.log(coText)
                     
                         const country = new maplibregl.Marker()
                         .setLngLat([this["lng"], this["lat"]])
@@ -615,7 +601,9 @@ $('body').on('click', '.see-more' , function(){
         if (mCountry.length <= 1 && mCity.length <= 1) {
             $('#mlc').hide();
         }
+    });
 
+    $('#section-modal-map').on('mouseenter', function () {
 
         if (mCountry.length > 0 && mCity.length > 0) {
             $.getJSON("worldcities.json", function(data){
@@ -643,7 +631,7 @@ $('body').on('click', '.see-more' , function(){
                         .addTo(map);
                         
 
-                        console.log((this["country"]) + (this["city"]));
+                        // console.log((this["country"]) + (this["city"]));
                     };
 
                 })
@@ -695,7 +683,7 @@ $('body').on('click', '.see-more' , function(){
                     const currencies = this.currencies;
                     const arrayCurrKeys = Object.keys(currencies);
                     const arrayCurrObjs = Object.values(currencies);
-                    console.log(Object.values(currencies));
+                    // console.log(Object.values(currencies));
 
                     $('#fCurr').children('span').html(
                         (JSON.stringify(arrayCurrObjs[0].name) + ' (' + arrayCurrKeys[0] +'), ' + JSON.stringify(arrayCurrObjs[0].symbol))
@@ -706,7 +694,7 @@ $('body').on('click', '.see-more' , function(){
 
                     const languages = this.languages;
                     const arrayLangObjs = Object.values(languages);
-                    console.log(Object.values(languages));                   
+                    // console.log(Object.values(languages));                   
 
                     $('#fLangs').children('span').html(
                         JSON.stringify(arrayLangObjs.join(", "))
@@ -743,6 +731,10 @@ $('body').on('click', '.see-more' , function(){
             $('#container-people-of').hide();
             $('.flag-container').hide();
         }
+        if (mCity.length === 0) {
+            $('#fCity').hide();
+            $('#cityPop').hide();
+        }
 
 
         $.getJSON('religiousdemographicspercentage.json', function(data){
@@ -752,7 +744,7 @@ $('body').on('click', '.see-more' , function(){
 
                     const religions = this;
                     const {Country, Region, Unaffiliated, Year, ...rest} = religions;
-                    console.log(rest);
+                    // console.log(rest);
                     let valWithPercentage = [];
                     for (const key in rest) {
 
@@ -761,7 +753,7 @@ $('body').on('click', '.see-more' , function(){
 
                     };
                     
-                    console.log(valWithPercentage);
+                    // console.log(valWithPercentage);
                     let elements = '';
                     for (let i = 0; i < valWithPercentage.length; i++) {
                         elements += (valWithPercentage[i]+'<br>')
@@ -777,3 +769,4 @@ $('body').on('click', '.see-more' , function(){
 
 
 });
+
