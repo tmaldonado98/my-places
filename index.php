@@ -156,32 +156,34 @@ echo "
                     </div>
                 
                     <div id=container-section-facts>
-                        <div id=facts1>
-                            <h3 id=as-of>As of 2021</h3>
-                            <p id=fCountry><b>Country:</b> <span></span></p>
-                            <p id=countryPop><b>Country Total Population:</b> <span></span> </p>
-                            <p id=fCapital><b>Capital City:</b> <span></span></p>
+                    <h3 id=as-of>As of 2021</h3>
+                        <div id=container-facts>
+                            <div id=facts1>
+                                <p id=fCountry><b>Country:</b> <span></span></p>
+                                <p id=countryPop><b>Country Total Population:</b> <span></span> </p>
+                                <p id=fCapital><b>Capital City:</b> <span></span></p>
 
-                            <p id=fCity><b>Your City:</b> <span></span> </p>
-                            <p id=cityPop><b>City Population:</b> <span></span> </p>
-                            <p id=fRel><b>National Religious Demographics (as of 2020):</b> <br><span></span> </p>".
-                            
-                            // <p id=fEthnic><b>National Ethnic Demographics:</b> <span></span> </p> 
-                            "
-                                                     
-                            
-                        </div>
-                            
-                        <div id=facts2>
-                            <p id=fLangs><b>Main Language(s) Spoken:</b> <span></span> </p>
-                            <p id=govt><b>Type Of Government:</b> <span></span> </p>
-                            <p id=fGdp><b>National Average GDP per Capita (in USD):</b> <span></span> </p>
-                            <p id=fMigrants><b>% of Country Inhabitants International Migrants:</b> <br><span></span> </p>
-                            <p id=fCurr><b>National Currency:</b> <span></span> </p>
+                                <p id=fCity><b>Your City:</b> <span></span> </p>
+                                <p id=cityPop><b>City Population:</b> <span></span> </p>
+                                <p id=fRel><b>National Religious Demographics (as of 2020):</b> <br><span></span> </p>".
 
+                                // <p id=fEthnic><b>National Ethnic Demographics:</b> <span></span> </p> 
+                                "
+
+
+                            </div>
+
+                            <div id=facts2>
+                                <p id=fLangs><b>Main Language(s) Spoken:</b> <span></span> </p>
+                                <p id=govt><b>Type Of Government:</b> <span></span> </p>
+                                <p id=fGdp><b>National Average GDP per Capita (in USD):</b> <span></span> </p>
+                                <p id=fMigrants><b>% of Country Inhabitants International Migrants:</b> <br><span></span> </p>
+                                <p id=fCurr><b>National Currency:</b> <span></span> </p>
+
+                                <p>Sources: WorldBank, </p>
+                            </div>
                         </div>
                     </div>
-                        <p>Sources: WorldBank, </p>
 
                     <div id=container-news>
                         <div id=news>
