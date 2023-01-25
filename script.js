@@ -192,15 +192,19 @@ $('body').on('change', '.checkbox', function(){
     }
 });//works
 
-$('body').on('click focus blur', '.checkbox', function(){
-    
+function scanCheckbox() {
     if ($('.checkbox:checked').length > 0) {
         $('.del-sel').addClass('del-sel-visible');
-
+    
     } else if ($('.checkbox:checked').length == 0) {
         $('.del-sel').removeClass('del-sel-visible');
         
     }
+
+}
+
+$('body').on('click focus blur', '.checkbox', function(){
+    scanCheckbox();
 });
 
 $('body').on('click', '#sel-all', function(){
@@ -368,9 +372,12 @@ $('body').on('click', '.del-sel', function(){
         
         if (confirmalert == true) {
             
-            $('body').find('.checkbox:checked').each(function (i){
-                id[i] = $(this).val();
-            });
+            // let findCheckedRows = function (){
+                $('body').find('.checkbox:checked').each(function (i){
+                    id[i] = $(this).val();
+                });
+            // };
+            // deleteCheckedRows();
 
             $.ajax({
                 method: 'POST',
@@ -380,7 +387,19 @@ $('body').on('click', '.del-sel', function(){
                 },
                 success: function () {
                     console.log('deleted');
-                    displayData();
+                    $('body').find('.checkbox:checked').each(function (){
+                        $(this).closest('.data-row').addClass('animateOut');
+                        
+                        
+                    });
+                    setTimeout(() => {
+                        $('.animateOut').addClass('animateOutHide');
+                        $('.animateOutHide').prop('checked', false);
+                        $('.del-sel').removeClass('del-sel-visible')
+                    }, 700);    
+                    
+                    // $(row).addClass('animateOut');
+                    // displayData();
                 }
             })
             
@@ -538,51 +557,73 @@ $('#map-section').ready(function(){
 });
 
 ///function for main map markers
-$('#map').ready(function(){
+let addMapMarkers = function (){
+$('.data-row').each(function(){
+    let coText = $(this).children('#country-text').text();
+    let ciText = $(this).children('#city-text').text();
+    // let laText = $(this).children('#landmark-text').text();
+
     
-    $('.data-row').each(function(){
-        let coText = $(this).children('#country-text').text();
-        let ciText = $(this).children('#city-text').text();
-        // let laText = $(this).children('#landmark-text').text();
+    if (coText.length > 0 && ciText.length > 0) {
+        $.getJSON("worldcities.json", function(data){
 
-        
-        if (coText.length > 0 && ciText.length > 0) {
-            $.getJSON("worldcities.json", function(data){
+            $.each(data.worldcities, function (){
 
-                $.each(data.worldcities, function (){
-
-                    if (coText  === (this["country"]) && ciText === (this["city"])) {
-                    
-                        const country = new maplibregl.Marker()
-                        .setLngLat([this["lng"], this["lat"]])
-                        .addTo(map);
-                    }
-                    
-
-                    
-                });//main closing bracket for each
-
-            });
-
-        }                
-        else if (coText.length > 0 && ciText.length === 0) {
-            $.getJSON("countrieswcoordinates.json", function(resp){
-                $.each(resp.countries, function(){
-                    
-                    if (coText  === (this.name["common"])) {
-                    
-                        const country = new maplibregl.Marker()
-                        .setLngLat([this.latlng[1], this.latlng[0]])
-                        .addTo(map);
-
-                    }
-                })
+                if (coText  === (this["country"]) && ciText === (this["city"])) {
                 
-            })        
-            } else{
-                console.log('error')
-            }
-    })  
+                    const country = new maplibregl.Marker()
+                    .setLngLat([this["lng"], this["lat"]])
+                    .addTo(map);
+                }
+                
+
+                
+            });//main closing bracket for each
+
+        });
+
+    }                
+    else if (coText.length > 0 && ciText.length === 0) {
+        $.getJSON("countrieswcoordinates.json", function(resp){
+            $.each(resp.countries, function(){
+                
+                if (coText  === (this.name["common"])) {
+                
+                    const country = new maplibregl.Marker()
+                    .setLngLat([this.latlng[1], this.latlng[0]])
+                    .addTo(map);
+
+                }
+            })
+            
+        })        
+    }
+})
+};  
+
+let table = $('#table');
+
+$('#map').ready(function(){
+    addMapMarkers();
+    
+   /* let mutObserver = new MutationObserver(mutation => {
+        // addMapMarkers();
+        console.log(mutation); // console.log(the changes)
+
+      });
+
+    mutObserver.observe(table, {
+        childList: true,
+        subtree: true,
+        attributes: false,
+        subtree: false,
+    });*/
+
+
+    // $('#table').on('DOMSubtreeModified', function(){
+    //     // console.log('map updated');
+    //   });
+
 });
 
 

@@ -223,10 +223,10 @@ echo "
 echo "    </table>
 </div>"; 
 
-$select = ("SELECT * FROM places_table");
-$count = mysqli_query($con, $select);
-$rowcount = mysqli_num_rows($count);
-echo "<p id=total-places ><b>Total Number Of Places: " . $rowcount . "</b></p>";
+// $select = ("SELECT * FROM places_table");
+// $count = mysqli_query($con, $select);
+// $rowcount = mysqli_num_rows($count);
+// echo "<p id=total-places ><b>Total Number Of Places: " . $rowcount . "</b></p>";
 
 ?>
        
@@ -794,9 +794,6 @@ echo "<p id=total-places ><b>Total Number Of Places: " . $rowcount . "</b></p>";
     </div>
 </section>
 
-<!-- <div class=search-engine>
-    <div class='gcse-searchresults-only' sandbox='allow-storage-access-by-user-activation allow-scripts allow-same-origin'></div>                                      
-</div> -->
 <footer>
     <p>
         Tomas Maldonado 2022
@@ -810,21 +807,19 @@ mysqli_close($con);
     <section id="scripts">
     <script defer src="https://code.jquery.com/jquery-3.6.1.js"></script>
 
-    <script defer type="module" src="script.js"></script>
+    <script defer src="script.js"></script>
 
     <!-- <script defer src='map-script.js'></script> -->
 
         <!-- jQuery UI plugin -->
     <script defer src="jquery-ui.js"></script>
 
-    <!-- <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script> -->
-
     
     <script defer src="sortable-script.js"></script>
 
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
     
-    <script  id=script-place-cse async=true src='https://cse.google.com/cse.js?cx=22bdf86666de74d21'></script>
+    <script async=true src='https://cse.google.com/cse.js?cx=22bdf86666de74d21'></script>
     
     <script src='https://cdn.maptiler.com/maplibre-gl-js/v2.4.0/maplibre-gl.js'></script>
     </section>
