@@ -118,7 +118,9 @@ echo "
                     
 
                     <div id=container-search-engine>
-                        <div class=lds-ring><div></div><div></div><div></div><div></div></div>
+                    ".
+                        // <div class=lds-ring><div></div><div></div><div></div><div></div></div>
+                        "
                         <div class=search-engine>
                                                   
                         </div>
@@ -154,41 +156,32 @@ echo "
                     </div>
                 
                     <div id=container-section-facts>
-                        <div id=facts>
-                            <p>As of 2021</p>
+                        <div id=facts1>
+                            <h3 id=as-of>As of 2021</h3>
                             <p id=fCountry><b>Country:</b> <span></span></p>
                             <p id=countryPop><b>Country Total Population:</b> <span></span> </p>
                             <p id=fCapital><b>Capital City:</b> <span></span></p>
 
                             <p id=fCity><b>Your City:</b> <span></span> </p>
                             <p id=cityPop><b>City Population:</b> <span></span> </p>
+                            <p id=fRel><b>National Religious Demographics (as of 2020):</b> <br><span></span> </p>".
+                            
+                            // <p id=fEthnic><b>National Ethnic Demographics:</b> <span></span> </p> 
+                            "
+                                                     
+                            
+                        </div>
+                            
+                        <div id=facts2>
                             <p id=fLangs><b>Main Language(s) Spoken:</b> <span></span> </p>
-
-                            <p id=fRel><b>National Religious Demographics (as of 2020):</b> <br><span></span> </p>
-                            <p id=fEthnic><b>National Ethnic Demographics:</b> <span></span> </p>
+                            <p id=govt><b>Type Of Government:</b> <span></span> </p>
                             <p id=fGdp><b>National Average GDP per Capita (in USD):</b> <span></span> </p>
                             <p id=fMigrants><b>% of Country Inhabitants International Migrants:</b> <br><span></span> </p>
                             <p id=fCurr><b>National Currency:</b> <span></span> </p>
-                            
-                            <h2 class=constr>**Site still under construction</h2>
-
-
-                            <p>Sources: WorldBank, </p>                          
 
                         </div>
-
-                        <div class=flag-container>
-                            <div id=flag>
-                                flag goes here
-                            </div>
-
-                            <div id=weather>
-                                weather api here?
-                            </div>
-
-                        </div>
-
                     </div>
+                        <p>Sources: WorldBank, </p>
 
                     <div id=container-news>
                         <div id=news>
@@ -797,9 +790,11 @@ echo "<p id=total-places ><b>Total Number Of Places: " . $rowcount . "</b></p>";
         
         
     </div>
-    
 </section>
 
+<!-- <div class=search-engine>
+    <div class='gcse-searchresults-only' sandbox='allow-storage-access-by-user-activation allow-scripts allow-same-origin'></div>                                      
+</div> -->
 <footer>
     <p>
         Tomas Maldonado 2022
@@ -827,7 +822,8 @@ mysqli_close($con);
 
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
     
-        
+    <script  id=script-place-cse async=true src='https://cse.google.com/cse.js?cx=22bdf86666de74d21'></script>
+    
     <script src='https://cdn.maptiler.com/maplibre-gl-js/v2.4.0/maplibre-gl.js'></script>
     </section>
 </body>

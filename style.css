@@ -1,6 +1,7 @@
 body, html {
   margin: 0 auto;
   font-family: Georgia, "Times New Roman", Times, serif;
+  scroll-behavior: smooth;
 }
 
 input[type=button], input[type=text] {
@@ -10,6 +11,8 @@ input[type=button], input[type=text] {
 input[type=text] {
   font-size: 1.25rem;
   box-shadow: 0px 0px 9px 3px ivory;
+  border-radius: 16px;
+  text-align: center;
 }
 
 @media screen and (min-width: 901px) {
@@ -37,7 +40,7 @@ input[type=text] {
   }
   .data-row:hover td:nth-child(n+1) {
     transition: 250ms;
-    background-color: rgba(159, 148, 143, 0.9);
+    background-color: rgba(199, 198, 197, 0.442);
   }
   #insertBtn:hover {
     border: 1.5rem, rgb(87, 87, 87);
@@ -47,6 +50,7 @@ input[type=text] {
   .container-see-more:hover {
     transition: 250ms;
     background-color: antiquewhite !important;
+    color: black !important;
   }
 }
 nav {
@@ -143,6 +147,19 @@ nav {
   color: white;
 }
 
+
+@keyframes page-fade-bottom {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
 h1 {
   font-size: 3.25rem;
   text-align: center;
@@ -156,6 +173,9 @@ h1 {
   backdrop-filter: blur(10px);
   text-shadow: 5px 5px 5px black;
   box-shadow: 0 4px 20px rgba(255, 255, 240, 0.34);
+
+  animation: page-fade-bottom 1000ms ease-in;
+  margin-bottom: 2rem;
 }
 
 #want {
@@ -176,6 +196,7 @@ h1 {
 #container-table-btns {
   width: 70%;
   margin: auto;
+  animation: page-fade-bottom 1000ms ease-in;
 }
 
 #container-print {
@@ -281,8 +302,8 @@ th {
 }
 
 #table {
-  border-spacing: 0.2rem;
-  border-collapse: separate;
+  /* border-spacing: 0.2rem;
+  border-collapse: separate; */
   margin: auto;
   width: 100%;
   color: antiquewhite;
@@ -291,8 +312,14 @@ th {
 td {
   padding: 0.8rem;
   text-align: center;
-  font-size: 1.4rem;
-  border-spacing: 1rem;
+  font-size: 1.6rem;
+
+  border-radius: 25px;
+  background-color: #ffffff1f;
+  width: min-content;
+
+  text-shadow: 0px 0px 5px black;
+  backdrop-filter: blur(2px);
 }
 
 td:nth-child(1) {
@@ -300,24 +327,21 @@ td:nth-child(1) {
 }
 
 .data-row {
-  border-bottom: 1px solid black;
-  row-gap: 1rem;
-  background-color: rgba(236, 220, 213, 0.8);
-  color: rgb(0, 0, 0);
+  /* background-color: rgba(236, 220, 213, 0.8); */
+  color: ivory;
   font-weight: 600;
-  border-radius: 5px;
   transition: 250ms;
 }
 
 .selectedRow {
-  background-color: rgba(255, 255, 255, 0.9) !important;
-  color: grey !important;
+  background-color: rgba(255, 255, 255, 0.481) !important;
+  /* color: black !important; */
   transition: 250ms;
 }
 
-tr {
+/* tr {
   border-spacing: 5px;
-}
+} */
 
 #sel-all {
   width: 1rem;
@@ -540,15 +564,11 @@ ul li {
 
 /* Modal  */
 
-#container-search-engine {
-  /* background-color: rgb(135, 163, 184); */
-
-}
-
+/*
 .gsc-control-cse {
   background-color: rgba(255, 255, 240, 0) !important;
   border: none !important;
-}
+}*/
 
 #section-modal-map {
   /* background-color: rgb(47, 65, 79); */
@@ -576,21 +596,28 @@ ul li {
   align-items: center;
 }
 
-#facts {
+#facts1, #facts2 {
   width: 50%;
   background-color: #fffff02b;
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   backdrop-filter: blur(5px);
   border-radius: 30px;
   padding: 1.25rem;
 }
-.flag-container {
-  width: 50%;
+
+#facts1 b, #facts2 b {
+  color: wheat;
 }
-#flag {
-  /* align-items: center; */
+#facts1 span, #facts2 span {
+  color: #f7f7f7;
+}
+
+#as-of {
   text-align: center;
+  font-size: 2rem;
+  color: wheat;
 }
+
 
 #container-news {
   height: 80vh;
@@ -715,7 +742,7 @@ footer p {
 }
 
 /*              */
-.search-engine {
+/* .search-engine { */
   /* height: 55vh; */
   /* overflow: scroll; */
   /* direction: rtl; */
@@ -724,7 +751,7 @@ footer p {
   background-color: #fffff038;
   border-radius: 30px; */
 
-}
+/* } */
 
 .gsc-results .gsc-imageResult {
   width: 33%;
@@ -755,9 +782,20 @@ footer p {
   box-shadow: 0px 0px 7px 1px;
 }
 
+.gsc-imageResult {
+  visibility: visible !important;
+  height: 10vh;
+}
+
 .gsc-cursor {
   font-size: 1rem;
 }
+
+.gsc-cursor-page {
+  background-color: rgba(255, 255, 240, 0) !important;
+  color: wheat;
+}
+
 
 #section-edit {
   backdrop-filter: blur(5px);
@@ -812,10 +850,13 @@ td:nth-child(1) {
 /* loading icon */
 .lds-ring {
   display: block;
-  position: relative;
+  position: absolute;
   width: 80px;
   height: 80px;
   margin: 2rem auto;
+  z-index: 100;
+  top: 25%;
+  left: 50%;
 }
 .lds-ring div {
   box-sizing: border-box;
@@ -845,4 +886,9 @@ td:nth-child(1) {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.lds-ring-hide {
+  opacity: 0;
+  transition: 400ms;
 }

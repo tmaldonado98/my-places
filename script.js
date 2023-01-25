@@ -1,4 +1,7 @@
 $(document).ready(()=>{
+    $(window).scrollTop(0);
+
+    // window.scrollTo(0, 0);
     /*
     const openModalBtns = $('data-modal-target');
     const closeModalBtns = $('data-close-btn');
@@ -218,10 +221,10 @@ $('body').on('focus blur', '.checkbox', function(){
 
      $(checkbox[i]).change(()=>{
          if ($(checkbox[i]).attr('checked', true)) {
-             $(rows[i]).toggleClass('selectedRow')
+             $($(rows[i]).children('td')).toggleClass('selectedRow')
          }
          else if ($(checkbox[i]).attr('checked', false)) {
-             $(rows[i]).toggleClass('selectedRow')
+             $($(rows[i]).children('td')).toggleClass('selectedRow')
          }
          
      });
@@ -230,10 +233,10 @@ $('body').on('focus blur', '.checkbox', function(){
 
 $('body').on('change', '#sel-all', function (e) {
  if ($('#sel-all').attr('checked', true)) {
-     $('.data-row').addClass('selectedRow')
+     $('.data-row').children('td').addClass('selectedRow')
  }
  if ($('#sel-all').attr('checked', false) && $('.checkbox:checked').length == 0) {
-     $('.data-row').removeClass('selectedRow')
+     $('.data-row').children('td').removeClass('selectedRow')
  }
 });
 
@@ -479,13 +482,22 @@ $('body').on('click', '.see-more', function(){
     let mCity = $('#m-city').text();
     let mLandmark = $('#m-landmark').text();
 
-
-    $('.search-engine').append("<div class='gcse-searchresults-only'></div>");
+    $('.modal').scrollTop(0);
+    $('.search-engine').append("<div class='gcse-searchresults-only' sandbox='allow-storage-access-by-user-activation allow-scripts allow-same-origin'></div>");
     $('#scripts').append(scriptPlaceCse);
-    
-    setTimeout(() => {
-        $('.lds-ring').css('display', 'none')
-      }, 4000);
+    let recaptcha = 'https://www.google.com/recaptcha/api2/bframe?hl=en&v=Gg72x2_SHmxi8X0BLo33HMpr&k=6LdE6qgbAAAAANq2Tal4NuP8YdGwtfdTpCLArNE-';
+    // $('.gcse-searchresults-only').requestStorageAccess()
+    // setTimeout(() => {
+        // $('.lds-ring').addClass('lds-ring-hide')
+        // $(recaptcha).requestStorageAccess().then(
+        //     () => { console.log('access granted') },
+        //     () => { console.log('access denied') }
+        //     )
+            // .then(
+                
+            //     () => {  }
+            // );
+    //   }, 4000);
     // $('.gsc-control-cse').onload(function(){
     //     hideLoader();
     //     console.log('testtest');
@@ -502,10 +514,10 @@ function unloadModalCse(){
     $('.edit-field').removeClass('edit-field-visible');
 
     window.history.replaceState(null, null, "?q=");
-    $('head').find('script[src="https://cse.google.com/cse.js?cx=22bdf86666de74d21"]').remove();
-    $('head').find('script[src="https://www.google.com/cse/static/element/f275a300093f201a/cse_element__en.js?usqp=CAI%3D"]').remove();
+    $(document).find('script[src="https://cse.google.com/cse.js?cx=22bdf86666de74d21"]').remove();
+    $(document).find('script[src="https://www.google.com/cse/static/element/f275a300093f201a/cse_element__en.js?usqp=CAI%3D"]').remove();
     $('.search-engine').find('.gsc-control-cse').remove(); 
-    $('.lds-ring').css('display', 'block');
+    // $('.lds-ring').removeClass('lds-ring-hide');
 }
 
 $('body').on('click', '.mfp-close', function(){
@@ -598,9 +610,9 @@ $('body').on('click', '.see-more' , function(){
         $('#mlc').hide();
     }
    
-    setTimeout(() => {
-        $('.lds-ring').css('display', 'none')
-    }, 4000);
+    // setTimeout(() => {
+    //     $('.lds-ring').addClass('lds-ring-hide')
+    // }, 4000);
     
     setTimeout(() => {
     
@@ -739,6 +751,7 @@ $('body').on('click', '.see-more' , function(){
         $.getJSON('religiousdemographicspercentage.json', function(data){
             $.each(data, function(){
                 if (mCountry == this.Country) {
+                    // console.log(data)
 
 
                     const religions = this;
@@ -762,6 +775,18 @@ $('body').on('click', '.see-more' , function(){
                 }
             })
         })
+
+        $.getJSON('bygovttype.json', function(govts){
+            $.each(govts, function(){
+                if (mCountry == this.country) {
+                    $('#govt').children('span')
+                    .html(JSON.stringify(this.government)
+                    .replace(/[""]/g, '')
+                    );
+                    
+                } 
+            })
+        });
 
     }, 6000);
 
