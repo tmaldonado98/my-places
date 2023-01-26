@@ -30,25 +30,12 @@ if (isset($_POST['update'])) {
 <body>
 <!-- ,maximum-scale=1,user-scalable=no -->
 <nav>
-    <!-- <div id="contact" >
-        <div class='nav-btns' title="Contact Me!" data-modal-target="contact-modal">Contact</div>
-
-        <div id="contact-modal" class="active">
-            <div id="contact-modal-title">
-                <h3>Let's Get In Touch</h3>
-                <button id="contact-close-btn" data-close-btn>&times;</button>
-            </div>
-            
-            <div id="modal-body">
-                <div class='nav-btns'><a href="https://github.com/tmaldonado98" target="_blank" rel="noopener noreferrer" title="My Github Profile"><i class="fa-brands fa-github fa-xl"></i></a></div>
-                <div class='nav-btns'><a href="mailto:tmaldonadotrs@gmail.com" target="_blank" rel="noopener noreferrer" title="Send Me An Email!"><i class="fa-solid fa-envelope fa-xl"></i></a></div>
-                <div class='nav-btns'><a href="https://www.linkedin.com/in/tom%C3%A1s-maldonado-9b396420a/" target="_blank" rel="noopener noreferrer" title="My LinkedIn Profile"><i class="fa-brands fa-linkedin fa-xl"></i></a></div>
-                <div id="share" class='nav-btns'><p class="share" title="Share your list"><i class="fa-regular fa-xl fa-share-from-square share"></i> Share</p></div>
-
-            </div>               
-        </div>   
+    <div id="contact">
+        <div class='nav-btns'><a href="https://github.com/tmaldonado98" target="_blank" rel="noopener noreferrer" title="My Github Profile">Github</a></div>
+        <div class='nav-btns'><a href="mailto:tmaldonadotrs@gmail.com" target="_blank" rel="noopener noreferrer" title="Send Me An Email!">Email</a></div>
+        <div class='nav-btns'><a href="https://www.linkedin.com/in/tom%C3%A1s-maldonado-9b396420a/" target="_blank" rel="noopener noreferrer" title="My LinkedIn Profile">LinkedIn</a></div>
+        <div id="share" class='nav-btns'><p class="share" title="Share your list"><i class="fa-regular fa-xl fa-share-from-square share"></i> Share</p></div>
     </div>
-    <div class="active" id="overlay"></div> -->
 </nav>
 <div id=container-print>
     <i class="fa-solid fa-print fa-xl print" title="Print Page"></i>
@@ -59,7 +46,7 @@ if (isset($_POST['update'])) {
 
 <section id="want">  
 
-<h1>Where I Want To Go</h1>
+<h1>Where Should We Go?</h1>
 <div id=container-table-btns>
     <div id=container-table>
         <table id=table>
@@ -156,7 +143,7 @@ echo "
                     </div>
                 
                     <div id=container-section-facts>
-                    <h3 id=as-of>As of 2021</h3>
+                    <h3>Some Facts About Your Place</h3>
                         <div id=container-facts>
                             <div id=facts1>
                                 <p id=fCountry><b>Country:</b> <span></span></p>
@@ -179,25 +166,30 @@ echo "
                                 <p id=fGdp><b>National Average GDP per Capita (in USD):</b> <span></span> </p>
                                 <p id=fMigrants><b>% of Country Inhabitants International Migrants:</b> <br><span></span> </p>
                                 <p id=fCurr><b>National Currency:</b> <span></span> </p>
-
-                                <p>Sources: WorldBank, </p>
+                                <br>
+                                <br>
+                                <p>Sources: World Bank, UN Data Bank</p>
                             </div>
                         </div>
-                    </div>
-
-                    <div id=container-news>
-                        <div id=news>
-                            'news' cse section here
+                                
+                        <div id=facts-bottom>
+                            <p id=as-of>This information is current as of 2021</p>
                         </div>
                     </div>
+"
+                    // <div id=container-news>
+                    //     <div id=news>
+                    //         'news' cse section here
+                    //     </div>
+                    // </div>
 
-                    <div id=container-people-of>
-                        <div id=people-of>
-                            'people of' cse section here
+                    // <div id=container-people-of>
+                    //     <div id=people-of>
+                    //         'people of' cse section here
                             
-                        </div>
-                    </div>
-
+                    //     </div>
+                    // </div>
+."
 
                 </div>
 
@@ -237,7 +229,6 @@ echo "    </table>
            <!-- <li>To avoid error, make sure to remove empty spaces at the </li> -->
        </ul>
 
-       <h2 class="constr">**Site still under construction</h2>
             <div id="btn-msg">
             <div id="btn">
                         <input type="button" class="del-sel" name="delete_sel" value="Delete Selection">
@@ -787,7 +778,8 @@ echo "    </table>
     
             </div>
         <br>
-            <p>To see the <u>updated map</u> please refresh the page after editing the list.</p>
+            <p>Please allow a few seconds after adding a location to see the marker on the map.</p>
+            <p>To see the <u>updated map</u> after modifying or deleting a location, please refresh the page.</p>
             
         
         
@@ -807,9 +799,11 @@ mysqli_close($con);
     <section id="scripts">
     <script defer src="https://code.jquery.com/jquery-3.6.1.js"></script>
 
+    
+    <!-- for next version <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/16.1.3/smooth-scroll.min.js" integrity="sha512-HYG9E+RmbXS7oy529Nk8byKFw5jqM3R1zzvoV2JnltsIGkK/AhZSzciYCNxDMOXEbYO9w6MJ6SpuYgm5PJPpeQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+
     <script defer src="script.js"></script>
 
-    <!-- <script defer src='map-script.js'></script> -->
 
         <!-- jQuery UI plugin -->
     <script defer src="jquery-ui.js"></script>

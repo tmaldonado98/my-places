@@ -22,7 +22,7 @@ $('tbody').sortable({
             url: 'data.php',
             dataType: 'text',
             success: function(result){
-                let loadedData = $('#container-table-btns').html(result);
+                let loadedData = $('#container-table').html(result);
                 loadedData;
 
                 loadedData.find('tbody').sortable({

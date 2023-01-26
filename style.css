@@ -1,7 +1,13 @@
-body, html {
+html {
+  scroll-behavior: smooth;
+
+}
+
+body {
   margin: 0 auto;
   font-family: Georgia, "Times New Roman", Times, serif;
-  scroll-behavior: smooth;
+  width: 100%;
+  height: 100%;
 }
 
 input[type=button], input[type=text] {
@@ -13,6 +19,7 @@ input[type=text] {
   box-shadow: 0px 0px 9px 3px ivory;
   border-radius: 16px;
   text-align: center;
+  font-weight: bold;
 }
 
 @media screen and (min-width: 901px) {
@@ -35,9 +42,9 @@ input[type=text] {
     background-color: rgb(187, 8, 71);
     color: white;
   }
-  .print:hover {
+  /* .print:hover {
     color: white;
-  }
+  } */
   .data-row:hover td:nth-child(n+1) {
     transition: 250ms;
     background-color: rgba(199, 198, 197, 0.442);
@@ -165,7 +172,7 @@ h1 {
   text-align: center;
   /* margin: 0 1rem 2rem 1rem; */
   padding: 2rem;
-  color: antiquewhite;
+  color: ivory;
   width: fit-content;
   margin: auto;
   background-color: #fffff059;
@@ -210,10 +217,12 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  color: white;
 }
 
 .print, .share {
   cursor: pointer;
+  color: white;
 }
 .print .print:nth-child(1), .print .print:nth-child(3), .share .print:nth-child(1), .share .print:nth-child(3) {
   padding: 5px;
@@ -236,7 +245,10 @@ th {
   font-size: 20px;
   text-decoration: none;
   color: inherit;
+}
+.see-more {
   cursor: pointer;
+
 }
 
 .inputs {
@@ -290,7 +302,6 @@ th {
   font-size: 20px;
   text-decoration: none;
   color: whitesmoke;
-  cursor: pointer;
   border: 3px solid rgba(170, 170, 170, 0.481);
   padding: 0.5rem;
   opacity: 0;
@@ -299,6 +310,7 @@ th {
 
 .del-sel-visible {
   opacity: 1;
+  cursor: pointer;
 }
 
 #table {
@@ -387,6 +399,16 @@ td:where(.check-td) {
 
 #container-add-place h3 {
   text-align: center;
+  font-size: 2rem;
+  background-color: #99939359;
+  width: fit-content;
+  text-align: center;
+  margin: 2rem auto;
+  padding: 1rem;
+  border-radius: 30px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0px 13px 10px rgba(255, 255, 240, 0.34);
+  text-shadow: 0px 0px 10px black;
 }
 
 #add-place {
@@ -409,7 +431,7 @@ td:where(.check-td) {
   height: fit-content;
   font-size: 18px;
   width: 14rem;
-  background-color: rgba(244, 224, 224, 0.431372549);
+  background-color: rgba(244, 224, 224, 0.63);
 }
 
 #container-insertBtn {
@@ -445,18 +467,22 @@ td:where(.check-td) {
 .container-input p {
   font-size: 1.5rem;
   font-weight: bold;
-  color: black;
-  background-color: #fffff085;
+  color: antiquewhite;
+  background-color: #fffff03b;  
   padding: 0.25rem;
-  border: 1px ivory solid;
+  /* border: 1px ivory solid; */
   border-radius: 10px;
+
+  text-shadow: 0px 0px 10px black;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0px 13px 10px rgba(255, 255, 240, 0.34);
 }
 
-/* #btn-msg {
+#btn-msg {
   display: flex;
   flex-direction: column;
   margin: 0rem auto;
-} */
+}
 
 ul, #map-container p {
   color: white;
@@ -540,8 +566,16 @@ ul li {
 
 #map-container h2 {
   color: antiquewhite;
+  font-size: 2rem;
+  background-color: #fffdfd59;
+  width: fit-content;
   text-align: center;
-  font-size: 2.25rem;
+  margin: 2rem auto;
+  padding: 1rem;
+  border-radius: 30px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0px 13px 10px rgba(255, 255, 240, 0.34);
+  text-shadow: 0px 0px 10px black;
 }
 
 #map {
@@ -610,12 +644,24 @@ ul li {
   color: #f7f7f7;
 }
 
-#as-of {
+#container-section-facts h3 {
   text-align: center;
   font-size: 2rem;
   color: wheat;
 }
 
+#facts-bottom {
+  height: fit-content;
+}
+
+#as-of {
+  font-size: 1.35rem;
+  font-style: italic;
+  color: ivory;
+  margin: 0;
+  text-align: center;
+  padding: 10px;
+}
 
 #container-news {
   height: 80vh;
@@ -634,6 +680,11 @@ ul li {
 .maplibregl-canvas-container {
   height: inherit;
   width: inherit;
+}
+
+.marker-style {
+  font-family: inherit;
+
 }
 
 footer {
@@ -791,7 +842,7 @@ footer p {
 
 .gsc-cursor-page {
   background-color: rgba(255, 255, 240, 0) !important;
-  color: wheat;
+  color: wheat !important;
 }
 
 .gsc-control-cse {

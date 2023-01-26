@@ -1,0 +1,23 @@
+{
+  "name": "my-places",
+  "version": "1.0.0",
+  "description": "Welcome to My Places, a web app where you can create your own travel bucket list. You can view the page here: http://myplaces.rf.gd/?q=",
+  "main": "jquery-ui.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tmaldonado98/my-places.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tmaldonado98/my-places/issues"
+  },
+  "homepage": "https://github.com/tmaldonado98/my-places#readme",
+  "dependencies": {
+    "smooth-scrollbar": "^8.8.1"
+  }
+}

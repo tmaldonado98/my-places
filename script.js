@@ -1,53 +1,11 @@
 $(document).ready(()=>{
     $(window).scrollTop(0);
 
-    // window.scrollTo(0, 0);
-    /*
-    const openModalBtns = $('data-modal-target');
-    const closeModalBtns = $('data-close-btn');
-    const overlay = $('#overlay');
 
-    $('data-modal-target').on('click', () => {
-        let modal = $('data-modal-target');
-        function openModal(modal){
-
-        }
-    });
-
-    function openModal(modal){
-        if(modal == null){
-            return false
-        } else {
-            modal.addClass('active');
-            overlay.addClass('active');
-        }
-    }
-
-    function closeModal(modal){
-        if(modal == null){
-            return false
-        } else {
-            modal.removeClass('active');
-            overlay.removeClass('active');
-        }
-    }
-*/
-// $('tbody').sortable({
-//     handle: '#handle',
-//     items: 'tr:not(#heading-row)',
-//     // distance: 20,
-//     refresh: 'true',
-
-//     update: function (event, ui){
-//         $(this).not('#heading-row').children().each(function (marker){
-//             if ($(this).attr('data-position') != (marker+1)) {
-//                 $(this).attr('data-position', (marker+1)).addClass('updated')
-//             }
-//             saveNewPositions();
-//         })
-//     }
-// });
-
+///change to append script upon dom modification
+$('#map-section').ready(function(){
+    $('#map').append("<script id=map-script src='map-script.js'></script>");
+});
 
 $('#insertBtn').click(()=>{
     if ($('#country').val() == '' && $('#city').val() == '' && $('#landmark').val() == '') {
@@ -56,29 +14,58 @@ $('#insertBtn').click(()=>{
 });
     ///replaced SUBMIT with CLICK event 
 
+///function for main map markers
+let addMapMarkers = function (){
+    $('.data-row').each(function(){
+        let coText = $(this).children('#country-text').text();
+        let ciText = $(this).children('#city-text').text();
+        // let laText = $(this).children('#landmark-text').text();
+    
+        
+        if (coText.length > 0 && ciText.length > 0) {
+            $.getJSON("worldcities.json", function(data){
+    
+                $.each(data.worldcities, function (){
+    
+                    if (coText  === (this["country"]) && ciText === (this["city"])) {
+                    
+                        const countryMarker = new maplibregl.Marker()
+                        .setLngLat([this["lng"], this["lat"]])
+                        .setPopup(new maplibregl.Popup({className: 'marker-style'})
+                        .setHTML(ciText + ', ' +coText))
+                        .addTo(map);
 
-$('body').on('keypress', '.text', function(e){
-    if (e.keyCode === 13) {    
-        let insert = 'insert';
-        let data = {
-            action: insert,
-            country: $('#country').val().trim(),
-            city: $('#city').val().trim(),
-            landmark: $('#landmark').val().trim(),  
-        };
+                    }                
+                    
+                });//main closing bracket for each
+    
+            });
+    
+        }                
+        else if (coText.length > 0 && ciText.length === 0) {
+            $.getJSON("countrieswcoordinates.json", function(resp){
+                $.each(resp.countries, function(){
+                    
+                    if (coText  === (this.name["common"])) {
+                    
+                        const countryMarker = new maplibregl.Marker()
+                        .setLngLat([this.latlng[1], this.latlng[0]])
+                        .setPopup(new maplibregl.Popup({className: 'marker-style'})
+                        .setHTML(ciText + ', ' +coText))
+                        .addTo(map);
+    
+                    }
+                })
+                
+            })        
+        }
 
-        $.ajax({
-            url: 'insert.php',
-            type: 'POST',
-            data: data,
-            success: function (){
-               displayData();           
-            }
-        })
-    }
-//This block enables form to be posted upon pressing ENTER key.
-// Not submitted, but posted with AJAX
-});
+
+
+    })
+};
+
+
 
 
 ////THIS EVENT CAPITALIZES FIRST LETTER OF EACH WORD IN EACH INPUT FIELD
@@ -94,23 +81,6 @@ $('body').on('keypress', 'input', function(e){
     }
 });
 
-let countrySuggestion = [];
-/*
-$.getJSON("countriesonly.json", function(result){
-    $.each(result.countriesonly, function(val){
-        // $('#country').keyup(()=>{
-            countrySuggestion.push(result.countriesonly);
-            // if (str.substring == this.name["common"].substring) {
-            //     $('#countryList').append('<option></option>').val(this.name["common"])
-            //     console.log('test');
-            // }
-            // });
-        })
-    })
-    $("#country" ).autocomplete({
-        source: countrySuggestion
-      });
-*/
 
 ///THESE THREE KEYPRESS EVENTS INVALIDATE CHARACTERS WHEN FIELDS REACH A CHARACTER
 /// COUNT OF 20.
@@ -243,53 +213,11 @@ $('body').on('change', '#sel-all', function (e) {
      $('.data-row').children('td').removeClass('selectedRow')
  }
 });
-
-
-///Suggestions function
-/*
-function countrySuggestion(str){
-    
-    if (str.length == 0) {
-        $('#country-sug').val('')
-    } else {
-        $.ajax({
-            method: 'GET',
-            url: 'suggest.php?q=+str',
-            dataType: 'php',
-            success: function(result) {
-                $('#country-sug').html(this.result)
-            }
-        }).done(function (data) {
-            console.log(data);
-        });
-    }
-}
-
-$('#country').keyup(countrySuggestion(str), {
-    
-});
-
-$('#city').keyup(citySuggestion(str), {
-    //
-});
-
-*/
-
-
-// if ($.magnificPopup.close()){
-//     $('.edit-field').removeClass('edit-field-visible');
-
-//     window.history.replaceState(null, null, "?q=");
-//     $('head').find('script[src="https://cse.google.com/cse.js?cx=22bdf86666de74d21"]').remove();
-//     $('head').find('script[src="https://www.google.com/cse/static/element/f275a300093f201a/cse_element__en.js?usqp=CAI%3D"]').remove();
-//     $('.search-engine').find('.gsc-control-cse').remove(); 
-// };
-
-
     
 //AJAX INSERT
-$('body').on('click', '#insertBtn', function (){
 
+
+function insert(){
     let insert = 'insert';
     let data = {
         action: insert,
@@ -304,47 +232,28 @@ $('body').on('click', '#insertBtn', function (){
         type: 'POST',
         data: data,
         success: function (){
-           displayData();           
+           displayData(); 
+           setTimeout(() => {
+            addMapMarkers()
+           }, 200);
         }
     })
+    
+}
+
+$('body').on('keypress', '.text', function(e){
+    if (e.keyCode === 13) {  
+        insert();  
+    
+}
+//This block enables form to be posted upon pressing ENTER key.
+// Not submitted, but posted with AJAX
 });
 
+$('body').on('click', '#insertBtn', function (){
+    insert();
 
-
-//     //AJAX DISPLAY DB DATA
-//     function displayData(){
-//         $.ajax({        
-//             type: 'GET',
-//             url: 'data.php',
-//             dataType: 'text',
-//             success: function(result){
-//                 let loadedData = $('#container-table-btns').html(result);
-//                 loadedData;
-
-//                 loadedData.find('tbody').sortable({
-//                     ///disables sortable for heading row
-//                     items: 'tr:not(#heading-row)',
-//                     // distance: 20,
-//                     refresh: 'true',
-            
-//                     update: function (event, ui){
-//                         $(this).not('#heading-row').children().each(function (marker){
-//                             if ($(this).attr('data-position') != (marker+1)) {
-//                                 $(this).attr('data-position', (marker+1)).addClass('updated')
-//                             }
-//                             saveNewPositions();
-//                         })
-//                     }
-            
-//                 });
-//                 $('#country').val('');
-//                 $('#city').val('');
-//                 $('#landmark').val('');
-//                 $('#insertBtn').attr('style', 'opacity:0');
-
-//             }
-//     });
-// };
+});
 
 function saveNewPositions(){
     let positions = [];
@@ -364,47 +273,104 @@ function saveNewPositions(){
     });   
 }
 
+function deleteRow(){
+    let id = [];
+    let confirmalert = confirm('Are you sure?');
+    
+    if (confirmalert == true) {
+        // $('#map-script').remove();
+
+        $('body').find('.checkbox:checked').each(function (i){
+            id[i] = $(this).val();
+        });
+
+        $.ajax({
+            method: 'POST',
+            url: 'delete.php',
+            data: {
+            id:id,
+            },
+            success: function () {
+                console.log('deleted');
+                $('body').find('.checkbox:checked').each(function (){
+                    $(this).closest('.data-row').addClass('animateOut');
+                                        
+                });
+                setTimeout(() => {
+                    $('.animateOut').addClass('animateOutHide');
+                    $('.animateOutHide').prop('checked', false);
+                    $('.del-sel').removeClass('del-sel-visible')
+                }, 700);  
+                //these lines below are my attempt to update map markers after row deletion
+                // $('#map-script').load(' #map-script')
+                // $('#map').append("<script id=map-script src='map-script.js'></script>");
+                // console.log('Reloaded')
+
+                // $('.data-row').each(function(){
+                //     let coText = $(this).children('#country-text').text();
+                //     let ciText = $(this).children('#city-text').text();
+                //     // let laText = $(this).children('#landmark-text').text();
+                
+                    
+                //     if (coText.length > 0 && ciText.length > 0) {
+                //         $.getJSON("worldcities.json", function(data){
+                
+                //             $.each(data.worldcities, function (){
+                
+                //                 if (coText  === (this["country"]) && ciText === (this["city"])) {
+                //                     // const countryMarker = new maplibregl.Marker()
+                //                     // .setLngLat([this["lng"], this["lat"]])
+                //                     // .setPopup(new maplibregl.Popup({className: 'marker-style'})
+                //                     // .setHTML(ciText + ', ' +coText))
+                //                     // .addTo(map);
+
+                //                     this.maplibregl.Marker().remove();
+                //                     // countryMarker.remove();
+                //                 }
+                                
+                
+                                
+                //             });//main closing bracket for each
+                
+                //         });
+                
+                //     }                
+                //     else if (coText.length > 0 && ciText.length === 0) {
+                //         $.getJSON("countrieswcoordinates.json", function(resp){
+                //             $.each(resp.countries, function(){
+                                
+                //                 if (coText  === (this.name["common"])) {
+                                
+                //                     const countryMarker = new maplibregl.Marker()
+                //                     .setLngLat([this.latlng[1], this.latlng[0]])
+                //                     .setPopup(new maplibregl.Popup({className: 'marker-style'})
+                //                     .setHTML(ciText + ', ' +coText))
+                //                     .addTo(map);
+                
+                //                 }
+                //             })
+                            
+                //         })        
+                //     }
+            
+            
+            
+                // })
+
+            }
+        })
+        
+
+
+    }
+}
 
 // AJAX DELETE
 $('body').on('click', '.del-sel', function(){
-        let id = [];
-        let confirmalert = confirm('Are you sure?');
-        
-        if (confirmalert == true) {
-            
-            // let findCheckedRows = function (){
-                $('body').find('.checkbox:checked').each(function (i){
-                    id[i] = $(this).val();
-                });
-            // };
-            // deleteCheckedRows();
+    deleteRow();
 
-            $.ajax({
-                method: 'POST',
-                url: 'delete.php',
-                data: {
-                id:id,
-                },
-                success: function () {
-                    console.log('deleted');
-                    $('body').find('.checkbox:checked').each(function (){
-                        $(this).closest('.data-row').addClass('animateOut');
-                        
-                        
-                    });
-                    setTimeout(() => {
-                        $('.animateOut').addClass('animateOutHide');
-                        $('.animateOutHide').prop('checked', false);
-                        $('.del-sel').removeClass('del-sel-visible')
-                    }, 700);    
-                    
-                    // $(row).addClass('animateOut');
-                    // displayData();
-                }
-            })
-            
-        }
 });
+
 
 $('body').on('click', '.modal-delete', function(){
 
@@ -412,7 +378,7 @@ $('body').on('click', '.modal-delete', function(){
     let rowData = $(this).attr('dataId');
 
     if (confirmalert == true) {
-
+        // $('#map-script').remove();
         console.log(rowData)
         
         $.ajax({
@@ -421,8 +387,11 @@ $('body').on('click', '.modal-delete', function(){
             data: {rowData: rowData},
             success: function(){
                 console.log('row deleted from modal');
-                $.magnificPopup.close();
                 displayData();
+                $.magnificPopup.close();
+                // $('#map-script').load(' #map-script')
+                // $('#map').append("<script id=map-script src='map-script.js'></script>");
+                // console.log('Reloaded')
             }
         })
     }
@@ -450,6 +419,9 @@ $('body').on('click', '.editBtn', function (){
             console.log('edit ajax posted');
             displayData()           
             $.magnificPopup.close();
+            setTimeout(() => {
+                addMapMarkers()
+               }, 200);
         }
     })
 });
@@ -468,6 +440,9 @@ $('body').on('keypress', '.ed-text', function(e){
             success: function (){
                displayData();    
                $.magnificPopup.close();       
+               setTimeout(() => {
+                addMapMarkers()
+               }, 200);
             }
         })
     }
@@ -504,23 +479,7 @@ $('body').on('click', '.see-more', function(){
     $('.modal').scrollTop(0);
     $('.search-engine').append("<div class='gcse-searchresults-only' sandbox='allow-storage-access-by-user-activation allow-scripts allow-same-origin'></div>");
     $('#scripts').append(scriptPlaceCse);
-    let recaptcha = 'https://www.google.com/recaptcha/api2/bframe?hl=en&v=Gg72x2_SHmxi8X0BLo33HMpr&k=6LdE6qgbAAAAANq2Tal4NuP8YdGwtfdTpCLArNE-';
-    // $('.gcse-searchresults-only').requestStorageAccess()
-    // setTimeout(() => {
-        // $('.lds-ring').addClass('lds-ring-hide')
-        // $(recaptcha).requestStorageAccess().then(
-        //     () => { console.log('access granted') },
-        //     () => { console.log('access denied') }
-        //     )
-            // .then(
-                
-            //     () => {  }
-            // );
-    //   }, 4000);
-    // $('.gsc-control-cse').onload(function(){
-    //     hideLoader();
-    //     console.log('testtest');
-    // });
+
     window.history.replaceState(null, null, "?q="+mCountry +' ' + mCity +' ' + mLandmark +' ');
     
 });
@@ -549,80 +508,13 @@ $('body').keydown(function(e){
     }
 });
 
-window.history.replaceState(null, null, "?q=");
+// window.history.replaceState(null, null, "?q=");
 
-///change to append script upon dom modification
-$('#map-section').ready(function(){
-    $('#map').append("<script src='map-script.js'></script>");
-});
 
-///function for main map markers
-let addMapMarkers = function (){
-$('.data-row').each(function(){
-    let coText = $(this).children('#country-text').text();
-    let ciText = $(this).children('#city-text').text();
-    // let laText = $(this).children('#landmark-text').text();
-
-    
-    if (coText.length > 0 && ciText.length > 0) {
-        $.getJSON("worldcities.json", function(data){
-
-            $.each(data.worldcities, function (){
-
-                if (coText  === (this["country"]) && ciText === (this["city"])) {
-                
-                    const country = new maplibregl.Marker()
-                    .setLngLat([this["lng"], this["lat"]])
-                    .addTo(map);
-                }
-                
-
-                
-            });//main closing bracket for each
-
-        });
-
-    }                
-    else if (coText.length > 0 && ciText.length === 0) {
-        $.getJSON("countrieswcoordinates.json", function(resp){
-            $.each(resp.countries, function(){
-                
-                if (coText  === (this.name["common"])) {
-                
-                    const country = new maplibregl.Marker()
-                    .setLngLat([this.latlng[1], this.latlng[0]])
-                    .addTo(map);
-
-                }
-            })
-            
-        })        
-    }
-})
-};  
-
-let table = $('#table');
+  
 
 $('#map').ready(function(){
     addMapMarkers();
-    
-   /* let mutObserver = new MutationObserver(mutation => {
-        // addMapMarkers();
-        console.log(mutation); // console.log(the changes)
-
-      });
-
-    mutObserver.observe(table, {
-        childList: true,
-        subtree: true,
-        attributes: false,
-        subtree: false,
-    });*/
-
-
-    // $('#table').on('DOMSubtreeModified', function(){
-    //     // console.log('map updated');
-    //   });
 
 });
 
@@ -678,8 +570,10 @@ $('body').on('click', '.see-more' , function(){
                         });
                         map.addControl(new maplibregl.NavigationControl(), 'top-right');
                                                 
-                        const country = new maplibregl.Marker()
+                        const countryMarker = new maplibregl.Marker()
                         .setLngLat([this["lng"], this["lat"]])
+                        .setPopup(new maplibregl.Popup({className: 'marker-style'})
+                        .setHTML(mCity + ', ' + mCountry))
                         .addTo(map);
                         
 
@@ -706,8 +600,10 @@ $('body').on('click', '.see-more' , function(){
 
                         map.addControl(new maplibregl.NavigationControl(), 'top-right');
 
-                        const country = new maplibregl.Marker()
+                        const countryMarker = new maplibregl.Marker()
                         .setLngLat([this.latlng[1], this.latlng[0]])
+                        .setPopup(new maplibregl.Popup({className: 'marker-style'})
+                        .setHTML(ciText + ', ' +coText))
                         .addTo(map);                     
                                                 
                         $('#fCountry').children('span').html(this.name["common"]);
@@ -832,9 +728,5 @@ $('body').on('click', '.see-more' , function(){
     }, 6000);
 
 });
-// });
-
 
 });
-
-// });
