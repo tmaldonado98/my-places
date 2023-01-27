@@ -7,14 +7,11 @@
   #add-place {
     gap: 1rem;
   }
-  .gsc-results .gsc-imageResult {
-    width: 33%;
-    flex-basis: auto;
-  }
 }
 @media screen and (min-width: 901px) {
-  .share, #share {
+  .share {
     display: none;
+    color: antiquewhite;
   }
 }
 @media screen and (max-width: 900px) {
@@ -39,14 +36,6 @@
   td, .see-more {
     font-size: 1rem;
   }
-  .gsc-control-cse {
-    max-height: 50vh;
-    overflow-y: auto;
-  }
-  .gsc-results, .gsc-imageResult {
-    width: 33%;
-    flex-basis: 100%;
-  }  
   .editBtn {
     width: auto;
   }
@@ -98,4 +87,4 @@
   td {
     font-size: 1.15rem;
   }
-} /*# sourceMappingURL=media-queries.css.map *//*# sourceMappingURL=media-queries.css.map */
+}/*# sourceMappingURL=media-queries.css.map */

@@ -2,7 +2,6 @@ $(document).ready(()=>{
     $(window).scrollTop(0);
 
 
-///change to append script upon dom modification
 $('#map-section').ready(function(){
     $('#map').append("<script id=map-script src='map-script.js'></script>");
 });
@@ -15,8 +14,55 @@ $('#insertBtn').click(()=>{
     ///replaced SUBMIT with CLICK event 
 
 ///function for main map markers
-let addMapMarkers = function (){
-    $('.data-row').each(function(){
+let initMapMarkers = function (){
+    let dataRows = $('.data-row');
+    for (let i = 0; i < dataRows.length; i++) {
+        let coText = $(dataRows[i]).children('#country-text').text();
+        let ciText = $(dataRows[i]).children('#city-text').text();
+
+        if (coText.length > 0 && ciText.length > 0) {
+            $.getJSON("worldcities.json", function(data){
+    
+                $.each(data.worldcities, function (){
+    
+                    if (coText  === (this["country"]) && ciText === (this["city"])) {
+                          
+                            const countryMarker = new maplibregl.Marker()
+                            .setLngLat([this["lng"], this["lat"]])
+                            .setPopup(new maplibregl.Popup({className: 'marker-style'})
+                            .setHTML(ciText + ', ' +coText))
+                            .addTo(map);
+                        
+
+                    }                
+                    
+                });//main closing bracket for each
+    
+            });
+    
+        }                
+        else if (coText.length > 0 && ciText.length === 0) {
+            $.getJSON("countrieswcoordinates.json", function(resp){
+                $.each(resp.countries, function(){
+                    
+                    if (coText  === (this.name["common"])) {
+
+                        const countryMarker = new maplibregl.Marker()
+                        .setLngLat([this.latlng[1], this.latlng[0]])
+                        .setPopup(new maplibregl.Popup({className: 'marker-style'})
+                        .setHTML(ciText + ', ' +coText))
+                        .addTo(map);
+                    
+    
+                    }
+                })
+                
+            })        
+        }
+        
+    }
+
+    /*$('.data-row').each(function(){
         let coText = $(this).children('#country-text').text();
         let ciText = $(this).children('#city-text').text();
         // let laText = $(this).children('#landmark-text').text();
@@ -63,18 +109,74 @@ let addMapMarkers = function (){
 
 
     })
+    */
 };
 
+  
+
+$('#map').ready(function(){
+    initMapMarkers();
+
+});
 
 
+
+let addMapMarkers = function (country, city){
+    // let dataRows = $('.data-row');
+    const dataInsert = [country, city];
+    for (let i = 0; i < dataInsert.length; i++) {
+        // let coText = $(dataRows[i]).children('#country-text').text();
+        // let ciText = $(dataRows[i]).children('#city-text').text();
+
+        if (dataInsert[0].length > 0 && dataInsert[1].length > 0) {
+            $.getJSON("worldcities.json", function(data){
+    
+                $.each(data.worldcities, function (){
+    
+                    if (dataInsert[0]  == (this["country"]) && dataInsert[1] == (this["city"])) {
+                        
+                        const countryMarker = new maplibregl.Marker()
+                        .setLngLat([this["lng"], this["lat"]])
+                        // .setPopup(new maplibregl.Popup({className: 'marker-style'})
+                        // .setHTML(ciText + ', ' +coText))
+                        .addTo(map);
+                        
+
+                    }                
+                    
+                });//main closing bracket for each
+    
+            });
+    
+        }                
+        else if (dataInsert[0].length > 0 && dataInsert[1].length === 0) {
+            $.getJSON("countrieswcoordinates.json", function(resp){
+                $.each(resp.countries, function(){
+                    
+                    if (dataInsert[0]  == (this.name["common"])) {
+                                        
+                        const countryMarker = new maplibregl.Marker()
+                        .setLngLat([this.latlng[1], this.latlng[0]])
+                        .setPopup(new maplibregl.Popup({className: 'marker-style'})
+                        .setHTML(ciText + ', ' +coText))
+                        .addTo(map);
+                            
+                    }
+                })
+                
+            })        
+        }
+        
+    }
+};
 
 ////THIS EVENT CAPITALIZES FIRST LETTER OF EACH WORD IN EACH INPUT FIELD
 /// AND INVALIDATES NUMBER KEYS. IT DOES NOT CAPITALIZE EACH FIRST LETTER FOR DB ENTRIES
 // IT ALSO ALLOWS FOR COMMAS, PERIODS, SHIFT AND CAPS BUTTONS.
 
 $('body').on('keypress', 'input', function(e){
-    $('.text').attr('style', 'text-transform:capitalize');
-    $('.ed-text').attr('style', 'text-transform:capitalize');
+    // $('.text').attr('style', 'text-transform:capitalize');
+    // $('.ed-text').attr('style', 'text-transform:capitalize');
     
     if (e.keyCode > 47 && e.keyCode < 65 && e.keyCode != 32) {
         return false;
@@ -224,7 +326,6 @@ function insert(){
         country: $('#country').val().trim(),
         city: $('#city').val().trim(),
         landmark: $('#landmark').val().trim(),  
-        
     };
         
     $.ajax({
@@ -232,9 +333,10 @@ function insert(){
         type: 'POST',
         data: data,
         success: function (){
-           displayData(); 
+           displayData();
            setTimeout(() => {
-            addMapMarkers()
+            addMapMarkers(data.country, data.city)
+            console.log(data.country, data.city)
            }, 200);
         }
     })
@@ -405,22 +507,24 @@ $('body').on('click', '.modal-delete', function(){
 
 $('body').on('click', '.editBtn', function (){
 
+    let data = {
+        // action: 'edit',
+        id: $('.editBtn').attr('dataId'),
+        edCountry: $('#ed-country').val().trim(),
+        edCity: $('#ed-city').val().trim(),
+        edLandmark: $('#ed-landmark').val().trim()
+    };
+
     $.ajax({
         method: 'POST',
-        data: {
-            // action: 'edit',
-            id: $('.editBtn').attr('dataId'),
-            edCountry: $('#ed-country').val().trim(),
-            edCity: $('#ed-city').val().trim(),
-            edLandmark: $('#ed-landmark').val().trim()
-        },
+        data: data,
         dataType: 'html',
         success: function (){
             console.log('edit ajax posted');
             displayData()           
             $.magnificPopup.close();
             setTimeout(() => {
-                addMapMarkers()
+                addMapMarkers(data.edCountry, data.edCity)
                }, 200);
         }
     })
@@ -429,19 +533,21 @@ $('body').on('click', '.editBtn', function (){
 //send update query upon enter key press
 $('body').on('keypress', '.ed-text', function(e){
     if (e.keyCode === 13) {    
+        let data = {
+            id: $('.editBtn').attr('dataId'),
+            edCountry: $('#ed-country').val().trim(),
+            edCity: $('#ed-city').val().trim(),
+            edLandmark: $('#ed-landmark').val().trim()
+        };
+
         $.ajax({
             method: 'POST',
-            data: {
-                id: $('.editBtn').attr('dataId'),
-                edCountry: $('#ed-country').val().trim(),
-                edCity: $('#ed-city').val().trim(),
-                edLandmark: $('#ed-landmark').val().trim()
-            },
+            data: data,
             success: function (){
                displayData();    
                $.magnificPopup.close();       
                setTimeout(() => {
-                addMapMarkers()
+                addMapMarkers(data.edCountry, data.edCity)
                }, 200);
             }
         })
@@ -509,15 +615,6 @@ $('body').keydown(function(e){
 });
 
 // window.history.replaceState(null, null, "?q=");
-
-
-  
-
-$('#map').ready(function(){
-    addMapMarkers();
-
-});
-
 
 
 $('body').on('click', '.see-more' , function(){
@@ -725,7 +822,7 @@ $('body').on('click', '.see-more' , function(){
             })
         });
 
-    }, 6000);
+    }, 2000);
 
 });
 
