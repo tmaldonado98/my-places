@@ -47,7 +47,7 @@ body, html {
     #insertBtn:hover {
       border: 1.5rem, rgb(87, 87, 87);
       background-color: white;
-      color: rgb(58, 84, 160);
+      color: black;
     }
     .container-see-more:hover {
       transition: 250ms;
@@ -438,22 +438,26 @@ body, html {
     width: 10rem;
     padding: 1rem;
     border: 1rem, rgb(170, 175, 170);
-    background-color: rgba(58, 84, 160, 0.47);
+    background-color: #00000091;
     color: white;
     font-weight: 600;
     font-size: 1.2rem;
     align-content: center;
     opacity: 0;
     transition: 400ms;
+    border-radius: 15px;
   }
 
   #capit {
-    font-size: 1.25rem;
+    font-size: 1.35rem;
     font-style: italic;
     // border-bottom: 1px solid ivory;
     width: fit-content;
     text-align: center;
     margin: 1.5rem auto;
+    background-color: rgba(0, 0, 0, 0.57);
+    backdrop-filter: blur(5px);
+    border-radius: 25px;
   }
   
   .container-input {

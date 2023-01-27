@@ -762,7 +762,7 @@ echo "    </table>
                 </div>
 
                     <div id="container-insertBtn">
-                        <input id="insertBtn" type="button" value="Add New Place"></input>
+                        <input id="insertBtn" type="button" value="Add"></input>
                         <p id="capit">In order to see your place on the map please capitalize the first letter of each word,
                             and make sure to spell your place name(s) correctly.</p>
                     </div>
